@@ -1,0 +1,161 @@
+body {
+    background-color: #453E3E;
+    line-height: normal;
+    overflow: hidden;
+}
+
+.desktop {
+    width: 95%;
+    height: 90%;
+    position: absolute;
+    background-color: #acb2ec;
+    left: 2.5%;
+    top: 5%;
+}
+
+.logo {
+    position: absolute;
+    width: 40%;
+    height: 20%;
+    right: 0%;
+}
+
+.status_bar {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2%;
+    /* background-color: red; */
+    object-fit: cover;
+    bottom: 1%;
+    width: 25%;
+    height: 10%;
+}
+
+.close {
+    height: 90%;
+}
+
+.close:hover {
+    cursor: pointer;
+    filter: brightness(0.5);
+}
+
+.rectangle_small {
+    border-radius: 35px;
+    background-color: #757575;
+    height: 50%;
+    width: 35%;
+    display: flex;
+    justify-content: center;
+}
+
+.key_ea {
+    font-size: 2.5vw;
+    font-family: Inter;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+}
+
+.group_main_file {
+    position: absolute;
+    display: flex;
+    /* background-color: red; */
+    bottom: 8%;
+    right: 2%;
+    width: 30%;
+    height: 15%;
+    justify-content: center;
+    align-content: center;
+    object-fit: cover;
+    text-align: center;
+}
+
+.icon_wrapper {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+}
+
+.desktop_text {
+    font-size: 1vw;
+    font-family: Inter;
+}
+
+.icon {
+    width: 45%;
+}
+
+.icon:hover{
+    width: 55%;
+    cursor: pointer;
+}
+
+.group_folder_file {
+    position: absolute;
+    display: flex;
+    /* background-color: red; */
+    width: 30%;
+    height: 15%;
+    top: 5%;
+    align-content: center;
+    object-fit: cover;
+    text-align: center;
+}
+
+.group_readme_file {
+    position: absolute;
+    display: flex;
+    /* background-color: red; */
+    width: 30%;
+    height: 15%;
+    top: 25%;
+    align-content: center;
+    object-fit: cover;
+    text-align: center;
+}
+
+.popup-overlay {
+    position: absolute;
+    top: calc(50% - 90%/2);
+    left: calc(50% - 70%/2);
+    border-radius: 25px;
+    background-color: #feed95;
+    width: 70%;
+    height: 90%;
+    display: none;
+}
+
+.rectangle-div {
+    width: 85%;
+    height: 80%;
+    position: relative;
+    background-color: #fff9dc;
+    top: calc(55% - 80%/2);
+    left: calc(50% - 85%/2);
+}
+
+.x_close {
+    position: absolute;
+    right: 4%;
+    top: 4%;
+    font-size: 3vw;
+    font-family: Inter;
+    font-weight:bold;
+}
+
+.x_close:hover {
+    cursor: pointer;
+    font-size: 3vw;
+    color: gray;
+}
+
+
