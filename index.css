@@ -123,7 +123,7 @@ body {
     text-align: center;
 }
 
-.popup-overlay {
+.popup-overlay[data-view="0"] {
     position: absolute;
     top: calc(50% - 90%/2);
     left: calc(50% - 70%/2);
@@ -132,6 +132,17 @@ body {
     width: 70%;
     height: 90%;
     display: none;
+}
+
+.popup-overlay[data-view="1"] {
+    position: absolute;
+    top: calc(50% - 90%/2);
+    left: calc(50% - 70%/2);
+    border-radius: 25px;
+    background-color: #feed95;
+    width: 70%;
+    height: 90%;
+    display: flex;
 }
 
 .rectangle-div {
