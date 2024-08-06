@@ -1,53 +1,342 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  	<meta charset="utf-8">
-  	<meta name="viewport" content="initial-scale=1, width=device-width">
-  	
-  	<link rel="stylesheet"  href="./index.css" />
-  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" />
-  	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@400&display=swap" />
-  	
-  	
-  	
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1, width=device-width">
+
+	<link rel="stylesheet" href="./index.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@400&display=swap" />
+
 </head>
+
 <body>
 	<div class="desktop">
 		<img class="logo" src="/Icon/Logo.png">
 
+		<!-- Folder 1 -->
+		<div class="window" id="folder1">
+			<div class="window-header">
+				<button class="button" onclick="closeWindow('folder1')">
+					< Back</button>
+						<span>Folder 1</span>
+						<button class="button close" onclick="closeWindow('folder1')">X</button>
+			</div>
+			<div class="window-body">
+				<!-- icon file 1 -->
+				<div class="icon_wrapper">
+					<img class="icon" id="file_1" onclick="openWindow('file-info-carrot')" alt="" src="/Icon/notes.png">
+					<div class="desktop_text">Plant 06</div>
+				</div>
+				<!-- icon file 2 -->
+				<div class="icon_wrapper">
+					<img class="icon" id="file_2" onclick="openWindow('file-info-tomato')" alt="" src="/Icon/notes.png">
+					<div class="desktop_text">Plant 03</div>
+				</div>
+				<!-- icon file 3 -->
+				<div class="icon_wrapper">
+					<img class="icon" id="file_3" onclick="openWindow('file-hint-PT')" alt="" src="/Icon/hint.png">
+					<div class="desktop_text">MT:P</div>
+				</div>
+				<!-- icon file 4 -->
+				<div class="icon_wrapper">
+					<img class="icon" id="file_3" onclick="openWindow('file1')" alt="" src="/Icon/map.png">
+					<div class="desktop_text">Parts Map 01</div>
+				</div>
+				<!-- icon file 5 -->
+				<div class="icon_wrapper">
+					<img class="icon" id="file_3" onclick="openWindow('file-hint-Phum')" alt="" src="/Icon/hint.png">
+					<div class="desktop_text">Note 1</div>
+				</div>
+			</div>
+		</div>
 
-		
-		
-		<div class="status_bar">
-			<img class="close" src="/Icon/close-icon.png" id="close">
-			<div class="rectangle_small">
-				<img class="battery" alt="" src="/Icon/battery.png">
-				<img class="infinity" alt="" src="/Icon/infinity.png">
+		<!-- Folder 2 -->
+		<div class="window" id="folder2">
+			<div class="window-header">
+				<button class="button" onclick="closeWindow('folder2')">
+					< Back</button>
+						<span>Folder 2</span>
+						<button class="button close" onclick="closeWindow('folder2')">X</button>
 			</div>
-			<div class="rectangle_small">
-				<img class="key_img" alt="" src="/Icon/key.png">
-				<div class="key_ea">0</div>
+			<div class="window-body">
+				<!-- icon file 1 -->
+				<div class="icon_wrapper">
+					<img class="icon" id="file_1" onclick="openWindow('file-info-pumpkin')" alt="" src="/Icon/notes.png">
+					<div class="desktop_text">Plant 04</div>
+				</div>
+				<!-- icon file 2 -->
+				<div class="icon_wrapper">
+					<img class="icon" id="file_2" onclick="openWindow('file-hint-OT')" alt="" src="/Icon/hint.png">
+					<div class="desktop_text">MT:O</div>
+				</div>
+				<!-- icon file 3 -->
+				<div class="icon_wrapper">
+					<img class="icon" id="file_3" onclick="openWindow('file1')" alt="" src="/Icon/map.png">
+					<div class="desktop_text">Parts Map 02</div>
+				</div>
+				<!-- icon file 4 -->
+				<div class="icon_wrapper">
+					<img class="icon" id="file_4" onclick="openWindow('file-info-radish')" alt="" src="/Icon/notes.png">
+					<div class="desktop_text">Plant 07</div>
+				</div>
+				<!-- icon file 5 -->
+				<div class="icon_wrapper">
+					<img class="icon" id="file_5" onclick="openWindow('file-hint-Water')" alt="" src="/Icon/hint.png">
+					<div class="desktop_text">Note 2</div>
+				</div>
 			</div>
 		</div>
-		
+
+		<!-- Folder_readme -->
+		<div class="window" id="folder_readme">
+			<div class="window-header">
+				<button class="button" onclick="closeWindow('folder_readme')">
+					< Back</button>
+						<span>Readme</span>
+						<button class="button close" onclick="closeWindow('folder_readme')">X</button>
+			</div>
+			<div class="window-body">
+				<!-- icon file 1 -->
+				<div class="icon_wrapper">
+					<img class="icon" id="file_1" onclick="openWindow('file-info-elec')" alt="" src="/Icon/notes.png">
+					<div class="desktop_text">Electrical</div>
+				</div>
+				<!-- icon file 2 -->
+				<div class="icon_wrapper">
+					<img class="icon" id="file_2" onclick="openWindow('file-info-phum')" alt="" src="/Icon/notes.png">
+					<div class="desktop_text">Water Supply</div>
+				</div>
+				<!-- icon file 3 -->
+				<div class="icon_wrapper">
+					<img class="icon" id="file_3" onclick="openWindow('file-info-oxygen')" alt="" src="/Icon/notes.png">
+					<div class="desktop_text">Oxygen</div>
+				</div>
+				<!-- icon file 4 -->
+				<div class="icon_wrapper">
+					<img class="icon" id="file_3" onclick="openWindow('file-info-farm')" alt="" src="/Icon/notes.png">
+					<div class="desktop_text">Farming</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- info file 1 -->
+		<div class="window" id="file-info-farm">
+			<div class="window-header">
+				<button class="button" onclick="closeWindow('file-info-farm')">< Back</button>
+				<span>File 1 Info</span>
+				
+				<button class="button close" onclick="closeWindow('file-info-farm')">X</button>
+			</div>
+			<div class="info">
+				<img class="info-img" src="/info/info-farm.png">
+			</div>
+		</div>
+
+		<!-- info file 2 -->
+		<div class="window" id="file-info-oxygen">
+			<div class="window-header">
+				<button class="button" onclick="closeWindow('file-info-oxygen')">< Back</button>
+				<span>File 1 Info</span>
+				
+				<button class="button close" onclick="closeWindow('file-info-oxygen')">X</button>
+			</div>
+			<div class="info">
+				<img class="info-img" src="/info/info-oxygen.png">
+			</div>
+		</div>
+
+		<!-- info file 3 -->
+		<div class="window" id="file-info-phum">
+			<div class="window-header">
+				<button class="button" onclick="closeWindow('file-info-phum')">< Back</button>
+				<span>File 1 Info</span>
+				
+				<button class="button close" onclick="closeWindow('file-info-phum')">X</button>
+			</div>
+			<div class="info">
+				<img class="info-img" src="/info/info-phum.png">
+			</div>
+		</div>
+
+		<!-- info file 4 -->
+		<div class="window" id="file-info-elec">
+			<div class="window-header">
+				<button class="button" onclick="closeWindow('file-info-elec')">< Back</button>
+				<span>File 1 Info</span>
+				
+				<button class="button close" onclick="closeWindow('file-info-elec')">X</button>
+			</div>
+			<div class="info">
+				<img class="info-img" src="/info/info-elec.png">
+			</div>
+		</div>
+
+		<!-- info file 5 -->
+		<div class="window" id="info-cabbage">
+			<div class="window-header">
+				<button class="button" onclick="closeWindow('info-cabbage')">< Back</button>
+				<span>File 1 Info</span>
+				
+				<button class="button close" onclick="closeWindow('info-cabbage')">X</button>
+			</div>
+			<div class="info">
+				<img class="info-img" src="/info/info-cabbage.png">
+			</div>
+		</div>
+
+		<!-- info file 6 -->
+		<div class="window" id="file-info-carrot">
+			<div class="window-header">
+				<button class="button" onclick="closeWindow('file-info-carrot')">< Back</button>
+				<span>File 1 Info</span>
+				
+				<button class="button close" onclick="closeWindow('file-info-carrot')">X</button>
+			</div>
+			<div class="info">
+				<img class="info-img" src="/info/info-carrot.png">
+			</div>
+		</div>
+
+		<!-- info file 7 -->
+		<div class="window" id="file-info-pumpkin">
+			<div class="window-header">
+				<button class="button" onclick="closeWindow('file-info-pumpkin')">< Back</button>
+				<span>File 1 Info</span>
+				
+				<button class="button close" onclick="closeWindow('file-info-pumpkin')">X</button>
+			</div>
+			<div class="info">
+				<img class="info-img" src="/info/info-pumpkin.png">
+			</div>
+		</div>
+
+		<!-- info file 8 -->
+		<div class="window" id="file-info-radish">
+			<div class="window-header">
+				<button class="button" onclick="closeWindow('file-info-radish')">< Back</button>
+				<span>File 1 Info</span>
+				
+				<button class="button close" onclick="closeWindow('file-info-radish')">X</button>
+			</div>
+			<div class="info">
+				<img class="info-img" src="/info/info-radish.png">
+			</div>
+		</div>
+
+		<!-- info file 9 -->
+		<div class="window" id="file-info-rice">
+			<div class="window-header">
+				<button class="button" onclick="closeWindow('file-info-rice')">< Back</button>
+				<span>File 1 Info</span>
+				
+				<button class="button close" onclick="closeWindow('file-info-rice')">X</button>
+			</div>
+			<div class="info">
+				<img class="info-img" src="/info/info-rice.png">
+			</div>
+		</div>
+
+		<!-- info file 10 -->
+		<div class="window" id="file-info-tomato">
+			<div class="window-header">
+				<button class="button" onclick="closeWindow('file-info-tomato')">< Back</button>
+				<span>File 1 Info</span>
+				
+				<button class="button close" onclick="closeWindow('file-info-tomato')">X</button>
+			</div>
+			<div class="info">
+				<img class="info-img" src="/info/info-tomato.png">
+			</div>
+		</div>
+
+		<!-- info file 11 -->
+		<div class="window" id="file-info-watermelon">
+			<div class="window-header">
+				<button class="button" onclick="closeWindow('file-info-watermelon')">< Back</button>
+				<span>File 1 Info</span>
+				
+				<button class="button close" onclick="closeWindow('file-info-watermelon')">X</button>
+			</div>
+			<div class="info">
+				<img class="info-img" src="/info/info-watermelon.png">
+			</div>
+		</div>
+
+		<!-- info file 12 -->
+		<div class="window" id="file-hint-OT">
+			<div class="window-header">
+				<button class="button" onclick="closeWindow('file-hint-OT')">< Back</button>
+				<span>File 1 Info</span>
+				
+				<button class="button close" onclick="closeWindow('file-hint-OT')">X</button>
+			</div>
+			<div class="info">
+				<img class="info-img" style="width: 40%;" src="/info/hint-OT.png">
+			</div>
+		</div>
+
+		<!-- info file 13 -->
+		<div class="window" id="file-hint-PT">
+			<div class="window-header">
+				<button class="button" onclick="closeWindow('file-hint-PT')">< Back</button>
+				<span>File 1 Info</span>
+				
+				<button class="button close" onclick="closeWindow('file-hint-PT')">X</button>
+			</div>
+			<div class="info">
+				<img class="info-img" style="width: 40%;" src="/info/hint-PT.png">
+			</div>
+		</div>
+
+		<!-- info file 14 -->
+		<div class="window" id="file-hint-Phum">
+			<div class="window-header">
+				<button class="button" onclick="closeWindow('file-hint-Phum')">< Back</button>
+				<span>File 1 Info</span>
+				
+				<button class="button close" onclick="closeWindow('file-hint-Phum')">X</button>
+			</div>
+			<div class="info">
+				<img class="info-img" style="width: 45%;" src="/info/hint-Phum.png">
+			</div>
+		</div>
+
+		<!-- info file 15 -->
+		<div class="window" id="file-hint-Water">
+			<div class="window-header">
+				<button class="button" onclick="closeWindow('file-hint-Water')">< Back</button>
+				<span>File 1 Info</span>
+				
+				<button class="button close" onclick="closeWindow('file-hint-Water')">X</button>
+			</div>
+			<div class="info">
+				<img class="info-img" style="width: 45%;" src="/info/hint-Water.png">
+			</div>
+		</div>
+
+
+
 		<div class="group_folder_file">
+
 			<div class="icon_wrapper">
-				<img class="icon" id="file_1" alt="" src="/Icon/folder.png">
-				<div class="desktop_text">File 1</div>
+				<img class="icon" id="file_1" onclick="openWindow('folder1')" alt="" src="/Icon/folder.png">
+				<div class="desktop_text">Folder 1</div>
 			</div>
 			<div class="icon_wrapper">
-				<img class="icon" id="file_2" alt="" src="/Icon/folder.png">
-				<div class="desktop_text">File 2</div>
+				<img class="icon" id="file_2" onclick="openWindow('folder2')" alt="" src="/Icon/folder.png">
+				<div class="desktop_text">Folder 2</div>
 			</div>
 		</div>
-		
+
 		<div class="group_readme_file">
 			<div class="icon_wrapper">
-				<img class="icon" id="readme" alt="" src="/Icon/folder.png">
+				<img class="icon" id="readme" onclick="openWindow('folder_readme')" alt="" src="/Icon/folder.png">
 				<div class="desktop_text">ReadME!</div>
 			</div>
 		</div>
-		
+
 		<div class="group_main_file">
 			<div class="icon_wrapper">
 				<img class="icon" alt="" src="/Icon/lock_key_icon.png">
@@ -62,7 +351,18 @@
 				<div class="desktop_text">Water Supply System</div>
 			</div>
 		</div>
-		
+
+		<div class="status_bar">
+			<img class="close" src="/Icon/close-icon.png" id="close">
+			<div class="rectangle_small">
+				<img class="battery" alt="" src="/Icon/battery.png">
+				<img class="infinity" alt="" src="/Icon/infinity.png">
+			</div>
+			<div class="rectangle_small">
+				<img class="key_img" alt="" src="/Icon/key.png">
+				<div class="key_ea">0</div>
+			</div>
+		</div>
 		<div id="file1_popup" class="popup-overlay" data-view="0">
 			<div class="rectangle-div">
 
@@ -72,4 +372,5 @@
 	</div>
 	<script src="script.js"></script>
 </body>
+
 </html>
