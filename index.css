@@ -267,3 +267,65 @@ body {
 .info-img {
     width: 70%;
 }
+
+
+.decode_window{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    margin: 0;
+    background-color: #DCFFFF;
+}
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+}
+.input-box {
+    width: 100px;
+    height: 100px;
+    font-size: 50px;
+    text-align: center;
+    margin: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+.input-box.correct {
+    border-color: green;
+    border-width: 4px;
+}
+.input-box.misplaced {
+    border-color: yellow;
+    border-width: 4px;
+}
+.input-box.wrong {
+    border-color: red;
+    border-width: 4px;
+}
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btn-container button {
+    /* margin: 2px; */
+    width: 50px;
+    height: 40%;
+    font-size: 50px;
+}
+
+.button_press {
+    background-color: #04aa6d00;
+    border: none;
+    color: rgb(0, 0, 0);
+    /* padding: 15px 32px; */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    /* font-size: 50px;
+    margin: 4px 2px; */
+    cursor: pointer;
+  }
