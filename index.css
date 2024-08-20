@@ -277,45 +277,86 @@ body {
     flex-direction: column;
     margin: 0;
     background-color: #DCFFFF;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
+
 .input-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80%;
+    height: 50%;
+    width: 40%;
 }
 .input-box {
-    width: 100px;
-    height: 100px;
+    width: 50%;
+    height: 50%;
     font-size: 50px;
     text-align: center;
     margin: 5px;
     border: 2px solid black;
     border-radius: 5px;
+    border-width: 4px;
 }
+
 .input-box.correct {
     border-color: green;
     border-width: 4px;
+    background: radial-gradient(circle, white 45%, green 48%, green 65%, white 68%);
 }
+
 .input-box.misplaced {
-    border-color: yellow;
+    border-color: #F8D106;
     border-width: 4px;
+    background: linear-gradient(to right, transparent 45%, #F8D106 45%, #F8D106 55%, transparent 55%),
+                linear-gradient(to bottom, white 45%, #F8D106 45%, #F8D106 55%, white 55%);
+    background-size: 100% 100%, 100% 100%;
+    background-repeat: no-repeat;
 }
+
+
 .input-box.wrong {
     border-color: red;
     border-width: 4px;
+    background: linear-gradient(45deg, transparent 45%, red 45%, red 55%, transparent 55%),
+                linear-gradient(-45deg, white 45%, red 45%, red 55%, white 55%);
+    background-size: 100% 100%, 100% 100%;
+    background-position: top left, top right;
+    background-repeat: no-repeat;
 }
+
+.input-box.noting {
+    border-color: black;
+    border-width: 4px;
+}
+
 .btn-container {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .btn-container button {
-    /* margin: 2px; */
-    width: 50px;
     height: 40%;
-    font-size: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s, border-color 0.3s;
 }
+
+/* Hover Effect */
+.btn-container button:hover {
+    color: #000;
+    border-color: #000;
+    transform: scale(1.1); 
+}
+
+.btn-container button:active {
+    color: #666;
+    border-color: #666;
+    transform: scale(0.9);
+}
+
 
 .button_press {
     background-color: #04aa6d00;
@@ -328,4 +369,129 @@ body {
     /* font-size: 50px;
     margin: 4px 2px; */
     cursor: pointer;
-  }
+}
+
+/* enter_page */
+
+.enter_page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 10%;
+}
+
+.text_enter_page {
+    font-size: 50px;
+    font-family: Kanit;
+    color: #000;
+    text-align: center;
+}
+
+.enter_page_btn {
+    border-radius: 5px;
+    background-color: #bce8cb;
+    border: 5px #000;
+    width: 25%;
+    height: 15%;
+    font-size: 32px;
+}
+
+.enter_page_btn:hover{
+    background-color: hsl(140, 49%, 50%);
+    cursor: pointer;
+}
+
+/* select_pipe_page */
+.select_pipe_window{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn_pipe_container{
+    width: 40%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-color: #0097ba;
+    border: 60px #000000;
+    box-sizing: border-box;
+    height: 80%;
+    padding: 2%;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+/* ตั้งค่า pipe */
+.pipe {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 5px;
+}
+
+.pipe:hover {
+    background-color: #007395;
+    
+}
+
+.pipe:active {
+    transform: scale(0.95);
+}
+
+.pipe img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: cover;
+    border-radius: 0px;
+}
+
+/* pipe board */
+.pipe_board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 20%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    background-color: #0097ba;
+    border: 60px #000000;
+    box-sizing: border-box;
+    height: 40%;
+    padding: 2%;
+}
+
+.pipe_show {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    border: 1px solid #000000;
+}
+
+.pipe_show img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; 
+}
+
+.hidden {
+    display: none; /* ซ่อนรูปภาพ */
+}
+
+.black-background {
+    background-color: #0B3954; /* เปลี่ยนพื้นหลังเป็นสีดำ */
+}

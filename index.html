@@ -332,44 +332,71 @@
 			</div>
 		</div>
 
-		<!-- lock_key -->
-		<div class="window" id="lock_key">
+		<!-- water_supply_enter_page -->
+		<div class="window" id="water_supply_enter_page" style="background-color: #dcffff;">
 			<div class="window-header" style="background-color: #95E5FE;">
-				<button class="button" onclick="closeWindow('lock_key')">
-					< Back</button>
-						<span>File 1 Info</span>
+				<div></div>
+				<span>Water Supply</span>
+				<button class="button close" onclick="closeWindow('water_supply_enter_page')">X</button>
+			</div>
+			<div class="enter_page">
+				<img style="width: 10%;" src="/Icon/water_drop.png">
+				<div class="text_enter_page">Water Supply System</div>
+				<button class="enter_page_btn" onclick="openWindow('select_pipe')">Enter</button>
+			</div>
+		</div>
 
-						<button class="button close" onclick="closeWindow('lock_key')">X</button>
+		<!-- select_pipe -->
+		<div class="window" id="select_pipe" style="background-color: #dcffff;">
+			<div class="window-header" style="background-color: #95E5FE;">
+				<button class="button" onclick="closeWindow('select_pipe')">
+					< Back
+				</button>
+				<span>Water Supply</span>
+				<button class="button close" onclick="closeWindow('select_pipe')">X</button>
+			</div>
+			<div class="select_pipe_window">
+				<div class="btn_pipe_container">
+				</div>
+			</div>
+		</div>
+
+		<!-- water_supply -->
+		<div class="window" id="water_supply">
+			<div class="window-header" style="background-color: #95E5FE;">
+				<button class="button" onclick="closeWindow('water_supply')">
+					< Back</button>
+						<span>Water Supply</span>
+
+						<button class="button close" onclick="closeWindow('water_supply')">X</button>
 			</div>
 			<div class="decode_window">
-				<h1>Decode Number</h1>
+				<div class="pipe_board">
+				</div>
 				<div class="input-container">
 					<div class="btn-container">
-						<button onclick="increment('digit1')" class="button_press">^</button>
+						<button onclick="increment('digit1')" class="button_press">Λ</button>
 						<input type="text" id="digit1" class="input-box" value="0" readonly>
-						<button onclick="decrement('digit1')" class="button_press">v</button>
+						<button onclick="decrement('digit1')" class="button_press">V</button>
 					</div>
 					<div class="btn-container">
-						<button onclick="increment('digit2')" class="button_press">^</button>
+						<button onclick="increment('digit2')" class="button_press">Λ</button>
 						<input type="text" id="digit2" class="input-box" value="0" readonly>
-						<button onclick="decrement('digit2')" class="button_press">v</button>
+						<button onclick="decrement('digit2')" class="button_press">V</button>
 					</div>
 					<div class="btn-container">
-						<button onclick="increment('digit3')" class="button_press">^</button>
+						<button onclick="increment('digit3')" class="button_press">Λ</button>
 						<input type="text" id="digit3" class="input-box" value="0" readonly>
-						<button onclick="decrement('digit3')" class="button_press">v</button>
+						<button onclick="decrement('digit3')" class="button_press">V</button>
 					</div>
 					<div class="btn-container">
-						<button onclick="increment('digit4')" class="button_press">^</button>
+						<button onclick="increment('digit4')" class="button_press">Λ</button>
 						<input type="text" id="digit4" class="input-box" value="0" readonly>
-						<button onclick="decrement('digit4')" class="button_press">v</button>
+						<button onclick="decrement('digit4')" class="button_press">V</button>
 					</div>
 				</div>
 				<button onclick="checkGuess()">Check</button>
-				<p id="message"></p>
-				<p>Attempts: <span id="attempts">0</span></p>
 			</div>
-
 		</div>
 
 		<div class="group_folder_file">
@@ -401,7 +428,7 @@
 				<div class="desktop_text">Electrical system</div>
 			</div>
 			<div class="icon_wrapper">
-				<img class="icon" onclick="openWindow('water_supply')" alt="" src="/Icon/water_supply_icon.png">
+				<img class="icon" onclick="openWindow('water_supply_enter_page')" alt="" src="/Icon/water_supply_icon.png">
 				<div class="desktop_text">Water Supply System</div>
 			</div>
 		</div>
