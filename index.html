@@ -362,7 +362,7 @@
 		</div>
 
 		<!-- water_supply -->
-		<div class="window" id="water_supply">
+		<div class="window" id="water_supply" style="background-color: #DCFFFF;">
 			<div class="window-header" style="background-color: #95E5FE;">
 				<button class="button" onclick="closeWindow('water_supply')">
 					< Back</button>
@@ -371,7 +371,24 @@
 						<button class="button close" onclick="closeWindow('water_supply')">X</button>
 			</div>
 			<div class="decode_window">
-				<div class="pipe_board">
+				<div class="decode_header">
+					<div class="decode_guide">
+						<div>Decode Guide</div>
+						<div>
+							<div class="box"></div>
+							<div>= Right number, right position.</div>
+						</div>
+						<div>
+							<div class="box"></div>
+							<div>= Right number, wrong position.</div>
+						</div>
+						<div>
+							<div class="box"></div>
+							<div>= Wrong number.</div>
+						</div>	
+					</div>
+					<div class="pipe_board">
+					</div>
 				</div>
 				<div class="input-container">
 					<div class="btn-container">
@@ -395,7 +412,8 @@
 						<button onclick="decrement('digit4')" class="button_press">V</button>
 					</div>
 				</div>
-				<button onclick="checkGuess()">Check</button>
+				<button class="btn_check" onclick="checkGuess()">Check</button>
+				
 			</div>
 		</div>
 
