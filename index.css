@@ -392,16 +392,24 @@ body {
 .enter_page_btn {
     border-radius: 5px;
     background-color: #bce8cb;
-    border: 5px #000;
+    border: 2px #000 solid;
     width: 25%;
     height: 15%;
     font-size: 32px;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 .enter_page_btn:hover{
     background-color: hsl(140, 49%, 50%);
     cursor: pointer;
 }
+
+.enter_page_btn:active{
+    background-color: hsl(140, 49%, 50%);
+    transform: scale(0.95);
+    cursor: pointer;
+}
+
 
 /* select_pipe_page */
 .select_pipe_window{
@@ -601,8 +609,3 @@ body {
     background-position: top left, top right;
     background-repeat: no-repeat;
 }
-
-
-
-
-  

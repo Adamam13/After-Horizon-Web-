@@ -6,6 +6,7 @@
 	<meta name="viewport" content="initial-scale=1, width=device-width">
 
 	<link rel="stylesheet" href="./index.css" />
+	<link rel="stylesheet" href="./minigame.css" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@400&display=swap" />
 
@@ -322,10 +323,11 @@
 		<div class="window" id="file-hint-Water">
 			<div class="window-header">
 				<button class="button" onclick="closeWindow('file-hint-Water')">
-					< Back</button>
-						<span>File 1 Info</span>
+					< Back
+				</button>
+				<span>File 1 Info</span>
 
-						<button class="button close" onclick="closeWindow('file-hint-Water')">X</button>
+				<button class="button close" onclick="closeWindow('file-hint-Water')">X</button>
 			</div>
 			<div class="info">
 				<img class="info-img" style="width: 45%;" src="/info/hint-Water.png">
@@ -417,6 +419,60 @@
 			</div>
 		</div>
 
+
+		<!-- Key Unlock system -->
+		<div class="window" id="lock_key" style="background-color: #ffffff;">
+			<div class="window-header" style="background-color: #C5C5C2;">
+				<div></div>
+				<span>Key Unlock System</span>
+				<button class="button close" onclick="closeWindow('lock_key')">X</button>
+			</div>
+			<div class="enter_page">
+				<img style="width: 10%;" src="/Icon/lock_key_icon.png">
+				<div class="text_enter_page">Key Unlock System</div>
+				<button class="enter_page_btn" onclick="openWindow('minigame')">Enter</button>
+			</div>
+		</div>
+
+		<div class="window" id="minigame" style="background-color: #ffffff;">
+			<div class="window-header" style="background-color: #C5C5C2;">
+				<button class="button" onclick="closeWindow('minigame')">
+					< Back
+				</button>
+				<span>Key Unlock System</span>
+				<button class="button close" onclick="closeWindow('minigame')">X</button>
+			</div>
+			<div class="minigame">
+				<div class="image-grid">
+					<div class="image" data-index="0" style="background-position: 0 0;"></div>
+					<div class="image" data-index="1" style="background-position: 50% 0;"></div>
+					<div class="image" data-index="2" style="background-position: 100% 0;"></div>
+					<div class="image" data-index="3" style="background-position: 0 50%;"></div>
+					<div class="image" data-index="4" style="background-position: 50% 50%;"></div>
+					<div class="image" data-index="5" style="background-position: 100% 50%;"></div>
+					<div class="image" data-index="6" style="background-position: 0 100%;"></div>
+					<div class="image" data-index="7" style="background-position: 50% 100%;"></div>
+					<div class="image" data-index="8" style="background-position: 100% 100%;"></div>
+				</div>
+			</div>
+			
+		</div>
+
+		<!-- Electrical system -->
+		<div class="window" id="electrical" style="background-color: #E5DCFF;">
+			<div class="window-header" style="background-color: #BD95FE;">
+				<div></div>
+				<span>Electrical System</span>
+				<button class="button close" onclick="closeWindow('electrical')">X</button>
+			</div>
+			<div class="enter_page">
+				<img style="width: 10%;" src="/Icon/Thunder.png">
+				<div class="text_enter_page">Electrical System</div>
+				<button class="enter_page_btn" onclick="openWindow('')">Enter</button>
+			</div>
+		</div>
+
+		<!-- desktop_icon -->
 		<div class="group_folder_file">
 
 			<div class="icon_wrapper">
@@ -470,6 +526,7 @@
 		</div>
 	</div>
 	<script src="script.js"></script>
+	<script src="minigame.js"></script>
 </body>
 
 </html>
