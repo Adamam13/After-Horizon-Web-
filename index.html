@@ -15,7 +15,14 @@
 </head>
 
 <body>
+
 	<div class="desktop">
+		<div class="video-container">
+			<video autoplay muted loop>
+				<source src="/video/test4.mp4" type="video/mp4">
+				Your browser does not support the video tag.
+			</video>
+		</div>
 		<img class="logo" src="/Icon/Logo.png">
 
 		<!-- Folder 1 -->
@@ -29,12 +36,14 @@
 			<div class="window-body">
 				<!-- icon file 1 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_1" onclick="openWindow('file-info-carrot')" alt="" src="/Icon/notes_new.png">
+					<img class="icon" id="file_1" onclick="openWindow('file-info-carrot')" alt=""
+						src="/Icon/notes_new.png">
 					<div class="desktop_text">Plant 06</div>
 				</div>
 				<!-- icon file 2 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_2" onclick="openWindow('file-info-tomato')" alt="" src="/Icon/notes_new.png">
+					<img class="icon" id="file_2" onclick="openWindow('file-info-tomato')" alt=""
+						src="/Icon/notes_new.png">
 					<div class="desktop_text">Plant 03</div>
 				</div>
 				<!-- icon file 3 -->
@@ -44,12 +53,13 @@
 				</div>
 				<!-- icon file 4 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_3" onclick="openWindow('file1')" alt="" src="/Icon/map_new.png">
+					<img class="icon" id="file_3" onclick="openWindow('file-part1')" alt="" src="/Icon/map_new.png">
 					<div class="desktop_text">Parts Map 01</div>
 				</div>
 				<!-- icon file 5 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_3" onclick="openWindow('file-hint-Phum')" alt="" src="/Icon/hint_new.png">
+					<img class="icon" id="file_3" onclick="openWindow('file-hint-Phum')" alt=""
+						src="/Icon/hint_new.png">
 					<div class="desktop_text">Note 1</div>
 				</div>
 			</div>
@@ -77,17 +87,19 @@
 				</div>
 				<!-- icon file 3 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_3" onclick="openWindow('file1')" alt="" src="/Icon/map_new.png">
+					<img class="icon" id="file_3" onclick="openWindow('file-part2')" alt="" src="/Icon/map_new.png">
 					<div class="desktop_text">Parts Map 02</div>
 				</div>
 				<!-- icon file 4 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_4" onclick="openWindow('file-info-radish')" alt="" src="/Icon/notes_new.png">
+					<img class="icon" id="file_4" onclick="openWindow('file-info-radish')" alt=""
+						src="/Icon/notes_new.png">
 					<div class="desktop_text">Plant 07</div>
 				</div>
 				<!-- icon file 5 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_5" onclick="openWindow('file-hint-Water')" alt="" src="/Icon/hint_new.png">
+					<img class="icon" id="file_5" onclick="openWindow('file-hint-Water')" alt=""
+						src="/Icon/hint_new.png">
 					<div class="desktop_text">Note 2</div>
 				</div>
 			</div>
@@ -104,22 +116,26 @@
 			<div class="window-body">
 				<!-- icon file 1 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_1" onclick="openWindow('file-info-elec')" alt="" src="/Icon/notes_new.png">
+					<img class="icon" id="file_1" onclick="openWindow('file-info-elec')" alt=""
+						src="/Icon/notes_new.png">
 					<div class="desktop_text">Electrical</div>
 				</div>
 				<!-- icon file 2 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_2" onclick="openWindow('file-info-phum')" alt="" src="/Icon/notes_new.png">
+					<img class="icon" id="file_2" onclick="openWindow('file-info-phum')" alt=""
+						src="/Icon/notes_new.png">
 					<div class="desktop_text">Water Supply</div>
 				</div>
 				<!-- icon file 3 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_3" onclick="openWindow('file-info-oxygen')" alt="" src="/Icon/notes_new.png">
+					<img class="icon" id="file_3" onclick="openWindow('file-info-oxygen')" alt=""
+						src="/Icon/notes_new.png">
 					<div class="desktop_text">Oxygen</div>
 				</div>
 				<!-- icon file 4 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_3" onclick="openWindow('file-info-farm')" alt="" src="/Icon/notes_new.png">
+					<img class="icon" id="file_3" onclick="openWindow('file-info-farm')" alt=""
+						src="/Icon/notes_new.png">
 					<div class="desktop_text">Farming</div>
 				</div>
 			</div>
@@ -130,12 +146,12 @@
 			<div class="window-header">
 				<button class="button" onclick="closeWindow('file-info-farm')">
 					< Back</button>
-						<span>File 1 Info</span>
+						<span>Farming</span>
 
 						<button class="button close" onclick="closeWindow('file-info-farm')">X</button>
 			</div>
 			<div class="info">
-				<img class="info-img" src="/info/info-farm.png">
+				<img class="info-img" src="/info/info-farm_new.png">
 			</div>
 		</div>
 
@@ -149,7 +165,7 @@
 						<button class="button close" onclick="closeWindow('file-info-oxygen')">X</button>
 			</div>
 			<div class="info">
-				<img class="info-img" src="/info/info-oxygen.png">
+				<img class="info-img" src="/info/info-oxygen_new.png">
 			</div>
 		</div>
 
@@ -163,7 +179,7 @@
 						<button class="button close" onclick="closeWindow('file-info-phum')">X</button>
 			</div>
 			<div class="info">
-				<img class="info-img" src="/info/info-phum.png">
+				<img class="info-img" style="width: 80%;" src="/info/info-phum_new.png">
 			</div>
 		</div>
 
@@ -177,7 +193,7 @@
 						<button class="button close" onclick="closeWindow('file-info-elec')">X</button>
 			</div>
 			<div class="info">
-				<img class="info-img" src="/info/info-elec.png">
+				<img class="info-img" style="width: 98%;" src="/info/info-elec_new.png">
 			</div>
 		</div>
 
@@ -191,7 +207,7 @@
 						<button class="button close" onclick="closeWindow('info-cabbage')">X</button>
 			</div>
 			<div class="info">
-				<img class="info-img" src="/info/info-cabbage.png">
+				<img class="info-img" src="/info/info-cabbage_new.png">
 			</div>
 		</div>
 
@@ -205,7 +221,7 @@
 						<button class="button close" onclick="closeWindow('file-info-carrot')">X</button>
 			</div>
 			<div class="info">
-				<img class="info-img" src="/info/info-carrot.png">
+				<img class="info-img" src="/info/info-carrot_new.png">
 			</div>
 		</div>
 
@@ -219,7 +235,7 @@
 						<button class="button close" onclick="closeWindow('file-info-pumpkin')">X</button>
 			</div>
 			<div class="info">
-				<img class="info-img" src="/info/info-pumpkin.png">
+				<img class="info-img" src="/info/info-pumpkin_new.png">
 			</div>
 		</div>
 
@@ -233,7 +249,7 @@
 						<button class="button close" onclick="closeWindow('file-info-radish')">X</button>
 			</div>
 			<div class="info">
-				<img class="info-img" src="/info/info-radish.png">
+				<img class="info-img" src="/info/info-radish_new.png">
 			</div>
 		</div>
 
@@ -247,7 +263,7 @@
 						<button class="button close" onclick="closeWindow('file-info-rice')">X</button>
 			</div>
 			<div class="info">
-				<img class="info-img" src="/info/info-rice.png">
+				<img class="info-img" src="/info/info-rice_new.png">
 			</div>
 		</div>
 
@@ -261,7 +277,7 @@
 						<button class="button close" onclick="closeWindow('file-info-tomato')">X</button>
 			</div>
 			<div class="info">
-				<img class="info-img" src="/info/info-tomato.png">
+				<img class="info-img" src="/info/info-tomato_new.png">
 			</div>
 		</div>
 
@@ -275,7 +291,7 @@
 						<button class="button close" onclick="closeWindow('file-info-watermelon')">X</button>
 			</div>
 			<div class="info">
-				<img class="info-img" src="/info/info-watermelon.png">
+				<img class="info-img" src="/info/info-watermelon_new.png">
 			</div>
 		</div>
 
@@ -289,7 +305,7 @@
 						<button class="button close" onclick="closeWindow('file-hint-OT')">X</button>
 			</div>
 			<div class="info">
-				<img class="info-img" style="width: 40%;" src="/info/hint-OT.png">
+				<img class="info-img" style="width: 40%;" src="/info/hint-OT_new.png">
 			</div>
 		</div>
 
@@ -303,7 +319,7 @@
 						<button class="button close" onclick="closeWindow('file-hint-PT')">X</button>
 			</div>
 			<div class="info">
-				<img class="info-img" style="width: 40%;" src="/info/hint-PT.png">
+				<img class="info-img" style="width: 40%;" src="/info/hint-PT_new.png">
 			</div>
 		</div>
 
@@ -325,56 +341,82 @@
 		<div class="window" id="file-hint-Water">
 			<div class="window-header">
 				<button class="button" onclick="closeWindow('file-hint-Water')">
-					< Back
-				</button>
-				<span>File 1 Info</span>
+					< Back </button>
+						<span>File 1 Info</span>
 
-				<button class="button close" onclick="closeWindow('file-hint-Water')">X</button>
+						<button class="button close" onclick="closeWindow('file-hint-Water')">X</button>
 			</div>
 			<div class="info">
 				<img class="info-img" style="width: 45%;" src="/info/hint-Water.png">
 			</div>
 		</div>
 
+		<!-- info file 16 -->
+		<div class="window" id="file-part1">
+			<div class="window-header">
+				<button class="button" onclick="closeWindow('file-part1')">
+					< Back </button>
+						<span>part1</span>
+
+						<button class="button close" onclick="closeWindow('file-part1')">X</button>
+			</div>
+			<div class="info">
+				<img class="info-img" style="width: 30%;" src="/info/soon.png">
+			</div>
+		</div>
+
+		<!-- info file 17 -->
+		<div class="window" id="file-part2">
+			<div class="window-header">
+				<button class="button" onclick="closeWindow('file-part2')">
+					< Back </button>
+						<span>part1</span>
+
+						<button class="button close" onclick="closeWindow('file-part2')">X</button>
+			</div>
+			<div class="info">
+				<img class="info-img" style="width: 30%;" src="/info/soon.png">
+			</div>
+		</div>
+
 		<!-- water_supply_enter_page -->
-		<div class="window" id="water_supply_enter_page" style="background-color: #dcffff;">
-			<div class="window-header" style="background-color: #95E5FE;">
+		<div class="window" id="water_supply_enter_page" style="background-color: #dcffff; border: 5px solid #00FFFF;">
+			<div class="window-header" style="background-color: #00FFFF;"> 
 				<div></div>
 				<span>Water Supply</span>
 				<button class="button close" onclick="closeWindow('water_supply_enter_page')">X</button>
 			</div>
-			<div class="enter_page">
-				<img style="width: 10%;" src="/Icon/water_drop.png">
-				<div class="text_enter_page">Water Supply System</div>
+			<div class="enter_page" style="background-color: #151515;">
+				<img style="width: 15%;" src="/Icon/water_supply_icon _blue.png">
+				<div class="text_enter_page "style="color: #00FFFF;">Water Supply System</div>
 				<button class="enter_page_btn" onclick="openWindow('select_pipe')">Enter</button>
 			</div>
 		</div>
 
 		<!-- select_pipe -->
-		<div class="window" id="select_pipe" style="background-color: #dcffff;">
-			<div class="window-header" style="background-color: #95E5FE;">
+		<div class="window" id="select_pipe" style="background-color: #dcffff; border: 5px solid #00FFFF;">
+			<div class="window-header" style="background-color: #00FFFF;">
 				<button class="button" onclick="closeWindow('select_pipe')">
-					< Back
-				</button>
-				<span>Water Supply</span>
-				<button class="button close" onclick="closeWindow('select_pipe')">X</button>
+					< Back </button>
+						<span>Water Supply</span>
+						<button class="button close" onclick="closeWindow('select_pipe')">X</button>
 			</div>
-			<div class="select_pipe_window">
+			<div class="select_pipe_window" style="background-color: #151515;">
 				<div class="btn_pipe_container">
 				</div>
 			</div>
 		</div>
 
 		<!-- water_supply -->
-		<div class="window" id="water_supply" style="background-color: #DCFFFF;">
-			<div class="window-header" style="background-color: #95E5FE;">
+		<div class="window" id="water_supply" style="background-color: #151515; border: 5px solid #00FFFF;">
+			<div class="window-header" style="background-color: #00FFFF;">
 				<button class="button" onclick="closeWindow('water_supply')">
 					< Back</button>
 						<span>Water Supply</span>
 
 						<button class="button close" onclick="closeWindow('water_supply')">X</button>
 			</div>
-			<div class="decode_window">
+			<div class="decode_window" style="background-color: #151515; margin: 15px;">
 				<div class="decode_header">
 					<div class="decode_guide">
 						<div>Decode Guide</div>
@@ -389,7 +431,7 @@
 						<div>
 							<div class="box"></div>
 							<div>= Wrong number.</div>
-						</div>	
+						</div>
 					</div>
 					<div class="pipe_board">
 					</div>
@@ -417,34 +459,33 @@
 					</div>
 				</div>
 				<button class="btn_check" onclick="checkGuess()">Check</button>
-				
+
 			</div>
 		</div>
 
 
 		<!-- Key Unlock system -->
-		<div class="window" id="lock_key" style="background-color: #ffffff;">
-			<div class="window-header" style="background-color: #C5C5C2;">
+		<div class="window" id="lock_key" style="background-color: #ffffff; border: 5px solid #e25519;">
+			<div class="window-header" style="background-color: #e25519;">
 				<div></div>
-				<span>Key Unlock System</span>
+				<span style="color:#000000;">Key Unlock System</span>
 				<button class="button close" onclick="closeWindow('lock_key')">X</button>
 			</div>
-			<div class="enter_page">
-				<img style="width: 10%;" src="/Icon/lock_key_icon_new.png">
-				<div class="text_enter_page">Key Unlock System</div>
+			<div class="enter_page" style="background-color: #351b1b;">
+				<img style="width: 15%;" src="/Icon/lock_key_icon_orange.png">
+				<div class="text_enter_page" style="color:#e25519;">Key Unlock System</div>
 				<button class="enter_page_btn" onclick="openWindow('minigame')">Enter</button>
 			</div>
 		</div>
 
-		<div class="window" id="minigame" style="background-color: #ffffff;">
-			<div class="window-header" style="background-color: #C5C5C2;">
+		<div class="window" id="minigame" style="background-color: #ffffff; border: 5px solid #e25519;">
+			<div class="window-header" style="background-color: #e25519;">
 				<button class="button" onclick="closeWindow('minigame')">
-					< Back
-				</button>
-				<span>Key Unlock System</span>
-				<button class="button close" onclick="closeWindow('minigame')">X</button>
+					< Back </button>
+						<span>Key Unlock System</span>
+						<button class="button close" onclick="closeWindow('minigame')">X</button>
 			</div>
-			<div class="minigame">
+			<div class="minigame" style="background-color: #351b1b;">
 				<div class="image-grid">
 					<div class="image" data-index="0" style="background-position: 0 0;"></div>
 					<div class="image" data-index="1" style="background-position: 50% 0;"></div>
@@ -457,19 +498,19 @@
 					<div class="image" data-index="8" style="background-position: 100% 100%;"></div>
 				</div>
 			</div>
-			
+
 		</div>
 
 		<!-- Electrical system -->
-		<div class="window" id="electrical" style="background-color: #E5DCFF;">
-			<div class="window-header" style="background-color: #BD95FE;">
+		<div class="window" id="electrical" style="background-color: #E5DCFF; border: 5px solid #F1FA49;">
+			<div class="window-header" style="background-color: #F1FA49;">
 				<div></div>
 				<span>Electrical System</span>
 				<button class="button close" onclick="closeWindow('electrical')">X</button>
 			</div>
-			<div class="enter_page">
-				<img style="width: 10%;" src="/Icon/Thunder.png">
-				<div class="text_enter_page">Electrical System</div>
+			<div class="enter_page" style="background-color: #1A1A1A;">
+				<img style="width: 15%;" src="/Icon/electrical_icon_yellow.png">
+				<div class="text_enter_page" style="color: #F1FA49;">Electrical System</div>
 				<button class="enter_page_btn" onclick="openWindow('')">Enter</button>
 			</div>
 		</div>
@@ -497,27 +538,28 @@
 		<div class="group_main_file">
 			<div class="icon_wrapper">
 				<img class="icon" onclick="openWindow('lock_key')" alt="" src="/Icon/lock_key_icon_new.png">
-				<div class="desktop_text">Key Unlock System</div>
+				<div class="desktop_text" >Key Unlock System</div>
 			</div>
 			<div class="icon_wrapper">
 				<img class="icon" onclick="openWindow('electrical')" alt="" src="/Icon/electrical_icon_new.png">
 				<div class="desktop_text">Electrical system</div>
 			</div>
 			<div class="icon_wrapper">
-				<img class="icon" onclick="openWindow('water_supply_enter_page')" alt="" src="/Icon/water_supply_icon _new.png">
+				<img class="icon" onclick="openWindow('water_supply_enter_page')" alt=""
+					src="/Icon/water_supply_icon _new.png">
 				<div class="desktop_text">Water Supply System</div>
 			</div>
 		</div>
 
 		<div class="status_bar">
-			<img class="close" src="/Icon/close-icon.png" id="close">
+			<img class="close" src="/Icon/close-icon_new.png" id="close">
 			<div class="rectangle_small">
-				<img class="battery" alt="" src="/Icon/battery.png">
-				<img class="infinity" alt="" src="/Icon/infinity.png">
+				<img class="battery img_bar" alt="" src="/Icon/battery_new.png">
+				<img class="infinity img_bar" alt="" src="/Icon/infinity_new.png">
 			</div>
 			<div class="rectangle_small">
-				<img class="key_img" alt="" src="/Icon/key.png">
-				<div class="key_ea">0</div>
+				<img class="key_img img_bar" alt="" src="/Icon/key_new.png">
+				<div class="key_ea img_bar">0</div>
 			</div>
 		</div>
 		<div id="file1_popup" class="popup-overlay" data-view="0">

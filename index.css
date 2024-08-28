@@ -3,7 +3,12 @@ body {
     line-height: normal;
     overflow: hidden;
 }
-
+span{
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2vw;
+}
 .desktop {
     width: 95%;
     height: 90%;
@@ -11,7 +16,7 @@ body {
     background-color: #000000;
     left: 2.5%;
     top: 5%;
-    border: #1ada14 0.2rem solid;
+    border: #58E191 0.2rem solid;
 }
 
 .logo {
@@ -44,12 +49,18 @@ body {
 }
 
 .rectangle_small {
-    border-radius: 35px;
-    background-color: #757575;
-    height: 50%;
+    border-radius: 10px;
+    background-color: #242424;
+    height: 70%;
     width: 35%;
     display: flex;
     justify-content: center;
+}
+.img_bar{
+    max-height: 2vw;
+    text-align: center;
+    font-family: "Jersey 10", sans-serif;
+    margin: 0.5vw;
 }
 
 .key_ea {
@@ -89,7 +100,7 @@ body {
 .desktop_text {
     font-size: 1.7vw;
     font-family: Inter;
-    color: #1ada14;
+    color: #58E191;
     font-family: "Jersey 10", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -198,21 +209,21 @@ body {
 .window {
     width: 60%;
     height: 70%;
-    background-color: #000000;
+    background-color: #272727;
     color: #000;
     position: absolute;
     top: 15%;
     left: 20%;
     display: none;
     flex-direction: column;
-    border: 5px solid #1ada14;
+    border: 5px solid #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     z-index: 1;
 }
 
 .window-header {
-    background-color: #1ada14;
+    background-color: #ffffff;
     color: #000000;
     padding: 10px;
     display: flex;
@@ -249,14 +260,18 @@ body {
 .button {
     padding: 5px 10px;
     cursor: pointer;
-    background-color: #0078d7;
-    color: #fff;
+    background-color: #0076d700;
+    color: #000000;
     border: none;
     border-radius: 5px;
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5vw;
 }
 
 .button.close {
-    background-color: #f44336;
+    background-color: #ff110000;
 }
 
 .info {
@@ -346,7 +361,7 @@ body {
     height: 40%;
     font-size: 24px;
     font-weight: bold;
-    color: #000;
+    color: #ffffff;
     cursor: pointer;
     transition: color 0.3s, transform 0.3s, border-color 0.3s;
 }
@@ -387,6 +402,7 @@ body {
     justify-content: center;
     height: 100%;
     gap: 10%;
+    background-color: #007395;
 }
 
 .text_enter_page {
@@ -564,6 +580,11 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: left;
+    font-family: "Jersey 10", sans-serif;
+    /* font-weight: 400; */
+    /* font-style: normal; */
+    font-size: 1.3vw;
+    color: #ffffff;
 }
 
 .decode_guide>div {
@@ -574,7 +595,7 @@ body {
 
 .decode_guide>div:first-child {
     font-size: 20px;
-    font-weight: bold;
+    /* font-weight: bold; */
     margin-bottom: 4%;
     text-align: center;
     align-self: center;
@@ -617,4 +638,38 @@ body {
     background-size: 100% 100%, 100% 100%;
     background-position: top left, top right;
     background-repeat: no-repeat;
+}
+
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    opacity: 50%;
+    /* margin: 0.2rem; */
+}
+
+/* .video-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.611);
+    z-index: 1;
+} */
+
+video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    transform: translate(-50%, -50%);
 }
