@@ -3,71 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Background with Opacity</title>
+    <title>Button Game</title>
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
             font-family: Arial, sans-serif;
         }
-
-        .video-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1;
+        .container {
+            display: grid;
+            grid-template-columns: repeat(5, 100px);
+            grid-template-rows: repeat(2, 100px);
+            gap: 10px;
         }
-
-        .video-container::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* ปรับ opacity ของพื้นหลังที่นี่ */
-            z-index: 1;
+        button {
+            width: 100px;
+            height: 100px;
+            font-size: 24px;
+            cursor: pointer;
+            transition: background-color 0.5s ease;
         }
-
-        video {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            transform: translate(-50%, -50%);
-        }
-
-        .content {
-            position: relative;
-            z-index: 2;
+        .green {
+            background-color: green;
             color: white;
-            text-align: center;
-            font-size: 2em;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            cursor: not-allowed;
+        }
+        .blinking {
+            background-color: red;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 24px;
+            color: red;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        #message.show {
+            opacity: 1;
+        }
+        #message.fade-out {
+            opacity: 0;
         }
     </style>
 </head>
 <body>
-    <div class="video-container">
-        <video autoplay muted loop>
-            <source src="/video/test4.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
 
-    <div class="content">
-        <p>Your Content Here</p>
-    </div>
+<div class="container">
+    <button id="btn1" onclick="handleClick(1)">1</button>
+    <button id="btn2" onclick="handleClick(2)">2</button>
+    <button id="btn3" onclick="handleClick(3)">3</button>
+    <button id="btn4" onclick="handleClick(4)">4</button>
+    <button id="btn5" onclick="handleClick(5)">5</button>
+    <button id="btn6" onclick="handleClick(6)">6</button>
+    <button id="btn7" onclick="handleClick(7)">7</button>
+    <button id="btn8" onclick="handleClick(8)">8</button>
+    <button id="btn9" onclick="handleClick(9)">9</button>
+    <button id="btn10" onclick="handleClick(10)">10</button>
+</div>
+<div id="message"></div>
+
+<script>
+    const correctOrder = [1, 5, 9, 4, 3];
+    const blinkOrder = [2, 7, 6, 8, 10];
+    let currentIndex = 0;
+    let blinkIndex = 0;
+    let blinkInterval;
+
+    function startBlinking(buttonId) {
+        const button = document.getElementById(buttonId);
+        button.classList.add('blinking');
+    }
+
+    function stopBlinking(buttonId) {
+        const button = document.getElementById(buttonId);
+        button.classList.remove('blinking');
+    }
+
+    function handleClick(buttonNumber) {
+        const clickedButton = document.getElementById(`btn${buttonNumber}`);
+
+        // ตรวจสอบว่าปุ่มถูกกดไปแล้วหรือไม่
+        if (clickedButton.classList.contains('green')) {
+            return;
+        }
+
+        // ถ้ากดปุ่มที่ถูกต้องตามลำดับ
+        if (buttonNumber === correctOrder[currentIndex]) {
+            // เปลี่ยนปุ่มที่กดเป็นสีเขียว
+            clickedButton.classList.add('green');
+
+            // หยุดกระพริบปุ่มปัจจุบัน
+            stopBlinking(`btn${blinkOrder[currentIndex]}`);
+
+            currentIndex++;
+
+            // ถ้ามีปุ่มถัดไปที่ต้องกระพริบ
+            if (currentIndex < correctOrder.length) {
+                startBlinking(`btn${blinkOrder[currentIndex]}`);
+            } else {
+                document.getElementById("message").textContent = "Complete!";
+                document.getElementById("message").classList.add('show');
+            }
+        } else {
+            // ถ้ากดผิดลำดับ
+            const messageElement = document.getElementById("message");
+            messageElement.textContent = "Reset";
+            messageElement.classList.add('show');
+            resetGame();
+
+            // หลังจาก 3 วินาที ให้ข้อความค่อยๆ จางหายไป
+            setTimeout(() => {
+                messageElement.classList.add('fade-out');
+                setTimeout(() => {
+                    messageElement.classList.remove('show', 'fade-out');
+                }, 1000); // ระยะเวลาที่ใช้ในการจางหาย (1 วินาที)
+            }, 3000); // เวลาที่จะแสดงข้อความ (3 วินาที)
+        }
+    }
+
+    function resetGame() {
+        // รีเซ็ตสถานะของปุ่มทั้งหมด
+        currentIndex = 0;
+
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(button => {
+            button.classList.remove('green');
+            button.classList.remove('blinking');
+        });
+
+        // เริ่มกระพริบปุ่มแรกใหม่
+        startBlinking(`btn${blinkOrder[currentIndex]}`);
+    }
+
+    // เริ่มต้นกระพริบปุ่มแรก
+    startBlinking(`btn${blinkOrder[currentIndex]}`);
+</script>
+
 </body>
 </html>
