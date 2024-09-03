@@ -1,5 +1,20 @@
+const minigames = [
+    imageSwapGame,
+    spotTheDifferenceGame
+];
+
+function getRandomMinigame() {
+    const randomIndex = Math.floor(Math.random() * minigames.length);
+    return minigames[randomIndex];
+}
+
+const possibleImages = [
+    '/Minigame/earth_hot.png',
+    '/Minigame/Some_organize.png'
+];
+
 let selectedImage = null;
-const gridSize = 9; // Number of grid items (3x3 grid)
+const gridSize = 9; // 3x3
 const imagePositionsReal = [
     '0% 0%',
     '50% 0%',
@@ -12,10 +27,41 @@ const imagePositionsReal = [
     '100% 100%'
 ];
 
-const imagePositions = [...imagePositionsReal]; // Clone the original positions for shuffling
 
-// Shuffle the images at the start of the game
-shuffleImages();
+
+const imagePositions = [...imagePositionsReal]; // Clone
+
+function getRandomImage() {
+    const randomIndex = Math.floor(Math.random() * possibleImages.length);
+    return possibleImages[randomIndex];
+}
+
+function imageSwapGame() {
+    // Clear the game area
+    const gameArea = document.querySelector('.minigame');
+    gameArea.innerHTML = '';
+
+    gameArea.innerHTML = `<div class="image-grid">
+					<div class="image" data-index="0" style="background-position: 0 0;"></div>
+					<div class="image" data-index="1" style="background-position: 50% 0;"></div>
+					<div class="image" data-index="2" style="background-position: 100% 0;"></div>
+					<div class="image" data-index="3" style="background-position: 0 50%;"></div>
+					<div class="image" data-index="4" style="background-position: 50% 50%;"></div>
+					<div class="image" data-index="5" style="background-position: 100% 50%;"></div>
+					<div class="image" data-index="6" style="background-position: 0 100%;"></div>
+					<div class="image" data-index="7" style="background-position: 50% 100%;"></div>
+					<div class="image" data-index="8" style="background-position: 100% 100%;"></div>
+				</div>`
+
+    const selectedImage = getRandomImage(); // Get a random image
+    document.querySelectorAll('.image').forEach((img, index) => {
+        img.style.backgroundImage = `url(${selectedImage})`;
+        img.style.backgroundPosition = imagePositionsReal[index];
+        img.addEventListener('click', imageClickHandler);
+        img.style.cursor = 'pointer';
+    });
+    shuffleImages();
+}
 
 document.querySelectorAll('.image').forEach(img => {
     img.addEventListener('click', imageClickHandler);
@@ -61,7 +107,7 @@ function checkWinCondition() {
         setTimeout(() => {
             displayWinMessage();
             disableImageSwapping(); // Disable swapping after the game is won
-        }, 1000); // Delay the win message by 1 second
+        }, 1000);
     }
 }
 
@@ -72,45 +118,36 @@ function normalizeBackgroundPosition(pos) {
     return `${xPos} ${yPos}`;
 }
 
-function displayWinMessage() {
-    //Win message
-    const winMessageContainer = document.createElement('div');
-    winMessageContainer.style.position = 'fixed';
-    winMessageContainer.style.top = '50%';
-    winMessageContainer.style.left = '50%';
-    winMessageContainer.style.transform = 'translate(-50%, -50%)';
-    winMessageContainer.style.padding = '20px';
-    winMessageContainer.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
-    winMessageContainer.style.color = '#fff';
-    winMessageContainer.style.borderRadius = '8px';
-    winMessageContainer.style.textAlign = 'center';
-    winMessageContainer.style.zIndex = '1000';
-
-    const winText = document.createElement('p');
-    winText.innerText = 'Congratulations!';
-    winText.style.margin = '0 0 10px 0';
-    winMessageContainer.appendChild(winText);
-
-    //Button
-    const nextButton = document.createElement('button');
-    nextButton.innerText = 'Next';
-    nextButton.style.padding = '10px 20px';
-    nextButton.style.backgroundColor = '#4CAF50';
-    nextButton.style.color = '#fff';
-    nextButton.style.border = 'none';
-    nextButton.style.borderRadius = '4px';
-    nextButton.style.cursor = 'pointer';
-    nextButton.addEventListener('click', function() {
-
-    });
-    winMessageContainer.appendChild(nextButton);
-
-    document.body.appendChild(winMessageContainer);
-}
-
 function disableImageSwapping() {
     document.querySelectorAll('.image').forEach(img => {
         img.removeEventListener('click', imageClickHandler);
         img.style.cursor = 'default';
     });
 }
+
+
+function displayWinMessage() {
+    const winMessageContainer = document.getElementById('winMessage');
+    winMessageContainer.classList.remove('hidden');
+    
+    const nextButton = document.getElementById('nextGameButton');
+    nextButton.addEventListener('click', function() {
+        winMessageContainer.classList.add('hidden');
+        const nextGame = getRandomMinigame();
+        nextGame();
+    });
+}
+
+function spotTheDifferenceGame() {
+    // Clear the game area
+    const gameArea = document.querySelector('.minigame');
+    gameArea.innerHTML = '';
+    displayWinMessage();
+
+}
+
+// Initialize the first game
+window.onload = function() {
+    const firstGame = getRandomMinigame();
+    firstGame();
+};

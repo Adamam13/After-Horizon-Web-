@@ -19,6 +19,11 @@ function closeWindow(id) {
     document.getElementById(id).style.display = 'none';
 }
 
+function CnO_Window(id_close, id_open){
+    document.getElementById(id_close).style.display = 'none';
+    document.getElementById(id_open).style.display = 'flex';
+}
+
 const pipeList = [
     '/pipe/pipe1.png',
     '/pipe/pipe2.png',
@@ -57,7 +62,7 @@ for (let i = 1; i <= 9; i++) {
 
     btn_pipe_container.appendChild(newNode);
 
-    newNode.addEventListener('click', () => openWindow('water_supply'));
+    newNode.addEventListener('click', () => CnO_Window('select_pipe', 'water_supply'));
     newNode.addEventListener('click', () => set_code(i));
 }
 
