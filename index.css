@@ -2,6 +2,7 @@ body {
     background-color: #000000;
     line-height: normal;
     overflow: hidden;
+    user-select: none;
 }
 span{
     font-family: "Jersey 10", sans-serif;
@@ -229,6 +230,7 @@ span{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    user-select: none;
     /* border-top-left-radius: 10px;
     border-top-right-radius: 10px; */
 }

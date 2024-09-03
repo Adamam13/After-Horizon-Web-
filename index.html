@@ -493,13 +493,13 @@
 			<div class="enter_page" style="background-color: #351b1b;">
 				<img style="width: 15%;" src="/Icon/lock_key_icon_orange.png">
 				<div class="text_enter_page" style="color:#e25519;">Key Unlock System</div>
-				<button class="enter_page_btn" onclick="openWindow('minigame')">Enter</button>
+				<button class="enter_page_btn" onclick="CnO_Window('lock_key' ,'minigame')">Enter</button>
 			</div>
 		</div>
 
 		<div class="window" id="minigame" style="background-color: #ffffff; border: 5px solid #e25519;">
 			<div class="window-header" style="background-color: #e25519;">
-				<button class="button" onclick="closeWindow('minigame')">
+				<button class="button" onclick="CnO_Window('minigame', 'lock_key')">
 					< Back </button>
 						<span>Key Unlock System</span>
 						<button class="button close" onclick="closeWindow('minigame')">X</button>
@@ -519,7 +519,7 @@
 			</div>
 			<div id="winMessage" class="win-message hidden">
 				<p>Congratulations!</p>
-				<button id="nextGameButton">Next Game</button>
+				<button id="nextGameButton" onclick="continue_Game()">Next Game</button>
 			</div>
 		</div>
 

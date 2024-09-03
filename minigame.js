@@ -41,7 +41,8 @@ function imageSwapGame() {
     const gameArea = document.querySelector('.minigame');
     gameArea.innerHTML = '';
 
-    gameArea.innerHTML = `<div class="image-grid">
+    gameArea.innerHTML = `
+                <div class="image-grid">
 					<div class="image" data-index="0" style="background-position: 0 0;"></div>
 					<div class="image" data-index="1" style="background-position: 50% 0;"></div>
 					<div class="image" data-index="2" style="background-position: 100% 0;"></div>
@@ -53,7 +54,7 @@ function imageSwapGame() {
 					<div class="image" data-index="8" style="background-position: 100% 100%;"></div>
 				</div>`
 
-    const selectedImage = getRandomImage(); // Get a random image
+    const selectedImage = getRandomImage();
     document.querySelectorAll('.image').forEach((img, index) => {
         img.style.backgroundImage = `url(${selectedImage})`;
         img.style.backgroundPosition = imagePositionsReal[index];
@@ -74,7 +75,7 @@ function imageClickHandler() {
     } else {
         if (selectedImage !== this) {
             swapImages(selectedImage, this);
-            checkWinCondition(); // Check if the images are in the correct order after each swap
+            checkWinCondition();
         }
         selectedImage.classList.remove('selected');
         selectedImage = null;
@@ -106,7 +107,7 @@ function checkWinCondition() {
     if (isCorrect) {
         setTimeout(() => {
             displayWinMessage();
-            disableImageSwapping(); // Disable swapping after the game is won
+            disableImageSwapping();
         }, 1000);
     }
 }
@@ -125,25 +126,33 @@ function disableImageSwapping() {
     });
 }
 
+function addKey() {
+    const key = document.querySelector('.key_ea');
+    let currentKeyCount = parseInt(key.textContent, 10);
+    currentKeyCount++;
+    key.textContent = currentKeyCount;
+    console.log('Hold on just let it go');
+}
+
 
 function displayWinMessage() {
     const winMessageContainer = document.getElementById('winMessage');
     winMessageContainer.classList.remove('hidden');
-    
-    const nextButton = document.getElementById('nextGameButton');
-    nextButton.addEventListener('click', function() {
-        winMessageContainer.classList.add('hidden');
-        const nextGame = getRandomMinigame();
-        nextGame();
-    });
+}
+
+function continue_Game(){
+    const winMessageContainer = document.getElementById('winMessage');
+    winMessageContainer.classList.add('hidden');
+    const nextGame = getRandomMinigame();
+    nextGame();
+    addKey();
 }
 
 function spotTheDifferenceGame() {
     // Clear the game area
     const gameArea = document.querySelector('.minigame');
-    gameArea.innerHTML = '';
+    gameArea.innerHTML = '<h1 style="position: absolute; transform: translateY(-300%); color: white; font-size: 3em;">Minigame 2</h1>';
     displayWinMessage();
-
 }
 
 // Initialize the first game
