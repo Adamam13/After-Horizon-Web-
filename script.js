@@ -164,28 +164,28 @@ function checkGuess() {
 
 // ลากหัวคมๆ
 
-// document.querySelectorAll('.window').forEach(windowElement => {
-//     const header = windowElement.querySelector('.window-header');
-//     let isDragging = false;
-//     let offsetX, offsetY;
+document.querySelectorAll('.window').forEach(windowElement => {
+    const header = windowElement.querySelector('.window-header');
+    let isDragging = false;
+    let offsetX, offsetY;
 
-//     header.addEventListener('mousedown', (e) => {
-//         isDragging = true;
-//         offsetX = e.clientX - windowElement.getBoundingClientRect().left;
-//         offsetY = e.clientY - windowElement.getBoundingClientRect().top;
-//         windowElement.style.position = 'absolute';
-//         windowElement.style.zIndex = '1000';
-//     });
+    header.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        offsetX = e.clientX - windowElement.getBoundingClientRect().left;
+        offsetY = e.clientY - windowElement.getBoundingClientRect().top;
+        windowElement.style.position = 'absolute';
+        windowElement.style.zIndex = '1000';
+    });
 
-//     document.addEventListener('mousemove', (e) => {
-//         if (isDragging) {
-//             windowElement.style.left = `${e.clientX - offsetX}px`;
-//             windowElement.style.top = `${e.clientY - offsetY}px`;
-//         }
-//     });
+    document.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+            windowElement.style.left = `${e.clientX - offsetX}px`;
+            windowElement.style.top = `${e.clientY - offsetY}px`;
+        }
+    });
 
-//     document.addEventListener('mouseup', () => {
-//         isDragging = false;
-//     });
-// });
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+    });
+});
 
