@@ -6,6 +6,16 @@
     height: 100%;
 }
 
+.header-text {
+    position: absolute;
+    top: 10%;
+    color: white;
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    font-size: 2em;
+}
+
+
 /* Container for the image grid */
 .image-grid {
     display: grid;
@@ -90,5 +100,51 @@
 
 .hidden {
     display: none;
+}
+
+.spot-the-difference-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.image-container {
+    position: relative;
+    border: 3px solid #e25519;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 400px;
+    max-height: 300px;
+}
+
+.image_dif {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* Highlight found differences */
+.difference {
+    position: absolute;
+    border: 5px solid #ff0000;
+    background-color: rgba(255, 0, 0, 0.3);
+    pointer-events: none;
+    animation: pulse 1s;
+}
+
+/* Pulse animation to make the difference markers stand out */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+    }
+    50% {
+        transform: scale(1.1); /* Slight zoom in for effect */
+        box-shadow: 0 0 20px rgba(255, 0, 0, 1); /* Increase glow intensity */
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
