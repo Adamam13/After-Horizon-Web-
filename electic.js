@@ -16,10 +16,10 @@ function stopBlinking(buttonId) {
 }
 
 function startTimer() {
-    document.getElementById('timer').textContent = `Time: ${timeLeft}s`;
+    document.getElementById('timer').textContent = `${timeLeft}`;
     timer = setInterval(() => {
         timeLeft--;
-        document.getElementById('timer').textContent = `Time: ${timeLeft}s`;
+        document.getElementById('timer').textContent = `${timeLeft}`;
         if (timeLeft <= 0) {
             resetGame();
         }

@@ -680,11 +680,15 @@ video {
 .indicator-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-top: 2%;
+    margin-bottom: 1%;
+    padding: 2%;
+    border: 5px solid #F1FA49;
+    border-collapse: collapse;
 }
 .indicator {
-    width: 30px;
-    height: 30px;
+    width: 50px;
+    height: 50px;
     background-color: red;
     border-radius: 50%;
     margin: 0 5px;
@@ -696,19 +700,28 @@ video {
 }
 .container-elec {
     display: grid;
+    padding: 2%;
     grid-template-columns: repeat(5, 100px);
     grid-template-rows: repeat(2, 100px);
     gap: 10px;
+    /* background-color: #2196f3; */
+    border: 5px solid #F1FA49;
+    border-collapse: collapse;
 }
-button {
+.button-elec{
     width: 100px;
     height: 100px;
     font-size: 24px;
     cursor: pointer;
     transition: background-color 0.5s ease;
+    /* background-color: #0098ba00; */
+    border-color: #F1FA49;
+}
+button{
+    background-color: #00000000;
 }
 .blinking {
-    background-color: red;
+    background-color: rgb(166, 51, 51);
     animation: blink 1s infinite;
 }
 @keyframes blink {
@@ -730,25 +743,47 @@ button {
     opacity: 0;
 }
 #timer {
+    width:100px;
+    height:100px;
+    border-radius: 50%;
     position: absolute;
-    top: 50px;
-    right: 20px;
-    font-size: 24px;
+    left: 85%;
+    top: 50%;
+    font-size: 20px;
     color: #333;
+    font-size:60px;
+    background-color: #ff6666;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 5vw;
+    color: white;
 }
 #resetButton {
     position: absolute;
-    left: 20px;
-    top: 50%;
+    left: 5%;
+    top: 55%;
     transform: translateY(-50%);
     padding: 10px 20px;
-    font-size: 18px;
+    font-size: 30px;
     cursor: pointer;
     background-color: #ff6666;
     color: white;
     border: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3vw;
 }
 
 #resetButton:hover {
