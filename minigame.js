@@ -9,9 +9,44 @@ function getRandomMinigame() {
     return minigames[randomIndex];
 }
 
+let gameTimer;
+let remainingTime = 60;
+
+function initializeGameTimer(duration) {
+    remainingTime = duration;
+    const timeDisplay = document.getElementById('gameTimerDisplay');
+
+    gameTimer = setInterval(() => {
+        remainingTime--;
+        timeDisplay.textContent = `Time left: ${remainingTime}s`;
+
+        if (remainingTime <= 0) {
+            clearInterval(gameTimer);
+            handleTimeExpired();
+        }
+    }, 1000);
+}
+
+function handleTimeExpired() {
+    console.log('Time is up!');
+    play_minigame();
+}
+
+
 const possibleImages = [
     '/Minigame/earth_hot.png',
-    '/Minigame/Some_organize.png'
+    '/Minigame/Some_organize.png',
+    '/Minigame/1.png',
+    '/Minigame/2.png',
+    '/Minigame/3.png',
+    '/Minigame/4.png',
+    '/Minigame/5.png',
+    '/Minigame/6.png',
+    '/Minigame/7.png',
+    '/Minigame/8.png',
+    '/Minigame/9.png',
+    '/Minigame/10.png',
+    '/Minigame/18.png'
 ];
 
 let selectedImage = null;
@@ -38,6 +73,7 @@ function getRandomImage() {
 }
 
 function imageSwapGame() {
+    clearInterval(gameTimer);
     // Clear the game area
     const gameArea = document.querySelector('.minigame');
     gameArea.innerHTML = '';
@@ -64,6 +100,7 @@ function imageSwapGame() {
         img.style.cursor = 'pointer';
     });
     shuffleImages();
+    initializeGameTimer(60);
 }
 
 document.querySelectorAll('.image').forEach(img => {
@@ -145,18 +182,29 @@ function continue_Game(){
     const winMessageContainer = document.getElementById('winMessage');
     winMessageContainer.classList.add('hidden');
     const nextGame = getRandomMinigame();
+    
+    remainingTime = 60;
+    const timeDisplay = document.getElementById('gameTimerDisplay');
+    timeDisplay.textContent = `Time left: ${remainingTime}s`;
     nextGame();
     addKey();
 }
 
 
 // Initialize the first game
-window.onload = function() {
+function play_minigame() {
+    remainingTime = 60;
+    const timeDisplay = document.getElementById('gameTimerDisplay');
+    timeDisplay.textContent = `Time left: ${remainingTime}s`;
     const firstGame = getRandomMinigame();
     firstGame();
 };
 
+const btn_enter_minigame = document.querySelector("#enter_minigame");
+btn_enter_minigame.addEventListener('click', play_minigame);
+
 function spotTheDifferenceGame() {
+    clearInterval(gameTimer);
     // Clear the game area
     const gameArea = document.querySelector('.minigame');
     foundDifferences = [];
@@ -186,7 +234,7 @@ function spotTheDifferenceGame() {
     document.getElementById('image_dif1').src = randomPair.img1;
     document.getElementById('image_dif2').src = randomPair.img2;
     currentDifferences = randomPair.differences;
-    
+    initializeGameTimer(60);
 }
 
 const imagePairs = [

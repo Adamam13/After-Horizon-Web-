@@ -547,7 +547,7 @@
 			<div class="enter_page" style="background-color: #351b1b;">
 				<img style="width: 15%;" src="/Icon/lock_key_icon_orange.png">
 				<div class="text_enter_page" style="color:#e25519;">Key Unlock System</div>
-				<button class="enter_page_btn" onclick="CnO_Window('lock_key' ,'minigame')">Enter</button>
+				<button class="enter_page_btn" id="enter_minigame" onclick="CnO_Window('lock_key' ,'minigame')">Enter</button>
 			</div>
 		</div>
 
@@ -571,6 +571,9 @@
 					<div class="image" data-index="8" style="background-position: 100% 100%;"></div>
 				</div>
 			</div>
+			<div class="timer-container">
+				<span id="gameTimerDisplay">Time left: 60s</span>
+			</div>
 			<div id="winMessage" class="win-message hidden">
 				<p>Congratulations!</p>
 				<button id="nextGameButton" onclick="continue_Game()">Next Game</button>
@@ -587,7 +590,7 @@
 			<div class="enter_page" style="background-color: #1A1A1A;">
 				<img style="width: 15%;" src="/Icon/electrical_icon_yellow.png">
 				<div class="text_enter_page" style="color: #F1FA49;">Electrical System</div>
-				<button class="enter_page_btn" onclick="openWindow('electrical-game')">Enter</button>
+				<button class="enter_page_btn" onclick="CnO_Window('electrical', 'electrical-game')">Enter</button>
 			</div>
 		</div>
 

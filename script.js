@@ -164,6 +164,8 @@ function checkGuess() {
 
 // ลากหัวคมๆ
 
+let zIndexCounter = 1;
+
 document.querySelectorAll('.window').forEach(windowElement => {
     const header = windowElement.querySelector('.window-header');
     let isDragging = false;
@@ -174,7 +176,9 @@ document.querySelectorAll('.window').forEach(windowElement => {
         offsetX = e.clientX - windowElement.getBoundingClientRect().left;
         offsetY = e.clientY - windowElement.getBoundingClientRect().top;
         windowElement.style.position = 'absolute';
-        windowElement.style.zIndex = '1000';
+
+        zIndexCounter += 1;
+        windowElement.style.zIndex = zIndexCounter; 
     });
 
     document.addEventListener('mousemove', (e) => {

@@ -115,7 +115,7 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     max-width: 400px;
     width: 400px;
-    max-height: 300px;
+    max-height: 200px;
 }
 
 .image_dif {
@@ -148,3 +148,20 @@
     }
 }
 
+/* CSS for the timer container */
+.timer-container {
+    width: 100%;
+}
+
+#gameTimerDisplay {
+    text-align: center;
+}
+
+@keyframes timerAnimation {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0;
+    }
+}
