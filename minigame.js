@@ -1,7 +1,8 @@
 const minigames = [
     // ไม่อยากเล่นเกมอะไรคอมเมนต์ออกเอานะ
     imageSwapGame,
-    spotTheDifferenceGame
+    spotTheDifferenceGame,
+    separateTrash
 ];
 
 function getRandomMinigame() {
@@ -10,7 +11,7 @@ function getRandomMinigame() {
 }
 
 let gameTimer;
-let remainingTime = 60;
+let remainingTime = 30;
 
 function initializeGameTimer(duration) {
     remainingTime = duration;
@@ -100,7 +101,7 @@ function imageSwapGame() {
         img.style.cursor = 'pointer';
     });
     shuffleImages();
-    initializeGameTimer(60);
+    initializeGameTimer(30);
 }
 
 document.querySelectorAll('.image').forEach(img => {
@@ -183,7 +184,7 @@ function continue_Game(){
     winMessageContainer.classList.add('hidden');
     const nextGame = getRandomMinigame();
     
-    remainingTime = 60;
+    remainingTime = 30;
     const timeDisplay = document.getElementById('gameTimerDisplay');
     timeDisplay.textContent = `Time left: ${remainingTime}s`;
     nextGame();
@@ -193,7 +194,7 @@ function continue_Game(){
 
 // Initialize the first game
 function play_minigame() {
-    remainingTime = 60;
+    remainingTime = 30;
     const timeDisplay = document.getElementById('gameTimerDisplay');
     timeDisplay.textContent = `Time left: ${remainingTime}s`;
     const firstGame = getRandomMinigame();
@@ -234,7 +235,7 @@ function spotTheDifferenceGame() {
     document.getElementById('image_dif1').src = randomPair.img1;
     document.getElementById('image_dif2').src = randomPair.img2;
     currentDifferences = randomPair.differences;
-    initializeGameTimer(60);
+    initializeGameTimer(30);
 }
 
 const imagePairs = [
@@ -306,3 +307,144 @@ function checkWinCondition_dif() {
         
     }
 }
+
+
+
+//separateTrash
+
+function separateTrash() {
+    clearInterval(gameTimer); // หยุดตัวจับเวลาของมินิเกมก่อนหน้า
+    const gameArea = document.querySelector('.minigame');
+    gameArea.innerHTML = `
+        <h1 class="header-text">เกมแยกขยะ</h1>
+        <div id="game-container">
+            <div id="score-container">
+                <progress id="score-progress" value="0" max="30"></progress>
+            </div>
+            <div id="game-area">
+                <div id="bins">
+                    <div class="bin" data-type="organic">ขยะอินทรีย์</div>
+                    <div class="bin" data-type="recycle">ขยะรีไซเคิล</div>
+                    <div class="bin" data-type="hazardous">ขยะอันตราย</div>
+                    <div class="bin" data-type="general">ขยะทั่วไป</div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    initializeGameTimer(30); // เรียกใช้ตัวจับเวลาใหม่
+    startGame();
+}
+
+function startGame() {
+    let score = 0;
+    const gameArea = document.getElementById('game-area');
+    const progressBar = document.getElementById('score-progress');
+    
+    // เริ่มการสร้างขยะ
+    generateTrash();
+
+    function generateTrash() {
+        if (progressBar.value < 30) { // สร้างขยะต่อถ้าคะแนนยังไม่เต็ม
+            const trash = document.createElement('div');
+            trash.classList.add('trash');
+            const trashTypes = ['organic', 'recycle', 'hazardous', 'general'];
+            const type = trashTypes[Math.floor(Math.random() * trashTypes.length)];
+            trash.dataset.type = type;
+            trash.style.top = Math.random() * 40 + '%';
+            trash.style.left = Math.random() * 80 + '%';
+            trash.style.backgroundImage = `url(Minigame/trash/${type}_${Math.floor(Math.random() * 10) + 1}.png)`;
+            trash.style.backgroundSize = 'contain';  // ปรับขนาดภาพให้พอดีกับพื้นที่
+            trash.style.backgroundRepeat = 'no-repeat';  // ป้องกันการซ้ำของภาพ
+            trash.style.backgroundPosition = 'center';  // จัดตำแหน่งภาพให้อยู่ตรงกลาง
+            trash.style.backgroundColor = 'transparent'; // ให้พื้นหลังโปร่งใส
+            gameArea.appendChild(trash);
+            makeDraggable(trash);
+            setTimeout(generateTrash, 1000);
+        }
+    }
+
+    function makeDraggable(element) {
+        let shiftX, shiftY;
+
+        function moveAt(pageX, pageY) {
+            const gameAreaRect = gameArea.getBoundingClientRect();
+            const newLeft = pageX - shiftX - gameAreaRect.left;
+            const newTop = pageY - shiftY - gameAreaRect.top;
+
+            if (newLeft >= 0 && newLeft + element.offsetWidth <= gameAreaRect.width) {
+                element.style.left = newLeft + 'px';
+            }
+            if (newTop >= 0 && newTop + element.offsetHeight <= gameAreaRect.height) {
+                element.style.top = newTop + 'px';
+            }
+        }
+
+        element.onmousedown = function(event) {
+            shiftX = event.clientX - element.getBoundingClientRect().left;
+            shiftY = event.clientY - element.getBoundingClientRect().top;
+
+            element.style.position = 'absolute';
+            element.style.zIndex = 1000;
+
+            document.onmousemove = function(event) {
+                moveAt(event.pageX, event.pageY);
+            };
+
+            document.onmouseup = function() {
+                document.onmousemove = null;
+                document.onmouseup = null;
+                checkDrop(element);
+            };
+        };
+
+        element.ondragstart = function() {
+            return false;
+        };
+    }
+
+    function checkDrop(trash) {
+        const bins = document.querySelectorAll('.bin');
+        const trashRect = trash.getBoundingClientRect();
+
+        bins.forEach(bin => {
+            const binRect = bin.getBoundingClientRect();
+            if (
+                trashRect.right > binRect.left &&
+                trashRect.left < binRect.right &&
+                trashRect.bottom > binRect.top &&
+                trashRect.top < binRect.bottom
+            ) {
+                score += trash.dataset.type === bin.dataset.type ? 5 : -1;
+                updateScore();
+                trash.remove();
+            }
+        });
+    }
+
+    function updateScore() {
+        progressBar.value = score % 30;
+        let keys = 0;
+        if (score >= 90) keys = 3;
+        else if (score >= 60) keys = 2;
+        else if (score >= 30) keys = 1;
+
+        if (score >= 30) { // เมื่อคะแนนเต็ม
+            displayMessage('ภาวะโลก ละละละเลิฟยู');
+            clearInterval(gameTimer); // หยุดจับเวลา
+        }
+    }
+}
+
+function displayMessage(message) {
+    const gameArea = document.querySelector('.minigame');
+    const messageDiv = document.createElement('div');
+    messageDiv.classList.add('win-message');
+    messageDiv.innerHTML = `
+        <h2>${message}</h2>
+        <button onclick="play_minigame()">Next game</button>
+    `;
+    gameArea.appendChild(messageDiv);
+}
+
+

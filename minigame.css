@@ -148,6 +148,8 @@
     }
 }
 
+
+
 /* CSS for the timer container */
 .timer-container {
     width: 100%;
@@ -164,4 +166,82 @@
     to {
         width: 0;
     }
+}
+
+
+/* separateTrash */
+
+.bin {
+    width: 50%;
+    height: 150px;
+    text-align: center;
+    padding-top: 10px;
+    background-size: cover;
+}
+
+.bin[data-type="organic"] {
+    background-image: url('Minigame/trash/bin_organic.png');
+}
+
+.bin[data-type="recycle"] {
+    background-image: url('Minigame/trash/bin_recycle.png');
+}
+
+.bin[data-type="hazardous"] {
+    background-image: url('Minigame/trash/bin_hazardous.png');
+}
+
+.bin[data-type="general"] {
+    background-image: url('Minigame/trash/bin_general.png');
+}
+
+#game-container {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden; /* ป้องกันการเลื่อนออกนอกขอบเขต */
+}
+
+#game-area {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden; /* ป้องกันการเลื่อนออกนอกขอบเขต */
+}
+
+.trash {
+    position: absolute;
+    width: 20%; /* ขนาดที่เหมาะสมของ trash */
+    height: 20%;
+    cursor: move;
+    background-size: contain; /* ปรับขนาดภาพให้พอดีกับขอบเขตของ div */
+    background-repeat: no-repeat; /* ป้องกันการซ้ำของภาพ */
+    background-position: center; /* จัดตำแหน่งภาพให้อยู่ตรงกลาง */
+}
+
+
+#bins {
+    display: flex;
+    justify-content: space-between; /* กระจายถังขยะให้ทั่วพื้นที่ */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#score-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+#score-progress {
+    width: 70%; /* ขนาด progress bar */
+    height: 24px;
+}
+
+#timer {
+    font-size: 2vw; /* ปรับขนาดตัวจับเวลา */
+    margin-bottom: 10px;
 }
