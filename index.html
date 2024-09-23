@@ -25,6 +25,20 @@
 		</div>
 		<img class="logo" src="/Icon/Logo.png">
 
+		<!-- หน้าต่างยืนยันการใช้กุญแจ -->
+		<div class="window" id="unlock_confirmation" style="display:none;">
+			<div class="window-header">
+			<span>Use 1 key to unlock this file?</span>
+			</div>
+			<div class="window-body">
+			<div>
+				<button class="button"  onclick="useKey()">Yes, use key</button>
+				<button class="button"  onclick="closeWindow('unlock_confirmation')">No, cancel</button>
+			</div>
+			</div>
+		</div>
+  
+
 		<!-- Folder 1 -->
 		<div class="window" id="folder1">
 			<div class="window-header">
@@ -33,32 +47,32 @@
 				<span>Folder 1</span>
 				<button class="button close" onclick="closeWindow('folder1')">X</button>
 			</div>
-			<div class="window-body">
+			<div class="window-body folder1-body">
 				<!-- icon file 1 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_1" onclick="CnO_Window('folder1', 'file-info-carrot')" alt=""
+					<img class="icon" id="file_1" onclick="openFile('file-info-carrot', 'folder1')" alt=""
 						src="/Icon/notes_new.png">
 					<div class="desktop_text">Plant 06</div>
 				</div>
 				<!-- icon file 2 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_2" onclick="CnO_Window('folder1', 'file-info-tomato')" alt=""
+					<img class="icon" id="file_2" onclick="openFile('file-info-tomato', 'folder1')" alt=""
 						src="/Icon/notes_new.png">
 					<div class="desktop_text">Plant 03</div>
 				</div>
 				<!-- icon file 3 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_3" onclick="CnO_Window('folder1', 'file-hint-PT')" alt="" src="/Icon/hint_new.png">
+					<img class="icon" id="file_3" onclick="openFile('file-hint-PT', 'folder1')" alt="" src="/Icon/hint_new.png">
 					<div class="desktop_text">MT:P</div>
 				</div>
 				<!-- icon file 4 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_3" onclick="CnO_Window('folder1', 'file-part1')" alt="" src="/Icon/map_new.png">
+					<img class="icon" id="file_3" onclick="openFile('file-part1', 'folder1')" alt="" src="/Icon/map_new.png">
 					<div class="desktop_text">Parts Map 01</div>
 				</div>
 				<!-- icon file 5 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_3" onclick="CnO_Window('folder1', 'file-hint-Phum')" alt=""
+					<img class="icon" id="file_3" onclick="openFile('file-hint-Phum', 'folder1')" alt=""
 						src="/Icon/hint_new.png">
 					<div class="desktop_text">Note 1</div>
 				</div>
@@ -73,32 +87,32 @@
 						<span>Folder 2</span>
 						<button class="button close" onclick="closeWindow('folder2')">X</button>
 			</div>
-			<div class="window-body">
+			<div class="window-body folder2-body">
 				<!-- icon file 1 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_1" onclick="CnO_Window('folder2', 'file-info-pumpkin')" alt=""
+					<img class="icon" id="file_1" onclick="openFile('file-info-pumpkin', 'folder2')" alt=""
 						src="/Icon/notes_new.png">
 					<div class="desktop_text">Plant 04</div>
 				</div>
 				<!-- icon file 2 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_2" onclick="CnO_Window('folder2', 'file-hint-OT')" alt="" src="/Icon/hint_new.png">
+					<img class="icon" id="file_2" onclick="openFile('file-hint-OT', 'folder2')" alt="" src="/Icon/hint_new.png">
 					<div class="desktop_text">MT:O</div>
 				</div>
 				<!-- icon file 3 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_3" onclick="CnO_Window('folder2', 'file-part2')" alt="" src="/Icon/map_new.png">
+					<img class="icon" id="file_3" onclick="openFile('file-part2', 'folder2')" alt="" src="/Icon/map_new.png">
 					<div class="desktop_text">Parts Map 02</div>
 				</div>
 				<!-- icon file 4 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_4" onclick="CnO_Window('folder2', 'file-info-radish')" alt=""
+					<img class="icon" id="file_4" onclick="openFile('file-info-radish', 'folder2')" alt=""
 						src="/Icon/notes_new.png">
 					<div class="desktop_text">Plant 07</div>
 				</div>
 				<!-- icon file 5 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_5" onclick="CnO_Window('folder2', 'file-hint-Water')" alt=""
+					<img class="icon" id="file_5" onclick="openFile('file-hint-Water', 'folder2')" alt=""
 						src="/Icon/hint_new.png">
 					<div class="desktop_text">Note 2</div>
 				</div>
@@ -116,31 +130,31 @@
 			<div class="window-body">
 				<!-- icon file 1 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_1" onclick="CnO_Window('folder_readme', 'file-info-elec')" alt=""
+					<img class="icon" id="file_1" onclick="openFile('file-info-elec', 'folder_readme')" alt=""
 						src="/Icon/notes_new.png">
 					<div class="desktop_text">Electrical</div>
 				</div>
 				<!-- icon file 2 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_2" onclick="CnO_Window('folder_readme', 'file-info-phum')" alt=""
+					<img class="icon" id="file_2" onclick="openFile('file-info-phum', 'folder_readme')" alt=""
 						src="/Icon/notes_new.png">
 					<div class="desktop_text">Water Supply</div>
 				</div>
 				<!-- icon file 3 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_3" onclick="CnO_Window('folder_readme', 'file-info-oxygen')" alt=""
+					<img class="icon" id="file_3" onclick="openFile('file-info-oxygen', 'folder_readme')" alt=""
 						src="/Icon/notes_new.png">
 					<div class="desktop_text">Oxygen</div>
 				</div>
 				<!-- icon file 4 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_3" onclick="CnO_Window('folder_readme', 'file-info-farm')" alt=""
+					<img class="icon" id="file_3" onclick="openFile('file-info-farm', 'folder_readme')" alt=""
 						src="/Icon/notes_new.png">
 					<div class="desktop_text">Farming</div>
 				</div>
 				<!-- icon file 5 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_3" onclick="CnO_Window('folder_readme', 'file-info-guied')" alt=""
+					<img class="icon" id="file_3" onclick="openFile('file-info-guied', 'folder_readme')" alt=""
 						src="/Icon/notes_new.png">
 					<div class="desktop_text">VR Guide</div>
 				</div>

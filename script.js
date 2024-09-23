@@ -161,6 +161,9 @@ function checkGuess() {
     }
 }
 
+//key unlock
+
+
 
 // ลากหัวคมๆ
 
@@ -193,3 +196,105 @@ document.querySelectorAll('.window').forEach(windowElement => {
     });
 });
 
+function closeAllWindows() {
+    const allWindows = document.querySelectorAll('.window');
+
+    allWindows.forEach(window => {
+        window.style.display = 'none';
+    });
+}
+
+
+
+let keys = 3;
+let lockedFiles = {
+    //folder1
+    'file-info-carrot': true,
+    'file-info-tomato': true,
+    'file-hint-PT': true,
+    'file-part1': true,
+    'file-hint-Phum': true,
+
+    //folder2
+    'file-info-pumpkin': true,
+    'file-hint-OT': true,
+    'file-part2': true,
+    'file-info-radish': true,
+    'file-hint-Water': true,
+
+    //readme
+    'file-info-elec': false,
+    'file-info-phum': false,
+    'file-info-oxygen': false,
+    'file-info-farm': false,
+    'file-info-guied': false
+};
+
+
+//comfirm to use key
+function confirmUnlock(fileId, folderId) {
+    keys = document.querySelector('.key_ea').textContent;
+    document.getElementById('unlock_confirmation').style.display = 'flex';
+    document.getElementById('unlock_confirmation').dataset.fileId = fileId;
+    document.getElementById('unlock_confirmation').dataset.folderId = folderId;
+
+}
+
+function useKey() {
+    let fileId = document.getElementById('unlock_confirmation').dataset.fileId;
+    let folderId = document.getElementById('unlock_confirmation').dataset.folderId;
+
+    if(keys > 0){
+        keys--;
+        document.querySelector('.key_ea').textContent = keys;
+    
+        lockedFiles[fileId] = false;
+    
+        closeWindow(folderId);
+    
+        CnO_Window('unlock_confirmation', fileId);
+    }
+
+
+}
+
+function openFile(fileId, folderId) {
+    if (!lockedFiles[fileId]) {
+        CnO_Window(folderId, fileId);
+    } else {
+        confirmUnlock(fileId, folderId);
+    }
+}
+
+
+//random file **not now**
+
+// function shuffleArray(array) {
+//     for (let i = array.length - 1; i > 0; i--) {
+//         const j = Math.floor(Math.random() * (i + 1));
+//         [array[i], array[j]] = [array[j], array[i]];
+//     }
+//     return array;
+// }
+
+// function shuffleFolders() {
+//     const folder1 = document.querySelector('.folder1-body');
+//     const folder2 = document.querySelector('.folder2-body');
+
+//     const folder1Icons = Array.from(folder1.querySelectorAll('.icon_wrapper'));
+//     const folder2Icons = Array.from(folder2.querySelectorAll('.icon_wrapper'));
+
+//     const allIcons = folder1Icons.concat(folder2Icons);
+//     const shuffledIcons = shuffleArray(allIcons);
+
+//     folder1.innerHTML = '';
+//     folder2.innerHTML = '';
+
+//     const halfLength = Math.floor(shuffledIcons.length / 2);
+//     shuffledIcons.slice(0, halfLength).forEach(icon => folder1.appendChild(icon));
+//     shuffledIcons.slice(halfLength).forEach(icon => folder2.appendChild(icon));
+// }
+
+// window.onload = function() {
+//     shuffleFolders();
+// };
