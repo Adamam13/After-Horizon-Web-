@@ -24,7 +24,7 @@
     padding: 0;
     gap: 0;
     width: 50%;
-    height: 50%;
+    height: 70%;
     position: relative;
     border: 4px solid #aaa;
     border-radius: 12px; 
@@ -60,14 +60,14 @@
 /* win-message */
 .win-message {
     position: fixed;
-    width: 40%;
-    height: 30%;
+    width: 50%;
+    height: 70%;
     background-color: #272727;
     color: #fff;
+    display: flex;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -153,21 +153,45 @@
 /* CSS for the timer container */
 .timer-container {
     width: 100%;
+    height: 8%;
+    background-color: #f3f3f3; /* พื้นหลังโปรเกรส */
+    overflow: hidden;
+    
 }
 
 #gameTimerDisplay {
-    text-align: center;
+    width: 100%;
+    border-radius: 5px;
+    position: absolute;
+    overflow: hidden;
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    font-size: 1.75em;
+    margin-left: 2%;
 }
 
-@keyframes timerAnimation {
+#time-bar {
+    height: 100%;
+    background-color: #4caf50; /* สีของ Progress Bar */
+    width: 100%; /* เริ่มต้นที่ 100% */
+    animation: reduceTime linear forwards;
+}
+
+@keyframes reduceTime {
     from {
-        width: 100%;
+        width: 100%; /* เริ่มต้นที่เต็ม */
     }
     to {
-        width: 0;
+        width: 0%; /* จบที่ 0% */
     }
 }
 
+
+@keyframes flash {
+    0% { background-color: #4caf50; }
+    50% { background-color: #e74c3c; }
+    100% { background-color: #4caf50; }
+}
 
 /* separateTrash */
 
@@ -237,11 +261,84 @@
 }
 
 #score-progress {
-    width: 70%; /* ขนาด progress bar */
+    width: 80%; /* ขนาด progress bar */
     height: 24px;
 }
 
 #timer {
     font-size: 2vw; /* ปรับขนาดตัวจับเวลา */
     margin-bottom: 10px;
+}
+
+.bin-label {
+    position: absolute;
+    bottom: 20%;
+    transform: translateX(45%);
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.trash-summary-horizontal {
+    display: flex;
+    flex-direction: column;
+    /* จัดประเภทขยะในแนวนอน */
+    gap: 10px;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+}
+
+.trash-category {
+    display: flex;
+    align-items: center;
+    border: 2px solid #000;
+    border-radius: 5px;
+    position: relative;
+    width: 100%;
+    height: 25%;
+    overflow-x: hidden;
+}
+
+.trash-category h4 {
+    flex-shrink: 0;
+    width: 200px;
+}
+
+.trash-category img {
+    width: 5%;
+    height: 5%;
+    margin: 5px;
+    position: relative;
+}
+
+.cross {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 90%;
+    background-image: url('Minigame/trash/cross.png');
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+.popup-content {
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }

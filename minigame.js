@@ -16,10 +16,19 @@ let remainingTime = 30;
 function initializeGameTimer(duration) {
     remainingTime = duration;
     const timeDisplay = document.getElementById('gameTimerDisplay');
+    const progressBar = document.querySelector("#time-bar");
+
+    progressBar.style.animation = 'none';
+    progressBar.offsetHeight;
+    progressBar.style.animation = `reduceTime ${duration}s linear forwards`;
 
     gameTimer = setInterval(() => {
         remainingTime--;
         timeDisplay.textContent = `Time left: ${remainingTime}s`;
+
+        if (remainingTime <= 10) {
+            progressBar.style.animation = `flash 1s infinite, reduceTime ${duration}s linear forwards`;
+        }
 
         if (remainingTime <= 0) {
             clearInterval(gameTimer);
@@ -27,6 +36,7 @@ function initializeGameTimer(duration) {
         }
     }, 1000);
 }
+
 
 function handleTimeExpired() {
     console.log('Time is up!');
@@ -210,10 +220,13 @@ function spotTheDifferenceGame() {
     const gameArea = document.querySelector('.minigame');
     foundDifferences = [];
     foundDifferencesCount = 0;
+    const randomPair = imagePairs[Math.floor(Math.random() * imagePairs.length)];
+    let total_diff = randomPair.differences.length;
+
     gameArea.innerHTML = '';
     
     gameArea.innerHTML = `
-    <h1 class="header-text">Find the differences between the images!</h1>
+    <h1 class="header-text">Find the ${total_diff} differences between the images!</h1>
     <div class="spot-the-difference-container">
         <div class="image-container">
             <img src="" alt="Image 1" class="image_dif" id="image_dif1">
@@ -231,7 +244,6 @@ function spotTheDifferenceGame() {
         detectClick(event, 'image_dif2');
     });
     
-    const randomPair = imagePairs[Math.floor(Math.random() * imagePairs.length)];
     document.getElementById('image_dif1').src = randomPair.img1;
     document.getElementById('image_dif2').src = randomPair.img2;
     currentDifferences = randomPair.differences;
@@ -316,17 +328,25 @@ function separateTrash() {
     clearInterval(gameTimer); // หยุดตัวจับเวลาของมินิเกมก่อนหน้า
     const gameArea = document.querySelector('.minigame');
     gameArea.innerHTML = `
-        <h1 class="header-text">เกมแยกขยะ</h1>
+        <h1 class="header-text">Drag and drop the waste into the correct bins!</h1>
         <div id="game-container">
             <div id="score-container">
                 <progress id="score-progress" value="0" max="30"></progress>
             </div>
             <div id="game-area">
                 <div id="bins">
-                    <div class="bin" data-type="organic">ขยะอินทรีย์</div>
-                    <div class="bin" data-type="recycle">ขยะรีไซเคิล</div>
-                    <div class="bin" data-type="hazardous">ขยะอันตราย</div>
-                    <div class="bin" data-type="general">ขยะทั่วไป</div>
+                    <div class="bin" data-type="organic">
+                        <div class="bin-label">Organic</div>
+                    </div>
+                    <div class="bin" data-type="recycle">
+                        <div class="bin-label">Recyclable</div>
+                    </div>
+                    <div class="bin" data-type="hazardous">
+                        <div class="bin-label">Hazardous</div>
+                    </div>
+                    <div class="bin" data-type="general">
+                        <div class="bin-label">General</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -338,8 +358,61 @@ function separateTrash() {
 
 function startGame() {
     let score = 0;
+    let trashTypes = ['organic', 'recycle', 'hazardous', 'general'];
+    let droppedTrashHistory = [];
+
     const gameArea = document.getElementById('game-area');
     const progressBar = document.getElementById('score-progress');
+
+
+    const trashSizes = {
+        // 'organic_1.png': { width: 50, height: 50 },
+        // 'organic_2.png': { width: 60, height: 60 },
+        // 'recycle_1.png': { width: 100, height: 100 }, // ขวดพลาสติกใหญ่
+        // 'hazardous_1.png': { width: 40, height: 40 }, // ถ่านไฟฉายเล็ก
+        // 'general_1.png': { width: 80, height: 80 },
+        // 'organic_1.png': { width: 80, height: 80 },
+        // 'organic_2.png': { width: 80, height: 80 },
+        // 'organic_3.png': { width: 80, height: 80 },
+        'organic_4.png': { width: 80, height: 80 },
+        'organic_5.png': { width: 80, height: 80 },
+        // 'organic_6.png': { width: 60, height: 60 },
+        'organic_7.png': { width: 60, height: 60 },
+        'organic_8.png': { width: 60, height: 60 },
+        // 'organic_9.png': { width: 80, height: 80 },
+        // 'organic_10.png': { width: 80, height: 80 },
+        'recycle_1.png': { width: 110, height: 110 },
+        // 'recycle_2.png': { width: 70, height: 90 },
+        'recycle_3.png': { width: 100, height: 100 },
+        // 'recycle_4.png': { width: 100, height: 100 },
+        // 'recycle_5.png': { width: 100, height: 100 },
+        'recycle_6.png': { width: 90, height: 90 },
+        'recycle_7.png': { width: 90, height: 90 },
+        'recycle_8.png': { width: 110, height: 110 },
+        'recycle_9.png': { width: 90, height: 90 },
+        'recycle_10.png': { width: 80, height: 80 },
+        'hazardous_1.png': { width: 110, height: 110 },
+        'hazardous_2.png': { width: 100, height: 100 },
+        // 'hazardous_3.png': { width: 80, height: 80 },
+        // 'hazardous_4.png': { width: 80, height: 80 },
+        'hazardous_5.png': { width: 80, height: 80 },
+        'hazardous_6.png': { width: 120, height: 120 },
+        'hazardous_7.png': { width: 80, height: 80 },
+        'hazardous_8.png': { width: 60, height: 60 },
+        'hazardous_9.png': { width: 100, height: 100 },
+        'hazardous_10.png': { width: 90, height: 90 },
+        'general_1.png': { width: 80, height: 80 },
+        'general_2.png': { width: 60, height: 60 },
+        // 'general_3.png': { width: 80, height: 80 },
+        // 'general_4.png': { width: 80, height: 80 },
+        'general_5.png': { width: 80, height: 80 },
+        'general_6.png': { width: 50, height: 50 },
+        // 'general_7.png': { width: 80, height: 80 },
+        'general_8.png': { width: 60, height: 60 },
+        // 'general_9.png': { width: 80, height: 80 },
+        'general_10.png': { width: 60, height: 60 },
+        // เพิ่มชื่อขยะอื่น ๆ ตามไฟล์ภาพ
+    };
     
     // เริ่มการสร้างขยะ
     generateTrash();
@@ -348,17 +421,29 @@ function startGame() {
         if (progressBar.value < 30) { // สร้างขยะต่อถ้าคะแนนยังไม่เต็ม
             const trash = document.createElement('div');
             trash.classList.add('trash');
-            const trashTypes = ['organic', 'recycle', 'hazardous', 'general'];
             const type = trashTypes[Math.floor(Math.random() * trashTypes.length)];
             trash.dataset.type = type;
             trash.style.top = Math.random() * 40 + '%';
             trash.style.left = Math.random() * 80 + '%';
-            trash.style.backgroundImage = `url(Minigame/trash/${type}_${Math.floor(Math.random() * 10) + 1}.png)`;
+
+            let imageNumber = Math.floor(Math.random() * 10) + 1;
+            let trashImageFile = `${type}_${imageNumber}.png`;
+            trash.style.backgroundImage = `url(Minigame/trash/${trashImageFile})`;
+            
             trash.style.backgroundSize = 'contain';  // ปรับขนาดภาพให้พอดีกับพื้นที่
             trash.style.backgroundRepeat = 'no-repeat';  // ป้องกันการซ้ำของภาพ
             trash.style.backgroundPosition = 'center';  // จัดตำแหน่งภาพให้อยู่ตรงกลาง
             trash.style.backgroundColor = 'transparent'; // ให้พื้นหลังโปร่งใส
+
+            let size = trashSizes[trashImageFile] || { width: 70, height: 70 }; // ค่าเริ่มต้น 70x70 ถ้าไม่มีขนาด
+            trash.style.width = size.width + 'px';
+            trash.style.height = size.height + 'px';
+            trash.style.backgroundSize = 'cover';
+
             gameArea.appendChild(trash);
+
+            trash.dataset.imageFile = trashImageFile;
+
             makeDraggable(trash);
             setTimeout(generateTrash, 1000);
         }
@@ -403,6 +488,51 @@ function startGame() {
         };
     }
 
+    // เพิ่มตัวแปรเพื่อเก็บชื่อขยะตามประเภทและภาพ
+    const trashNames = {
+        'organic_1.png': 'Fruit Peels',
+        'organic_2.png': 'Fish Bone',
+        'organic_3.png': 'Leaves',
+        'organic_4.png': 'Bread Crumbs',
+        'organic_5.png': 'Food Leftovers',
+        'organic_6.png': 'Leaves',
+        'organic_7.png': 'Eggshells',
+        'organic_8.png': 'Feces',
+        'organic_9.png': 'Apple Core',
+        'organic_10.png': 'Flower',
+        'recycle_1.png': 'Glass Bdottles',
+        'recycle_2.png': 'Steel Cans',
+        'recycle_3.png': 'Metal Scraps',
+        'recycle_4.png': 'CD Disc',
+        'recycle_5.png': 'Milk Cartons',
+        'recycle_6.png': 'Newspaper',
+        'recycle_7.png': 'Cardboard',
+        'recycle_8.png': 'Plastic Bottles',
+        'recycle_9.png': 'Plastic Cup',
+        'recycle_10.png': 'Plastic Bag',
+        'hazardous_1.png': 'Batteries',
+        'hazardous_2.png': 'Aerosol Cans',
+        'hazardous_3.png': 'Lithium Batteries',
+        'hazardous_4.png': 'Syringes',
+        'hazardous_5.png': 'Mobile Phones',
+        'hazardous_6.png': 'Notebook',
+        'hazardous_7.png': 'Light Bulb',
+        'hazardous_8.png': 'Nail Polish Bottles',
+        'hazardous_9.png': 'Leftover Paint',
+        'hazardous_10.png': 'Pesticide Bottles',
+        'general_1.png': 'Snack wrappers',
+        'general_2.png': 'Chopsticks',
+        'general_3.png': 'Foam Box',
+        'general_4.png': 'Rubber Gloves',
+        'general_5.png': 'Face Masks',
+        'general_6.png': 'Rubber Band',
+        'general_7.png': 'Snack Bag',
+        'general_8.png': 'Plastic straws',
+        'general_9.png': 'Tissue paper',
+        'general_10.png': 'Toothpicks',
+        // เพิ่มชื่อขยะอื่น ๆ ตามไฟล์ภาพ
+    };
+
     function checkDrop(trash) {
         const bins = document.querySelectorAll('.bin');
         const trashRect = trash.getBoundingClientRect();
@@ -415,6 +545,26 @@ function startGame() {
                 trashRect.bottom > binRect.top &&
                 trashRect.top < binRect.bottom
             ) {
+
+                let isCorrect = trash.dataset.type === bin.dataset.type;
+
+                // ตรวจสอบว่าขยะนี้ถูกบันทึกไปแล้วหรือไม่ ถ้าซ้ำจะไม่บันทึกใหม่
+                let isDuplicate = droppedTrashHistory.some(item =>
+                    item.imageFile === trash.dataset.imageFile && item.isCorrect === isCorrect
+                );
+
+                if (!isDuplicate) {
+                    // บันทึกข้อมูลขยะทุกชิ้น
+                    droppedTrashHistory.push({
+                        trashType: trash.dataset.type,
+                        imageFile: trash.dataset.imageFile, // เก็บข้อมูลรูปภาพขยะ
+                        isCorrect: isCorrect, // เก็บสถานะว่าทิ้งถูกหรือผิดประเภท
+                        trashName: trashNames[trash.dataset.imageFile] || 'ขยะไม่ทราบชื่อ', // ชื่อขยะ
+                        droppedIn: bin.dataset.type // เก็บข้อมูลถังที่ถูกทิ้งลงไป
+                    });
+                }
+
+
                 score += trash.dataset.type === bin.dataset.type ? 5 : -1;
                 updateScore();
                 trash.remove();
@@ -424,27 +574,95 @@ function startGame() {
 
     function updateScore() {
         progressBar.value = score % 30;
-        let keys = 0;
-        if (score >= 90) keys = 3;
-        else if (score >= 60) keys = 2;
-        else if (score >= 30) keys = 1;
+        // let keys = 0;
+        // if (score >= 90) keys = 3;
+        // else if (score >= 60) keys = 2;
+        // else if (score >= 30) keys = 1;
+
+        if (progressBar.value > progressBar.max) {
+            progressBar.value = progressBar.max;
+        }
 
         if (score >= 30) { // เมื่อคะแนนเต็ม
             displayMessage('ภาวะโลก ละละละเลิฟยู');
             clearInterval(gameTimer); // หยุดจับเวลา
         }
     }
+
+    function displayMessage(message) {
+        const gameArea = document.querySelector('.minigame');
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('win-message');
+        messageDiv.innerHTML = `
+            <div class="popup-content">
+                <h2>Summary</h2>
+                <div id="trash-summary" class="trash-summary-horizontal"></div> <!-- ตารางแนวนอน -->
+                <button id="nextGameButton" onclick="continue_Game()">Next Game</button>
+            </div>
+        `;
+        gameArea.appendChild(messageDiv);
+    
+        // สร้าง div สำหรับแสดงขยะในถังแต่ละประเภท
+        let trashSummary = document.getElementById('trash-summary');
+        trashSummary.innerHTML = ''; // ล้างรายการก่อนแสดงผลใหม่
+    
+        // สลับขยะอันตรายกับขยะทั่วไป โดยขยะอันตราย (hazardous) อยู่ตารางที่ 3 และขยะทั่วไป (general) อยู่ตารางที่ 4
+        let categories = ['organic', 'recycle', 'hazardous', 'general']; // สลับตำแหน่ง hazardous กับ general
+    
+        categories.forEach(category => {
+            // สร้าง div สำหรับถังขยะแต่ละประเภท
+            let categoryDiv = document.createElement('div');
+            categoryDiv.classList.add('trash-category');
+            categoryDiv.style.position = 'relative'; // ทำให้ trash-category เป็น relative เพื่อให้ลูกเป็น absolute
+    
+            let categoryTitle = document.createElement('h4');
+            categoryTitle.textContent = getCategoryName(category); // ชื่อของประเภทขยะ
+            categoryDiv.appendChild(categoryTitle);
+    
+            // กรองขยะที่ถูกทิ้งในถังนี้ (ไม่ว่าถูกหรือผิด)
+            let filteredTrash = droppedTrashHistory.filter(item => item.droppedIn === category);
+    
+            filteredTrash.forEach(item => {
+                let trashWrapper = document.createElement('div');
+                trashWrapper.style.position = 'relative'; // ต้องการให้ตำแหน่งนี้เป็น relative สำหรับการวางกากบาท
+    
+                let trashImage = document.createElement('img');
+                trashImage.src = `Minigame/trash/${item.imageFile}`; // ใช้ชื่อไฟล์ที่เก็บไว้แสดงภาพขยะ
+                trashImage.style.width = '70px'; // ขนาดภาพขยะ
+                trashImage.style.height = '70px'; // ขนาดภาพขยะ
+                trashImage.title = item.trashName; // ใช้ title เพื่อแสดงชื่อขยะเมื่อ hover
+    
+                trashWrapper.appendChild(trashImage);
+    
+                // ถ้าขยะถูกทิ้งผิดประเภท แสดงเครื่องหมายกากบาท
+                if (!item.isCorrect) {
+                    let cross = document.createElement('div');
+                    cross.classList.add('cross'); // ใช้คลาส cross ที่กำหนดไว้ด้านบน
+                    trashWrapper.appendChild(cross);
+                }
+    
+                categoryDiv.appendChild(trashWrapper); // เพิ่ม trashWrapper ใน categoryDiv
+            });
+    
+            trashSummary.appendChild(categoryDiv); // เพิ่มประเภทขยะในตาราง
+        });
+    }
 }
 
-function displayMessage(message) {
-    const gameArea = document.querySelector('.minigame');
-    const messageDiv = document.createElement('div');
-    messageDiv.classList.add('win-message');
-    messageDiv.innerHTML = `
-        <h2>${message}</h2>
-        <button onclick="play_minigame()">Next game</button>
-    `;
-    gameArea.appendChild(messageDiv);
+
+function getCategoryName(type) {
+    switch (type) {
+        case 'organic':
+            return 'Organic Waste';
+        case 'recycle':
+            return 'Recyclable Waste';
+        case 'general':
+            return 'General Waste';
+        case 'hazardous':
+            return 'Hazardous Waste';
+        default:
+            return '';
+    }
 }
 
 
