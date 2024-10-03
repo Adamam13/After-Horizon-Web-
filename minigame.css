@@ -77,6 +77,17 @@
     z-index: 1000;
 }
 
+.win-message img {
+    width: 50%;
+    height: 50%;
+    margin-bottom: 10px;
+}
+
+.win-message p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
 .win-message button {
     padding: 10px 20px;
     margin-top: 20px;

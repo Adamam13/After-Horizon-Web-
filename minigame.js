@@ -1,8 +1,8 @@
 const minigames = [
     // ไม่อยากเล่นเกมอะไรคอมเมนต์ออกเอานะ
-    imageSwapGame,
+    // imageSwapGame,
     spotTheDifferenceGame,
-    separateTrash
+    // separateTrash
 ];
 
 function getRandomMinigame() {
@@ -43,6 +43,19 @@ function handleTimeExpired() {
     play_minigame();
 }
 
+function showEndGamePopup(imageUrl) {
+    const winMessage = document.getElementById('winMessage');
+    const winImage = document.getElementById('win-image');
+    const winText = document.getElementById('win-text');
+
+    winImage.src = imageUrl;
+    winText.textContent = imageData[imageUrl] || "Congratulations!"; //default = congratulatoins eiei
+
+    winMessage.classList.remove('hidden');
+}
+
+
+
 
 const possibleImages = [
     '/Minigame/earth_hot.png',
@@ -60,7 +73,28 @@ const possibleImages = [
     '/Minigame/18.png'
 ];
 
+const imageData = {
+    '/Minigame/earth_hot.png': "The Earth is getting hotter, take action!",
+    '/Minigame/Some_organize.png': "Let's organize everything perfectly!",
+    '/Minigame/1.png': "You solved the puzzle!",
+    '/Minigame/2.png': "Well done, another victory!",
+    '/Minigame/3.png': "Great job finding the differences!",
+    '/Minigame/4.png': "Amazing! You've completed the game!",
+    '/Minigame/5.png': "You're getting better at this!",
+    '/Minigame/6.png': "That was a tough one, but you did it!",
+    '/Minigame/7.png': "Excellent work!",
+    '/Minigame/8.png': "Keep going, you're doing great!",
+    '/Minigame/9.png': "Puzzle solved, well done!",
+    '/Minigame/10.png': "Another win in the books!",
+
+    '/Minigame/earth_hot_b.png': "โลกมันร้อนอะ แกร้อนไหม",
+    '/Minigame/earth_hot.png': "โลกมันร้อนอะ แกร้อนไหม",
+    '/Minigame/Some_organize.png': "ใครอยู่ในรูปก็ไม่รู้เหมือนกัน",
+    '/Minigame/Some_organize_b.png': "ใครอยู่ในรูปก็ไม่รู้เหมือนกัน",
+};
+
 let selectedImage = null;
+let image_finish = null
 const gridSize = 9; // 3x3
 const imagePositionsReal = [
     '0% 0%',
@@ -87,6 +121,9 @@ function imageSwapGame() {
     clearInterval(gameTimer);
     // Clear the game area
     const gameArea = document.querySelector('.minigame');
+
+    const selectedImage = getRandomImage();
+    image_finish = selectedImage;
     gameArea.innerHTML = '';
 
     gameArea.innerHTML = `
@@ -103,7 +140,7 @@ function imageSwapGame() {
 					<div class="image" data-index="8" style="background-position: 100% 100%;"></div>
 				</div>`
 
-    const selectedImage = getRandomImage();
+    
     document.querySelectorAll('.image').forEach((img, index) => {
         img.style.backgroundImage = `url(${selectedImage})`;
         img.style.backgroundPosition = imagePositionsReal[index];
@@ -156,7 +193,7 @@ function checkWinCondition() {
 
     if (isCorrect) {
         setTimeout(() => {
-            displayWinMessage();
+            showEndGamePopup(image_finish);
             disableImageSwapping();
         }, 1000);
     }
@@ -222,6 +259,7 @@ function spotTheDifferenceGame() {
     foundDifferencesCount = 0;
     const randomPair = imagePairs[Math.floor(Math.random() * imagePairs.length)];
     let total_diff = randomPair.differences.length;
+    selectedImage = randomPair.img1
 
     gameArea.innerHTML = '';
     
@@ -312,7 +350,7 @@ function markDifference(diff) {
 function checkWinCondition_dif() {
     if (foundDifferencesCount === currentDifferences.length) {
         setTimeout(() => {
-            document.getElementById('winMessage').classList.remove('hidden');
+            showEndGamePopup(selectedImage);
             const differenceMarkers = document.querySelectorAll('.difference');
             differenceMarkers.forEach(marker => marker.remove());
         }, 1000);
