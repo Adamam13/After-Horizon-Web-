@@ -701,16 +701,16 @@ video {
 .container-elec {
     display: grid;
     padding: 2%;
-    grid-template-columns: repeat(5, 100px);
-    grid-template-rows: repeat(2, 100px);
+    grid-template-columns: repeat(5, 80px);
+    grid-template-rows: repeat(2, 80px);
     gap: 10px;
     /* background-color: #2196f3; */
     border: 5px solid #F1FA49;
     border-collapse: collapse;
 }
 .button-elec{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     font-size: 24px;
     cursor: pointer;
     transition: background-color 0.5s ease;
