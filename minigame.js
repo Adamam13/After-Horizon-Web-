@@ -114,8 +114,6 @@ function imageSwapGame() {
     // Clear the game area
     const gameArea = document.querySelector('.minigame');
 
-    const selectedImage = getRandomImage();
-    image_finish = selectedImage;
     gameArea.innerHTML = '';
 
     gameArea.innerHTML = `
@@ -132,9 +130,10 @@ function imageSwapGame() {
 					<div class="image" data-index="8" style="background-position: 100% 100%;"></div>
 				</div>`
 
-    
+    const selectedImage = getRandomImage();
+    image_finish = selectedImage;
     document.querySelectorAll('.image').forEach((img, index) => {
-        img.style.backgroundImage = `url(${selectedImage})`;
+        img.style.backgroundImage = `url(${image_finish})`;
         img.style.backgroundPosition = imagePositionsReal[index];
         img.addEventListener('click', imageClickHandler);
         img.style.cursor = 'pointer';
@@ -143,9 +142,9 @@ function imageSwapGame() {
     initializeGameTimer(30);
 }
 
-document.querySelectorAll('.image').forEach(img => {
-    img.addEventListener('click', imageClickHandler);
-});
+// document.querySelectorAll('.image').forEach(img => {
+//     img.addEventListener('click', imageClickHandler);
+// });
 
 function imageClickHandler() {
     if (!selectedImage) {
@@ -251,7 +250,7 @@ function spotTheDifferenceGame() {
     foundDifferencesCount = 0;
     const randomPair = imagePairs[Math.floor(Math.random() * imagePairs.length)];
     let total_diff = randomPair.differences.length;
-    selectedImage = randomPair.img1
+    image_finish = randomPair.img1;
 
     gameArea.innerHTML = '';
     
@@ -350,7 +349,7 @@ function markDifference(diff) {
 function checkWinCondition_dif() {
     if (foundDifferencesCount === currentDifferences.length) {
         setTimeout(() => {
-            showEndGamePopup(selectedImage);
+            showEndGamePopup(image_finish);
             const differenceMarkers = document.querySelectorAll('.difference');
             differenceMarkers.forEach(marker => marker.remove());
         }, 1000);
