@@ -1,8 +1,8 @@
 const minigames = [
     // ไม่อยากเล่นเกมอะไรคอมเมนต์ออกเอานะ
-    // imageSwapGame,
+    imageSwapGame,
     spotTheDifferenceGame,
-    // separateTrash
+    separateTrash
 ];
 
 function getRandomMinigame() {
@@ -58,39 +58,31 @@ function showEndGamePopup(imageUrl) {
 
 
 const possibleImages = [
-    '/Minigame/earth_hot.png',
-    '/Minigame/Some_organize.png',
-    '/Minigame/1.png',
-    '/Minigame/2.png',
-    '/Minigame/3.png',
-    '/Minigame/4.png',
-    '/Minigame/5.png',
-    '/Minigame/6.png',
-    '/Minigame/7.png',
-    '/Minigame/8.png',
-    '/Minigame/9.png',
-    '/Minigame/10.png',
-    '/Minigame/18.png'
+    'Minigame/swap/swap_1.png',
+    'Minigame/swap/swap_2.png',
+    'Minigame/swap/swap_3.png',
+    'Minigame/swap/swap_4.png',
+    'Minigame/swap/swap_5.png',
+    'Minigame/swap/swap_6.png',
+    'Minigame/swap/swap_7.png',
+    'Minigame/swap/swap_8.png',
+    'Minigame/swap/swap_9.png',
+    'Minigame/swap/swap_10.png'
 ];
 
 const imageData = {
-    '/Minigame/earth_hot.png': "The Earth is getting hotter, take action!",
-    '/Minigame/Some_organize.png': "Let's organize everything perfectly!",
-    '/Minigame/1.png': "You solved the puzzle!",
-    '/Minigame/2.png': "Well done, another victory!",
-    '/Minigame/3.png': "Great job finding the differences!",
-    '/Minigame/4.png': "Amazing! You've completed the game!",
-    '/Minigame/5.png': "You're getting better at this!",
-    '/Minigame/6.png': "That was a tough one, but you did it!",
-    '/Minigame/7.png': "Excellent work!",
-    '/Minigame/8.png': "Keep going, you're doing great!",
-    '/Minigame/9.png': "Puzzle solved, well done!",
-    '/Minigame/10.png': "Another win in the books!",
-
-    '/Minigame/earth_hot_b.png': "โลกมันร้อนอะ แกร้อนไหม",
-    '/Minigame/earth_hot.png': "โลกมันร้อนอะ แกร้อนไหม",
-    '/Minigame/Some_organize.png': "ใครอยู่ในรูปก็ไม่รู้เหมือนกัน",
-    '/Minigame/Some_organize_b.png': "ใครอยู่ในรูปก็ไม่รู้เหมือนกัน",
+    // '/Minigame/earth_hot.png': "The Earth is getting hotter, take action!",
+    // '/Minigame/Some_organize.png': "Let's organize everything perfectly!",
+    'Minigame/swap/swap_1.png':"Daily plastic use exposes over 90% of marine animals to ocean plastic waste.", 
+    'Minigame/swap/swap_2.png':"Recycling materials like glass, plastic, and metal can reduce greenhouse gas emissions by up to 50% and significantly lower landfill waste.", 
+    'Minigame/swap/swap_3.png':"Chemical fertilizers release nitrous oxide, a greenhouse gas 300 times more potent than CO2, harming wildlife ecosystems. [FAO]", 
+    'Minigame/swap/swap_4.png':"Personal car use contributes 14% of global greenhouse gases, speeding Arctic ice melt by 13% per decade. [NASA]", 
+    'Minigame/swap/swap_5.png':"Personal car use contributes 14% of global greenhouse gases, shrinking wildlife habitats. [IPCC]", 
+    'Minigame/swap/swap_6.png':"The fast fashion industry accounts for 10% of global greenhouse gas emissions, threatening rare ecosystems and wildlife. [UNEP]", 
+    'Minigame/swap/swap_7.png':"Switching to LED lights saves up to 75% of energy compared to traditional bulbs and lasts much longer.", 
+    'Minigame/swap/swap_8.png':"Air conditioners emit CO2 and HFCs, accounting for about 10% of global energy-related greenhouse gas emissions.", 
+    'Minigame/swap/swap_9.png':"Deforestation accounts for about 10-15% of global greenhouse gas emissions, reducing the Earth's ability to store CO2.", 
+    'Minigame/swap/swap_10.png':"Oceans absorb 90% of greenhouse gas heat, rapidly increasing sea temperatures and destroying coral reefs and marine ecosystems."
 };
 
 let selectedImage = null;
@@ -290,21 +282,29 @@ function spotTheDifferenceGame() {
 
 const imagePairs = [
     { 
-        img1: '/Minigame/earth_hot_b.png', 
-        img2: '/Minigame/earth_hot.png',
+        img1: 'Minigame/diff/diff_1_1.PNG', 
+        img2: 'Minigame/diff/diff_1_2.PNG',
         differences: [
-            { x: 50, y: 70, width: 20, height: 20 },
-            { x: 10, y: 30, width: 10, height: 6 }
+            { x: 50, y: 49, width: 10, height: 10 },
+            { x: 83, y: 85, width: 10, height: 10 }
         ]
     },
     { 
-        img1: '/Minigame/Some_organize.png', 
-        img2: '/Minigame/Some_organize_b.png',
+        img1: 'Minigame/diff/diff_2_1.PNG', 
+        img2: 'Minigame/diff/diff_2_2.PNG',
         differences: [
-            { x: 55, y: 20, width: 10, height: 15 },
-            { x: 25, y: 85, width: 5, height: 5 }
+            { x: 50, y: 20, width: 10, height: 10 },
+            { x: 39, y: 71, width: 10, height: 10 }
         ]
-    }
+    },
+    // { 
+    //     img1: 'Minigame/diff/diff_3_1.PNG', 
+    //     img2: 'Minigame/diff/diff_3_2.PNG',
+    //     differences: [
+    //         { x: 26, y: 31, width: 10, height: 10 },
+    //         { x: 53, y: 33, width: 10, height: 10 }
+    //     ]
+    // },
 ];
 let currentDifferences = [];
 let foundDifferences = [];
@@ -373,18 +373,10 @@ function separateTrash() {
             </div>
             <div id="game-area">
                 <div id="bins">
-                    <div class="bin" data-type="organic">
-                        <div class="bin-label">Organic</div>
-                    </div>
-                    <div class="bin" data-type="recycle">
-                        <div class="bin-label">Recyclable</div>
-                    </div>
-                    <div class="bin" data-type="hazardous">
-                        <div class="bin-label">Hazardous</div>
-                    </div>
-                    <div class="bin" data-type="general">
-                        <div class="bin-label">General</div>
-                    </div>
+                    <div class="bin" data-type="organic"></div>
+                    <div class="bin" data-type="recycle"></div>
+                    <div class="bin" data-type="hazardous"></div>
+                    <div class="bin" data-type="general"></div>
                 </div>
             </div>
         </div>
