@@ -28,24 +28,24 @@
 		<!-- หน้าต่างยืนยันการใช้กุญแจ -->
 		<div class="window" id="unlock_confirmation" style="display:none;">
 			<div class="window-header">
-			<span>Use 1 key to unlock this file?</span>
+				<span>Use 1 key to unlock this file?</span>
 			</div>
 			<div class="window-body">
-			<div>
-				<button class="button"  onclick="useKey()">Yes, use key</button>
-				<button class="button"  onclick="closeWindow('unlock_confirmation')">No, cancel</button>
-			</div>
+				<div>
+					<button class="button" onclick="useKey()">Yes, use key</button>
+					<button class="button" onclick="closeWindow('unlock_confirmation')">No, cancel</button>
+				</div>
 			</div>
 		</div>
-  
+
 
 		<!-- Folder 1 -->
 		<div class="window" id="folder1">
 			<div class="window-header">
 				<button class="button" onclick="closeWindow('folder1')">
 					< Back</button>
-				<span>Folder 1</span>
-				<button class="button close" onclick="closeWindow('folder1')">X</button>
+						<span>Folder 1</span>
+						<button class="button close" onclick="closeWindow('folder1')">X</button>
 			</div>
 			<div class="window-body folder1-body">
 				<!-- icon file 1 -->
@@ -61,13 +61,15 @@
 					<div class="desktop_text">Plant 03</div>
 				</div>
 				<!-- icon file 3 -->
-				<div class="icon_wrapper">
-					<img class="icon" id="file_3" onclick="openFile('file-hint-PT', 'folder1')" alt="" src="/Icon/hint_new.png">
+				<!-- <div class="icon_wrapper">
+					<img class="icon" id="file_3" onclick="openFile('file-hint-PT', 'folder1')" alt=""
+						src="/Icon/hint_new.png">
 					<div class="desktop_text">MT:P</div>
-				</div>
+				</div> -->
 				<!-- icon file 4 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_3" onclick="openFile('file-part1', 'folder1')" alt="" src="/Icon/map_new.png">
+					<img class="icon" id="file_3" onclick="openFile('file-part1', 'folder1')" alt=""
+						src="/Icon/map_new.png">
 					<div class="desktop_text">Parts Map 01</div>
 				</div>
 				<!-- icon file 5 -->
@@ -75,6 +77,18 @@
 					<img class="icon" id="file_3" onclick="openFile('file-hint-Phum', 'folder1')" alt=""
 						src="/Icon/hint_new.png">
 					<div class="desktop_text">Note 1</div>
+				</div>
+				<!-- icon file 6 -->
+				<div class="icon_wrapper">
+					<img class="icon" id="file_3" onclick="openFile('file-part3', 'folder1')" alt=""
+						src="/Icon/map_new.png">
+					<div class="desktop_text">Parts Map 03</div>
+				</div>
+				<!-- icon file 7 -->
+				<div class="icon_wrapper">
+					<img class="icon" id="file_2" onclick="openFile('file-info-rice', 'folder1')" alt=""
+						src="/Icon/notes_new.png">
+					<div class="desktop_text">Plant 07</div>
 				</div>
 			</div>
 		</div>
@@ -95,13 +109,15 @@
 					<div class="desktop_text">Plant 04</div>
 				</div>
 				<!-- icon file 2 -->
-				<div class="icon_wrapper">
-					<img class="icon" id="file_2" onclick="openFile('file-hint-OT', 'folder2')" alt="" src="/Icon/hint_new.png">
+				<!-- <div class="icon_wrapper">
+					<img class="icon" id="file_2" onclick="openFile('file-hint-OT', 'folder2')" alt=""
+						src="/Icon/hint_new.png">
 					<div class="desktop_text">MT:O</div>
-				</div>
+				</div> -->
 				<!-- icon file 3 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_3" onclick="openFile('file-part2', 'folder2')" alt="" src="/Icon/map_new.png">
+					<img class="icon" id="file_3" onclick="openFile('file-part2', 'folder2')" alt=""
+						src="/Icon/map_new.png">
 					<div class="desktop_text">Parts Map 02</div>
 				</div>
 				<!-- icon file 4 -->
@@ -115,6 +131,11 @@
 					<img class="icon" id="file_5" onclick="openFile('file-hint-Water', 'folder2')" alt=""
 						src="/Icon/hint_new.png">
 					<div class="desktop_text">Note 2</div>
+				</div>
+				<!-- icon file 6 -->
+				<div class="icon_wrapper">
+					<img class="icon" id="file_3" onclick="openFile('file-part4', 'folder2')" alt="" src="/Icon/map_new.png">
+					<div class="desktop_text">Parts Map 04</div>
 				</div>
 			</div>
 		</div>
@@ -394,7 +415,7 @@
 						<button class="button close" onclick="closeWindow('file-part1')">X</button>
 			</div>
 			<div class="info">
-				<img class="info-img" style="width: 30%;" src="/info/soon.png">
+				<img class="info-img" style="width: 70%;" src="info/part_1.PNG">
 			</div>
 		</div>
 
@@ -403,26 +424,54 @@
 			<div class="window-header">
 				<button class="button" onclick="CnO_Window('file-part2', 'folder2')">
 					< Back </button>
-						<span>part1</span>
+						<span>part2</span>
 
 						<button class="button close" onclick="closeWindow('file-part2')">X</button>
 			</div>
 			<div class="info">
-				<img class="info-img" style="width: 30%;" src="/info/soon.png">
+				<img class="info-img" style="width: 70%;" src="info/part_2.PNG">
 			</div>
 		</div>
 
+		<!-- info file 18 -->
+		<div class="window" id="file-part3">
+			<div class="window-header">
+				<button class="button" onclick="CnO_Window('file-part3', 'folder2')">
+					< Back </button>
+						<span>part3</span>
+
+						<button class="button close" onclick="closeWindow('file-part3')">X</button>
+			</div>
+			<div class="info">
+				<img class="info-img" style="width: 70%;" src="info/part_3.PNG">
+			</div>
+		</div>
+
+		<!-- info file 19 -->
+		<div class="window" id="file-part4">
+			<div class="window-header">
+				<button class="button" onclick="CnO_Window('file-part4', 'folder2')">
+					< Back </button>
+						<span>part4</span>
+
+						<button class="button close" onclick="closeWindow('file-part4')">X</button>
+			</div>
+			<div class="info">
+				<img class="info-img" style="width: 70%;" src="info/part_4.PNG">
+			</div>
+		</div>
 		<!-- water_supply_enter_page -->
 		<div class="window" id="water_supply_enter_page" style="background-color: #dcffff; border: 5px solid #00FFFF;">
-			<div class="window-header" style="background-color: #00FFFF;"> 
+			<div class="window-header" style="background-color: #00FFFF;">
 				<div></div>
 				<span>Water Supply</span>
 				<button class="button close" onclick="closeWindow('water_supply_enter_page')">X</button>
 			</div>
 			<div class="enter_page" style="background-color: #151515;">
 				<img style="width: 15%;" src="/Icon/water_supply_icon _blue.png">
-				<div class="text_enter_page "style="color: #00FFFF;">Water Supply System</div>
-				<button class="enter_page_btn" onclick="CnO_Window('water_supply_enter_page', 'select_pipe')">Enter</button>
+				<div class="text_enter_page " style="color: #00FFFF;">Water Supply System</div>
+				<button class="enter_page_btn"
+					onclick="CnO_Window('water_supply_enter_page', 'select_pipe')">Enter</button>
 			</div>
 		</div>
 
@@ -496,7 +545,7 @@
 			</div>
 		</div>
 
-<!-- water_supply -->
+		<!-- water_supply -->
 		<div class="window" id="water_supply" style="background-color: #151515; border: 5px solid #00FFFF;">
 			<div class="window-header" style="background-color: #00FFFF;">
 				<button class="button" onclick="CnO_Window('water_supply', 'select_pipe')">
@@ -561,7 +610,8 @@
 			<div class="enter_page" style="background-color: #351b1b;">
 				<img style="width: 15%;" src="/Icon/lock_key_icon_orange.png">
 				<div class="text_enter_page" style="color:#e25519;">Key Unlock System</div>
-				<button class="enter_page_btn" id="enter_minigame" onclick="CnO_Window('lock_key' ,'minigame')">Enter</button>
+				<button class="enter_page_btn" id="enter_minigame"
+					onclick="CnO_Window('lock_key' ,'minigame')">Enter</button>
 			</div>
 		</div>
 
@@ -592,10 +642,10 @@
 			</div>
 			<div id="winMessage" class="win-message hidden">
 				<img id="win-image" src="" alt="End Game Image">
-    			<p id="win-text"></p>
+				<p id="win-text"></p>
 				<button id="nextGameButton" onclick="continue_Game()">Next Game</button>
 			</div>
-			
+
 		</div>
 
 		<!-- Electrical system -->
@@ -629,18 +679,28 @@
 					<div class="indicator" id="indicator4"></div>
 					<div class="indicator" id="indicator5"></div>
 				</div>
-				
+
 				<div class="container-elec">
-					<button id="btn1" class=" button-elec" onclick="handleClick(1)"><img style="width: 70%;" src="Icon/thunder_icon.png"></button>
-					<button id="btn2" class=" button-elec"onclick="handleClick(2)"><img style="width: 70%;" src="Icon/thunder_icon.png"></button>
-					<button id="btn3" class=" button-elec"onclick="handleClick(3)"><img style="width: 70%;" src="Icon/thunder_icon.png"></button>
-					<button id="btn4" class=" button-elec"onclick="handleClick(4)"><img style="width: 70%;" src="Icon/thunder_icon.png"></button>
-					<button id="btn5" class=" button-elec"onclick="handleClick(5)"><img style="width: 70%;" src="Icon/thunder_icon.png"></button>
-					<button id="btn6" class=" button-elec"onclick="handleClick(6)"><img style="width: 70%;" src="Icon/thunder_icon.png"></button>
-					<button id="btn7" class=" button-elec"onclick="handleClick(7)"><img style="width: 70%;" src="Icon/thunder_icon.png"></button>
-					<button id="btn8" class=" button-elec"onclick="handleClick(8)"><img style="width: 70%;" src="Icon/thunder_icon.png"></button>
-					<button id="btn9" class=" button-elec"onclick="handleClick(9)"><img style="width: 70%;" src="Icon/thunder_icon.png"></button>
-					<button id="btn10" class=" button-elec"onclick="handleClick(10)"><img style="width: 70%;" src="Icon/thunder_icon.png"></button>
+					<button id="btn1" class=" button-elec" onclick="handleClick(1)"><img style="width: 70%;"
+							src="Icon/thunder_icon.png"></button>
+					<button id="btn2" class=" button-elec" onclick="handleClick(2)"><img style="width: 70%;"
+							src="Icon/thunder_icon.png"></button>
+					<button id="btn3" class=" button-elec" onclick="handleClick(3)"><img style="width: 70%;"
+							src="Icon/thunder_icon.png"></button>
+					<button id="btn4" class=" button-elec" onclick="handleClick(4)"><img style="width: 70%;"
+							src="Icon/thunder_icon.png"></button>
+					<button id="btn5" class=" button-elec" onclick="handleClick(5)"><img style="width: 70%;"
+							src="Icon/thunder_icon.png"></button>
+					<button id="btn6" class=" button-elec" onclick="handleClick(6)"><img style="width: 70%;"
+							src="Icon/thunder_icon.png"></button>
+					<button id="btn7" class=" button-elec" onclick="handleClick(7)"><img style="width: 70%;"
+							src="Icon/thunder_icon.png"></button>
+					<button id="btn8" class=" button-elec" onclick="handleClick(8)"><img style="width: 70%;"
+							src="Icon/thunder_icon.png"></button>
+					<button id="btn9" class=" button-elec" onclick="handleClick(9)"><img style="width: 70%;"
+							src="Icon/thunder_icon.png"></button>
+					<button id="btn10" class=" button-elec" onclick="handleClick(10)"><img style="width: 70%;"
+							src="Icon/thunder_icon.png"></button>
 				</div>
 				<!-- <div id="message"></div> -->
 				<button id="resetButton" onclick="resetGame()">Reset</button>
@@ -670,7 +730,7 @@
 		<div class="group_main_file">
 			<div class="icon_wrapper">
 				<img class="icon" onclick="openWindow('lock_key')" alt="" src="/Icon/lock_key_icon_new.png">
-				<div class="desktop_text" >Key Unlock System</div>
+				<div class="desktop_text">Key Unlock System</div>
 			</div>
 			<div class="icon_wrapper">
 				<img class="icon" onclick="openWindow('electrical')" alt="" src="/Icon/electrical_icon_new.png">

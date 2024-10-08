@@ -71,18 +71,27 @@ const possibleImages = [
 ];
 
 const imageData = {
-    // '/Minigame/earth_hot.png': "The Earth is getting hotter, take action!",
-    // '/Minigame/Some_organize.png': "Let's organize everything perfectly!",
-    'Minigame/swap/swap_1.png':"Daily plastic use exposes over 90% of marine animals to ocean plastic waste.", 
-    'Minigame/swap/swap_2.png':"Recycling materials like glass, plastic, and metal can reduce greenhouse gas emissions by up to 50% and significantly lower landfill waste.", 
-    'Minigame/swap/swap_3.png':"Chemical fertilizers release nitrous oxide, a greenhouse gas 300 times more potent than CO2, harming wildlife ecosystems. [FAO]", 
-    'Minigame/swap/swap_4.png':"Personal car use contributes 14% of global greenhouse gases, speeding Arctic ice melt by 13% per decade. [NASA]", 
-    'Minigame/swap/swap_5.png':"Personal car use contributes 14% of global greenhouse gases, shrinking wildlife habitats. [IPCC]", 
-    'Minigame/swap/swap_6.png':"The fast fashion industry accounts for 10% of global greenhouse gas emissions, threatening rare ecosystems and wildlife. [UNEP]", 
-    'Minigame/swap/swap_7.png':"Switching to LED lights saves up to 75% of energy compared to traditional bulbs and lasts much longer.", 
-    'Minigame/swap/swap_8.png':"Air conditioners emit CO2 and HFCs, accounting for about 10% of global energy-related greenhouse gas emissions.", 
-    'Minigame/swap/swap_9.png':"Deforestation accounts for about 10-15% of global greenhouse gas emissions, reducing the Earth's ability to store CO2.", 
-    'Minigame/swap/swap_10.png':"Oceans absorb 90% of greenhouse gas heat, rapidly increasing sea temperatures and destroying coral reefs and marine ecosystems."
+    'Minigame/swap/swap_1.png': "Over 90% of marine animals are exposed to ocean plastic waste daily. [WWF]",
+    'Minigame/swap/swap_2.png': "Recycling glass, plastic, and metal can cut emissions by up to 50% and reduce landfill waste. [EPA]",
+    'Minigame/swap/swap_3.png': "Chemical fertilizers release nitrous oxide, a greenhouse gas 300 times stronger than CO2. [FAO]",
+    'Minigame/swap/swap_4.png': "Personal car use causes 14% of global emissions, accelerating Arctic ice melt by 13% per decade. [NASA]",
+    'Minigame/swap/swap_5.png': "Personal car use causes 14% of global emissions, shrinking wildlife habitats. [IPCC]",
+    'Minigame/swap/swap_6.png': "Fast fashion produces 10% of global emissions, endangering ecosystems. [UNEP]",
+    'Minigame/swap/swap_7.png': "LED lights save up to 75% of energy and last longer than traditional bulbs. [DOE]",
+    'Minigame/swap/swap_8.png': "Air conditioners emit CO2 and HFCs, responsible for 10% of energy-related emissions. [IEA]",
+    'Minigame/swap/swap_9.png': "Deforestation accounts for 10-15% of emissions, reducing CO2 storage capacity. [WWF]",
+    'Minigame/swap/swap_10.png': "Oceans absorb 90% of heat from emissions, raising sea temperatures and harming reefs. [NOAA]",
+    'Minigame/diff/diff_1_1.PNG': "30% of freshwater species have gone extinct in 100 years due to river pollution. [IUCN]",
+    'Minigame/diff/diff_2_1.PNG': "Global warming has reduced bird populations by 35% in some regions. [Audubon Society]",
+    'Minigame/diff/diff_3_1.PNG': "Toxic waste increases methane and nitrous oxide, contributing 3-5% of waste emissions. [UNEP]",
+    'Minigame/diff/diff_4_1.PNG': "Overfishing has reduced marine species populations by 40% in 40 years. [WWF]",
+    'Minigame/diff/diff_5_1.PNG': "Polar ice melt raises sea levels by 3.2 mm per year, endangering coastal areas. [NASA]",
+    'Minigame/diff/diff_6_1.PNG': "Climate change increases mosquito-borne disease risk by 25%. [WHO]",
+    'Minigame/diff/diff_7_1.PNG': "Chemical fertilizers release nitrous oxide, 300 times more potent than CO2. [FAO]",
+    'Minigame/diff/diff_8_1.PNG': "Unsorted organic waste releases methane, which traps much more heat than CO2. [EPA]",
+    'Minigame/diff/diff_9_1.PNG': "Water conservation can reduce energy use and emissions by 15%. [EPA]",
+    'Minigame/diff/diff_10_1.PNG': "Recycling paper reduces deforestation by 35%, helping mitigate global warming. [UNEP]",
+
 };
 
 let selectedImage = null;
@@ -208,7 +217,7 @@ function addKey() {
     const key = document.querySelector('.key_ea');
     let currentKeyCount = parseInt(key.textContent, 10);
     currentKeyCount++;
-    key.textContent = currentKeyCount;    
+    key.textContent = currentKeyCount;
 }
 
 
@@ -217,11 +226,11 @@ function displayWinMessage() {
     winMessageContainer.classList.remove('hidden');
 }
 
-function continue_Game(){
+function continue_Game() {
     const winMessageContainer = document.getElementById('winMessage');
     winMessageContainer.classList.add('hidden');
     const nextGame = getRandomMinigame();
-    
+
     remainingTime = 30;
     const timeDisplay = document.getElementById('gameTimerDisplay');
     timeDisplay.textContent = `Time left: ${remainingTime}s`;
@@ -253,7 +262,7 @@ function spotTheDifferenceGame() {
     image_finish = randomPair.img1;
 
     gameArea.innerHTML = '';
-    
+
     gameArea.innerHTML = `
     <h1 class="header-text">Find the ${total_diff} differences between the images!</h1>
     <div class="spot-the-difference-container">
@@ -268,11 +277,11 @@ function spotTheDifferenceGame() {
     document.getElementById('image_dif1').addEventListener('click', function (event) {
         detectClick(event, 'image_dif1');
     });
-    
+
     document.getElementById('image_dif2').addEventListener('click', function (event) {
         detectClick(event, 'image_dif2');
     });
-    
+
     document.getElementById('image_dif1').src = randomPair.img1;
     document.getElementById('image_dif2').src = randomPair.img2;
     currentDifferences = randomPair.differences;
@@ -280,30 +289,93 @@ function spotTheDifferenceGame() {
 }
 
 const imagePairs = [
-    { 
-        img1: 'Minigame/diff/diff_1_1.PNG', 
+    {
+        img1: 'Minigame/diff/diff_1_1.PNG',
         img2: 'Minigame/diff/diff_1_2.PNG',
         differences: [
             { x: 50, y: 49, width: 10, height: 10 },
             { x: 83, y: 85, width: 10, height: 10 }
         ]
     },
-    { 
-        img1: 'Minigame/diff/diff_2_1.PNG', 
+    {
+        img1: 'Minigame/diff/diff_2_1.PNG',
         img2: 'Minigame/diff/diff_2_2.PNG',
         differences: [
             { x: 50, y: 20, width: 10, height: 10 },
             { x: 39, y: 71, width: 10, height: 10 }
         ]
     },
-    // { 
-    //     img1: 'Minigame/diff/diff_3_1.PNG', 
-    //     img2: 'Minigame/diff/diff_3_2.PNG',
-    //     differences: [
-    //         { x: 26, y: 31, width: 10, height: 10 },
-    //         { x: 53, y: 33, width: 10, height: 10 }
-    //     ]
-    // },
+    {
+        img1: 'Minigame/diff/diff_3_1.PNG',
+        img2: 'Minigame/diff/diff_3_2.PNG',
+        differences: [
+            { x: 26, y: 31, width: 10, height: 10 },
+            { x: 51, y: 57, width: 10, height: 10 },
+            { x: 61, y: 83, width: 10, height: 10 },
+            { x: 53, y: 33, width: 10, height: 10 }
+        ]
+    },
+    {
+        img1: 'Minigame/diff/diff_4_1.PNG',
+        img2: 'Minigame/diff/diff_4_2.PNG',
+        differences: [
+            { x: 17, y: 65, width: 10, height: 10 },
+            { x: 35, y: 75, width: 10, height: 10 },
+            { x: 70, y: 81, width: 10, height: 10 }
+        ]
+    },
+    {
+        img1: 'Minigame/diff/diff_5_1.PNG',
+        img2: 'Minigame/diff/diff_5_2.PNG',
+        differences: [
+            { x: 10, y: 31, width: 10, height: 10 },
+            { x: 41, y: 46, width: 10, height: 10 },
+            { x: 37, y: 65, width: 10, height: 10 }
+        ]
+    },
+    {
+        img1: 'Minigame/diff/diff_6_1.PNG',
+        img2: 'Minigame/diff/diff_6_2.PNG',
+        differences: [
+            { x: 82, y: 11, width: 10, height: 10 },
+            { x: 14, y: 79, width: 10, height: 10 }
+        ]
+    },
+    {
+        img1: 'Minigame/diff/diff_7_1.PNG',
+        img2: 'Minigame/diff/diff_7_2.PNG',
+        differences: [
+            { x: 1, y: 46, width: 10, height: 10 },
+            { x: 27, y: 77, width: 10, height: 10 },
+            { x: 92, y: 27, width: 10, height: 10 }
+        ]
+    },
+    {
+        img1: 'Minigame/diff/diff_8_1.PNG',
+        img2: 'Minigame/diff/diff_8_2.PNG',
+        differences: [
+            { x: 80, y: 8, width: 10, height: 10 },
+            { x: 83, y: 26, width: 10, height: 10 }
+        ]
+    },
+    {
+        img1: 'Minigame/diff/diff_9_1.PNG',
+        img2: 'Minigame/diff/diff_9_2.PNG',
+        differences: [
+            { x: 21, y: 47, width: 10, height: 10 },
+            { x: 31, y: 35, width: 10, height: 10 },
+            { x: 60, y: 49, width: 10, height: 10 }
+        ]
+    },
+    {
+        img1: 'Minigame/diff/diff_10_1.PNG',
+        img2: 'Minigame/diff/diff_10_2.PNG',
+        differences: [
+            { x: 25, y: 55, width: 10, height: 10 },
+            { x: 49, y: 37, width: 10, height: 10 },
+            { x: 66, y: 31, width: 10, height: 10 }
+        ]
+    }
 ];
 let currentDifferences = [];
 let foundDifferences = [];
@@ -353,7 +425,7 @@ function checkWinCondition_dif() {
             const differenceMarkers = document.querySelectorAll('.difference');
             differenceMarkers.forEach(marker => marker.remove());
         }, 1000);
-        
+
     }
 }
 
@@ -442,7 +514,7 @@ function startGame() {
         'general_10.png': { width: 60, height: 60 },
         // เพิ่มชื่อขยะอื่น ๆ ตามไฟล์ภาพ
     };
-    
+
     // เริ่มการสร้างขยะ
     generateTrash();
 
@@ -458,7 +530,7 @@ function startGame() {
             let imageNumber = Math.floor(Math.random() * 10) + 1;
             let trashImageFile = `${type}_${imageNumber}.png`;
             trash.style.backgroundImage = `url(Minigame/trash/${trashImageFile})`;
-            
+
             trash.style.backgroundSize = 'contain';  // ปรับขนาดภาพให้พอดีกับพื้นที่
             trash.style.backgroundRepeat = 'no-repeat';  // ป้องกันการซ้ำของภาพ
             trash.style.backgroundPosition = 'center';  // จัดตำแหน่งภาพให้อยู่ตรงกลาง
@@ -494,25 +566,25 @@ function startGame() {
             }
         }
 
-        element.onmousedown = function(event) {
+        element.onmousedown = function (event) {
             shiftX = event.clientX - element.getBoundingClientRect().left;
             shiftY = event.clientY - element.getBoundingClientRect().top;
 
             element.style.position = 'absolute';
             element.style.zIndex = 1000;
 
-            document.onmousemove = function(event) {
+            document.onmousemove = function (event) {
                 moveAt(event.pageX, event.pageY);
             };
 
-            document.onmouseup = function() {
+            document.onmouseup = function () {
                 document.onmousemove = null;
                 document.onmouseup = null;
                 checkDrop(element);
             };
         };
 
-        element.ondragstart = function() {
+        element.ondragstart = function () {
             return false;
         };
     }
@@ -630,49 +702,49 @@ function startGame() {
             </div>
         `;
         gameArea.appendChild(messageDiv);
-    
+
         // สร้าง div สำหรับแสดงขยะในถังแต่ละประเภท
         let trashSummary = document.getElementById('trash-summary');
         trashSummary.innerHTML = ''; // ล้างรายการก่อนแสดงผลใหม่
-    
+
         // สลับขยะอันตรายกับขยะทั่วไป โดยขยะอันตราย (hazardous) อยู่ตารางที่ 3 และขยะทั่วไป (general) อยู่ตารางที่ 4
         let categories = ['organic', 'recycle', 'hazardous', 'general']; // สลับตำแหน่ง hazardous กับ general
-    
+
         categories.forEach(category => {
             // สร้าง div สำหรับถังขยะแต่ละประเภท
             let categoryDiv = document.createElement('div');
             categoryDiv.classList.add('trash-category');
             categoryDiv.style.position = 'relative'; // ทำให้ trash-category เป็น relative เพื่อให้ลูกเป็น absolute
-    
+
             let categoryTitle = document.createElement('h4');
             categoryTitle.textContent = getCategoryName(category); // ชื่อของประเภทขยะ
             categoryDiv.appendChild(categoryTitle);
-    
+
             // กรองขยะที่ถูกทิ้งในถังนี้ (ไม่ว่าถูกหรือผิด)
             let filteredTrash = droppedTrashHistory.filter(item => item.droppedIn === category);
-    
+
             filteredTrash.forEach(item => {
                 let trashWrapper = document.createElement('div');
                 trashWrapper.style.position = 'relative'; // ต้องการให้ตำแหน่งนี้เป็น relative สำหรับการวางกากบาท
-    
+
                 let trashImage = document.createElement('img');
                 trashImage.src = `Minigame/trash/${item.imageFile}`; // ใช้ชื่อไฟล์ที่เก็บไว้แสดงภาพขยะ
                 trashImage.style.width = '70px'; // ขนาดภาพขยะ
                 trashImage.style.height = '70px'; // ขนาดภาพขยะ
                 trashImage.title = item.trashName; // ใช้ title เพื่อแสดงชื่อขยะเมื่อ hover
-    
+
                 trashWrapper.appendChild(trashImage);
-    
+
                 // ถ้าขยะถูกทิ้งผิดประเภท แสดงเครื่องหมายกากบาท
                 if (!item.isCorrect) {
                     let cross = document.createElement('div');
                     cross.classList.add('cross'); // ใช้คลาส cross ที่กำหนดไว้ด้านบน
                     trashWrapper.appendChild(cross);
                 }
-    
+
                 categoryDiv.appendChild(trashWrapper); // เพิ่ม trashWrapper ใน categoryDiv
             });
-    
+
             trashSummary.appendChild(categoryDiv); // เพิ่มประเภทขยะในตาราง
         });
     }

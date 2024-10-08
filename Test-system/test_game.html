@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <title>เกมแยกขยะ</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            -webkit-user-select: none;
+            /* Safari */
+            -moz-user-select: none;
+            /* Firefox */
+            -ms-user-select: none;
+            /* Internet Explorer/Edge */
+            user-select: none;
+            /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+        }
+
+        /* กรอบสี่เหลี่ยมรอบเกม */
+        #game-container {
+            width: 850px;
+            margin: 0 auto;
+            border: 5px solid #000;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        #summary.popup {
+            display: none;
+            /* เริ่มต้นจะไม่แสดง popup */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            background-color: white;
+            padding: 20px;
+            border: 2px solid #000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .popup-content {
+            text-align: center;
+        }
+
+        #game-area {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            background-color: #f0f0f0;
+            overflow: hidden;
+            z-index: 1;
+            /* ให้แน่ใจว่าเกมอยู่ด้านหลัง popup */
+        }
+
+        .trash {
+            position: absolute;
+            width: 70px;
+            /* เพิ่มขนาดของไอเทม */
+            height: 70px;
+            /* เพิ่มขนาดของไอเทม */
+            cursor: move;
+        }
+
+        #bins {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .bin {
+            width: 50%;
+            height: 150px;
+            /* border: 2px solid #000;
+            background-color: #ddd; */
+            text-align: center;
+            padding-top: 10px;
+            box-sizing: border-box;
+        }
+
+        #score-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        #score-label {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+
+        #score-progress {
+            width: 300px;
+            height: 24px;
+            appearance: none;
+            -webkit-appearance: none;
+            background-color: #ddd;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        #keys-earned-text {
+            font-size: 20px;
+            margin-top: 5px;
+        }
+
+        #timer {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+
+        /* กำหนดรูปภาพให้กับกุญแจ */
+        .key {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-image: url('key.png');
+            background-size: cover;
+            margin: 5px;
+        }
+
+        .bin[data-type="organic"] {
+            background-image: url('Minigame/trash/bin_organic.png');
+            background-size: cover;
+        }
+
+        .bin[data-type="recycle"] {
+            background-image: url('Minigame/trash/bin_recycle.png');
+            background-size: cover;
+        }
+
+        .bin[data-type="hazardous"] {
+            background-image: url('Minigame/trash/bin_hazardous.png');
+            background-size: cover;
+        }
+
+        .bin[data-type="general"] {
+            background-image: url('Minigame/trash/bin_general.png');
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="game-container">
+        <h1>เกมแยกขยะ</h1>
+        <div id="score-container">
+            <div id="score-label">คะแนน:</div>
+            <progress id="score-progress" value="0" max="30"></progress>
+        </div>
+        <div id="keys-earned-text">กุญแจสะสม: 0 ดอก</div>
+        <div id="timer">เวลา: 30 วินาที</div>
+        <div id="game-area">
+            <div id="bins">
+                <div class="bin" data-type="organic">ขยะอินทรีย์</div>
+                <div class="bin" data-type="recycle">ขยะรีไซเคิล</div>
+                <div class="bin" data-type="hazardous">ขยะอันตราย</div>
+                <div class="bin" data-type="general">ขยะทั่วไป</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="summary" class="popup">
+        <div class="popup-content">
+            <h2>สรุปผล</h2>
+            <p id="final-score"></p>
+            <p id="keys-earned"></p>
+            <button onclick="location.reload()">เล่นอีกครั้ง</button>
+        </div>
+    </div>
+
+
+    <script>
+        let score = 0;
+        let timeLeft = 30;
+        let timerId;
+        let trashTypes = ['organic', 'recycle', 'hazardous', 'general'];
+        let gameArea = document.getElementById('game-area');
+        let keys = 0;
+        document.addEventListener('contextmenu', function (event) {
+            event.preventDefault();
+        });
+        function startGame() {
+            timerId = setInterval(countdown, 1000);
+            generateTrash();
+        }
+
+        function countdown() {
+            if (timeLeft == 0) {
+                clearInterval(timerId);
+                endGame();
+            } else {
+                document.getElementById('timer').textContent = 'เวลา: ' + timeLeft + ' วินาที';
+                timeLeft--;
+            }
+        }
+
+        function generateTrash() {
+            if (timeLeft > 0) {
+                let trash = document.createElement('div');
+                trash.classList.add('trash');
+                let type = trashTypes[Math.floor(Math.random() * trashTypes.length)];
+                trash.dataset.type = type;
+                trash.style.top = Math.random() * 400 + 'px';
+                trash.style.left = Math.random() * 730 + 'px'; /* ปรับขนาดเพื่อให้พอดีกับขนาดใหม่ */
+                // สุ่มเลือกรูปภาพจาก 1 ถึง 10
+                let imageNumber = Math.floor(Math.random() * 10) + 1;
+                trash.style.backgroundImage = 'url(Minigame/trash/' + type + '_' + imageNumber + '.png)';
+                trash.style.backgroundSize = 'cover';
+                gameArea.appendChild(trash);
+
+                makeDraggable(trash);
+
+                setTimeout(generateTrash, 1000);
+            }
+        }
+
+        function makeDraggable(element) {
+            let shiftX, shiftY;
+
+            function moveAt(clientX, clientY) {
+                const gameAreaRect = gameArea.getBoundingClientRect();
+                const newLeft = clientX - shiftX - gameAreaRect.left;
+                const newTop = clientY - shiftY - gameAreaRect.top;
+
+                // ตรวจสอบว่าตำแหน่งใหม่ไม่เกินขอบเขตของ gameArea
+                if (newLeft >= 0 && newLeft + element.offsetWidth <= gameAreaRect.width) {
+                    element.style.left = newLeft + 'px';
+                }
+                if (newTop >= 0 && newTop + element.offsetHeight <= gameAreaRect.height) {
+                    element.style.top = newTop + 'px';
+                }
+            }
+
+            function onMouseMove(event) {
+                moveAt(event.clientX, event.clientY);
+            }
+
+
+            function onMouseUp() {
+                document.removeEventListener('mousemove', onMouseMove);
+                document.removeEventListener('mouseup', onMouseUp);
+                checkDrop(element);
+            }
+
+            element.onmousedown = function (event) {
+                shiftX = event.clientX - element.getBoundingClientRect().left;
+                shiftY = event.clientY - element.getBoundingClientRect().top;
+
+                element.style.position = 'absolute';
+                element.style.zIndex = 1000;
+                moveAt(event.pageX, event.pageY);
+
+                document.addEventListener('mousemove', onMouseMove);
+                document.addEventListener('mouseup', onMouseUp);
+            };
+
+            element.ondragstart = function () {
+                return false;
+            };
+        }
+
+        function checkDrop(trash) {
+            let bins = document.querySelectorAll('.bin');
+            let trashRect = trash.getBoundingClientRect();
+
+            bins.forEach(bin => {
+                let binRect = bin.getBoundingClientRect();
+                if (trashRect.right > binRect.left && trashRect.left < binRect.right &&
+                    trashRect.bottom > binRect.top && trashRect.top < binRect.bottom) {
+                    if (trash.dataset.type === bin.dataset.type) {
+                        score += 5;
+                    } else {
+                        score -= 1;
+                    }
+                    updateScore();
+                    trash.remove();
+                }
+            });
+        }
+
+        function updateScore() {
+            // Update progress bar
+            let progressBar = document.getElementById('score-progress');
+            progressBar.value = score % 30;
+            if (progressBar.value > progressBar.max) {
+                progressBar.value = progressBar.max;
+            }
+
+            // Update keys earned
+            if (score >= 90) {
+                keys = 3;
+            } else if (score >= 60) {
+                keys = 2;
+            } else if (score >= 30) {
+                keys = 1;
+            } else {
+                keys = 0;
+            }
+
+            document.getElementById('keys-earned-text').textContent = `กุญแจสะสม: ${keys} ดอก`;
+        }
+
+        function endGame() {
+            const summaryPopup = document.getElementById('summary');
+            summaryPopup.style.display = 'block'; // แสดง popup
+
+            document.getElementById('final-score').textContent = 'คะแนนสุดท้ายของคุณคือ: ' + score;
+
+            let keysEarned = document.getElementById('keys-earned');
+            keysEarned.innerHTML = 'คุณได้รับกุญแจจำนวน: ' + keys + ' ดอก<br>';
+
+            // แสดงรูปกุญแจ
+            for (let i = 0; i < keys; i++) {
+                let keyIcon = document.createElement('div');
+                keyIcon.classList.add('key');
+                keysEarned.appendChild(keyIcon);
+            }
+        }
+
+
+        function countdown() {
+            const timerElement = document.getElementById('timer');
+            const gameArea = document.getElementById('game-area');
+
+            if (timeLeft <= 7) {
+                if (timeLeft % 2 === 0) {
+                    gameArea.style.backgroundColor = 'red';
+                } else {
+                    gameArea.style.backgroundColor = '';
+                }
+            } else {
+                gameArea.style.backgroundColor = ''; // คืนค่าสีปกติ
+            }
+
+            if (timeLeft == 0) {
+                clearInterval(timerId);
+                endGame();
+            } else {
+                timerElement.textContent = 'เวลา: ' + timeLeft + ' วินาที';
+                timeLeft--;
+            }
+        }
+
+
+
+        startGame();
+    </script>
+
+</body>
+
+</html>

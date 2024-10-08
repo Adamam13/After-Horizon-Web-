@@ -98,6 +98,14 @@ span{
     gap: 10%;
 }
 
+/* .icon_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+} */
 .desktop_text {
     font-size: 1.7vw;
     font-family: Inter;
@@ -226,7 +234,8 @@ span{
 .window-header {
     background-color: #ffffff;
     color: #000000;
-    padding: 10px;
+    padding: 20px;
+    top: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -236,12 +245,11 @@ span{
 }
 
 .window-body {
-    /* background-color: #FFF9DC; */
     padding: 20px;
     flex: 1;
     position: absolute;
     display: flex;
-    width: 70%;
+    width: 90%;
     height: 15%;
     top: 15%;
     align-content: center;
@@ -249,6 +257,16 @@ span{
     text-align: center;
 
 }
+
+/* .window-body {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    padding: 20px;
+    align-content: center;
+    object-fit: cover;
+    text-align: center;
+} */
 
 .window-footer {
     display: flex;
