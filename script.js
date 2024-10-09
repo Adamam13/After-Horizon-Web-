@@ -214,6 +214,8 @@ let lockedFiles = {
     'file-hint-PT': true,
     'file-part1': true,
     'file-hint-Phum': true,
+    'file-part3': true,
+    'file-info-rice': true,
 
     //folder2
     'file-info-pumpkin': true,
@@ -221,6 +223,7 @@ let lockedFiles = {
     'file-part2': true,
     'file-info-radish': true,
     'file-hint-Water': true,
+    'file-part4' : true,
 
     //readme
     'file-info-elec': false,
