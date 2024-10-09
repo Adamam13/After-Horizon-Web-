@@ -166,10 +166,11 @@
 /* CSS for the timer container */
 .timer-container {
     width: 100%;
-    height: 8%;
+    height: 5%;
     background-color: #f3f3f3; /* พื้นหลังโปรเกรส */
     overflow: hidden;
-    
+    position: absolute;
+    bottom: 0%;
 }
 
 #gameTimerDisplay {
@@ -276,6 +277,8 @@
 #score-progress {
     width: 80%; /* ขนาด progress bar */
     height: 24px;
+    position: absolute;
+    top: 6%;
 }
 
 #timer {
