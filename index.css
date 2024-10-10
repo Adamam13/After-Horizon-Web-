@@ -861,3 +861,34 @@ button{
 #unlock_confirmation .window-body .button:last-child:hover {
     color: #f44336;
 }
+
+
+/* จัดการทุกหน้าจอให้เต็มจอ */
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+}
+
+.menu-title, .summary-title {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.menu-button, .summary-button {
+    padding: 15px 30px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+.menu-button:hover, .summary-button:hover {
+    background-color: #45a049;
+}

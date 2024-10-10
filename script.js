@@ -270,6 +270,46 @@ function openFile(fileId, folderId) {
 }
 
 
+
+function showMenu() {
+    document.getElementById('menu-page').classList.remove('hidden');
+    document.getElementById('game-page').classList.add('hidden');
+    document.getElementById('summary-page').classList.add('hidden');
+}
+
+function startGame() {
+    document.getElementById('menu-page').classList.add('hidden');
+    document.getElementById('summary-page').classList.add('hidden');
+    document.getElementById('game-page').classList.remove('hidden');
+}
+
+function showSummary() {
+    document.getElementById('menu-page').classList.add('hidden');
+    document.getElementById('game-page').classList.add('hidden');
+    document.getElementById('summary-page').classList.remove('hidden');
+}
+
+function showThank() {
+    document.getElementById('menu-page').classList.add('hidden');
+    document.getElementById('game-page').classList.add('hidden');
+    document.getElementById('summary-page').classList.add('hidden');
+    document.getElementById('thankyou-page').classList.remove('hidden');
+}
+
+function check_nextDay_code(){
+    if (document.getElementById('code1').value == 5 && document.getElementById('code2').value == 0){
+        showThank();
+    }
+}
+
+
+document.getElementById('start-game-button').addEventListener('click', startGame);
+
+document.getElementById('close').addEventListener('click', showSummary);
+
+document.getElementById('continue-button').addEventListener('click', check_nextDay_code);
+document.getElementById('back-button').addEventListener('click', startGame);
+
 //random file **not now**
 
 // function shuffleArray(array) {
@@ -301,3 +341,51 @@ function openFile(fileId, folderId) {
 // window.onload = function() {
 //     shuffleFolders();
 // };
+
+
+function up_num(id) {
+    let inputBox = document.getElementById(id);
+    let value = parseInt(inputBox.value);
+    if (value < 9) {
+        inputBox.value = value + 1;
+    }
+}
+
+function down_num(id) {
+    let inputBox = document.getElementById(id);
+    let value = parseInt(inputBox.value);
+    if (value > 0) {
+        inputBox.value = value - 1;
+    }
+}
+
+function up_num_entry(id) {
+    let inputBox = document.getElementById(id);
+    let value = parseInt(inputBox.value);
+    if (value < 9) {
+        inputBox.value = value + 1;
+        check_entry()
+    }
+}
+
+function down_num_entry(id) {
+    let inputBox = document.getElementById(id);
+    let value = parseInt(inputBox.value);
+    if (value > 0) {
+        inputBox.value = value - 1;
+        check_entry()
+    }
+}
+
+function check_entry(){
+    if (document.getElementById('code1_entry').value == 5 && document.getElementById('code2_entry').value == 0){
+        document.getElementById('start-game-button').classList.remove('hidden');
+        document.getElementById('code3_entry').value = '4';
+        document.getElementById('code4_entry').value = '8';
+    }
+    else {
+        document.getElementById('start-game-button').classList.add('hidden');
+        document.getElementById('code3_entry').value = '?';
+        document.getElementById('code4_entry').value = '?';
+    }
+}
