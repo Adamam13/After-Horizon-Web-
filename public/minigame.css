@@ -1,0 +1,359 @@
+.minigame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.header-text {
+    position: absolute;
+    top: 10%;
+    color: white;
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    font-size: 2em;
+}
+
+
+/* Container for the image grid */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    padding: 0;
+    gap: 0;
+    width: 21vw;
+    height: 21vw;
+    margin-top: 4%;
+    position: relative;
+    border: 4px solid #aaa;
+    border-radius: 12px; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+/* Styling for each image */
+.image {
+    width: 100%;
+    height: 100%;
+    background-image: url('Minigame/Some_organize.png');
+    background-size: 300% 300%; /* Adjust size for a 3x3 grid */
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 0;
+}
+
+/* Hover effect for each image */
+.image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Highlight the selected image */
+.image.selected {
+    box-shadow: 0 0 0 3px #ff0000 inset;
+    transform: scale(1.05);
+}
+
+/* win-message */
+.win-message {
+    position: fixed;
+    width: 50%;
+    height: 70%;
+    background-color: #272727;
+    color: #fff;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+.win-message img {
+    width: 50%;
+    height: 50%;
+    margin-bottom: 10px;
+}
+
+.win-message p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.win-message button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.win-message button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.win-message button:active {
+    background-color: #45a049;
+    transform: scale(0.95);
+}
+
+.hidden {
+    display: none;
+}
+
+.spot-the-difference-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.image-container {
+    position: relative;
+    border: 3px solid #e25519;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    top: 10%;
+    max-width: 70%;
+    /* width: 400px; */
+    max-height: 70%;
+}
+
+.image_dif {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* Highlight found differences */
+.difference {
+    position: absolute;
+    border: 5px solid #ff0000;
+    background-color: rgba(255, 0, 0, 0.3);
+    pointer-events: none;
+    animation: pulse 1s;
+}
+
+/* Pulse animation to make the difference markers stand out */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+    }
+    50% {
+        transform: scale(1.1); /* Slight zoom in for effect */
+        box-shadow: 0 0 20px rgba(255, 0, 0, 1); /* Increase glow intensity */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+/* CSS for the timer container */
+.timer-container {
+    width: 100%;
+    height: 5%;
+    background-color: #f3f3f3; /* พื้นหลังโปรเกรส */
+    overflow: hidden;
+    position: absolute;
+    bottom: 0%;
+}
+
+#gameTimerDisplay {
+    width: 100%;
+    border-radius: 5px;
+    position: absolute;
+    overflow: hidden;
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    font-size: 1.75em;
+    margin-left: 2%;
+}
+
+#time-bar {
+    height: 100%;
+    background-color: #4caf50; /* สีของ Progress Bar */
+    width: 100%; /* เริ่มต้นที่ 100% */
+    animation: reduceTime linear forwards;
+}
+
+@keyframes reduceTime {
+    from {
+        width: 100%; /* เริ่มต้นที่เต็ม */
+    }
+    to {
+        width: 0%; /* จบที่ 0% */
+    }
+}
+
+
+@keyframes flash {
+    0% { background-color: #4caf50; }
+    50% { background-color: #e74c3c; }
+    100% { background-color: #4caf50; }
+}
+
+/* separateTrash */
+
+.bin {
+    width: 50%;
+    height: 150px;
+    text-align: center;
+    padding-top: 10px;
+    background-size: cover;
+}
+
+.bin[data-type="organic"] {
+    background-image: url('Minigame/trash/bin_organic.png');
+}
+
+.bin[data-type="recycle"] {
+    background-image: url('Minigame/trash/bin_recycle.png');
+}
+
+.bin[data-type="hazardous"] {
+    background-image: url('Minigame/trash/bin_hazardous.png');
+}
+
+.bin[data-type="general"] {
+    background-image: url('Minigame/trash/bin_general.png');
+}
+
+#game-container {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden; /* ป้องกันการเลื่อนออกนอกขอบเขต */
+}
+
+#game-area {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden; /* ป้องกันการเลื่อนออกนอกขอบเขต */
+}
+
+.trash {
+    position: absolute;
+    width: 20%; /* ขนาดที่เหมาะสมของ trash */
+    height: 20%;
+    cursor: move;
+    background-size: contain; /* ปรับขนาดภาพให้พอดีกับขอบเขตของ div */
+    background-repeat: no-repeat; /* ป้องกันการซ้ำของภาพ */
+    background-position: center; /* จัดตำแหน่งภาพให้อยู่ตรงกลาง */
+}
+
+
+#bins {
+    display: flex;
+    justify-content: space-between; /* กระจายถังขยะให้ทั่วพื้นที่ */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#score-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#score-progress {
+    width: 80%; /* ขนาด progress bar */
+    height: 24px;
+    position: absolute;
+    top: 10%;
+}
+
+#timer {
+    font-size: 2vw; /* ปรับขนาดตัวจับเวลา */
+    margin-bottom: 10px;
+}
+
+.bin-label {
+    position: absolute;
+    bottom: 20%;
+    transform: translateX(45%);
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.trash-summary-horizontal {
+    display: flex;
+    flex-direction: column;
+    /* จัดประเภทขยะในแนวนอน */
+    gap: 10px;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+}
+
+.trash-category {
+    display: flex;
+    align-items: center;
+    border: 2px solid #000;
+    border-radius: 5px;
+    position: relative;
+    width: 100%;
+    height: 25%;
+    overflow-x: hidden;
+}
+
+.trash-category h4 {
+    flex-shrink: 0;
+    width: 200px;
+}
+
+.trash-category img {
+    width: 5%;
+    height: 5%;
+    margin: 5px;
+    position: relative;
+}
+
+.cross {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 90%;
+    background-image: url('Minigame/trash/cross.png');
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+.popup-content {
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
