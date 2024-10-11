@@ -25,10 +25,10 @@ function CnO_Window(id_close, id_open){
 }
 
 const pipeList = [
-    '/pipe/pipe1.png',
-    '/pipe/pipe2.png',
-    '/pipe/pipe3.png',
-    '/pipe/pipe4.png'
+    'pipe/pipe1.png',
+    'pipe/pipe2.png',
+    'pipe/pipe3.png',
+    'pipe/pipe4.png'
 ];
 
 const pipe_line_up = [2, 3, 2,

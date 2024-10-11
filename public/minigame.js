@@ -58,39 +58,39 @@ function showEndGamePopup(imageUrl) {
 
 
 const possibleImages = [
-    '/Minigame/swap/swap_1.png',
-    '/Minigame/swap/swap_2.png',
-    '/Minigame/swap/swap_3.png',
-    '/Minigame/swap/swap_4.png',
-    '/Minigame/swap/swap_5.png',
-    '/Minigame/swap/swap_6.png',
-    '/Minigame/swap/swap_7.png',
-    '/Minigame/swap/swap_8.png',
-    '/Minigame/swap/swap_9.png',
-    '/Minigame/swap/swap_10.png'
+    'Minigame/swap/swap_1.png',
+    'Minigame/swap/swap_2.png',
+    'Minigame/swap/swap_3.png',
+    'Minigame/swap/swap_4.png',
+    'Minigame/swap/swap_5.png',
+    'Minigame/swap/swap_6.png',
+    'Minigame/swap/swap_7.png',
+    'Minigame/swap/swap_8.png',
+    'Minigame/swap/swap_9.png',
+    'Minigame/swap/swap_10.png'
 ];
 
 const imageData = {
-    '/Minigame/swap/swap_1.png': "Over 90% of marine animals are exposed to ocean plastic waste daily. [WWF]",
-    '/Minigame/swap/swap_2.png': "Recycling glass, plastic, and metal can cut emissions by up to 50% and reduce landfill waste. [EPA]",
-    '/Minigame/swap/swap_3.png': "Chemical fertilizers release nitrous oxide, a greenhouse gas 300 times stronger than CO2. [FAO]",
-    '/Minigame/swap/swap_4.png': "Personal car use causes 14% of global emissions, accelerating Arctic ice melt by 13% per decade. [NASA]",
-    '/Minigame/swap/swap_5.png': "Personal car use causes 14% of global emissions, shrinking wildlife habitats. [IPCC]",
-    '/Minigame/swap/swap_6.png': "Fast fashion produces 10% of global emissions, endangering ecosystems. [UNEP]",
-    '/Minigame/swap/swap_7.png': "LED lights save up to 75% of energy and last longer than traditional bulbs. [DOE]",
-    '/Minigame/swap/swap_8.png': "Air conditioners emit CO2 and HFCs, responsible for 10% of energy-related emissions. [IEA]",
-    '/Minigame/swap/swap_9.png': "Deforestation accounts for 10-15% of emissions, reducing CO2 storage capacity. [WWF]",
-    '/Minigame/swap/swap_10.png': "Oceans absorb 90% of heat from emissions, raising sea temperatures and harming reefs. [NOAA]",
-    '/Minigame/diff/diff_1_1.PNG': "30% of freshwater species have gone extinct in 100 years due to river pollution. [IUCN]",
-    '/Minigame/diff/diff_2_1.PNG': "Global warming has reduced bird populations by 35% in some regions. [Audubon Society]",
-    '/Minigame/diff/diff_3_1.PNG': "Toxic waste increases methane and nitrous oxide, contributing 3-5% of waste emissions. [UNEP]",
-    '/Minigame/diff/diff_4_1.PNG': "Overfishing has reduced marine species populations by 40% in 40 years. [WWF]",
-    '/Minigame/diff/diff_5_1.PNG': "Polar ice melt raises sea levels by 3.2 mm per year, endangering coastal areas. [NASA]",
-    '/Minigame/diff/diff_6_1.PNG': "Climate change increases mosquito-borne disease risk by 25%. [WHO]",
-    '/Minigame/diff/diff_7_1.PNG': "Chemical fertilizers release nitrous oxide, 300 times more potent than CO2. [FAO]",
-    '/Minigame/diff/diff_8_1.PNG': "Unsorted organic waste releases methane, which traps much more heat than CO2. [EPA]",
-    '/Minigame/diff/diff_9_1.PNG': "Water conservation can reduce energy use and emissions by 15%. [EPA]",
-    '/Minigame/diff/diff_10_1.PNG': "Recycling paper reduces deforestation by 35%, helping mitigate global warming. [UNEP]",
+    'Minigame/swap/swap_1.png': "Over 90% of marine animals are exposed to ocean plastic waste daily. [WWF]",
+    'Minigame/swap/swap_2.png': "Recycling glass, plastic, and metal can cut emissions by up to 50% and reduce landfill waste. [EPA]",
+    'Minigame/swap/swap_3.png': "Chemical fertilizers release nitrous oxide, a greenhouse gas 300 times stronger than CO2. [FAO]",
+    'Minigame/swap/swap_4.png': "Personal car use causes 14% of global emissions, accelerating Arctic ice melt by 13% per decade. [NASA]",
+    'Minigame/swap/swap_5.png': "Personal car use causes 14% of global emissions, shrinking wildlife habitats. [IPCC]",
+    'Minigame/swap/swap_6.png': "Fast fashion produces 10% of global emissions, endangering ecosystems. [UNEP]",
+    'Minigame/swap/swap_7.png': "LED lights save up to 75% of energy and last longer than traditional bulbs. [DOE]",
+    'Minigame/swap/swap_8.png': "Air conditioners emit CO2 and HFCs, responsible for 10% of energy-related emissions. [IEA]",
+    'Minigame/swap/swap_9.png': "Deforestation accounts for 10-15% of emissions, reducing CO2 storage capacity. [WWF]",
+    'Minigame/swap/swap_10.png': "Oceans absorb 90% of heat from emissions, raising sea temperatures and harming reefs. [NOAA]",
+    'Minigame/diff/diff_1_1.PNG': "30% of freshwater species have gone extinct in 100 years due to river pollution. [IUCN]",
+    'Minigame/diff/diff_2_1.PNG': "Global warming has reduced bird populations by 35% in some regions. [Audubon Society]",
+    'Minigame/diff/diff_3_1.PNG': "Toxic waste increases methane and nitrous oxide, contributing 3-5% of waste emissions. [UNEP]",
+    'Minigame/diff/diff_4_1.PNG': "Overfishing has reduced marine species populations by 40% in 40 years. [WWF]",
+    'Minigame/diff/diff_5_1.PNG': "Polar ice melt raises sea levels by 3.2 mm per year, endangering coastal areas. [NASA]",
+    'Minigame/diff/diff_6_1.PNG': "Climate change increases mosquito-borne disease risk by 25%. [WHO]",
+    'Minigame/diff/diff_7_1.PNG': "Chemical fertilizers release nitrous oxide, 300 times more potent than CO2. [FAO]",
+    'Minigame/diff/diff_8_1.PNG': "Unsorted organic waste releases methane, which traps much more heat than CO2. [EPA]",
+    'Minigame/diff/diff_9_1.PNG': "Water conservation can reduce energy use and emissions by 15%. [EPA]",
+    'Minigame/diff/diff_10_1.PNG': "Recycling paper reduces deforestation by 35%, helping mitigate global warming. [UNEP]",
 
 };
 
@@ -290,24 +290,24 @@ function spotTheDifferenceGame() {
 
 const imagePairs = [
     {
-        img1: '/Minigame/diff/diff_1_1.PNG',
-        img2: '/Minigame/diff/diff_1_2.PNG',
+        img1: 'Minigame/diff/diff_1_1.PNG',
+        img2: 'Minigame/diff/diff_1_2.PNG',
         differences: [
             { x: 50, y: 49, width: 10, height: 10 },
             { x: 83, y: 85, width: 10, height: 10 }
         ]
     },
     {
-        img1: '/Minigame/diff/diff_2_1.PNG',
-        img2: '/Minigame/diff/diff_2_2.PNG',
+        img1: 'Minigame/diff/diff_2_1.PNG',
+        img2: 'Minigame/diff/diff_2_2.PNG',
         differences: [
             { x: 50, y: 20, width: 10, height: 10 },
             { x: 39, y: 71, width: 10, height: 10 }
         ]
     },
     {
-        img1: '/Minigame/diff/diff_3_1.PNG',
-        img2: '/Minigame/diff/diff_3_2.PNG',
+        img1: 'Minigame/diff/diff_3_1.PNG',
+        img2: 'Minigame/diff/diff_3_2.PNG',
         differences: [
             { x: 26, y: 31, width: 10, height: 10 },
             { x: 51, y: 57, width: 10, height: 10 },
@@ -316,8 +316,8 @@ const imagePairs = [
         ]
     },
     {
-        img1: '/Minigame/diff/diff_4_1.PNG',
-        img2: '/Minigame/diff/diff_4_2.PNG',
+        img1: 'Minigame/diff/diff_4_1.PNG',
+        img2: 'Minigame/diff/diff_4_2.PNG',
         differences: [
             { x: 17, y: 65, width: 10, height: 10 },
             { x: 35, y: 75, width: 10, height: 10 },
@@ -325,8 +325,8 @@ const imagePairs = [
         ]
     },
     {
-        img1: '/Minigame/diff/diff_5_1.PNG',
-        img2: '/Minigame/diff/diff_5_2.PNG',
+        img1: 'Minigame/diff/diff_5_1.PNG',
+        img2: 'Minigame/diff/diff_5_2.PNG',
         differences: [
             { x: 10, y: 31, width: 10, height: 10 },
             { x: 41, y: 46, width: 10, height: 10 },
@@ -334,16 +334,16 @@ const imagePairs = [
         ]
     },
     {
-        img1: '/Minigame/diff/diff_6_1.PNG',
-        img2: '/Minigame/diff/diff_6_2.PNG',
+        img1: 'Minigame/diff/diff_6_1.PNG',
+        img2: 'Minigame/diff/diff_6_2.PNG',
         differences: [
             { x: 82, y: 11, width: 10, height: 10 },
             { x: 14, y: 79, width: 10, height: 10 }
         ]
     },
     {
-        img1: '/Minigame/diff/diff_7_1.PNG',
-        img2: '/Minigame/diff/diff_7_2.PNG',
+        img1: 'Minigame/diff/diff_7_1.PNG',
+        img2: 'Minigame/diff/diff_7_2.PNG',
         differences: [
             { x: 1, y: 46, width: 10, height: 10 },
             { x: 27, y: 77, width: 10, height: 10 },
@@ -351,16 +351,16 @@ const imagePairs = [
         ]
     },
     {
-        img1: '/Minigame/diff/diff_8_1.PNG',
-        img2: '/Minigame/diff/diff_8_2.PNG',
+        img1: 'Minigame/diff/diff_8_1.PNG',
+        img2: 'Minigame/diff/diff_8_2.PNG',
         differences: [
             { x: 80, y: 8, width: 10, height: 10 },
             { x: 83, y: 26, width: 10, height: 10 }
         ]
     },
     {
-        img1: '/Minigame/diff/diff_9_1.PNG',
-        img2: '/Minigame/diff/diff_9_2.PNG',
+        img1: 'Minigame/diff/diff_9_1.PNG',
+        img2: 'Minigame/diff/diff_9_2.PNG',
         differences: [
             { x: 21, y: 47, width: 10, height: 10 },
             { x: 31, y: 35, width: 10, height: 10 },
@@ -368,8 +368,8 @@ const imagePairs = [
         ]
     },
     {
-        img1: '/Minigame/diff/diff_10_1.PNG',
-        img2: '/Minigame/diff/diff_10_2.PNG',
+        img1: 'Minigame/diff/diff_10_1.PNG',
+        img2: 'Minigame/diff/diff_10_2.PNG',
         differences: [
             { x: 25, y: 55, width: 10, height: 10 },
             { x: 49, y: 37, width: 10, height: 10 },
@@ -529,7 +529,7 @@ function startTrashGame() {
 
             let imageNumber = Math.floor(Math.random() * 10) + 1;
             let trashImageFile = `${type}_${imageNumber}.png`;
-            trash.style.backgroundImage = `url(/Minigame/trash/${trashImageFile})`;
+            trash.style.backgroundImage = `url(Minigame/trash/${trashImageFile})`;
 
             trash.style.backgroundSize = 'contain';  // ปรับขนาดภาพให้พอดีกับพื้นที่
             trash.style.backgroundRepeat = 'no-repeat';  // ป้องกันการซ้ำของภาพ
@@ -728,7 +728,7 @@ function startTrashGame() {
                 trashWrapper.style.position = 'relative'; // ต้องการให้ตำแหน่งนี้เป็น relative สำหรับการวางกากบาท
 
                 let trashImage = document.createElement('img');
-                trashImage.src = `/Minigame/trash/${item.imageFile}`; // ใช้ชื่อไฟล์ที่เก็บไว้แสดงภาพขยะ
+                trashImage.src = `Minigame/trash/${item.imageFile}`; // ใช้ชื่อไฟล์ที่เก็บไว้แสดงภาพขยะ
                 trashImage.style.width = '70px'; // ขนาดภาพขยะ
                 trashImage.style.height = '70px'; // ขนาดภาพขยะ
                 trashImage.title = item.trashName; // ใช้ title เพื่อแสดงชื่อขยะเมื่อ hover
