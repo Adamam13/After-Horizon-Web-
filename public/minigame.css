@@ -218,19 +218,19 @@
 }
 
 .bin[data-type="organic"] {
-    background-image: url('Minigame/trash/bin_organic.png');
+    background-image: url('/Minigame/trash/bin_organic.png');
 }
 
 .bin[data-type="recycle"] {
-    background-image: url('Minigame/trash/bin_recycle.png');
+    background-image: url('/Minigame/trash/bin_recycle.png');
 }
 
 .bin[data-type="hazardous"] {
-    background-image: url('Minigame/trash/bin_hazardous.png');
+    background-image: url('/Minigame/trash/bin_hazardous.png');
 }
 
 .bin[data-type="general"] {
-    background-image: url('Minigame/trash/bin_general.png');
+    background-image: url('/Minigame/trash/bin_general.png');
 }
 
 #game-container {
@@ -341,7 +341,7 @@
     left: 0;
     width: 90%;
     height: 90%;
-    background-image: url('Minigame/trash/cross.png');
+    background-image: url('/Minigame/trash/cross.png');
 
     background-size: contain;
     background-repeat: no-repeat;
