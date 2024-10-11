@@ -472,6 +472,7 @@ span{
     box-sizing: border-box;
     height: 80%;
     padding: 2%;
+    position: relative;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -531,6 +532,23 @@ span{
     align-items: center;
     background-color: #000;
     border: 1px solid #000000;
+}
+
+.yellow_pipe {
+    position: absolute;
+    width: 10%;
+    height: 5%;
+    background-color: yellow;
+}
+
+#y_pipe1 {
+    top: 5%;
+    right: 15%;
+}
+
+#y_pipe2 {
+    bottom: 5%;
+    left: 15%;
 }
 
 .pipe_show img {
