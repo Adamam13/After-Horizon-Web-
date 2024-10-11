@@ -1,3 +1,3 @@
 # After-Horizon-Web-
-# url the Application
+# URL the Application
 https://afterday-horizon.web.app/
