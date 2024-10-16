@@ -378,10 +378,10 @@ function down_num_entry(id) {
 }
 
 function check_entry(){
-    if (document.getElementById('code1_entry').value == 5 && document.getElementById('code2_entry').value == 0){
+    if (document.getElementById('code1_entry').value == 2 && document.getElementById('code2_entry').value == 5){
         document.getElementById('start-game-button').classList.remove('hidden');
-        document.getElementById('code3_entry').value = '4';
-        document.getElementById('code4_entry').value = '8';
+        document.getElementById('code3_entry').value = '6';
+        document.getElementById('code4_entry').value = '7';
     }
     else {
         document.getElementById('start-game-button').classList.add('hidden');
