@@ -1,7 +1,7 @@
 const correctOrder = [1, 5, 9, 4, 3];
 const blinkOrder = [2, 7, 6, 8, 10];
 let currentIndex = 0;
-let timeLeft = 10;
+let timeLeft = 30;
 let timer;
 let timerStarted = false;
 
@@ -28,7 +28,7 @@ function startTimer() {
 
 function resetTimer() {
     clearInterval(timer);
-    timeLeft = 10;
+    timeLeft = 30;
     startTimer();
 }
 
@@ -65,7 +65,7 @@ function handleClick(buttonNumber) {
 
 function resetGame() {
     currentIndex = 0;
-    timeLeft = 10;
+    timeLeft = 30;
     timerStarted = false;
     clearInterval(timer);
 

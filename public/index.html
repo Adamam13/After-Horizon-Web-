@@ -16,15 +16,15 @@
 
 <body>
 
+
 	<div id="game-page" class="desktop hidden">
+		<img class="logo" src="Icon/Logo.png">
 		<div class="video-container">
 			<video autoplay muted loop>
 				<source src="video/test4.mp4" type="video/mp4">
 				Your browser does not support the video tag.
 			</video>
 		</div>
-		<img class="logo" src="Icon/Logo.png">
-
 		<!-- หน้าต่างยืนยันการใช้กุญแจ -->
 		<div class="window" id="unlock_confirmation" style="display:none;">
 			<div class="window-header">
@@ -672,7 +672,7 @@
 				<button class="button close" onclick="closeWindow('electrical-game')">X</button>
 			</div>
 			<div class="enter_page" style="background-color: #1A1A1A;">
-				<div id="timer">10</div>
+				<div id="timer">30</div>
 
 				<div class="indicator-container">
 					<div class="indicator" id="indicator1"></div>
@@ -819,6 +819,7 @@
 		<h1 class="summary-title">Thankyou for Playing</h1>
 		<p id="summary-text">You completed the game! Well done!</p>
 	</div>
+	
 	
 	<script src="script.js"></script>
 	<script src="minigame.js"></script>
