@@ -492,6 +492,10 @@ span{
     border-radius: 5px;
 }
 
+.pipe_fin {
+    background-color: #009859;
+}
+
 .pipe:hover {
     background-color: #007395;
 

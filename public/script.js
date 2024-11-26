@@ -39,6 +39,10 @@ const pipe_code = ['5823', '1642', '1989',
                    '1150', '2117', '0507',
                    '1321', '9768', '1617'];
 
+let pipe_save = [0, 0, 0,
+                0, 0, 0,
+                0, 0, 0];
+
 const pipe_rotate = [180, 90, 0,
                    0, 0, 0,
                    0, 0, 0];
@@ -77,6 +81,10 @@ function increment(id) {
         inputBox.value = value + 1;
         inputBox.className = 'input-box noting';
     }
+    else {
+        inputBox.value = 0;
+        inputBox.className = 'input-box noting';
+    }
 }
 
 function decrement(id) {
@@ -84,6 +92,10 @@ function decrement(id) {
     let value = parseInt(inputBox.value);
     if (value > 0) {
         inputBox.value = value - 1;
+        inputBox.className = 'input-box noting';
+    }
+    else {
+        inputBox.value = 9;
         inputBox.className = 'input-box noting';
     }
 }
@@ -117,15 +129,30 @@ function set_code(num_pipe){
         }
     });
 
-    document.getElementById('digit1').value = 0;
-    document.getElementById('digit2').value = 0;
-    document.getElementById('digit3').value = 0;
-    document.getElementById('digit4').value = 0;
+    if (pipe_save[num_pipe - 1] == 1){
 
-    for (let i = 0; i < 4; i++) {
-        let inputBox = document.getElementById('digit' + (i + 1));
-        inputBox.className = 'input-box noting';
+        document.getElementById('digit1').value = correctCode[0];
+        document.getElementById('digit2').value = correctCode[1];
+        document.getElementById('digit3').value = correctCode[2];
+        document.getElementById('digit4').value = correctCode[3];
+    
+        for (let i = 0; i < 4; i++) {
+            let inputBox = document.getElementById('digit' + (i + 1));
+            inputBox.className = 'input-box correct';
+        }
     }
+    else {
+        document.getElementById('digit1').value = 0;
+        document.getElementById('digit2').value = 0;
+        document.getElementById('digit3').value = 0;
+        document.getElementById('digit4').value = 0;
+    
+        for (let i = 0; i < 4; i++) {
+            let inputBox = document.getElementById('digit' + (i + 1));
+            inputBox.className = 'input-box noting';
+        }
+    }
+
 }
 
 function checkGuess() {
@@ -153,9 +180,15 @@ function checkGuess() {
             inputBox.className = 'input-box wrong';
         }
     }
+    // console.log(pipe_code.indexOf(correctCode));
 
     if (correctPositions === 4) {
         console.log('Congratulations!');
+        pipe_save[pipe_code.indexOf(correctCode)] = 1;
+
+        document.getElementById(`pipe${pipe_code.indexOf(correctCode) + 1}`).classList.add("pipe_fin");
+
+        // console.log(pipe_save[pipe_code.indexOf(correctCode)]);
     } else {
         console.log(`Correct positions: ${correctPositions}, Correct digits (wrong positions): ${correctDigits}`);
     }
@@ -349,6 +382,9 @@ function up_num(id) {
     if (value < 9) {
         inputBox.value = value + 1;
     }
+    else {
+        inputBox.value = 0;
+    }
 }
 
 function down_num(id) {
@@ -356,6 +392,9 @@ function down_num(id) {
     let value = parseInt(inputBox.value);
     if (value > 0) {
         inputBox.value = value - 1;
+    }
+    else {
+        inputBox.value = 9;
     }
 }
 
@@ -366,6 +405,10 @@ function up_num_entry(id) {
         inputBox.value = value + 1;
         check_entry()
     }
+    else {
+        inputBox.value = 0;
+        check_entry()
+    }
 }
 
 function down_num_entry(id) {
@@ -373,6 +416,10 @@ function down_num_entry(id) {
     let value = parseInt(inputBox.value);
     if (value > 0) {
         inputBox.value = value - 1;
+        check_entry()
+    }
+    else {
+        inputBox.value = 9;
         check_entry()
     }
 }
