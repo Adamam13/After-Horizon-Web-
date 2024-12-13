@@ -242,21 +242,21 @@ function closeAllWindows() {
 let keys = 3;
 let lockedFiles = {
     //folder1
-    'file-info-carrot': false,
-    'file-info-tomato': false,
-    'file-hint-PT': false,
-    'file-part1': false,
-    'file-hint-Phum': false,
-    'file-part3': false,
-    'file-info-rice': false,
+    'file-info-carrot': true,
+    'file-info-tomato': true,
+    'file-hint-PT': true,
+    'file-part1': true,
+    'file-hint-Phum': true,
+    'file-part3': true,
+    'file-info-rice': true,
 
     //folder2
-    'file-info-pumpkin': false,
-    'file-hint-OT': false,
-    'file-part2': false,
-    'file-info-radish': false,
-    'file-hint-Water': false,
-    'file-part4' : false,
+    'file-info-pumpkin': true,
+    'file-hint-OT': true,
+    'file-part2': true,
+    'file-info-radish': true,
+    'file-hint-Water': true,
+    'file-part4' : true,
 
     //readme
     'file-info-elec': false,
