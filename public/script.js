@@ -239,7 +239,7 @@ function closeAllWindows() {
 
 
 
-let keys = 3;
+let keys = 3;  
 let lockedFiles = {
     //folder1
     'file-info-carrot': true,
@@ -435,4 +435,28 @@ function check_entry(){
         document.getElementById('code3_entry').value = '?';
         document.getElementById('code4_entry').value = '?';
     }
+}
+
+function startGameTimer() {
+    const timerElement = document.getElementById('timecount');
+    let elapsedTime = 0;
+
+    function updateTimer() {
+        elapsedTime++;
+        const minutes = String(Math.floor(elapsedTime / 60)).padStart(2, '0');
+        const seconds = String(elapsedTime % 60).padStart(2, '0');
+        timerElement.textContent = `${minutes}:${seconds}`;
+    }
+
+    setInterval(updateTimer, 1000);
+}
+
+// เรียกใช้งาน startGameTimer เมื่อผู้ใช้เริ่มเกมหลังจากใส่รหัสสำเร็จ
+function startGame() {
+    document.getElementById('menu-page').classList.add('hidden');
+    document.getElementById('summary-page').classList.add('hidden');
+    document.getElementById('game-page').classList.remove('hidden');
+
+    // เริ่มจับเวลา
+    startGameTimer();
 }
