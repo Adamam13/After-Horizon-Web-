@@ -683,6 +683,8 @@
 				</div>
 
 				<div class="container-elec">
+					<button id="btn0" class=" button-elec" onclick="handleClick(0)"><img style="width: 70%;"
+							src="Icon/thunder_icon.png"></button>
 					<button id="btn1" class=" button-elec" onclick="handleClick(1)"><img style="width: 70%;"
 							src="Icon/thunder_icon.png"></button>
 					<button id="btn2" class=" button-elec" onclick="handleClick(2)"><img style="width: 70%;"
@@ -701,11 +703,115 @@
 							src="Icon/thunder_icon.png"></button>
 					<button id="btn9" class=" button-elec" onclick="handleClick(9)"><img style="width: 70%;"
 							src="Icon/thunder_icon.png"></button>
-					<button id="btn10" class=" button-elec" onclick="handleClick(10)"><img style="width: 70%;"
-							src="Icon/thunder_icon.png"></button>
 				</div>
 				<!-- <div id="message"></div> -->
 				<button id="resetButton" onclick="resetGame()">Reset</button>
+			</div>
+		</div>
+
+		<!-- Enter Codesystem -->
+		<div class="window enter_code" id="enter_Electical_code" style="background-color: #ffffff; border: 5px solid #ff0000;">
+			<div class="window-header" style="background-color: #ff0000;">
+				<div></div>
+				<span>Emergency Alert !!</span>
+				<div></div>
+			</div>
+			<div class="emergency_page" style="background-color: #000000;">
+				<span style="color:#ff0000;">Electical system error!!</span>
+				<span id="emer_electic" style="color:#ff0000;">03.12</span>
+				<div class="input-container">
+					<div class="btn-container">
+						<button onclick="increment('digit5')" class="button_press">Λ</button>
+						<input type="text" id="digit5" class="input-box" value="0" readonly>
+						<button onclick="decrement('digit5')" class="button_press">V</button>
+					</div>
+					<div class="btn-container">
+						<button onclick="increment('digit6')" class="button_press">Λ</button>
+						<input type="text" id="digit6" class="input-box" value="0" readonly>
+						<button onclick="decrement('digit6')" class="button_press">V</button>
+					</div>
+					<div class="btn-container">
+						<button onclick="increment('digit7')" class="button_press">Λ</button>
+						<input type="text" id="digit7" class="input-box" value="0" readonly>
+						<button onclick="decrement('digit7')" class="button_press">V</button>
+					</div>
+					<div class="btn-container">
+						<button onclick="increment('digit8')" class="button_press">Λ</button>
+						<input type="text" id="digit8" class="input-box" value="0" readonly>
+						<button onclick="decrement('digit8')" class="button_press">V</button>
+					</div>
+				</div>
+				<button class="btn_check" onclick="checkGuess()">Enter</button>
+			</div>
+		</div>
+
+		<div class="window enter_code" id="enter_Water_code" style="background-color: #ffffff; border: 5px solid #ff0000;">
+			<div class="window-header" style="background-color: #ff0000;">
+				<div></div>
+				<span>Emergency Alert !!</span>
+				<div></div>
+			</div>
+			<div class="emergency_page" style="background-color: #000000;">
+				<span  style="color:#ff0000;">Water supply system error!!</span>
+				<span style="color:#ff0000;">03.12</span>
+				<div class="input-container">
+					<div class="btn-container">
+						<button onclick="increment('digit5')" class="button_press">Λ</button>
+						<input type="text" id="digit5" class="input-box" value="0" readonly>
+						<button onclick="decrement('digit5')" class="button_press">V</button>
+					</div>
+					<div class="btn-container">
+						<button onclick="increment('digit6')" class="button_press">Λ</button>
+						<input type="text" id="digit6" class="input-box" value="0" readonly>
+						<button onclick="decrement('digit6')" class="button_press">V</button>
+					</div>
+					<div class="btn-container">
+						<button onclick="increment('digit7')" class="button_press">Λ</button>
+						<input type="text" id="digit7" class="input-box" value="0" readonly>
+						<button onclick="decrement('digit7')" class="button_press">V</button>
+					</div>
+					<div class="btn-container">
+						<button onclick="increment('digit8')" class="button_press">Λ</button>
+						<input type="text" id="digit8" class="input-box" value="0" readonly>
+						<button onclick="decrement('digit8')" class="button_press">V</button>
+					</div>
+				</div>
+				<button class="btn_check" onclick="checkGuess()">Enter</button>
+			</div>
+		</div>
+
+		<div class="window enter_code" id="enter_Oxygen_code" style="background-color: #ffffff; border: 5px solid #ff0000;">
+			<div class="window-header" style="background-color: #ff0000;">
+				<div></div>
+				<span>Emergency Alert !!</span>
+				<div></div>
+			</div>
+			<div class="emergency_page" style="background-color: #000000;">
+				<span  style="color:#ff0000;">Oxygen gennerator error!</span>
+				<span style="color:#ff0000;">03.12</span>
+				<div class="input-container">
+					<div class="btn-container">
+						<button onclick="increment('digit5')" class="button_press">Λ</button>
+						<input type="text" id="digit5" class="input-box" value="0" readonly>
+						<button onclick="decrement('digit5')" class="button_press">V</button>
+					</div>
+					<div class="btn-container">
+						<button onclick="increment('digit6')" class="button_press">Λ</button>
+						<input type="text" id="digit6" class="input-box" value="0" readonly>
+						<button onclick="decrement('digit6')" class="button_press">V</button>
+					</div>
+					<div class="btn-container">
+						<button onclick="increment('digit7')" class="button_press">Λ</button>
+						<input type="text" id="digit7" class="input-box" value="0" readonly>
+						<button onclick="decrement('digit7')" class="button_press">V</button>
+					</div>
+					<div class="btn-container">
+						<button onclick="increment('digit8')" class="button_press">Λ</button>
+						<input type="text" id="digit8" class="input-box" value="0" readonly>
+						<button onclick="decrement('digit8')" class="button_press">V</button>
+					</div>
+				</div>
+				<button class="btn_check" onclick="checkGuess()">Enter</button>
 			</div>
 		</div>
 
@@ -819,7 +925,6 @@
 		<h1 class="summary-title">Thankyou for Playing</h1>
 		<p id="summary-text">You completed the game! Well done!</p>
 	</div>
-	
 	
 	<script src="script.js"></script>
 	<script src="minigame.js"></script>

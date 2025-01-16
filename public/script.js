@@ -11,6 +11,26 @@
 //     console.log('hello3');
 // }
 
+
+fetch('./seed.json')
+.then(response => {
+  if (!response.ok) {
+    throw new Error('Network response was not ok ' + response.statusText);
+  }
+  return response.json();
+})
+.then(data => {
+    gameData = data;
+})
+.catch(error => {
+  console.error('There has been a problem with your fetch operation:', error);
+});
+
+let seed;
+let event_count = 0;
+
+
+// fucntion code
 function openWindow(id) {
     document.getElementById(id).style.display = 'flex';
 }
@@ -229,6 +249,36 @@ document.querySelectorAll('.window').forEach(windowElement => {
     });
 });
 
+//ลาก ตัวEmergency Alert
+
+// const emergency = document.querySelector("#enter_code");
+// let isDragging = false;
+// let offsetX, offsetY;
+
+// emergency.addEventListener('mousedown', (e) => {
+//     isDragging = true;
+//     offsetX = e.clientX - emergency.getBoundingClientRect().left;
+//     offsetY = e.clientY - emergency.getBoundingClientRect().top;
+//     emergency.style.position = 'absolute';
+
+//     zIndexCounter += 1;
+//     emergency.style.zIndex = zIndexCounter; 
+// });
+
+// document.addEventListener('mousemove', (e) => {
+//     if (isDragging) {
+//         emergency.style.left = `${e.clientX - offsetX}px`;
+//         emergency.style.top = `${e.clientY - offsetY}px`;
+//     }
+// });
+
+document.addEventListener('mouseup', () => {
+    isDragging = false;
+});
+
+
+
+
 function closeAllWindows() {
     const allWindows = document.querySelectorAll('.window');
 
@@ -403,12 +453,11 @@ function up_num_entry(id) {
     let value = parseInt(inputBox.value);
     if (value < 9) {
         inputBox.value = value + 1;
-        check_entry()
     }
     else {
         inputBox.value = 0;
-        check_entry()
     }
+    check_entry(document.getElementById('code1_entry').value, document.getElementById('code2_entry').value)
 }
 
 function down_num_entry(id) {
@@ -416,19 +465,20 @@ function down_num_entry(id) {
     let value = parseInt(inputBox.value);
     if (value > 0) {
         inputBox.value = value - 1;
-        check_entry()
     }
     else {
         inputBox.value = 9;
-        check_entry()
     }
+    check_entry(document.getElementById('code1_entry').value, document.getElementById('code2_entry').value)
 }
 
-function check_entry(){
-    if (document.getElementById('code1_entry').value == 2 && document.getElementById('code2_entry').value == 5){
+function check_entry(num1, num2){
+    seed = ""+num1+num2;
+    if (gameData[seed]){
         document.getElementById('start-game-button').classList.remove('hidden');
-        document.getElementById('code3_entry').value = '6';
-        document.getElementById('code4_entry').value = '7';
+        document.getElementById('code3_entry').value = gameData[seed].code[2];
+        document.getElementById('code4_entry').value = gameData[seed].code[3];
+
     }
     else {
         document.getElementById('start-game-button').classList.add('hidden');
@@ -443,9 +493,10 @@ function startGameTimer() {
 
     function updateTimer() {
         elapsedTime++;
-        const minutes = String(Math.floor(elapsedTime / 60)).padStart(2, '0');
-        const seconds = String(elapsedTime % 60).padStart(2, '0');
+        const minutes = String(Math.floor(elapsedTime / 60)).padStart(2, '00');
+        const seconds = String(elapsedTime % 60).padStart(2, '00');
         timerElement.textContent = `${minutes}:${seconds}`;
+        check_event(elapsedTime);
     }
 
     setInterval(updateTimer, 1000);
@@ -459,4 +510,66 @@ function startGame() {
 
     // เริ่มจับเวลา
     startGameTimer();
+    console.log(gameData);
+}
+
+function check_event(time){
+    if(Math.floor(time/60) >= gameData[seed].event_time[event_count]){
+        console.log("cjeck")
+        switch (gameData[seed].event_order[event_count]) {
+            case 1:
+                electic_broken()
+                event_count++;
+                break
+            case 2:
+                water_broken()
+                event_count++;
+                break
+            case 3:
+                oxygen_broken()
+                event_count++;
+                break
+
+        }
+    }
+}
+
+function electic_broken(){
+    console.log("ไฟฟ้าพังจ้าาาา");
+    set_electic();
+    event_alert();
+    openWindow('enter_Electical_code');
+}
+
+function water_broken(){
+    event_alert();
+    openWindow('enter_Water_code');
+    console.log("ระบบประปาพังจ้าาาา");
+}
+
+function oxygen_broken(){
+    event_alert();
+    openWindow('enter_Oxygen_code');
+    console.log("เครื่องผลิตออกซิเจนพังจ้าาาา");
+}
+
+function event_alert() {
+    // red element
+    let overlay = document.createElement('div');
+    overlay.className = 'flashing-overlay';
+    document.body.appendChild(overlay);
+
+    // krapib
+    let flashCount = 0;
+    const flashInterval = setInterval(() => {
+        if (flashCount >= 10) { // กระพริบ 5 ครั้ง (เปิด-ปิด = 10 รอบ)
+            clearInterval(flashInterval);
+            document.body.removeChild(overlay); // ลบ overlay ออกจาก DOM
+        } else {
+            overlay.style.opacity = flashCount % 2 === 0 ? '0.5' : '0'; // สลับระหว่างแสดงและซ่อน
+            flashCount++;
+        }
+    }, 300); // กระพริบทุก 300ms
+
+    
 }
