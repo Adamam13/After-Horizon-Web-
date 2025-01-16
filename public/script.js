@@ -497,6 +497,10 @@ function startGameTimer() {
         const seconds = String(elapsedTime % 60).padStart(2, '00');
         timerElement.textContent = `${minutes}:${seconds}`;
         check_event(elapsedTime);
+        if (!electic && !water && !oxygen){
+            noting++;
+            console.log(noting);
+        }
     }
 
     setInterval(updateTimer, 1000);
@@ -513,9 +517,18 @@ function startGame() {
     console.log(gameData);
 }
 
+let noting = 0;
+let electic = false;
+let water = false;
+let oxygen = false;
+let numcode = 0;
+let elect_interval;
+let water_interval;
+let oxygen_interval;
+
 function check_event(time){
-    if(Math.floor(time/60) >= gameData[seed].event_time[event_count]){
-        console.log("cjeck")
+    if(Math.floor(time/60) >= gameData[seed].event_time[event_count] || noting >= 30){
+        noting = 0;
         switch (gameData[seed].event_order[event_count]) {
             case 1:
                 electic_broken()
@@ -534,23 +547,129 @@ function check_event(time){
     }
 }
 
-function electic_broken(){
-    console.log("ไฟฟ้าพังจ้าาาา");
-    set_electic();
-    event_alert();
-    openWindow('enter_Electical_code');
+function electic_broken() {
+    if(!electic){
+        console.log("ไฟฟ้าพังจ้าาาา");
+        electic = true;
+        set_electic();
+        event_alert();
+        openWindow('enter_Electical_code');
+        const timer_electic = document.getElementById('emer_electic');
+        let elect_time = 360000;
+    
+        function updateTimer() {
+            elect_time -= 10;
+            const minutes = String(Math.floor(elect_time / 60000)).padStart(2, '0');
+            const seconds = String(Math.floor((elect_time % 60000) / 1000)).padStart(2, '0');
+            const milliseconds = String(Math.floor((elect_time % 1000) / 10)).padStart(2, '0');
+            timer_electic.textContent = `${minutes}:${seconds}:${milliseconds}`;
+        }
+        
+        elect_interval = setInterval(() => {
+            if (elect_time <= 0) {
+                clearInterval(elect_interval);
+                showThank()
+                timer_electic.textContent = "00:00:00";
+            } else {
+                updateTimer();
+            }
+        }, 10);
+    }
 }
 
 function water_broken(){
-    event_alert();
-    openWindow('enter_Water_code');
-    console.log("ระบบประปาพังจ้าาาา");
+    if(!water){
+        console.log("ระบบประปาพังจ้าาาา");
+        event_alert();
+        openWindow('enter_Water_code');
+        water = true;
+        const timer_Water = document.getElementById('emer_water');
+        let water_time = 300000;
+    
+        function updateTimer() {
+            water_time -= 10;
+            const minutes = String(Math.floor(water_time / 60000)).padStart(2, '0');
+            const seconds = String(Math.floor((water_time % 60000) / 1000)).padStart(2, '0');
+            const milliseconds = String(Math.floor((water_time % 1000) / 10)).padStart(2, '0');
+            timer_Water.textContent = `${minutes}:${seconds}:${milliseconds}`;
+        }
+        
+        water_interval = setInterval(() => {
+            if (water_time <= 0) {
+                clearInterval(water_interval);
+                showThank()
+                timer_Water.textContent = "00:00:00";
+            } else {
+                updateTimer();
+            }
+        }, 10);
+    }
 }
 
 function oxygen_broken(){
-    event_alert();
-    openWindow('enter_Oxygen_code');
-    console.log("เครื่องผลิตออกซิเจนพังจ้าาาา");
+    if(!oxygen){
+        console.log("เครื่องผลิตออกซิเจนพังจ้าาาา");
+        event_alert();
+        openWindow('enter_Oxygen_code');
+        oxygen = true;
+        const timer_oxygen = document.getElementById('emer_oxy');
+        let oxygen_time = 240000;
+    
+        function updateTimer() {
+            oxygen_time -= 10;
+            const minutes = String(Math.floor(oxygen_time / 60000)).padStart(2, '0');
+            const seconds = String(Math.floor((oxygen_time % 60000) / 1000)).padStart(2, '0');
+            const milliseconds = String(Math.floor((oxygen_time % 1000) / 10)).padStart(2, '0');
+            timer_oxygen.textContent = `${minutes}:${seconds}:${milliseconds}`;
+        }
+        
+        oxygen_interval = setInterval(() => {
+            if (oxygen_time <= 0) {
+                clearInterval(oxygen_interval);
+                showThank()
+                timer_oxygen.textContent = "00:00:00";
+            } else {
+                updateTimer();
+            }
+        }, 10);
+    }
+}
+
+function check_pass_code(nameid){
+    let emer = document.getElementById(nameid);
+    let codelist = emer.querySelectorAll("input");
+    let fincode = ""
+    codelist.forEach(element =>{
+        fincode += element.value;
+    })
+
+    console.log(fincode, gameData[seed].passcode[numcode]);
+
+    if (fincode === gameData[seed].passcode[numcode]) {
+        flashScreen('green'); // กระพริบสีเขียว
+        closeWindow(nameid);
+        numcode++;
+        // fincode = "";
+        codelist.forEach(element =>{
+            element.value = 0;
+        })
+
+        if(nameid == 'enter_Electical_code'){
+            electic = false;
+            clearInterval(elect_interval);
+        }
+        else if(nameid == 'enter_Water_code'){
+            water = false;
+            clearInterval(water_interval);
+        }
+        else if(nameid == 'enter_Oxygen_code'){
+            oxygen = false;
+            clearInterval(oxygen_interval);
+        }
+        
+    } else {
+        flashScreen('red'); // กระพริบสีแดง
+    }
 }
 
 function event_alert() {
@@ -570,6 +689,29 @@ function event_alert() {
             flashCount++;
         }
     }, 300); // กระพริบทุก 300ms
-
-    
 }
+
+function flashScreen(color) {
+    // สร้าง div สำหรับกระพริบ
+    const flashElement = document.createElement('div');
+    flashElement.style.position = 'fixed'; // ตำแหน่งแบบเต็มหน้าจอ
+    flashElement.style.top = '0';
+    flashElement.style.left = '0';
+    flashElement.style.width = '100vw';
+    flashElement.style.height = '100vh';
+    flashElement.style.backgroundColor = color; // ใช้สีที่ส่งเข้ามา
+    flashElement.style.opacity = '0.7'; // ความโปร่งใส
+    flashElement.style.zIndex = '9999'; // อยู่ด้านบนสุด
+    flashElement.style.transition = 'opacity 0.3s ease'; // เพิ่มเอฟเฟกต์ fade-out
+
+    // เพิ่ม Element เข้าไปใน body
+    document.body.appendChild(flashElement);
+
+    // ลบ Element หลังจาก 300 มิลลิวินาที
+    setTimeout(() => {
+        flashElement.style.opacity = '0'; // ทำให้จางหายไป
+        setTimeout(() => flashElement.remove(), 300); // ลบออกจาก DOM
+    }, 300);
+}
+
+

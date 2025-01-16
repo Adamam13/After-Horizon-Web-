@@ -717,31 +717,31 @@
 				<div></div>
 			</div>
 			<div class="emergency_page" style="background-color: #000000;">
-				<span style="color:#ff0000;">Electical system error!!</span>
-				<span id="emer_electic" style="color:#ff0000;">03.12</span>
-				<div class="input-container">
+				<span id="emer_text" style="color:#ff0000;">Electical system error!!</span>
+				<span class="emer_time" id="emer_electic" style="color:#ff0000;">06:00</span>
+				<div class="input_pass_code">
 					<div class="btn-container">
-						<button onclick="increment('digit5')" class="button_press">Λ</button>
-						<input type="text" id="digit5" class="input-box" value="0" readonly>
-						<button onclick="decrement('digit5')" class="button_press">V</button>
+						<button onclick="up_num('elec1')" class="button_press">Λ</button>
+						<input type="text" id="elec1" class="input_box_pass_code" value="0" readonly>
+						<button onclick="down_num('elec1')" class="button_press">V</button>
 					</div>
 					<div class="btn-container">
-						<button onclick="increment('digit6')" class="button_press">Λ</button>
-						<input type="text" id="digit6" class="input-box" value="0" readonly>
-						<button onclick="decrement('digit6')" class="button_press">V</button>
+						<button onclick="up_num('elec2')" class="button_press">Λ</button>
+						<input type="text" id="elec2" class="input_box_pass_code" value="0" readonly>
+						<button onclick="down_num('elec2')" class="button_press">V</button>
 					</div>
 					<div class="btn-container">
-						<button onclick="increment('digit7')" class="button_press">Λ</button>
-						<input type="text" id="digit7" class="input-box" value="0" readonly>
-						<button onclick="decrement('digit7')" class="button_press">V</button>
+						<button onclick="up_num('elec3')" class="button_press">Λ</button>
+						<input type="text" id="elec3" class="input_box_pass_code" value="0" readonly>
+						<button onclick="down_num('elec3')" class="button_press">V</button>
 					</div>
 					<div class="btn-container">
-						<button onclick="increment('digit8')" class="button_press">Λ</button>
-						<input type="text" id="digit8" class="input-box" value="0" readonly>
-						<button onclick="decrement('digit8')" class="button_press">V</button>
+						<button onclick="up_num('elec4')" class="button_press">Λ</button>
+						<input type="text" id="elec4" class="input_box_pass_code" value="0" readonly>
+						<button onclick="down_num('elec4')" class="button_press">V</button>
 					</div>
 				</div>
-				<button class="btn_check" onclick="checkGuess()">Enter</button>
+				<button class="btn_pass_code" onclick="check_pass_code('enter_Electical_code')">ENTER</button>
 			</div>
 		</div>
 
@@ -752,31 +752,31 @@
 				<div></div>
 			</div>
 			<div class="emergency_page" style="background-color: #000000;">
-				<span  style="color:#ff0000;">Water supply system error!!</span>
-				<span style="color:#ff0000;">03.12</span>
-				<div class="input-container">
+				<span id="emer_text" style="color:#ff0000;">Water supply error!!</span>
+				<span class="emer_time" id="emer_water" style="color:#ff0000;">05:00</span>
+				<div class="input_pass_code">
 					<div class="btn-container">
-						<button onclick="increment('digit5')" class="button_press">Λ</button>
-						<input type="text" id="digit5" class="input-box" value="0" readonly>
-						<button onclick="decrement('digit5')" class="button_press">V</button>
+						<button onclick="up_num('water1')" class="button_press">Λ</button>
+						<input type="text" id="water1" class="input_box_pass_code" value="0" readonly>
+						<button onclick="down_num('water1')" class="button_press">V</button>
 					</div>
 					<div class="btn-container">
-						<button onclick="increment('digit6')" class="button_press">Λ</button>
-						<input type="text" id="digit6" class="input-box" value="0" readonly>
-						<button onclick="decrement('digit6')" class="button_press">V</button>
+						<button onclick="up_num('water2')" class="button_press">Λ</button>
+						<input type="text" id="water2" class="input_box_pass_code" value="0" readonly>
+						<button onclick="down_num('water2')" class="button_press">V</button>
 					</div>
 					<div class="btn-container">
-						<button onclick="increment('digit7')" class="button_press">Λ</button>
-						<input type="text" id="digit7" class="input-box" value="0" readonly>
-						<button onclick="decrement('digit7')" class="button_press">V</button>
+						<button onclick="up_num('water3')" class="button_press">Λ</button>
+						<input type="text" id="water3" class="input_box_pass_code" value="0" readonly>
+						<button onclick="down_num('water3')" class="button_press">V</button>
 					</div>
 					<div class="btn-container">
-						<button onclick="increment('digit8')" class="button_press">Λ</button>
-						<input type="text" id="digit8" class="input-box" value="0" readonly>
-						<button onclick="decrement('digit8')" class="button_press">V</button>
+						<button onclick="up_num('water4')" class="button_press">Λ</button>
+						<input type="text" id="water4" class="input_box_pass_code" value="0" readonly>
+						<button onclick="down_num('water4')" class="button_press">V</button>
 					</div>
 				</div>
-				<button class="btn_check" onclick="checkGuess()">Enter</button>
+				<button class="btn_pass_code" onclick="check_pass_code('enter_Water_code')">ENTER</button>
 			</div>
 		</div>
 
@@ -787,31 +787,31 @@
 				<div></div>
 			</div>
 			<div class="emergency_page" style="background-color: #000000;">
-				<span  style="color:#ff0000;">Oxygen gennerator error!</span>
-				<span style="color:#ff0000;">03.12</span>
-				<div class="input-container">
+				<span id="emer_text" style="color:#ff0000;">Oxygen gennerator error!!</span>
+				<span class="emer_time" id="emer_oxy" style="color:#ff0000;">04:00</span>
+				<div class="input_pass_code">
 					<div class="btn-container">
-						<button onclick="increment('digit5')" class="button_press">Λ</button>
-						<input type="text" id="digit5" class="input-box" value="0" readonly>
-						<button onclick="decrement('digit5')" class="button_press">V</button>
+						<button onclick="up_num('oxy1')" class="button_press">Λ</button>
+						<input type="text" id="oxy1" class="input_box_pass_code" value="0" readonly>
+						<button onclick="down_num('oxy1')" class="button_press">V</button>
 					</div>
 					<div class="btn-container">
-						<button onclick="increment('digit6')" class="button_press">Λ</button>
-						<input type="text" id="digit6" class="input-box" value="0" readonly>
-						<button onclick="decrement('digit6')" class="button_press">V</button>
+						<button onclick="up_num('oxy2')" class="button_press">Λ</button>
+						<input type="text" id="oxy2" class="input_box_pass_code" value="0" readonly>
+						<button onclick="down_num('oxy2')" class="button_press">V</button>
 					</div>
 					<div class="btn-container">
-						<button onclick="increment('digit7')" class="button_press">Λ</button>
-						<input type="text" id="digit7" class="input-box" value="0" readonly>
-						<button onclick="decrement('digit7')" class="button_press">V</button>
+						<button onclick="up_num('oxy3')" class="button_press">Λ</button>
+						<input type="text" id="oxy3" class="input_box_pass_code" value="0" readonly>
+						<button onclick="down_num('oxy3')" class="button_press">V</button>
 					</div>
 					<div class="btn-container">
-						<button onclick="increment('digit8')" class="button_press">Λ</button>
-						<input type="text" id="digit8" class="input-box" value="0" readonly>
-						<button onclick="decrement('digit8')" class="button_press">V</button>
+						<button onclick="up_num('oxy4')" class="button_press">Λ</button>
+						<input type="text" id="oxy4" class="input_box_pass_code" value="0" readonly>
+						<button onclick="down_num('oxy4')" class="button_press">V</button>
 					</div>
 				</div>
-				<button class="btn_check" onclick="checkGuess()">Enter</button>
+				<button class="btn_pass_code" onclick="check_pass_code('enter_Oxygen_code')">ENTER</button>
 			</div>
 		</div>
 
