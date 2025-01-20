@@ -51,25 +51,25 @@ const pipeList = [
     'pipe/pipe4.png'
 ];
 
-const pipe_line_up = [2, 3, 2,
-                      3, 2, 4,
-                      1, 3, 2];
+const pipe_line_up = [1, 2, 4, 2, 1, 4,
+                      4, 3, 2, 1, 2, 3,
+                      3, 1, 2, 4, 1, 2];
 
-const pipe_code = ['5823', '1642', '1989',
-                   '1150', '2117', '0507',
-                   '1321', '9768', '1617'];
+const pipe_code = ['1111', '2222', '3333', '4444', '5555', '6666',
+                   '7777', '8888', '9999', '0000', '1112', '1213',
+                   '1314', '1415', '1516','1617', '1718', '1819'];
 
-let pipe_save = [0, 0, 0,
-                0, 0, 0,
-                0, 0, 0];
+let pipe_save = [0, 0, 0, 0, 0, 0,
+                0, 0, 0, 0, 0, 0,
+                0, 0, 0, 0, 0, 0];
 
-const pipe_rotate = [180, 90, 0,
-                   0, 0, 0,
-                   0, 0, 0];
+const pipe_rotate = [180, 90, 0, 0, 0, 0,
+                   0, 0, 0, 180, 90, 0,
+                   0, 0, 0, 0, 0, 0];
 
 const btn_pipe_container = document.querySelector('.btn_pipe_container');
 
-for (let i = 1; i <= 9; i++) {
+for (let i = 1; i <= 18; i++) {
     const newNode = document.createElement('div');
 
     newNode.className = 'pipe';
@@ -122,7 +122,7 @@ function decrement(id) {
 
 const pipe_board = document.querySelector('.pipe_board');
 
-for (let i = 1; i <= 9; i++) {
+for (let i = 1; i <= 18; i++) {
     const newNode = document.createElement('div');
     newNode.className = 'pipe_show';
     const img = document.createElement('img');
@@ -535,11 +535,11 @@ function check_event(time){
                 event_count++;
                 break
             case 2:
-                water_broken()
+                oxygen_broken()
                 event_count++;
                 break
             case 3:
-                oxygen_broken()
+                water_broken()
                 event_count++;
                 break
 
@@ -745,9 +745,9 @@ function flashScreen(color) {
 }
 
 // สร้าง Audio Object สำหรับเพลงประกอบ
-const backgroundMusic = new Audio('video/Hacktime.mp4'); // ใส่พาธเพลงที่ต้องการ
-backgroundMusic.loop = true; // ตั้งให้เพลงเล่นซ้ำ
-backgroundMusic.volume = 0.3; // ปรับระดับเสียง (0.0 - 1.0)
+// const backgroundMusic = new Audio('video/Hacktime.mp4'); // ใส่พาธเพลงที่ต้องการ
+// backgroundMusic.loop = true; // ตั้งให้เพลงเล่นซ้ำ
+// backgroundMusic.volume = 0.3; // ปรับระดับเสียง (0.0 - 1.0)
 
 // พยายามเล่นเพลงทันทีที่โหลดหน้าเว็บ
 window.addEventListener('load', () => {
