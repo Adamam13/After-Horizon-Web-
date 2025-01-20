@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer with Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .timer {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 2rem;
+            color: #333;
+        }
+        .event-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 1000;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            z-index: 999;
+        }
+        .countdown {
+            font-size: 1.2rem;
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="timer" id="timer">00:00:00</div>
+    <div class="overlay" id="overlay"></div>
+    <div class="event-popup" id="eventPopup">
+        <p id="eventMessage">Enter the correct code:</p>
+        <input type="text" id="eventInput" placeholder="Enter code">
+        <p class="countdown" id="countdownTimer"></p>
+        <button id="eventSubmit">Submit</button>
+    </div>
+
+    <script>
+        function startTimer() {
+            const timerElement = document.getElementById('timer');
+            const startTime = new Date(); // เวลาที่เริ่มเข้าเว็บไซต์
+
+            const events = [
+                ["Event 1", 10, "1234", 10],
+                ["Event 2", 10, "5678", 10]
+            ];
+
+            let currentEventIndex = 0;
+
+            function showEvent(eventData) {
+                const [eventType, duration, correctCode, gap] = eventData;
+                const overlay = document.getElementById('overlay');
+                const eventPopup = document.getElementById('eventPopup');
+                const eventMessage = document.getElementById('eventMessage');
+                const eventInput = document.getElementById('eventInput');
+                const eventSubmit = document.getElementById('eventSubmit');
+                const countdownTimer = document.getElementById('countdownTimer');
+
+                overlay.style.display = 'block';
+                eventPopup.style.display = 'block';
+                eventMessage.textContent = `Event: ${eventType}. Enter the correct code within ${duration} seconds.`;
+
+                let timeLeft = duration;
+                countdownTimer.textContent = `Time left: ${timeLeft} seconds`;
+
+                const countdownInterval = setInterval(() => {
+                    timeLeft--;
+                    countdownTimer.textContent = `Time left: ${timeLeft} seconds`;
+                    if (timeLeft <= 0) {
+                        clearInterval(countdownInterval);
+                    }
+                }, 1000);
+
+                eventSubmit.onclick = () => {
+                    if (eventInput.value === correctCode) {
+                        alert('Correct!');
+                        overlay.style.display = 'none';
+                        eventPopup.style.display = 'none';
+                        eventInput.value = '';
+                        clearInterval(countdownInterval);
+
+                        setTimeout(() => {
+                            currentEventIndex++;
+                            if (currentEventIndex < events.length) {
+                                showEvent(events[currentEventIndex]);
+                            }
+                        }, gap * 1000);
+                    } else {
+                        alert('Incorrect code. Try again.');
+                    }
+                };
+
+                setTimeout(() => {
+                    if (overlay.style.display === 'block') {
+                        alert('Game Over!');
+                        overlay.style.display = 'none';
+                        eventPopup.style.display = 'none';
+                        eventInput.value = '';
+                        clearInterval(countdownInterval);
+                    }
+                }, duration * 1000);
+            }
+
+            function updateTimer() {
+                const currentTime = new Date();
+                const elapsedTime = Math.floor((currentTime - startTime) / 1000); // เวลาผ่านไปเป็นวินาที
+
+                const hours = String(Math.floor(elapsedTime / 3600)).padStart(2, '0');
+                const minutes = String(Math.floor((elapsedTime % 3600) / 60)).padStart(2, '0');
+                const seconds = String(elapsedTime % 60).padStart(2, '0');
+
+                timerElement.textContent = `${hours}:${minutes}:${seconds}`;
+            }
+
+            setInterval(updateTimer, 1000);
+
+            // Start the first event after 10 seconds
+            setTimeout(() => {
+                if (events.length > 0) {
+                    showEvent(events[currentEventIndex]);
+                }
+            }, 10000);
+        }
+
+        window.onload = startTimer;
+    </script>
+</body>
+</html>

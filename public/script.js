@@ -647,6 +647,8 @@ function check_pass_code(nameid){
 
     if (fincode === gameData[seed].passcode[numcode]) {
         flashScreen('green'); // กระพริบสีเขียว
+        const soundEffect = new Audio('video/Correct.mp4'); // ใส่พาธไฟล์เสียงที่ต้องการ
+        soundEffect.play(); // เล่นเสียงเมื่อกระพริบหน้าจอ
         closeWindow(nameid);
         numcode++;
         // fincode = "";
@@ -668,9 +670,30 @@ function check_pass_code(nameid){
         }
         
     } else {
+        const soundEffect = new Audio('video/Alertone.mp4'); // ใส่พาธไฟล์เสียงที่ต้องการ
+        soundEffect.play(); // เล่นเสียงเมื่อกระพริบหน้าจอ
         flashScreen('red'); // กระพริบสีแดง
     }
 }
+
+// function event_alert() {
+//     // red element
+//     let overlay = document.createElement('div');
+//     overlay.className = 'flashing-overlay';
+//     document.body.appendChild(overlay);
+
+//     // krapib
+//     let flashCount = 0;
+//     const flashInterval = setInterval(() => {
+//         if (flashCount >= 10) { // กระพริบ 5 ครั้ง (เปิด-ปิด = 10 รอบ)
+//             clearInterval(flashInterval);
+//             document.body.removeChild(overlay); // ลบ overlay ออกจาก DOM
+//         } else {
+//             overlay.style.opacity = flashCount % 2 === 0 ? '0.5' : '0'; // สลับระหว่างแสดงและซ่อน
+//             flashCount++;
+//         }
+//     }, 300); // กระพริบทุก 300ms
+// }
 
 function event_alert() {
     // red element
@@ -678,12 +701,19 @@ function event_alert() {
     overlay.className = 'flashing-overlay';
     document.body.appendChild(overlay);
 
+    // Load and set up the sound
+    const alertSound = new Audio('video/AlertWarning.mp4'); // ใส่พาธเสียงที่คุณต้องการ
+    alertSound.loop = true; // ให้เล่นเสียงซ้ำ
+    alertSound.play(); // เริ่มเล่นเสียง
+
     // krapib
     let flashCount = 0;
     const flashInterval = setInterval(() => {
         if (flashCount >= 10) { // กระพริบ 5 ครั้ง (เปิด-ปิด = 10 รอบ)
             clearInterval(flashInterval);
             document.body.removeChild(overlay); // ลบ overlay ออกจาก DOM
+            alertSound.pause(); // หยุดเสียงเมื่ออีเวนต์จบ
+            alertSound.currentTime = 0; // รีเซ็ตเวลาเสียงให้เริ่มจากจุดเริ่มต้น
         } else {
             overlay.style.opacity = flashCount % 2 === 0 ? '0.5' : '0'; // สลับระหว่างแสดงและซ่อน
             flashCount++;
@@ -714,4 +744,14 @@ function flashScreen(color) {
     }, 300);
 }
 
+// สร้าง Audio Object สำหรับเพลงประกอบ
+const backgroundMusic = new Audio('video/Hacktime.mp4'); // ใส่พาธเพลงที่ต้องการ
+backgroundMusic.loop = true; // ตั้งให้เพลงเล่นซ้ำ
+backgroundMusic.volume = 0.3; // ปรับระดับเสียง (0.0 - 1.0)
 
+// พยายามเล่นเพลงทันทีที่โหลดหน้าเว็บ
+window.addEventListener('load', () => {
+    backgroundMusic.play().catch(error => {
+        console.error('Autoplay failed:', error);
+    });
+});
