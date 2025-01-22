@@ -1019,3 +1019,105 @@ button{
 .menu-button:hover, .summary-button:hover {
     background-color: #45a049;
 }
+
+
+.tutorial-container{
+    width: 40%;
+    height: 60%;
+    display: flex;
+    border: 5px solid #ff00aa;
+}
+.Tuto_slider-container {
+    position: relative;
+    width: 80%;
+    max-width: 1000px;
+    height: 600px;
+    background-color: #2e1b1b;
+    border: 5px solid #d94d1a;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.Tuto_slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    height: 100%;
+}
+
+.Tuto_slider img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.Tuto_arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    color: #d94d1a;
+}
+
+.Tuto_arrow.Tuto_left {
+    left: 13%; /* ติดขอบซ้าย */
+}
+
+.Tuto_arrow.Tuto_right {
+    right: 13%; /* ติดขอบขวา */
+}
+
+.Tuto_controls-container {
+    position: absolute;
+    bottom: 0; /* ติดขอบล่าง */
+    left: 50%;
+    max-width: 500px;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+    padding-bottom: 10px; /* เพิ่มพื้นที่ให้กับปุ่ม Play */
+}
+
+.Tuto_dots {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.Tuto_dot {
+    width: 15px;
+    height: 15px;
+    margin: 0 8px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.Tuto_dot.Tuto_active {
+    background-color: #fff;
+}
+
+.Tuto_play-button {
+    display: none;
+    margin-top: 10px;
+    padding: 10px 25px;
+    background-color: #fff;
+    color: #3d1d1d;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.Tuto_play-button.Tuto_show {
+    display: block;
+}

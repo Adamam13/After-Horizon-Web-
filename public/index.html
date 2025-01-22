@@ -15,15 +15,38 @@
 </head>
 
 <body>
-
+	
 
 	<div id="game-page" class="desktop hidden">
+
+		
 		<img class="logo" src="Icon/Logo.png">
 		<div class="video-container">
 			<video autoplay muted loop>
 				<source src="video/test4.mp4" type="video/mp4">
 				Your browser does not support the video tag.
 			</video>
+		</div>
+		<div class="window tutorial-container">
+			<div class="window-header" style="background-color: #ff00aa;">
+				<div></div>
+				<span>Tutorial</span>
+				<div></div>
+			</div>
+			<div class="emergency_page" style="background-color: #000000;">
+				<div class="tuto_slider-container">
+	
+					<div class="tuto_slider" id="tuto_slider">
+					</div>
+					
+				</div>
+				<button class="tuto_arrow tuto_right">&#9654;</button>
+				<div class="tuto_controls-container">
+					<div class="tuto_dots" id="tuto_dots"></div>
+					<button class="tuto_play-button" id="tuto_playButton">Play</button>
+				</div>
+				<button class="tuto_arrow tuto_left">&#9664;</button>
+			</div>
 		</div>
 		<!-- หน้าต่างยืนยันการใช้กุญแจ -->
 		<div class="window" id="unlock_confirmation" style="display:none;">
@@ -134,7 +157,8 @@
 				</div>
 				<!-- icon file 6 -->
 				<div class="icon_wrapper">
-					<img class="icon" id="file_3" onclick="openFile('file-part4', 'folder2')" alt="" src="Icon/map_new.png">
+					<img class="icon" id="file_3" onclick="openFile('file-part4', 'folder2')" alt=""
+						src="Icon/map_new.png">
 					<div class="desktop_text">Parts Map 04</div>
 				</div>
 			</div>
@@ -710,7 +734,8 @@
 		</div>
 
 		<!-- Enter Codesystem -->
-		<div class="window enter_code" id="enter_Electical_code" style="background-color: #ffffff; border: 5px solid #ff0000;">
+		<div class="window enter_code" id="enter_Electical_code"
+			style="background-color: #ffffff; border: 5px solid #ff0000;">
 			<div class="window-header" style="background-color: #ff0000;">
 				<div></div>
 				<span>Emergency Alert !!</span>
@@ -745,7 +770,8 @@
 			</div>
 		</div>
 
-		<div class="window enter_code" id="enter_Water_code" style="background-color: #ffffff; border: 5px solid #ff0000;">
+		<div class="window enter_code" id="enter_Water_code"
+			style="background-color: #ffffff; border: 5px solid #ff0000;">
 			<div class="window-header" style="background-color: #ff0000;">
 				<div></div>
 				<span>Emergency Alert !!</span>
@@ -780,7 +806,8 @@
 			</div>
 		</div>
 
-		<div class="window enter_code" id="enter_Oxygen_code" style="background-color: #ffffff; border: 5px solid #ff0000;">
+		<div class="window enter_code" id="enter_Oxygen_code"
+			style="background-color: #ffffff; border: 5px solid #ff0000;">
 			<div class="window-header" style="background-color: #ff0000;">
 				<div></div>
 				<span>Emergency Alert !!</span>
@@ -855,7 +882,7 @@
 			<img class="close" src="Icon/close-icon_new.png" id="close">
 			<div class="rectangle_small">
 				<img class="battery img_bar" alt="" src="Icon/battery_new.png">
-				<div class="key_ea img_bar" id = "timecount">00:00</div>
+				<div class="key_ea img_bar" id="timecount">00:00</div>
 			</div>
 			<div class="rectangle_small">
 				<img class="key_img img_bar" alt="" src="Icon/key_new.png">
@@ -925,7 +952,7 @@
 		<h1 class="summary-title">Thankyou for Playing</h1>
 		<p id="summary-text">You completed the game! Well done!</p>
 	</div>
-	
+
 	<script src="script.js"></script>
 	<script src="minigame.js"></script>
 	<script src="electic.js"></script>

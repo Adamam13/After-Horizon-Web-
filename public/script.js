@@ -39,7 +39,7 @@ function closeWindow(id) {
     document.getElementById(id).style.display = 'none';
 }
 
-function CnO_Window(id_close, id_open){
+function CnO_Window(id_close, id_open){s
     document.getElementById(id_close).style.display = 'none';
     document.getElementById(id_open).style.display = 'flex';
 }
@@ -517,7 +517,7 @@ function startGame() {
     console.log(gameData);
 }
 
-let noting = 0;
+// let noting = 0;
 let electic = false;
 let water = false;
 let oxygen = false;
@@ -527,8 +527,7 @@ let water_interval;
 let oxygen_interval;
 
 function check_event(time){
-    if(Math.floor(time/60) >= gameData[seed].event_time[event_count] || noting >= 30){
-        noting = 0;
+    if(Math.floor(time) >= gameData[seed].event_time[event_count]){
         switch (gameData[seed].event_order[event_count]) {
             case 1:
                 electic_broken()
@@ -750,8 +749,70 @@ function flashScreen(color) {
 // backgroundMusic.volume = 0.3; // ปรับระดับเสียง (0.0 - 1.0)
 
 // พยายามเล่นเพลงทันทีที่โหลดหน้าเว็บ
-window.addEventListener('load', () => {
-    backgroundMusic.play().catch(error => {
-        console.error('Autoplay failed:', error);
-    });
-});
+// window.addEventListener('load', () => {
+//     backgroundMusic.play().catch(error => {
+//         console.error('Autoplay failed:', error);
+//     });
+// });
+
+
+
+// const tuto_images = [
+//     'info/hint-OT_new.png',
+//     'info/info-guied.png',
+//     'info/info-carrot_new.png',
+//     'info/info-farm_new.png'
+// ]; // Replace with your images
+
+// const tuto_slider = document.getElementById('tuto_slider');
+// const tuto_dotsContainer = document.getElementById('tuto_dots');
+// const tuto_playButton = document.getElementById('tuto_playButton');
+
+// let tuto_currentIndex = 0;
+
+// function tuto_renderSlider() {
+//     tuto_slider.style.width = `100%`;
+//     tuto_slider.innerHTML = tuto_images.map(src => `<img src="${src}" alt="Tutorial Image">`).join('');
+
+//     tuto_dotsContainer.innerHTML = tuto_images.map((_, index) => 
+//         `<div class="tuto_dot ${index === 0 ? 'tuto_active' : ''}" data-index="${index}"></div>`
+//     ).join('');
+// }
+
+// function tuto_updateSlider() {
+//     tuto_slider.style.transform = `translateX(-${tuto_currentIndex * 100}%)`;
+
+//     document.querySelectorAll('.tuto_dot').forEach((dot, index) => {
+//         dot.classList.toggle('tuto_active', index === tuto_currentIndex);
+//     });
+
+//     if (tuto_currentIndex === tuto_images.length - 1) {
+//         tuto_playButton.classList.add('tuto_show');
+//     } else {
+//         tuto_playButton.classList.remove('tuto_show');
+//     }
+// }
+
+// document.querySelector('.tuto_arrow.tuto_left').addEventListener('click', () => {
+//     tuto_currentIndex = (tuto_currentIndex - 1 + tuto_images.length) % tuto_images.length;
+//     tuto_updateSlider();
+// });
+
+// document.querySelector('.tuto_arrow.tuto_right').addEventListener('click', () => {
+//     tuto_currentIndex = (tuto_currentIndex + 1) % tuto_images.length;
+//     tuto_updateSlider();
+// });
+
+// tuto_dotsContainer.addEventListener('click', event => {
+//     if (event.target.classList.contains('tuto_dot')) {
+//         tuto_currentIndex = parseInt(event.target.dataset.index, 10);
+//         tuto_updateSlider();
+//     }
+// });
+
+// tuto_playButton.addEventListener('click', () => {
+//     alert('Play button clicked!'); // Replace with desired functionality
+// });
+
+// tuto_renderSlider();
+// tuto_updateSlider();
