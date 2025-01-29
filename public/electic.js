@@ -54,6 +54,10 @@ function handleClick(buttonNumber) {
         return;
     }
 
+    if(!web_electic){
+        return;
+    }
+
     let index = web_electic.findIndex(item => item.startsWith(buffer_order));
 
     if (index == -1){

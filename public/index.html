@@ -7,6 +7,8 @@
 
 	<link rel="stylesheet" href="./index.css" />
 	<link rel="stylesheet" href="./minigame.css" />
+	<link rel="stylesheet" href="./tutorial.css">
+	<link rel="stylesheet" href="./menu.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@400&display=swap" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,11 +17,9 @@
 </head>
 
 <body>
-	
+
 
 	<div id="game-page" class="desktop hidden">
-
-		
 		<img class="logo" src="Icon/Logo.png">
 		<div class="video-container">
 			<video autoplay muted loop>
@@ -27,27 +27,9 @@
 				Your browser does not support the video tag.
 			</video>
 		</div>
-		<div class="window tutorial-container">
-			<div class="window-header" style="background-color: #ff00aa;">
-				<div></div>
-				<span>Tutorial</span>
-				<div></div>
-			</div>
-			<div class="emergency_page" style="background-color: #000000;">
-				<div class="tuto_slider-container">
-	
-					<div class="tuto_slider" id="tuto_slider">
-					</div>
-					
-				</div>
-				<button class="tuto_arrow tuto_right">&#9654;</button>
-				<div class="tuto_controls-container">
-					<div class="tuto_dots" id="tuto_dots"></div>
-					<button class="tuto_play-button" id="tuto_playButton">Play</button>
-				</div>
-				<button class="tuto_arrow tuto_left">&#9664;</button>
-			</div>
-		</div>
+
+		<!-- ไวรัส -->
+
 		<!-- หน้าต่างยืนยันการใช้กุญแจ -->
 		<div class="window" id="unlock_confirmation" style="display:none;">
 			<div class="window-header">
@@ -485,29 +467,29 @@
 			</div>
 		</div>
 		<!-- water_supply_enter_page -->
-		<div class="window" id="water_supply_enter_page" style="background-color: #dcffff; border: 5px solid #00FFFF;">
+		<div class="window" id="water_supply_enter_page" style="border: 5px solid #00FFFF;">
 			<div class="window-header" style="background-color: #00FFFF;">
 				<div></div>
 				<span>Water Supply</span>
 				<button class="button close" onclick="closeWindow('water_supply_enter_page')">X</button>
 			</div>
-			<div class="enter_page" style="background-color: #151515;">
+			<div class="enter_page">
 				<img style="width: 15%;" src="Icon/water_supply_icon _blue.png">
 				<div class="text_enter_page " style="color: #00FFFF;">Water Supply System</div>
-				<button class="enter_page_btn"
+				<button class="main_btn enter_btn" id="enter_water"
 					onclick="CnO_Window('water_supply_enter_page', 'select_pipe')">Enter</button>
 			</div>
 		</div>
 
 		<!-- select_pipe -->
-		<div class="window" id="select_pipe" style="background-color: #dcffff; border: 5px solid #00FFFF;">
+		<div class="window" id="select_pipe" style="border: 5px solid #00FFFF;">
 			<div class="window-header" style="background-color: #00FFFF;">
 				<button class="button" onclick="CnO_Window('select_pipe', 'water_supply_enter_page')">
 					< Back </button>
 						<span>Water Supply</span>
 						<button class="button close" onclick="closeWindow('select_pipe')">X</button>
 			</div>
-			<div class="select_pipe_window" style="background-color: #151515;">
+			<div class="select_pipe_window">
 				<div class="btn_pipe_container">
 					<div class="yellow_pipe" id="y_pipe1"></div>
 					<div class="yellow_pipe" id="y_pipe2"></div>
@@ -516,7 +498,7 @@
 		</div>
 
 		<!-- water_supply -->
-		<div class="window" id="water_supply" style="background-color: #151515; border: 5px solid #00FFFF;">
+		<div class="window" id="water_supply" style="border: 5px solid #00FFFF;">
 			<div class="window-header" style="background-color: #00FFFF;">
 				<button class="button" onclick="CnO_Window('water_supply', 'select_pipe')">
 					< Back</button>
@@ -524,7 +506,7 @@
 
 						<button class="button close" onclick="closeWindow('water_supply')">X</button>
 			</div>
-			<div class="decode_window" style="background-color: #151515; margin: 15px;">
+			<div class="decode_window">
 				<div class="decode_header">
 					<div class="decode_guide">
 						<div>วิธีการค้นหารหัส</div>
@@ -566,13 +548,11 @@
 						<button onclick="decrement('digit4')" class="button_press">V</button>
 					</div>
 				</div>
-				<button class="btn_check" onclick="checkGuess()">Check</button>
-
 			</div>
 		</div>
 
 		<!-- water_supply -->
-		<div class="window" id="water_supply" style="background-color: #151515; border: 5px solid #00FFFF;">
+		<!-- <div class="window" id="water_supply" style="background-color: #151515; border: 5px solid #00FFFF;">
 			<div class="window-header" style="background-color: #00FFFF;">
 				<button class="button" onclick="CnO_Window('water_supply', 'select_pipe')">
 					< Back</button>
@@ -625,7 +605,7 @@
 				<button class="btn_check" onclick="checkGuess()">Check</button>
 
 			</div>
-		</div>
+		</div> -->
 		<!-- Key Unlock system -->
 		<div class="window" id="lock_key" style="background-color: #ffffff; border: 5px solid #e25519;">
 			<div class="window-header" style="background-color: #e25519;">
@@ -633,22 +613,22 @@
 				<span style="color:#000000;">Key Unlock System</span>
 				<button class="button close" onclick="closeWindow('lock_key')">X</button>
 			</div>
-			<div class="enter_page" style="background-color: #351b1b;">
+			<div class="enter_page" style="background-color: #000000;">
 				<img style="width: 15%;" src="Icon/lock_key_icon_orange.png">
 				<div class="text_enter_page" style="color:#e25519;">Key Unlock System</div>
-				<button class="enter_page_btn" id="enter_minigame"
+				<button class="main_btn enter_btn" id="enter_minigame"
 					onclick="CnO_Window('lock_key' ,'minigame')">Enter</button>
 			</div>
 		</div>
 
-		<div class="window" id="minigame" style="background-color: #ffffff; border: 5px solid #e25519;">
+		<div class="window" id="minigame" style="background-color: #7c7979; border: 5px solid #e25519;">
 			<div class="window-header" style="background-color: #e25519;">
 				<button class="button" onclick="CnO_Window('minigame', 'lock_key')">
 					< Back </button>
 						<span>Key Unlock System</span>
 						<button class="button close" onclick="closeWindow('minigame')">X</button>
 			</div>
-			<div class="minigame" style="background-color: #351b1b;">
+			<div class="minigame" style="background-color: #000000;">
 				<div class="image-grid">
 					<div class="image" data-index="0" style="background-position: 0 0;"></div>
 					<div class="image" data-index="1" style="background-position: 50% 0;"></div>
@@ -681,10 +661,10 @@
 				<span>Electrical System</span>
 				<button class="button close" onclick="closeWindow('electrical')">X</button>
 			</div>
-			<div class="enter_page" style="background-color: #1A1A1A;">
+			<div class="enter_page" style="background-color: #000000;">
 				<img style="width: 15%;" src="Icon/electrical_icon_yellow.png">
 				<div class="text_enter_page" style="color: #F1FA49;">Electrical System</div>
-				<button class="enter_page_btn" onclick="CnO_Window('electrical', 'electrical-game')">Enter</button>
+				<button class="main_btn enter_btn" id="enter_elect" onclick="CnO_Window('electrical', 'electrical-game')">Enter</button>
 			</div>
 		</div>
 
@@ -695,7 +675,7 @@
 				<span>Electrical System</span>
 				<button class="button close" onclick="closeWindow('electrical-game')">X</button>
 			</div>
-			<div class="enter_page" style="background-color: #1A1A1A;">
+			<div class="enter_page" style="background-color: #000000;">
 				<div id="timer">30</div>
 
 				<div class="indicator-container">
@@ -897,9 +877,17 @@
 		</div>
 	</div>
 
+
 	<div id="menu-page" class="desktop page">
 		<h1 class="menu-title">Welcome to AfterDay Horizon</h1>
-		<h2 class="menu">Enter 2-digit code form The Caretaker</h2>
+		<button class="btn_menu" onclick="showEnter_codePage()">Start Game</button>
+		<button class="btn_menu" onclick="showTutorial()">Tutorial</button>
+		<button class="btn_menu">Credit</button>
+	</div>
+
+	<div id="enter_code-page" class="desktop page hidden">
+		<h1 class="menu-title">Welcome to AfterDay Horizon</h1>
+		<h2 class="menu">Enter 2-digit code from The Caretaker</h2>
 		<div class="input-container">
 			<div class="btn-container">
 				<button onclick="up_num_entry('code1_entry')" class="button_press">Λ</button>
@@ -918,12 +906,12 @@
 				<input type="text" id="code4_entry" class="input-box" value="?" readonly>
 			</div>
 		</div>
-		<button class="menu-button hidden" id="start-game-button">Start Game</button>
+		<button class="main_btn hidden" id="start-game-button">Start Game</button>
 	</div>
 
 
 	<div id="summary-page" class="desktop page hidden">
-		<h1 class="menu-title">Day summary</h1>
+		<h1 class="menu-title">หน้านี้จะมีอยู่ไหม มันคือหน้าอะไรนะ</h1>
 		<div class="input-container">
 			<div class="btn-container">
 				<button onclick="up_num('code1')" class="button_press">Λ</button>
@@ -942,21 +930,39 @@
 				<input type="text" id="code4" class="input-box" value="8" readonly>
 			</div>
 		</div>
-		<div>
-			<button class="summary-button" id="back-button">Back</button>
-			<button class="summary-button" id="continue-button">Continue</button>
-		</div>
+		<button class="main_btn" onclick="showGame()">Back</button>
+		<button class="main_btn" onclick="check_nextDay_code()">Continue</button>
 	</div>
 
 	<div id="thankyou-page" class="desktop page hidden">
 		<h1 class="summary-title">Thankyou for Playing</h1>
 		<p id="summary-text">You completed the game! Well done!</p>
+		<button class="main_btn" onclick="showMenu()">Back To Title</button>
+	</div>
+
+	<!-- tutorial -->
+	<div id="tutorial-page" class="tutorial page hidden">
+		<h1 class="tutorial-title">Tutorial</h1>
+		<div class="tuto">
+			<button class="tuto_arrow tuto_left">&#9664;</button>
+			<div class="tuto_slider-container">
+				<div class="tuto_slider" id="tuto_slider">
+					<!-- Images will be dynamically added here -->
+				</div>
+			</div>
+			<button class="tuto_arrow tuto_right">&#9654;</button>
+		</div>
+		<div class="tuto_controls-container">
+			<div class="tuto_dots" id="tuto_dots"></div>
+			<button class="btn_tutorial" id="tuto_playButton">CLOSE</button>
+		</div>
 	</div>
 
 	<script src="script.js"></script>
 	<script src="minigame.js"></script>
 	<script src="electic.js"></script>
 	<script src="event.js"></script>
+	<script src="tutorial.js"></script>
 </body>
 
 </html>

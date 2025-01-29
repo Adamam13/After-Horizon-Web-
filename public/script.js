@@ -39,7 +39,7 @@ function closeWindow(id) {
     document.getElementById(id).style.display = 'none';
 }
 
-function CnO_Window(id_close, id_open){s
+function CnO_Window(id_close, id_open){
     document.getElementById(id_close).style.display = 'none';
     document.getElementById(id_open).style.display = 'flex';
 }
@@ -88,6 +88,7 @@ for (let i = 1; i <= 18; i++) {
 
     newNode.addEventListener('click', () => CnO_Window('select_pipe', 'water_supply'));
     newNode.addEventListener('click', () => set_code(i));
+    newNode.addEventListener('click', checkGuess);
 }
 
 
@@ -105,6 +106,7 @@ function increment(id) {
         inputBox.value = 0;
         inputBox.className = 'input-box noting';
     }
+    checkGuess();
 }
 
 function decrement(id) {
@@ -118,6 +120,7 @@ function decrement(id) {
         inputBox.value = 9;
         inputBox.className = 'input-box noting';
     }
+    checkGuess();
 }
 
 const pipe_board = document.querySelector('.pipe_board');
@@ -355,15 +358,7 @@ function openFile(fileId, folderId) {
 
 
 function showMenu() {
-    document.getElementById('menu-page').classList.remove('hidden');
-    document.getElementById('game-page').classList.add('hidden');
-    document.getElementById('summary-page').classList.add('hidden');
-}
-
-function startGame() {
-    document.getElementById('menu-page').classList.add('hidden');
-    document.getElementById('summary-page').classList.add('hidden');
-    document.getElementById('game-page').classList.remove('hidden');
+    location.reload();
 }
 
 function showSummary() {
@@ -379,19 +374,52 @@ function showThank() {
     document.getElementById('thankyou-page').classList.remove('hidden');
 }
 
+function showEnter_codePage() {
+    document.getElementById('menu-page').classList.add('hidden');
+    document.getElementById('game-page').classList.add('hidden');
+    document.getElementById('summary-page').classList.add('hidden');
+    document.getElementById('enter_code-page').classList.remove('hidden');
+    showTutorial();
+}
+
+function showGame() {
+    document.getElementById('menu-page').classList.add('hidden');
+    document.getElementById('summary-page').classList.add('hidden');
+    document.getElementById('enter_code-page').classList.add('hidden')
+    document.getElementById('game-page').classList.remove('hidden');
+}
+
 function check_nextDay_code(){
     if (document.getElementById('code1').value == 5 && document.getElementById('code2').value == 0){
         showThank();
     }
 }
 
+function startGame() {
+    document.getElementById('menu-page').classList.add('hidden');
+    document.getElementById('summary-page').classList.add('hidden');
+    document.getElementById('enter_code-page').classList.add('hidden')
+    document.getElementById('game-page').classList.remove('hidden');
+
+    // เริ่มจับเวลา
+    startGameTimer();
+    // console.log(gameData);
+}
+
+function showTutorial(){
+    document.getElementById('tutorial-page').classList.remove('hidden');
+    tuto_currentIndex = 0;
+    tuto_updateSlider();
+}
+
+function closeTutorial(){
+    document.getElementById('tutorial-page').classList.add('hidden');
+}
+
 
 document.getElementById('start-game-button').addEventListener('click', startGame);
 
 document.getElementById('close').addEventListener('click', showSummary);
-
-document.getElementById('continue-button').addEventListener('click', check_nextDay_code);
-document.getElementById('back-button').addEventListener('click', startGame);
 
 //random file **not now**
 
@@ -497,251 +525,15 @@ function startGameTimer() {
         const seconds = String(elapsedTime % 60).padStart(2, '00');
         timerElement.textContent = `${minutes}:${seconds}`;
         check_event(elapsedTime);
-        if (!electic && !water && !oxygen){
-            noting++;
-            console.log(noting);
-        }
+        // if (!electic && !water && !oxygen){
+        //     noting++;
+        //     console.log(noting);
+        // }
     }
 
     setInterval(updateTimer, 1000);
 }
 
-// เรียกใช้งาน startGameTimer เมื่อผู้ใช้เริ่มเกมหลังจากใส่รหัสสำเร็จ
-function startGame() {
-    document.getElementById('menu-page').classList.add('hidden');
-    document.getElementById('summary-page').classList.add('hidden');
-    document.getElementById('game-page').classList.remove('hidden');
-
-    // เริ่มจับเวลา
-    startGameTimer();
-    console.log(gameData);
-}
-
-// let noting = 0;
-let electic = false;
-let water = false;
-let oxygen = false;
-let numcode = 0;
-let elect_interval;
-let water_interval;
-let oxygen_interval;
-
-function check_event(time){
-    if(Math.floor(time) >= gameData[seed].event_time[event_count]){
-        switch (gameData[seed].event_order[event_count]) {
-            case 1:
-                electic_broken()
-                event_count++;
-                break
-            case 2:
-                oxygen_broken()
-                event_count++;
-                break
-            case 3:
-                water_broken()
-                event_count++;
-                break
-
-        }
-    }
-}
-
-function electic_broken() {
-    if(!electic){
-        console.log("ไฟฟ้าพังจ้าาาา");
-        electic = true;
-        set_electic();
-        event_alert();
-        openWindow('enter_Electical_code');
-        const timer_electic = document.getElementById('emer_electic');
-        let elect_time = 360000;
-    
-        function updateTimer() {
-            elect_time -= 10;
-            const minutes = String(Math.floor(elect_time / 60000)).padStart(2, '0');
-            const seconds = String(Math.floor((elect_time % 60000) / 1000)).padStart(2, '0');
-            const milliseconds = String(Math.floor((elect_time % 1000) / 10)).padStart(2, '0');
-            timer_electic.textContent = `${minutes}:${seconds}:${milliseconds}`;
-        }
-        
-        elect_interval = setInterval(() => {
-            if (elect_time <= 0) {
-                clearInterval(elect_interval);
-                showThank()
-                timer_electic.textContent = "00:00:00";
-            } else {
-                updateTimer();
-            }
-        }, 10);
-    }
-}
-
-function water_broken(){
-    if(!water){
-        console.log("ระบบประปาพังจ้าาาา");
-        event_alert();
-        openWindow('enter_Water_code');
-        water = true;
-        const timer_Water = document.getElementById('emer_water');
-        let water_time = 300000;
-    
-        function updateTimer() {
-            water_time -= 10;
-            const minutes = String(Math.floor(water_time / 60000)).padStart(2, '0');
-            const seconds = String(Math.floor((water_time % 60000) / 1000)).padStart(2, '0');
-            const milliseconds = String(Math.floor((water_time % 1000) / 10)).padStart(2, '0');
-            timer_Water.textContent = `${minutes}:${seconds}:${milliseconds}`;
-        }
-        
-        water_interval = setInterval(() => {
-            if (water_time <= 0) {
-                clearInterval(water_interval);
-                showThank()
-                timer_Water.textContent = "00:00:00";
-            } else {
-                updateTimer();
-            }
-        }, 10);
-    }
-}
-
-function oxygen_broken(){
-    if(!oxygen){
-        console.log("เครื่องผลิตออกซิเจนพังจ้าาาา");
-        event_alert();
-        openWindow('enter_Oxygen_code');
-        oxygen = true;
-        const timer_oxygen = document.getElementById('emer_oxy');
-        let oxygen_time = 240000;
-    
-        function updateTimer() {
-            oxygen_time -= 10;
-            const minutes = String(Math.floor(oxygen_time / 60000)).padStart(2, '0');
-            const seconds = String(Math.floor((oxygen_time % 60000) / 1000)).padStart(2, '0');
-            const milliseconds = String(Math.floor((oxygen_time % 1000) / 10)).padStart(2, '0');
-            timer_oxygen.textContent = `${minutes}:${seconds}:${milliseconds}`;
-        }
-        
-        oxygen_interval = setInterval(() => {
-            if (oxygen_time <= 0) {
-                clearInterval(oxygen_interval);
-                showThank()
-                timer_oxygen.textContent = "00:00:00";
-            } else {
-                updateTimer();
-            }
-        }, 10);
-    }
-}
-
-function check_pass_code(nameid){
-    let emer = document.getElementById(nameid);
-    let codelist = emer.querySelectorAll("input");
-    let fincode = ""
-    codelist.forEach(element =>{
-        fincode += element.value;
-    })
-
-    console.log(fincode, gameData[seed].passcode[numcode]);
-
-    if (fincode === gameData[seed].passcode[numcode]) {
-        flashScreen('green'); // กระพริบสีเขียว
-        const soundEffect = new Audio('video/Correct.mp4'); // ใส่พาธไฟล์เสียงที่ต้องการ
-        soundEffect.play(); // เล่นเสียงเมื่อกระพริบหน้าจอ
-        closeWindow(nameid);
-        numcode++;
-        // fincode = "";
-        codelist.forEach(element =>{
-            element.value = 0;
-        })
-
-        if(nameid == 'enter_Electical_code'){
-            electic = false;
-            clearInterval(elect_interval);
-        }
-        else if(nameid == 'enter_Water_code'){
-            water = false;
-            clearInterval(water_interval);
-        }
-        else if(nameid == 'enter_Oxygen_code'){
-            oxygen = false;
-            clearInterval(oxygen_interval);
-        }
-        
-    } else {
-        const soundEffect = new Audio('video/Alertone.mp4'); // ใส่พาธไฟล์เสียงที่ต้องการ
-        soundEffect.play(); // เล่นเสียงเมื่อกระพริบหน้าจอ
-        flashScreen('red'); // กระพริบสีแดง
-    }
-}
-
-// function event_alert() {
-//     // red element
-//     let overlay = document.createElement('div');
-//     overlay.className = 'flashing-overlay';
-//     document.body.appendChild(overlay);
-
-//     // krapib
-//     let flashCount = 0;
-//     const flashInterval = setInterval(() => {
-//         if (flashCount >= 10) { // กระพริบ 5 ครั้ง (เปิด-ปิด = 10 รอบ)
-//             clearInterval(flashInterval);
-//             document.body.removeChild(overlay); // ลบ overlay ออกจาก DOM
-//         } else {
-//             overlay.style.opacity = flashCount % 2 === 0 ? '0.5' : '0'; // สลับระหว่างแสดงและซ่อน
-//             flashCount++;
-//         }
-//     }, 300); // กระพริบทุก 300ms
-// }
-
-function event_alert() {
-    // red element
-    let overlay = document.createElement('div');
-    overlay.className = 'flashing-overlay';
-    document.body.appendChild(overlay);
-
-    // Load and set up the sound
-    const alertSound = new Audio('video/AlertWarning.mp4'); // ใส่พาธเสียงที่คุณต้องการ
-    alertSound.loop = true; // ให้เล่นเสียงซ้ำ
-    alertSound.play(); // เริ่มเล่นเสียง
-
-    // krapib
-    let flashCount = 0;
-    const flashInterval = setInterval(() => {
-        if (flashCount >= 10) { // กระพริบ 5 ครั้ง (เปิด-ปิด = 10 รอบ)
-            clearInterval(flashInterval);
-            document.body.removeChild(overlay); // ลบ overlay ออกจาก DOM
-            alertSound.pause(); // หยุดเสียงเมื่ออีเวนต์จบ
-            alertSound.currentTime = 0; // รีเซ็ตเวลาเสียงให้เริ่มจากจุดเริ่มต้น
-        } else {
-            overlay.style.opacity = flashCount % 2 === 0 ? '0.5' : '0'; // สลับระหว่างแสดงและซ่อน
-            flashCount++;
-        }
-    }, 300); // กระพริบทุก 300ms
-}
-
-function flashScreen(color) {
-    // สร้าง div สำหรับกระพริบ
-    const flashElement = document.createElement('div');
-    flashElement.style.position = 'fixed'; // ตำแหน่งแบบเต็มหน้าจอ
-    flashElement.style.top = '0';
-    flashElement.style.left = '0';
-    flashElement.style.width = '100vw';
-    flashElement.style.height = '100vh';
-    flashElement.style.backgroundColor = color; // ใช้สีที่ส่งเข้ามา
-    flashElement.style.opacity = '0.7'; // ความโปร่งใส
-    flashElement.style.zIndex = '9999'; // อยู่ด้านบนสุด
-    flashElement.style.transition = 'opacity 0.3s ease'; // เพิ่มเอฟเฟกต์ fade-out
-
-    // เพิ่ม Element เข้าไปใน body
-    document.body.appendChild(flashElement);
-
-    // ลบ Element หลังจาก 300 มิลลิวินาที
-    setTimeout(() => {
-        flashElement.style.opacity = '0'; // ทำให้จางหายไป
-        setTimeout(() => flashElement.remove(), 300); // ลบออกจาก DOM
-    }, 300);
-}
 
 // สร้าง Audio Object สำหรับเพลงประกอบ
 // const backgroundMusic = new Audio('video/Hacktime.mp4'); // ใส่พาธเพลงที่ต้องการ
@@ -754,65 +546,3 @@ function flashScreen(color) {
 //         console.error('Autoplay failed:', error);
 //     });
 // });
-
-
-
-// const tuto_images = [
-//     'info/hint-OT_new.png',
-//     'info/info-guied.png',
-//     'info/info-carrot_new.png',
-//     'info/info-farm_new.png'
-// ]; // Replace with your images
-
-// const tuto_slider = document.getElementById('tuto_slider');
-// const tuto_dotsContainer = document.getElementById('tuto_dots');
-// const tuto_playButton = document.getElementById('tuto_playButton');
-
-// let tuto_currentIndex = 0;
-
-// function tuto_renderSlider() {
-//     tuto_slider.style.width = `100%`;
-//     tuto_slider.innerHTML = tuto_images.map(src => `<img src="${src}" alt="Tutorial Image">`).join('');
-
-//     tuto_dotsContainer.innerHTML = tuto_images.map((_, index) => 
-//         `<div class="tuto_dot ${index === 0 ? 'tuto_active' : ''}" data-index="${index}"></div>`
-//     ).join('');
-// }
-
-// function tuto_updateSlider() {
-//     tuto_slider.style.transform = `translateX(-${tuto_currentIndex * 100}%)`;
-
-//     document.querySelectorAll('.tuto_dot').forEach((dot, index) => {
-//         dot.classList.toggle('tuto_active', index === tuto_currentIndex);
-//     });
-
-//     if (tuto_currentIndex === tuto_images.length - 1) {
-//         tuto_playButton.classList.add('tuto_show');
-//     } else {
-//         tuto_playButton.classList.remove('tuto_show');
-//     }
-// }
-
-// document.querySelector('.tuto_arrow.tuto_left').addEventListener('click', () => {
-//     tuto_currentIndex = (tuto_currentIndex - 1 + tuto_images.length) % tuto_images.length;
-//     tuto_updateSlider();
-// });
-
-// document.querySelector('.tuto_arrow.tuto_right').addEventListener('click', () => {
-//     tuto_currentIndex = (tuto_currentIndex + 1) % tuto_images.length;
-//     tuto_updateSlider();
-// });
-
-// tuto_dotsContainer.addEventListener('click', event => {
-//     if (event.target.classList.contains('tuto_dot')) {
-//         tuto_currentIndex = parseInt(event.target.dataset.index, 10);
-//         tuto_updateSlider();
-//     }
-// });
-
-// tuto_playButton.addEventListener('click', () => {
-//     alert('Play button clicked!'); // Replace with desired functionality
-// });
-
-// tuto_renderSlider();
-// tuto_updateSlider();

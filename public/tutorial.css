@@ -1,0 +1,183 @@
+.tutorial{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: hsla(0, 0%, 0%, 0.9);
+}
+
+.tuto_slider-container {
+    /* position: absolute; */
+    width: 60%;
+    height: 70%;
+    background-color: #000000;
+    border: 5px solid #58E191;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.tuto_slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    height: 100%;
+}
+
+.tuto_slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.tuto {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+}
+
+.tuto_arrow {
+    /* position: absolute;
+    top: 40%;
+    transform: translateY(-50%); */
+    /* background-color: rgba(255, 255, 255, 0.7); */
+    border: none;
+    /* padding: 1%; */
+    font-size: 50px;
+    color: #58E191;
+    margin: 2%;
+    transition: background-color 0.1s, transform 0.1s;;
+}
+
+.tuto_arrow:hover {
+    /* background-color: rgba(255, 255, 255, 0.7); */
+    color: hsl(145, 70%, 80%);
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.tuto_arrow:active {
+    /* background-color: rgba(255, 255, 255, 0.7); */
+    color: #58E191;
+    cursor: pointer;
+    transform: scale(0.95);
+}
+
+.arrow_dis {
+    color: hsl(145, 70%, 20%);
+    transform: scale(1);
+    cursor: default;
+}
+
+.arrow_dis:hover {
+    color: hsl(145, 70%, 20%);
+    transform: scale(1);
+    cursor: default;
+}
+
+.arrow_dis:active {
+    color: hsl(145, 70%, 20%);
+    transform: scale(1);
+    cursor: default;
+}
+
+/* .tuto_arrow.tuto_left {
+    left: 13%;
+}
+
+.tuto_arrow.tuto_right {
+    right: 13%;
+} */
+
+.tuto_controls-container {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* z-index: 10; */
+    /* padding-bottom: 10px; เพิ่มพื้นที่ให้กับปุ่ม Play */
+}
+
+.tuto_dots {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.tuto_dot {
+    width: 15px;
+    height: 15px;
+    margin: 0 8px;
+    margin-bottom: 15%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.tutorial-title{
+    font-size: 3em;
+    position: absolute;
+    top: 5%;
+}
+
+.tuto_dot.tuto_active {
+    background-color: #fff;
+}
+
+/* .tuto_play-button {
+    display: none;
+    margin-top: 10px;
+    padding: 10px 25px;
+    background-color: #fff;
+    color: #3d1d1d;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.tuto_play-button.tuto_show {
+    display: block;
+} */
+
+.btn_tutorial{
+    visibility: hidden;
+    background-color: #000000;
+    color: #ff0000;
+    border: 3px solid #ff0000;
+    /* width: 100%; */
+    margin-top: 5%;
+    justify-items: center;
+    align-items: center;
+    align-self: center;
+    font-weight: bold;
+    font-size: x-large;
+    padding: 10%;
+    transition: background-color 0.1s, transform 0.1s;
+}
+
+.btn_tutorial:hover {
+    background-color: #ff0000;
+    color: #0e0000;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.btn_tutorial:active {
+    background-color: #ff0000;
+    color: #0e0000;
+    cursor: pointer;
+    transform: scale(0.95);
+}
+
+.btn_tutorial.tuto_show {
+    visibility: visible;
+}
