@@ -31,9 +31,11 @@
 		<!-- ไวรัส -->
 
 		<!-- หน้าต่างยืนยันการใช้กุญแจ -->
-		<div class="window" id="unlock_confirmation" style="display:none;">
-			<div class="window-header">
+		<div class="window" id="unlock_confirmation" style="display:none; background-color: #ff0000; border: 5px solid #ff0000;">
+			<div class="window-header" style="background-color: #ff0000;">
+				<div></div>
 				<span>Use 1 key to unlock this file?</span>
+				<div></div>
 			</div>
 			<div class="window-body">
 				<div>
@@ -42,6 +44,42 @@
 				</div>
 			</div>
 		</div>
+
+		<!-- <div class="window enter_code" id="enter_Electical_code"
+			style="background-color: #ff0000; border: 5px solid #ff0000;">
+			<div class="window-header" style="background-color: #ff0000;">
+				<div></div>
+				<span>Emergency Alert !!</span>
+				<div></div>
+			</div>
+			<div class="emergency_page" style="background-color: #000000;">
+				<span id="emer_text" style="color:#ff0000;">Electical system error!!</span>
+				<span class="emer_time" id="emer_electic" style="color:#ff0000;">06:00</span>
+				<div class="input_pass_code">
+					<div class="btn-container">
+						<button onclick="up_num('elec1')" class="button_press">Λ</button>
+						<input type="text" id="elec1" class="input_box_pass_code" value="0" readonly>
+						<button onclick="down_num('elec1')" class="button_press">V</button>
+					</div>
+					<div class="btn-container">
+						<button onclick="up_num('elec2')" class="button_press">Λ</button>
+						<input type="text" id="elec2" class="input_box_pass_code" value="0" readonly>
+						<button onclick="down_num('elec2')" class="button_press">V</button>
+					</div>
+					<div class="btn-container">
+						<button onclick="up_num('elec3')" class="button_press">Λ</button>
+						<input type="text" id="elec3" class="input_box_pass_code" value="0" readonly>
+						<button onclick="down_num('elec3')" class="button_press">V</button>
+					</div>
+					<div class="btn-container">
+						<button onclick="up_num('elec4')" class="button_press">Λ</button>
+						<input type="text" id="elec4" class="input_box_pass_code" value="0" readonly>
+						<button onclick="down_num('elec4')" class="button_press">V</button>
+					</div>
+				</div>
+				<button class="btn_pass_code" onclick="check_pass_code('enter_Electical_code')">ENTER</button>
+			</div>
+		</div> -->
 
 
 		<!-- Folder 1 -->
@@ -467,7 +505,7 @@
 			</div>
 		</div>
 		<!-- water_supply_enter_page -->
-		<div class="window" id="water_supply_enter_page" style="border: 5px solid #00FFFF;">
+		<div class="window" id="water_supply_enter_page" style="background-color: #00ffff; border: 5px solid #00FFFF;">
 			<div class="window-header" style="background-color: #00FFFF;">
 				<div></div>
 				<span>Water Supply</span>
@@ -482,14 +520,14 @@
 		</div>
 
 		<!-- select_pipe -->
-		<div class="window" id="select_pipe" style="border: 5px solid #00FFFF;">
+		<div class="window" id="select_pipe" style="background-color: #00FFFF; border: 5px solid #00FFFF;">
 			<div class="window-header" style="background-color: #00FFFF;">
 				<button class="button" onclick="CnO_Window('select_pipe', 'water_supply_enter_page')">
 					< Back </button>
 						<span>Water Supply</span>
 						<button class="button close" onclick="closeWindow('select_pipe')">X</button>
 			</div>
-			<div class="select_pipe_window">
+			<div class="enter_page">
 				<div class="btn_pipe_container">
 					<div class="yellow_pipe" id="y_pipe1"></div>
 					<div class="yellow_pipe" id="y_pipe2"></div>
@@ -498,7 +536,7 @@
 		</div>
 
 		<!-- water_supply -->
-		<div class="window" id="water_supply" style="border: 5px solid #00FFFF;">
+		<div class="window" id="water_supply" style="background-color: #00FFFF; border: 5px solid #00FFFF;">
 			<div class="window-header" style="background-color: #00FFFF;">
 				<button class="button" onclick="CnO_Window('water_supply', 'select_pipe')">
 					< Back</button>
@@ -607,7 +645,7 @@
 			</div>
 		</div> -->
 		<!-- Key Unlock system -->
-		<div class="window" id="lock_key" style="background-color: #ffffff; border: 5px solid #e25519;">
+		<div class="window" id="lock_key" style="background-color: #e25519; border: 5px solid #e25519;">
 			<div class="window-header" style="background-color: #e25519;">
 				<div></div>
 				<span style="color:#000000;">Key Unlock System</span>
@@ -621,7 +659,7 @@
 			</div>
 		</div>
 
-		<div class="window" id="minigame" style="background-color: #7c7979; border: 5px solid #e25519;">
+		<div class="window" id="minigame" style="background-color: #e25519; border: 5px solid #e25519;">
 			<div class="window-header" style="background-color: #e25519;">
 				<button class="button" onclick="CnO_Window('minigame', 'lock_key')">
 					< Back </button>
@@ -655,7 +693,7 @@
 		</div>
 
 		<!-- Electrical system -->
-		<div class="window" id="electrical" style="background-color: #E5DCFF; border: 5px solid #F1FA49;">
+		<div class="window" id="electrical" style="background-color: #F1FA49; border: 5px solid #F1FA49;">
 			<div class="window-header" style="background-color: #F1FA49;">
 				<div></div>
 				<span>Electrical System</span>
@@ -669,7 +707,7 @@
 		</div>
 
 		<!-- electrical-game -->
-		<div class="window" id="electrical-game" style="background-color: #E5DCFF; border: 5px solid #F1FA49;">
+		<div class="window" id="electrical-game" style="background-color: #F1FA49; border: 5px solid #F1FA49;">
 			<div class="window-header" style="background-color: #F1FA49;">
 				<div></div>
 				<span>Electrical System</span>
@@ -715,7 +753,7 @@
 
 		<!-- Enter Codesystem -->
 		<div class="window enter_code" id="enter_Electical_code"
-			style="background-color: #ffffff; border: 5px solid #ff0000;">
+			style="background-color: #ff0000; border: 5px solid #ff0000;">
 			<div class="window-header" style="background-color: #ff0000;">
 				<div></div>
 				<span>Emergency Alert !!</span>
@@ -751,7 +789,7 @@
 		</div>
 
 		<div class="window enter_code" id="enter_Water_code"
-			style="background-color: #ffffff; border: 5px solid #ff0000;">
+			style="background-color: #ff0000; border: 5px solid #ff0000;">
 			<div class="window-header" style="background-color: #ff0000;">
 				<div></div>
 				<span>Emergency Alert !!</span>
@@ -787,7 +825,7 @@
 		</div>
 
 		<div class="window enter_code" id="enter_Oxygen_code"
-			style="background-color: #ffffff; border: 5px solid #ff0000;">
+			style="background-color: #ff0000; border: 5px solid #ff0000;">
 			<div class="window-header" style="background-color: #ff0000;">
 				<div></div>
 				<span>Emergency Alert !!</span>

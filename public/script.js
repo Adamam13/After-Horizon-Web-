@@ -28,11 +28,17 @@ fetch('./seed.json')
 
 let seed;
 let event_count = 0;
+let zIndexCounter = 1;
 
 
 // fucntion code
 function openWindow(id) {
     document.getElementById(id).style.display = 'flex';
+    zIndexCounter += 1;
+    document.getElementById(id).style.zIndex = zIndexCounter;
+    document.getElementById(id).style.left = `50%`;
+    document.getElementById(id).style.top = `50%`;
+    document.getElementById(id).style.transform = `translate(-50%, -50%);`;
 }
 
 function closeWindow(id) {
@@ -42,6 +48,11 @@ function closeWindow(id) {
 function CnO_Window(id_close, id_open){
     document.getElementById(id_close).style.display = 'none';
     document.getElementById(id_open).style.display = 'flex';
+    zIndexCounter += 1;
+    document.getElementById(id_open).style.zIndex = zIndexCounter;
+    document.getElementById(id_open).style.left = `50%`;
+    document.getElementById(id_open).style.top = `50%`;
+    document.getElementById(id_open).style.transform = `translate(-50%, -50%);`;
 }
 
 const pipeList = [
@@ -223,17 +234,19 @@ function checkGuess() {
 
 // ลากหัวคมๆ
 
-let zIndexCounter = 1;
-
 document.querySelectorAll('.window').forEach(windowElement => {
     const header = windowElement.querySelector('.window-header');
     let isDragging = false;
-    let offsetX, offsetY;
+    let startX, startY, offsetX, offsetY;
 
     header.addEventListener('mousedown', (e) => {
         isDragging = true;
-        offsetX = e.clientX - windowElement.getBoundingClientRect().left;
-        offsetY = e.clientY - windowElement.getBoundingClientRect().top;
+
+        startX = e.clientX;
+        startY = e.clientY;
+
+        offsetX = e.clientX - windowElement.offsetLeft;
+        offsetY = e.clientY - windowElement.offsetTop;
         windowElement.style.position = 'absolute';
 
         zIndexCounter += 1;
@@ -242,8 +255,10 @@ document.querySelectorAll('.window').forEach(windowElement => {
 
     document.addEventListener('mousemove', (e) => {
         if (isDragging) {
-            windowElement.style.left = `${e.clientX - offsetX}px`;
-            windowElement.style.top = `${e.clientY - offsetY}px`;
+            if (e.clientX !== startX || e.clientY !== startY) {
+                windowElement.style.left = `${e.clientX - offsetX}px`;
+                windowElement.style.top = `${e.clientY - offsetY}px`;
+            }
         }
     });
 
@@ -251,35 +266,6 @@ document.querySelectorAll('.window').forEach(windowElement => {
         isDragging = false;
     });
 });
-
-//ลาก ตัวEmergency Alert
-
-// const emergency = document.querySelector("#enter_code");
-// let isDragging = false;
-// let offsetX, offsetY;
-
-// emergency.addEventListener('mousedown', (e) => {
-//     isDragging = true;
-//     offsetX = e.clientX - emergency.getBoundingClientRect().left;
-//     offsetY = e.clientY - emergency.getBoundingClientRect().top;
-//     emergency.style.position = 'absolute';
-
-//     zIndexCounter += 1;
-//     emergency.style.zIndex = zIndexCounter; 
-// });
-
-// document.addEventListener('mousemove', (e) => {
-//     if (isDragging) {
-//         emergency.style.left = `${e.clientX - offsetX}px`;
-//         emergency.style.top = `${e.clientY - offsetY}px`;
-//     }
-// });
-
-document.addEventListener('mouseup', () => {
-    isDragging = false;
-});
-
-
 
 
 function closeAllWindows() {
