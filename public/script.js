@@ -62,45 +62,61 @@ const pipeList = [
     'pipe/pipe4.png'
 ];
 
-const pipe_line_up = [1, 2, 4, 2, 1, 4,
-                      4, 3, 2, 1, 2, 3,
-                      3, 1, 2, 4, 1, 2];
-
-const pipe_code = ['1111', '2222', '3333', '4444', '5555', '6666',
-                   '7777', '8888', '9999', '0000', '1112', '1213',
-                   '1314', '1415', '1516','1617', '1718', '1819'];
+let pipe_line_up;
+let pipe_code;
+let pipe_rotate;
 
 let pipe_save = [0, 0, 0, 0, 0, 0,
                 0, 0, 0, 0, 0, 0,
                 0, 0, 0, 0, 0, 0];
 
-const pipe_rotate = [180, 90, 0, 0, 0, 0,
-                   0, 0, 0, 180, 90, 0,
-                   0, 0, 0, 0, 0, 0];
 
 const btn_pipe_container = document.querySelector('.btn_pipe_container');
 
-for (let i = 1; i <= 18; i++) {
-    const newNode = document.createElement('div');
+function start_setpipe(){
 
-    newNode.className = 'pipe';
-    newNode.id = `pipe${i}`;
+    pipe_line_up = gameData[seed].pipe_lineup;
 
-    const img = document.createElement('img');
-    img.src = pipeList[pipe_line_up[i - 1] - 1];
+    pipe_code = gameData[seed].pipe_code;
 
-    img.style.transform = `rotate(${pipe_rotate[i - 1]}deg)`;
+    pipe_rotate = gameData[seed].pipe_rotate;
 
-    newNode.setAttribute('data-code', pipe_code[i - 1]);
+    for (let i = 1; i <= 18; i++) {
+        const newNode = document.createElement('div');
+    
+        newNode.className = 'pipe';
+        newNode.id = `pipe${i}`;
+    
+        const img = document.createElement('img');
+        img.src = pipeList[pipe_line_up[i - 1] - 1];
+    
+        img.style.transform = `rotate(${pipe_rotate[i - 1]}deg)`;
+    
+        newNode.setAttribute('data-code', pipe_code[i - 1]);
+    
+        newNode.appendChild(img);
+    
+        btn_pipe_container.appendChild(newNode);
+    
+        newNode.addEventListener('click', () => CnO_Window('select_pipe', 'water_supply'));
+        newNode.addEventListener('click', () => set_code(i));
+        newNode.addEventListener('click', checkGuess);
+    }
 
-    newNode.appendChild(img);
+    const pipe_board = document.querySelector('.pipe_board');
 
-    btn_pipe_container.appendChild(newNode);
-
-    newNode.addEventListener('click', () => CnO_Window('select_pipe', 'water_supply'));
-    newNode.addEventListener('click', () => set_code(i));
-    newNode.addEventListener('click', checkGuess);
+    for (let i = 1; i <= 18; i++) {
+        const newNode = document.createElement('div');
+        newNode.className = 'pipe_show';
+        const img = document.createElement('img');
+        img.src = pipeList[pipe_line_up[i - 1] - 1];
+        img.style.transform = `rotate(${pipe_rotate[i - 1]}deg)`;
+        newNode.appendChild(img);
+        pipe_board.appendChild(newNode);
+        
+    }
 }
+
 
 
 let correctCode = '1234'; //test_code
@@ -132,19 +148,6 @@ function decrement(id) {
         inputBox.className = 'input-box noting';
     }
     checkGuess();
-}
-
-const pipe_board = document.querySelector('.pipe_board');
-
-for (let i = 1; i <= 18; i++) {
-    const newNode = document.createElement('div');
-    newNode.className = 'pipe_show';
-    const img = document.createElement('img');
-    img.src = pipeList[pipe_line_up[i - 1] - 1];
-    img.style.transform = `rotate(${pipe_rotate[i - 1]}deg)`;
-    newNode.appendChild(img);
-    pipe_board.appendChild(newNode);
-    
 }
 
 function set_code(num_pipe){
@@ -250,7 +253,9 @@ document.querySelectorAll('.window').forEach(windowElement => {
         windowElement.style.position = 'absolute';
 
         zIndexCounter += 1;
-        windowElement.style.zIndex = zIndexCounter; 
+        if (windowElement.style.zIndex){
+            windowElement.style.zIndex = zIndexCounter;
+        }
     });
 
     document.addEventListener('mousemove', (e) => {
@@ -389,7 +394,11 @@ function startGame() {
 
     // เริ่มจับเวลา
     startGameTimer();
+    reset_virus();
+    update_virus();
     // console.log(gameData);
+    start_setpipe()
+    reboot_code = gameData[seed].virus;
 }
 
 function showTutorial(){

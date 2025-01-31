@@ -37,13 +37,19 @@ function initializeGameTimer(duration) {
     }, 1000);
 }
 
+function stoptime_minigame(){
+    document.querySelector("#time-bar").style.animation = 'none';
+    clearInterval(gameTimer);
+}
 
 function handleTimeExpired() {
     console.log('Time is up!');
+    increase_virus(10);
     play_minigame();
 }
 
 function showEndGamePopup(imageUrl) {
+    stoptime_minigame();
     const winMessage = document.getElementById('winMessage');
     const winImage = document.getElementById('win-image');
     const winText = document.getElementById('win-text');
@@ -119,7 +125,7 @@ function getRandomImage() {
 }
 
 function imageSwapGame() {
-    clearInterval(gameTimer);
+    stoptime_minigame();
     // Clear the game area
     const gameArea = document.querySelector('.minigame');
 
@@ -252,7 +258,7 @@ const btn_enter_minigame = document.querySelector("#enter_minigame");
 btn_enter_minigame.addEventListener('click', play_minigame);
 
 function spotTheDifferenceGame() {
-    clearInterval(gameTimer);
+    stoptime_minigame();
     // Clear the game area
     const gameArea = document.querySelector('.minigame');
     foundDifferences = [];
@@ -386,7 +392,9 @@ function detectClick(event, imageId) {
     let rect = img.getBoundingClientRect();
     let x = ((event.clientX - rect.left) / rect.width) * 100;
     let y = ((event.clientY - rect.top) / rect.height) * 100;
-    console.log('live again', x, y);
+    // console.log('live again', x, y);
+
+    increase_virus(2);
 
     for (let i = 0; i < currentDifferences.length; i++) {
         let diff = currentDifferences[i];
@@ -400,6 +408,7 @@ function detectClick(event, imageId) {
             foundDifferences.push(diff)
             foundDifferencesCount++;
             checkWinCondition_dif();
+            decrease_virus(2);
         }
     }
 }
@@ -425,7 +434,6 @@ function checkWinCondition_dif() {
             const differenceMarkers = document.querySelectorAll('.difference');
             differenceMarkers.forEach(marker => marker.remove());
         }, 1000);
-
     }
 }
 
@@ -434,7 +442,7 @@ function checkWinCondition_dif() {
 //separateTrash
 
 function separateTrash() {
-    clearInterval(gameTimer); // หยุดตัวจับเวลาของมินิเกมก่อนหน้า
+    stoptime_minigame(); // หยุดตัวจับเวลาของมินิเกมก่อนหน้า
     const gameArea = document.querySelector('.minigame');
     gameArea.innerHTML = `
         <h1 class="header-text">Drag and drop the waste into the correct bins!</h1>
@@ -665,8 +673,14 @@ function startTrashGame() {
                     });
                 }
 
-
-                score += trash.dataset.type === bin.dataset.type ? 5 : -1;
+                if(trash.dataset.type === bin.dataset.type){
+                    score += 5
+                }
+                else{
+                    score -= 1
+                    increase_virus(2);
+                }
+                // score += trash.dataset.type === bin.dataset.type ? 5 : -1;
                 updateScore();
                 trash.remove();
             }
@@ -686,7 +700,7 @@ function startTrashGame() {
 
         if (score >= 30) { // เมื่อคะแนนเต็ม
             displayMessage('ภาวะโลก ละละละเลิฟยู');
-            clearInterval(gameTimer); // หยุดจับเวลา
+           stoptime_minigame(); // หยุดจับเวลา
         }
     }
 

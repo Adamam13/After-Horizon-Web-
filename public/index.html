@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="./minigame.css" />
 	<link rel="stylesheet" href="./tutorial.css">
 	<link rel="stylesheet" href="./menu.css">
+	<link rel="stylesheet" href="./virus.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@400&display=swap" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,19 +29,18 @@
 			</video>
 		</div>
 
-		<!-- ไวรัส -->
-
 		<!-- หน้าต่างยืนยันการใช้กุญแจ -->
-		<div class="window" id="unlock_confirmation" style="display:none; background-color: #ff0000; border: 5px solid #ff0000;">
-			<div class="window-header" style="background-color: #ff0000;">
+		<div class="window enter_code" id="unlock_confirmation" style="display:none; border: 5px solid #ffffff;">
+			<div class="window-header" style="background-color: #ffffff;">
 				<div></div>
-				<span>Use 1 key to unlock this file?</span>
+				<span>This File is Lock</span>
 				<div></div>
 			</div>
-			<div class="window-body">
-				<div>
-					<button class="button" onclick="useKey()">Yes, use key</button>
-					<button class="button" onclick="closeWindow('unlock_confirmation')">No, cancel</button>
+			<div class="window-body" id="unlock_page">
+				<span id="unlock_text" style="color: #ffffff;">Use 1 key to unlock this file?</span>
+				<div class="btn_confirm">
+					<button class="main_btn" id="yes_btn" onclick="useKey()">Yes</button>
+					<button class="main_btn" id="no_btn" onclick="closeWindow('unlock_confirmation')">Cancel</button>
 				</div>
 			</div>
 		</div>
@@ -644,6 +644,7 @@
 
 			</div>
 		</div> -->
+		
 		<!-- Key Unlock system -->
 		<div class="window" id="lock_key" style="background-color: #e25519; border: 5px solid #e25519;">
 			<div class="window-header" style="background-color: #e25519;">
@@ -661,10 +662,10 @@
 
 		<div class="window" id="minigame" style="background-color: #e25519; border: 5px solid #e25519;">
 			<div class="window-header" style="background-color: #e25519;">
-				<button class="button" onclick="CnO_Window('minigame', 'lock_key')">
+				<button class="button" onclick="CnO_Window('minigame', 'lock_key'); increase_virus(5)">
 					< Back </button>
 						<span>Key Unlock System</span>
-						<button class="button close" onclick="closeWindow('minigame')">X</button>
+						<button class="button close" onclick="closeWindow('minigame');increase_virus(5)">X</button>
 			</div>
 			<div class="minigame" style="background-color: #000000;">
 				<div class="image-grid">
@@ -748,6 +749,33 @@
 				</div>
 				<!-- <div id="message"></div> -->
 				<button id="resetButton" onclick="resetGame()">Reset</button>
+			</div>
+		</div>
+		
+		<!-- virus -->
+		<div class="window" id="virus" style="background-color: #f6433f; border: 5px solid #f6433f;">
+			<div class="window-header" style="background-color: #f6433f;">
+				<div></div>
+				<span style="color:#000000;">Virus Detector</span>
+				<button class="button close" onclick="closeWindow('virus')">X</button>
+			</div>
+			<div class="enter_page" id="virus_page" style="background-color: #000000;">
+				<div class="virus_left">
+					<div class="virus_state">
+						<img class="virus_icon" alt="" src="Icon/virus_icon.png">
+						<div class="virus_text">0 %</div>
+					</div>
+					<div class="virus_descrip">ไม่พบไวรัส</div>
+				</div>
+				<div>
+					<div class="circle-container">
+						<div class="btn_virus top-left" onclick="reboot_click(1)"><img alt="" src="Icon/key.png"></div>
+						<div class="btn_virus top-right" onclick="reboot_click(2)"><img alt="" src="Icon/time.png"></div>
+						<div class="btn_virus bottom-left" onclick="reboot_click(3)"><img alt="" src="Icon/water_drop.png"></div>
+						<div class="btn_virus bottom-right" onclick="reboot_click(4)"><img alt="" src="Icon/folder.png"></div>
+						<div class="center" id="need_reboot_code">3</div>
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -880,7 +908,12 @@
 			</div>
 		</div>
 
+		
 		<div class="group_main_file">
+			<div class="icon_wrapper">
+				<img class="icon" onclick="openWindow('virus')" alt="" src="Icon/virus_icon.png">
+				<div class="desktop_text">Virus Detector</div>
+			</div>
 			<div class="icon_wrapper">
 				<img class="icon" onclick="openWindow('lock_key')" alt="" src="Icon/lock_key_icon_new.png">
 				<div class="desktop_text">Key Unlock System</div>
@@ -1001,6 +1034,7 @@
 	<script src="electic.js"></script>
 	<script src="event.js"></script>
 	<script src="tutorial.js"></script>
+	<script src="virus.js"></script>
 </body>
 
 </html>
