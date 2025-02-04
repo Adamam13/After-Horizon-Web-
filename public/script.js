@@ -237,40 +237,42 @@ function checkGuess() {
 
 // ลากหัวคมๆ
 
-document.querySelectorAll('.window').forEach(windowElement => {
-    const header = windowElement.querySelector('.window-header');
-    let isDragging = false;
-    let startX, startY, offsetX, offsetY;
-
-    header.addEventListener('mousedown', (e) => {
-        isDragging = true;
-
-        startX = e.clientX;
-        startY = e.clientY;
-
-        offsetX = e.clientX - windowElement.offsetLeft;
-        offsetY = e.clientY - windowElement.offsetTop;
-        windowElement.style.position = 'absolute';
-
-        zIndexCounter += 1;
-        if (windowElement.style.zIndex){
-            windowElement.style.zIndex = zIndexCounter;
-        }
-    });
-
-    document.addEventListener('mousemove', (e) => {
-        if (isDragging) {
-            if (e.clientX !== startX || e.clientY !== startY) {
-                windowElement.style.left = `${e.clientX - offsetX}px`;
-                windowElement.style.top = `${e.clientY - offsetY}px`;
+function dragheader(){
+    document.querySelectorAll('.window').forEach(windowElement => {
+        const header = windowElement.querySelector('.window-header');
+        let isDragging = false;
+        let startX, startY, offsetX, offsetY;
+    
+        header.addEventListener('mousedown', (e) => {
+            isDragging = true;
+    
+            startX = e.clientX;
+            startY = e.clientY;
+    
+            offsetX = e.clientX - windowElement.offsetLeft;
+            offsetY = e.clientY - windowElement.offsetTop;
+            windowElement.style.position = 'absolute';
+    
+            zIndexCounter += 1;
+            if (windowElement.style.zIndex){
+                windowElement.style.zIndex = zIndexCounter;
             }
-        }
+        });
+    
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                if (e.clientX !== startX || e.clientY !== startY) {
+                    windowElement.style.left = `${e.clientX - offsetX}px`;
+                    windowElement.style.top = `${e.clientY - offsetY}px`;
+                }
+            }
+        });
+    
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
     });
-
-    document.addEventListener('mouseup', () => {
-        isDragging = false;
-    });
-});
+}
 
 
 function closeAllWindows() {
@@ -396,8 +398,9 @@ function startGame() {
     startGameTimer();
     reset_virus();
     update_virus();
+    dragheader();
     // console.log(gameData);
-    start_setpipe()
+    start_setpipe();
     reboot_code = gameData[seed].virus;
 }
 
@@ -520,6 +523,9 @@ function startGameTimer() {
         const seconds = String(elapsedTime % 60).padStart(2, '00');
         timerElement.textContent = `${minutes}:${seconds}`;
         check_event(elapsedTime);
+        if (elapsedTime%2 == 0){
+            check_virus_event();
+        }
         // if (!electic && !water && !oxygen){
         //     noting++;
         //     console.log(noting);

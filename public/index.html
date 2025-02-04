@@ -665,7 +665,7 @@
 				<button class="button" onclick="CnO_Window('minigame', 'lock_key'); increase_virus(5)">
 					< Back </button>
 						<span>Key Unlock System</span>
-						<button class="button close" onclick="closeWindow('minigame');increase_virus(5)">X</button>
+						<button class="button close" onclick="closeWindow('minigame');increase_virus(5);stoptime_minigame()">X</button>
 			</div>
 			<div class="minigame" style="background-color: #000000;">
 				<div class="image-grid">
@@ -885,6 +885,17 @@
 					</div>
 				</div>
 				<button class="btn_pass_code" onclick="check_pass_code('enter_Oxygen_code')">ENTER</button>
+			</div>
+		</div>
+
+		<!-- virus popup -->
+		<div class="window" id="virus_popup" style="background-color: #ffffff; border: 5px solid #ffffff;">
+			<div class="window-header" style="background-color: #ffffff;">
+				<div></div>
+				<span id="virus_popup_text" style="color:#000000;">Virus Text</span>
+				<button class="button close" onclick="close_virus_popup(this)">X</button>
+			</div>
+			<div class="enter_page" id="virus_popup_page" style="background-color: #000000;">
 			</div>
 		</div>
 
