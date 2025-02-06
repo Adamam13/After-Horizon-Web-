@@ -365,6 +365,8 @@ function showThank() {
     document.getElementById('game-page').classList.add('hidden');
     document.getElementById('summary-page').classList.add('hidden');
     document.getElementById('thankyou-page').classList.remove('hidden');
+    saveGameData();
+    clearInterval(interval_id);
 }
 
 function showEnter_codePage() {
@@ -373,6 +375,7 @@ function showEnter_codePage() {
     document.getElementById('summary-page').classList.add('hidden');
     document.getElementById('enter_code-page').classList.remove('hidden');
     showTutorial();
+   
 }
 
 function showGame() {
@@ -417,7 +420,7 @@ function closeTutorial(){
 
 document.getElementById('start-game-button').addEventListener('click', startGame);
 
-document.getElementById('close').addEventListener('click', showSummary);
+document.getElementById('close').addEventListener('click', showThank);
 
 //random file **not now**
 
@@ -513,26 +516,28 @@ function check_entry(num1, num2){
     }
 }
 
+let elapsedTime;
+const timerElement = document.getElementById('timecount');
+let interval_id;
 function startGameTimer() {
-    const timerElement = document.getElementById('timecount');
-    let elapsedTime = 0;
+    elapsedTime = 0;
 
-    function updateTimer() {
-        elapsedTime++;
-        const minutes = String(Math.floor(elapsedTime / 60)).padStart(2, '00');
-        const seconds = String(elapsedTime % 60).padStart(2, '00');
-        timerElement.textContent = `${minutes}:${seconds}`;
-        check_event(elapsedTime);
-        if (elapsedTime%2 == 0){
-            check_virus_event();
-        }
-        // if (!electic && !water && !oxygen){
-        //     noting++;
-        //     console.log(noting);
-        // }
+    interval_id = setInterval(updateTimer, 1000);
+}
+
+function updateTimer() {
+    elapsedTime++;
+    const minutes = String(Math.floor(elapsedTime / 60)).padStart(2, '00');
+    const seconds = String(elapsedTime % 60).padStart(2, '00');
+    timerElement.textContent = `${minutes}:${seconds}`;
+    check_event(elapsedTime);
+    if (elapsedTime%2 == 0){
+        check_virus_event();
     }
-
-    setInterval(updateTimer, 1000);
+    // if (!electic && !water && !oxygen){
+    //     noting++;
+    //     console.log(noting);
+    // }
 }
 
 

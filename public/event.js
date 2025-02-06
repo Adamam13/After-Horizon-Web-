@@ -6,6 +6,9 @@ let numcode = 0;
 let elect_interval;
 let water_interval;
 let oxygen_interval;
+let elect_time = 360000;
+let water_time = 300000;
+let oxygen_time = 240000;
 
 function check_event(time){
     if(Math.floor(time) >= gameData[seed].event_time[event_count]){
@@ -26,6 +29,8 @@ function check_event(time){
     }
 }
 
+
+
 function electic_broken() {
     if(!electic){
         console.log("ไฟฟ้าพังจ้าาาา");
@@ -34,7 +39,7 @@ function electic_broken() {
         event_alert();
         openWindow('enter_Electical_code');
         const timer_electic = document.getElementById('emer_electic');
-        let elect_time = 360000;
+        elect_time = 360000;
     
         function updateTimer() {
             elect_time -= 10;
@@ -63,7 +68,7 @@ function water_broken(){
         openWindow('enter_Water_code');
         water = true;
         const timer_Water = document.getElementById('emer_water');
-        let water_time = 300000;
+        water_time = 300000;
     
         function updateTimer() {
             water_time -= 10;
@@ -92,7 +97,7 @@ function oxygen_broken(){
         openWindow('enter_Oxygen_code');
         oxygen = true;
         const timer_oxygen = document.getElementById('emer_oxy');
-        let oxygen_time = 240000;
+        oxygen_time = 240000;
     
         function updateTimer() {
             oxygen_time -= 10;
@@ -137,14 +142,23 @@ function check_pass_code(nameid){
 
         if(nameid == 'enter_Electical_code'){
             electic = false;
+            order_event_clear.push(1);
+            event_clear_time.push(360000 - elect_time);
+            number_event_play += 1;
             clearInterval(elect_interval);
         }
         else if(nameid == 'enter_Water_code'){
             water = false;
+            order_event_clear.push(2);
+            event_clear_time.push(300000 - water_time);
+            number_event_play += 1;
             clearInterval(water_interval);
         }
         else if(nameid == 'enter_Oxygen_code'){
             oxygen = false;
+            order_event_clear.push(3);
+            event_clear_time.push(240000 - oxygen_time);
+            number_event_play += 1;
             clearInterval(oxygen_interval);
         }
         
