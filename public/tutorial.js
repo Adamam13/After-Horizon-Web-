@@ -1,8 +1,16 @@
 const tuto_images = [
-    'info/hint-OT_new.png',
-    'info/info-guied.png',
-    'info/info-carrot_new.png',
-    'info/info-farm_new.png'
+    'info/tutorial 1.png',
+    'info/tutorial 2.png',
+    'info/tutorial 3.png',
+    'info/tutorial 4.png',
+    'info/tutorial 5.png',
+    'info/tutorial 6.png',
+    'info/tutorial 7.png',
+    'info/tutorial 8.png',
+    'info/tutorial 9.png',
+    'info/tutorial 10.png',
+    'info/tutorial 11.png',
+    'info/tutorial 12.png'
 ]; // Replace with your images
 
 const tuto_slider = document.getElementById('tuto_slider');

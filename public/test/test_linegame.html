@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrow Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+    #game-board {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-gap: 5px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .button {
+      width: 100px;
+      height: 100px;
+      background-color: lightgray;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      border: 2px solid black;
+      cursor: pointer;
+    }
+
+    .button.green {
+      background-color: green;
+      color: white;
+    }
+
+    #message {
+      margin-top: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Arrow Game</h1>
+  <div id="game-board"></div>
+  <div id="message"></div>
+
+  <script>
+    const directions = ['←', '↑', '→', '↓']; // Left, Up, Right, Down
+    const boardSize = 3;
+    let board = [];
+    let currentRow = -1;
+    let currentCol = -1;
+
+    const gameBoard = document.getElementById('game-board');
+    const message = document.getElementById('message');
+
+    // Initialize the board
+    function initializeBoard() {
+      board = [];
+      gameBoard.innerHTML = '';
+      for (let i = 0; i < boardSize; i++) {
+        const row = [];
+        for (let j = 0; j < boardSize; j++) {
+          const button = document.createElement('div');
+          button.className = 'button';
+          button.textContent = directions[Math.floor(Math.random() * directions.length)];
+          button.addEventListener('click', () => handleButtonClick(i, j));
+          gameBoard.appendChild(button);
+          row.push(button);
+        }
+        board.push(row);
+      }
+      currentRow = -1;
+      currentCol = -1;
+      message.textContent = '';
+    }
+
+    // Handle button clicks
+    function handleButtonClick(row, col) {
+  if (currentRow === -1 && currentCol === -1) {
+    // First click
+    board[row][col].classList.add('green');
+    currentRow = row;
+    currentCol = col;
+  } else {
+    const direction = board[currentRow][currentCol].textContent;
+    const isValidMove =
+      (direction === '←' && col === currentCol - 1 && row === currentRow) ||
+      (direction === '↑' && row === currentRow - 1 && col === currentCol) ||
+      (direction === '→' && col === currentCol + 1 && row === currentRow) ||
+      (direction === '↓' && row === currentRow + 1 && col === currentCol);
+
+    if (isValidMove && !board[row][col].classList.contains('green')) {
+      board[row][col].classList.add('green');
+      currentRow = row;
+      currentCol = col;
+      checkWin();
+    } else {
+      console.log(`Invalid move: from (${currentRow}, ${currentCol}) to (${row}, ${col})`); // Debugging
+      alert('Wrong move! Resetting the game.');
+      initializeBoard();
+    }
+  }
+}
+
+function checkWin() {
+  for (let i = 0; i < boardSize; i++) {
+    for (let j = 0; j < boardSize; j++) {
+      if (!board[i][j].classList.contains('green')) {
+        console.log(`Button at (${i}, ${j}) is not green yet.`); // Debugging
+        return;
+      }
+    }
+  }
+  message.textContent = 'You Win!';
+}
+
+    // Start the game
+    initializeBoard();
+  </script>
+</body>
+</html>
