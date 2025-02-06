@@ -31,6 +31,24 @@
         "5167", "6147", "4908", "4967", "2873", "9024",
         "3410", "7758", "0291", "6845", "1234", "5683", 
         "7902", "4821", "9056", "3412", "8569", "2104" 
+        ],
+        "part_hint":[
+            "part/25/part1-1.png",
+            "part/25/part1-2.png",
+            "part/25/part1-3.png",
+            "part/25/part1-4.png",
+            "part/25/part2-1.png",
+            "part/25/part2-2.png",
+            "part/25/part2-3.png",
+            "part/25/part2-4.png",
+            "part/25/part3-1.png",
+            "part/25/part3-2.png",
+            "part/25/part3-3.png",
+            "part/25/part3-4.png",
+            "part/25/part4-1.png",
+            "part/25/part4-2.png",
+            "part/25/part4-3.png",
+            "part/25/part4-4.png"
         ]
     },
     "14":{
