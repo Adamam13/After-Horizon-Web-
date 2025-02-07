@@ -1,17 +1,4 @@
 
-// var file1 = document.querySelector("#file_1");
-
-// file1.addEventListener("click", popup);
-
-// function popup(){
-//     console.log('hello1');
-//     var file_popup = document.querySelector("#file1_popup");
-//     console.log('hello2');
-//     file_popup.dataset.view = '1';
-//     console.log('hello3');
-// }
-
-
 fetch('./seed.json')
 .then(response => {
   if (!response.ok) {
@@ -30,30 +17,91 @@ let seed;
 let event_count = 0;
 let zIndexCounter = 1;
 
-
-// fucntion code
 function openWindow(id) {
-    document.getElementById(id).style.display = 'flex';
-    zIndexCounter += 1;
-    document.getElementById(id).style.zIndex = zIndexCounter;
-    document.getElementById(id).style.left = `50%`;
-    document.getElementById(id).style.top = `50%`;
-    document.getElementById(id).style.transform = `translate(-50%, -50%);`;
+    const win = document.getElementById(id);
+    if (win) {
+        win.style.display = 'flex';
+        win.style.zIndex = ++zIndexCounter;
+        win.style.left = '50%';
+        win.style.top = '50%';
+        win.style.transform = 'translate(-50%, -50%)';
+    }
 }
 
 function closeWindow(id) {
-    document.getElementById(id).style.display = 'none';
+    const win = document.getElementById(id);
+    if (win) win.style.display = 'none';
 }
 
-function CnO_Window(id_close, id_open){
-    document.getElementById(id_close).style.display = 'none';
-    document.getElementById(id_open).style.display = 'flex';
-    zIndexCounter += 1;
-    document.getElementById(id_open).style.zIndex = zIndexCounter;
-    document.getElementById(id_open).style.left = `50%`;
-    document.getElementById(id_open).style.top = `50%`;
-    document.getElementById(id_open).style.transform = `translate(-50%, -50%);`;
+function CnO_Window(id_close, id_open) {
+    closeWindow(id_close);
+    openWindow(id_open);
 }
+
+function generateFoldersAndFiles() {
+    const folders = {
+        folder1: document.querySelector('.folder1-body'),
+        folder2: document.querySelector('.folder2-body'),
+        folder_readme: document.querySelector('.folder_readme-body')
+    };
+    
+    Object.keys(folders).forEach(folder => folders[folder].innerHTML = '');
+    
+    gameData[seed].part_hint.forEach((file, index) => {
+        const folderKey = index % 2 === 0 ? 'folder1' : 'folder2';
+        createFileIcon(folders[folderKey], file, `Part ${index + 1}`, `part_${index + 1}`, folderKey);
+    });
+    
+}
+
+function createFileIcon(folder, file, label, idname, foldername) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'icon_wrapper';
+    
+    const img = document.createElement('img');
+    img.className = 'icon';
+    img.src = 'Icon/notes_new.png';
+    
+    const text = document.createElement('div');
+    text.className = 'desktop_text';
+    text.textContent = label;
+
+    const filewrapper = document.createElement('div');
+    filewrapper.className = 'window';
+    filewrapper.id = idname;
+    filewrapper.innerHTML = `
+    <div class="window-header">
+        <button class="button" onclick="CnO_Window('${idname}', '${foldername}')">
+            < Back</button>
+                <span>${label}</span>
+
+                <button class="button close" onclick="closeWindow('${idname}')">X</button>
+    </div>
+    <div class="info">
+        <img class="info-img" src="${file}">
+    </div>
+    `;
+
+    document.getElementById("game-page").appendChild(filewrapper);
+    
+    img.onclick = () => openFile(foldername, idname);
+    wrapper.append(img, text);
+    folder.appendChild(wrapper);
+}
+
+function openFile(folderid, fileid) {
+    console.log('Opening file:', fileid);
+    CnO_Window(folderid, fileid);
+}
+
+// function showGame() {
+//     document.getElementById('game-page').classList.remove('hidden');
+// }
+
+// function startGame() {
+//     showGame();
+//     console.log('Game started with seed:', seed);
+// }
 
 const pipeList = [
     'pipe/pipe1.png',
@@ -340,13 +388,13 @@ function useKey() {
 
 }
 
-function openFile(fileId, folderId) {
-    if (!lockedFiles[fileId]) {
-        CnO_Window(folderId, fileId);
-    } else {
-        confirmUnlock(fileId, folderId);
-    }
-}
+// function openFile(fileId, folderId) {
+//     if (!lockedFiles[fileId]) {
+//         CnO_Window(folderId, fileId);
+//     } else {
+//         confirmUnlock(fileId, folderId);
+//     }
+// }
 
 
 
@@ -401,9 +449,10 @@ function startGame() {
     startGameTimer();
     reset_virus();
     update_virus();
+    start_setpipe();
+    generateFoldersAndFiles();
     dragheader();
     // console.log(gameData);
-    start_setpipe();
     reboot_code = gameData[seed].virus;
 }
 

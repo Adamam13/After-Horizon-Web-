@@ -2,9 +2,11 @@ let number_event_play = 0;
 let survival_time = 0;;
 let order_event_clear = [];
 let event_clear_time = [];
+let seedcode;
 
 function saveGameData() {
     survival_time = elapsedTime;
+    seedcode = gameData[seed].code;
     exportGameData();
 }
 
@@ -94,6 +96,7 @@ function exportGameData() {
         <body>
             <div class="container">
                 <h1>ข้อมูลเกมที่เล่น</h1>
+                <p><strong>Seed Code:</strong> ${seedcode}</p>
                 <p><strong>จำนวนอีเว้นที่เล่น:</strong> ${number_event_play}</p>
                 <p><strong>เวลารอด:</strong> ${survivalTimeFormatted}</p>
                 
@@ -122,4 +125,3 @@ function exportGameData() {
 
     URL.revokeObjectURL(url);
 }
-
