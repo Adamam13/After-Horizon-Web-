@@ -504,6 +504,63 @@
 				<img class="info-img" style="width: 70%;" src="info/part_4.PNG">
 			</div>
 		</div>
+
+		<!-- Hind elec -->
+		<div class="window" id="hint_elec">
+			<div class="window-header">
+				<button class="button" onclick="CnO_Window('electrical-game', 'electrical-game')">
+					< Back </button>
+						<span>Tutorial</span>
+
+						<button class="button close" onclick="closeWindow('hint_elec')">X</button>
+			</div>
+			<div class="info">
+				<img class="info-img" style="width: 70%;" src="info/hint_elec.png">
+			</div>
+		</div>
+
+		<!-- Hint water -->
+		<div class="window" id="hint_water">
+			<div class="window-header">
+				<button class="button" onclick="CnO_Window('water_supply', 'water_supply')">
+					< Back </button>
+						<span>Tutorial</span>
+
+						<button class="button close" onclick="closeWindow('hint_water')">X</button>
+			</div>
+			<div class="info">
+				<img class="info-img" style="width: 70%;" src="info/hint_water.png">
+			</div>
+		</div>
+
+		<!-- Hint key -->
+		<div class="window" id="hint_key">
+			<div class="window-header">
+				<button class="button" onclick="CnO_Window('lock_key', 'lock_key')">
+					< Back </button>
+						<span>Tutorial</span>
+
+						<button class="button close" onclick="closeWindow('hint_key')">X</button>
+			</div>
+			<div class="info">
+				<img class="info-img" style="width: 70%;" src="info/hint_key.png">
+			</div>
+		</div>
+
+		<!-- Hint virus -->
+		<div class="window" id="hint_virus">
+			<div class="window-header">
+				<button class="button" onclick="CnO_Window('virus', 'virus')">
+					< Back </button>
+						<span>Tutorial</span>
+
+						<button class="button close" onclick="closeWindow('hint_virus')">X</button>
+			</div>
+			<div class="info">
+				<img class="info-img" style="width: 70%;" src="info/Tutorial 8.png">
+			</div>
+		</div>
+
 		<!-- water_supply_enter_page -->
 		<div class="window" id="water_supply_enter_page" style="background-color: #00ffff; border: 5px solid #00FFFF;">
 			<div class="window-header" style="background-color: #00FFFF;">
@@ -541,7 +598,7 @@
 				<button class="button" onclick="CnO_Window('water_supply', 'select_pipe')">
 					< Back</button>
 						<span>Water Supply</span>
-
+						<button class="button_tuto" onclick="openFile('hint_water','hint_water')">?</button>
 						<button class="button close" onclick="closeWindow('water_supply')">X</button>
 			</div>
 			<div class="decode_window">
@@ -644,12 +701,13 @@
 
 			</div>
 		</div> -->
-		
+
 		<!-- Key Unlock system -->
 		<div class="window" id="lock_key" style="background-color: #e25519; border: 5px solid #e25519;">
 			<div class="window-header" style="background-color: #e25519;">
 				<div></div>
 				<span style="color:#000000;">Key Unlock System</span>
+				<button class="button_tuto" onclick="openFile('hint_key','hint_key')">?</button>
 				<button class="button close" onclick="closeWindow('lock_key')">X</button>
 			</div>
 			<div class="enter_page" style="background-color: #000000;">
@@ -665,7 +723,8 @@
 				<button class="button" onclick="CnO_Window('minigame', 'lock_key'); increase_virus(5)">
 					< Back </button>
 						<span>Key Unlock System</span>
-						<button class="button close" onclick="closeWindow('minigame');increase_virus(5);stoptime_minigame()">X</button>
+						<button class="button close"
+							onclick="closeWindow('minigame');increase_virus(5);stoptime_minigame()">X</button>
 			</div>
 			<div class="minigame" style="background-color: #000000;">
 				<div class="image-grid">
@@ -703,7 +762,8 @@
 			<div class="enter_page" style="background-color: #000000;">
 				<img style="width: 15%;" src="Icon/electrical_icon_yellow.png">
 				<div class="text_enter_page" style="color: #F1FA49;">Electrical System</div>
-				<button class="main_btn enter_btn" id="enter_elect" onclick="CnO_Window('electrical', 'electrical-game')">Enter</button>
+				<button class="main_btn enter_btn" id="enter_elect"
+					onclick="CnO_Window('electrical', 'electrical-game')">Enter</button>
 			</div>
 		</div>
 
@@ -712,6 +772,7 @@
 			<div class="window-header" style="background-color: #F1FA49;">
 				<div></div>
 				<span>Electrical System</span>
+				<button class="button_tuto" onclick="openFile('hint_elec','electrical')">?</button>
 				<button class="button close" onclick="closeWindow('electrical-game')">X</button>
 			</div>
 			<div class="enter_page" style="background-color: #000000;">
@@ -751,12 +812,13 @@
 				<button id="resetButton" onclick="resetGame()">Reset</button>
 			</div>
 		</div>
-		
+
 		<!-- virus -->
 		<div class="window" id="virus" style="background-color: #f6433f; border: 5px solid #f6433f;">
 			<div class="window-header" style="background-color: #f6433f;">
 				<div></div>
 				<span style="color:#000000;">Virus Detector</span>
+				<button class="button_tuto" onclick="openFile('hint_virus','hint_virus')">?</button>
 				<button class="button close" onclick="closeWindow('virus')">X</button>
 			</div>
 			<div class="enter_page" id="virus_page" style="background-color: #000000;">
@@ -769,10 +831,14 @@
 				</div>
 				<div>
 					<div class="circle-container">
-						<div class="btn_virus top-left" onclick="reboot_click(1)"><img alt="" src="Icon/virus1.png"></div>
-						<div class="btn_virus top-right" onclick="reboot_click(2)"><img alt="" src="Icon/virus2.png"></div>
-						<div class="btn_virus bottom-left" onclick="reboot_click(3)"><img alt="" src="Icon/virus3.png"></div>
-						<div class="btn_virus bottom-right" onclick="reboot_click(4)"><img alt="" src="Icon/virus4.png"></div>
+						<div class="btn_virus top-left" onclick="reboot_click(1)"><img alt="" src="Icon/virus1.png">
+						</div>
+						<div class="btn_virus top-right" onclick="reboot_click(2)"><img alt="" src="Icon/virus2.png">
+						</div>
+						<div class="btn_virus bottom-left" onclick="reboot_click(3)"><img alt="" src="Icon/virus3.png">
+						</div>
+						<div class="btn_virus bottom-right" onclick="reboot_click(4)"><img alt="" src="Icon/virus4.png">
+						</div>
 						<div class="center" id="need_reboot_code">3</div>
 					</div>
 				</div>
@@ -919,7 +985,7 @@
 			</div>
 		</div>
 
-		
+
 		<div class="group_main_file">
 			<div class="icon_wrapper">
 				<img class="icon" onclick="openWindow('virus')" alt="" src="Icon/virus_icon.png">

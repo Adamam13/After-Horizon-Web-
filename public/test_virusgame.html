@@ -17,15 +17,14 @@
             position: absolute;
             width: 100vw;
             height: 100vh;
-            /* border: 100px rgb(0, 255, 13); */
         }
         .virus {
-    position: absolute;
-    width: 80px;  /* ขยายขนาดให้ใหญ่ขึ้น */
-    height: 80px; /* ขยายขนาดให้ใหญ่ขึ้น */
-    cursor: pointer;
-    transition: transform 0.05s linear;
-}
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            transition: transform 0.05s linear;
+        }
         .virus img {
             width: 100%;
             height: 100%;
@@ -34,99 +33,139 @@
             font-size: 24px;
             margin: 10px;
         }
+        #game-over {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        #score-bar {
+            width: 100%;
+            height: 20px;
+            background: #555;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px auto;
+        }
+        #score-progress {
+            width: 0%;
+            height: 100%;
+            background: #0f0;
+        }
     </style>
 </head>
 <body>
-
     <h1>เกมยิงไวรัส</h1>
     <p id="score">คะแนน: 0</p>
+    <div id="score-bar"><div id="score-progress"></div></div>
     <p id="timer">เวลา: 30</p>
     <div id="game-container"></div>
+    <div id="game-over">
+        <h2 id="final-score"></h2>
+        <button onclick="startGame()">เริ่มเกมใหม่</button>
+    </div>
 
     <script>
         const gameContainer = document.getElementById('game-container');
+        const gameOverScreen = document.getElementById('game-over');
+        const finalScore = document.getElementById('final-score');
+        const scoreProgress = document.getElementById('score-progress');
         let score = 0;
         let timeLeft = 30;
         let timer;
+        let gameRunning = false;
 
         const virusTypes = [
-            { color: "red", speed: 3, points: 2, img: "Icon/enemy3.png" },   // ไวรัสแดง - วิ่งเร็ว
-            { color: "green", speed: 1, points: 1, img: "Icon/enemy1.png" }, // ไวรัสเขียว - ปกติ
-            { color: "gold", speed: 4, points: 5, img: "Icon/enemy2.png" }   // ไวรัสทอง - วิ่งเร็ว
+            { speed: 3, points: 2, img: "Icon/enemy3.png" },
+            { speed: 1, points: 1, img: "Icon/enemy1.png" },
+            { speed: 4, points: 5, img: "Icon/enemy2.png" }
         ];
 
+        function updateScore(points) {
+            score += points;
+            document.getElementById('score').innerText = `คะแนน: ${score}`;
+            scoreProgress.style.width = `${(score / 20) * 100}%`;
+        }
+
         function createVirus() {
-    const virusData = virusTypes[Math.floor(Math.random() * virusTypes.length)];
-    const virus = document.createElement('div');
-    virus.classList.add('virus');
+            if (!gameRunning) return;
+            
+            const virusData = virusTypes[Math.floor(Math.random() * virusTypes.length)];
+            const virus = document.createElement('div');
+            virus.classList.add('virus');
+            const virusImg = document.createElement('img');
+            virusImg.src = virusData.img;
+            virus.appendChild(virusImg);
+            gameContainer.appendChild(virus);
 
-    // ใช้ <img> แทน innerText
-    const virusImg = document.createElement('img');
-    virusImg.src = virusData.img;
-    virus.appendChild(virusImg);
-    gameContainer.appendChild(virus);
+            let x = Math.random() * (window.innerWidth - 80);
+            let y = Math.random() * (window.innerHeight - 80);
+            let speedX = (Math.random() * virusData.speed + 1) * (Math.random() < 0.5 ? 1 : -1);
+            let speedY = (Math.random() * virusData.speed + 1) * (Math.random() < 0.5 ? 1 : -1);
 
-    // ตำแหน่งเริ่มต้น: ให้ไวรัสเริ่มจากขอบจอ
-    let x = Math.random() * window.innerWidth;
-    let y = Math.random() * window.innerHeight;
+            virus.style.left = `${x}px`;
+            virus.style.top = `${y}px`;
 
-    // ทิศทางการเคลื่อนที่สุ่ม
-    let speedX = (Math.random() * virusData.speed + 1) * (Math.random() < 0.5 ? 1 : -1);
-    let speedY = (Math.random() * virusData.speed + 1) * (Math.random() < 0.5 ? 1 : -1);
+            function moveVirus() {
+                if (!gameRunning) return;
 
-    virus.style.left = `${x}px`;
-    virus.style.top = `${y}px`;
+                x += speedX;
+                y += speedY;
+                if (x <= 0 || x >= window.innerWidth - 80) speedX *= -1;
+                if (y <= 0 || y >= window.innerHeight - 80) speedY *= -1;
 
-    function moveVirus() {
-        x += speedX;
-        y += speedY;
+                virus.style.left = `${x}px`;
+                virus.style.top = `${y}px`;
+                requestAnimationFrame(moveVirus);
+            }
+            moveVirus();
 
-        // ให้ไวรัสวิ่งไปยังจุดต่าง ๆ โดยไม่ชนขอบ
-        // if (x < 0 || x > window.innerWidth - 80) speedX *= -1;
-        // if (y < 0 || y > window.innerHeight - 80) speedY *= -1;
+            virus.addEventListener('click', () => {
+                virus.style.transform = "scale(0)";
+                setTimeout(() => virus.remove(), 100);
+                updateScore(virusData.points);
+                createVirus();
+            });
 
-        virus.style.transform = `translate(${x}px, ${y}px)`;
-
-        requestAnimationFrame(moveVirus);
-    }
-    moveVirus();
-
-    virus.addEventListener('click', () => {
-        virus.remove();
-        score += virusData.points;
-        document.getElementById('score').innerText = `คะแนน: ${score}`;
-        createVirus();
-    });
-
-    setTimeout(() => virus.remove(), 30000);
-}
-
+            setTimeout(() => virus.remove(), 10000);
+        }
 
         function startGame() {
-    timer = setInterval(() => {
-        timeLeft--;
-        document.getElementById('timer').innerText = `เวลา: ${timeLeft}`;
-        if (timeLeft <= 0) {
-            clearInterval(timer);
-            gameContainer.innerHTML = '<h2>หมดเวลา! คะแนนของคุณ: ' + score + '</h2>';
+            gameRunning = true;
+            score = 0;
+            timeLeft = 30;
+            document.getElementById('score').innerText = `คะแนน: ${score}`;
+            document.getElementById('timer').innerText = `เวลา: ${timeLeft}`;
+            scoreProgress.style.width = "0%";
+            gameOverScreen.style.display = 'none';
+            gameContainer.innerHTML = '';
+
+            timer = setInterval(() => {
+                timeLeft--;
+                document.getElementById('timer').innerText = `เวลา: ${timeLeft}`;
+                if (timeLeft <= 0) {
+                    clearInterval(timer);
+                    gameRunning = false;
+                    gameContainer.innerHTML = '';
+                    finalScore.innerText = `หมดเวลา! คะแนนของคุณ: ${score}`;
+                    gameOverScreen.style.display = 'block';
+                }
+            }, 1000);
+
+            for (let i = 0; i < 10; i++) createVirus();
+            setInterval(createVirus, 2000);
         }
-    }, 1000);
-
-    let initialVirusCount = 10; // จำนวนไวรัสเริ่มต้น
-    let virusInterval = setInterval(() => {
-        createVirus();
-    }, 100); // ทุกๆ 1 วินาที จะเพิ่มไวรัสใหม่
-
-    setInterval(() => {
-        initialVirusCount++; // เพิ่มจำนวนไวรัสเมื่อเวลาผ่านไป
-    }, 100);
-
-    for (let i = 0; i < initialVirusCount; i++) createVirus();
-}
-
 
         startGame();
     </script>
-
 </body>
 </html>
