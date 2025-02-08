@@ -180,6 +180,90 @@ video {
     transform: scale(1.25);
 }
 
+.group_file {
+    position: absolute;
+    display: flex;
+    gap: 10px;
+    /* border: 3px solid #00d9ff; */
+    width: 35%;
+    align-content: center;
+    object-fit: cover;
+    text-align: center;
+}
+
+.g_main_file {
+    bottom: 8%;
+    right: 2%;
+}
+
+.g_folder_file {
+    flex-wrap: wrap;
+    width: 20%;
+    top: 5%;
+}
+
+.icon {
+    width: 40%;
+}
+
+.icon:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.icon:active {
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.icon_wrapper {
+    width: 120px;
+    display: flex;
+    /* border: 3px solid #f62424; */
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.lock_icon {
+    width: 30px;
+    position: absolute;
+    transform: translate(80%, 100%);
+}
+
+.lock_icon[data-lock='True'] {
+    width: 30px;
+    position: absolute;
+    transform: translate(80%, 100%);
+}
+
+/* .icon_wrapper:hover {
+    background-color: hsl(0, 100%, 100%, 0.05);
+} */
+
+.desktop_text {
+    font-size: 1.5vw;
+    color: #58E191;
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+}
+
+.window-body {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    flex: 1;
+    justify-content: start;
+    align-content: start;
+    object-fit: cover;
+    text-align: center;
+    background-color: #000;
+    gap: 5%;
+}
+
+
+
+/* ขอจุดไว้ไอตรงนี้คืออะไร */
 .rectangle_small {
     border-radius: 10px;
     background-color: #242424;
@@ -192,15 +276,16 @@ video {
     max-height: 2vw;
     text-align: center;
     font-family: "Jersey 10", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
     margin: 0.5vw;
     flex-basis: 200px;
+    font-size: 2.5vw;
 }
 
 .key_ea {
-    font-size: 2.5vw;
-    font-family: Inter;
-    color: #fff;
-    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -212,29 +297,6 @@ video {
 
 }
 
-.group_main_file {
-    position: absolute;
-    display: flex;
-    /* background-color: red; */
-    bottom: 8%;
-    right: 2%;
-    width: 30%;
-    height: 15%;
-    justify-content: center;
-    align-content: center;
-    object-fit: cover;
-    text-align: center;
-}
-
-.icon_wrapper {
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    /* gap: 10%; */
-}
-
 /* .icon_wrapper {
     display: flex;
     justify-content: center;
@@ -243,49 +305,8 @@ video {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     flex-direction: column;
 } */
-.desktop_text {
-    font-size: 1.7vw;
-    font-family: Inter;
-    color: #58E191;
-    font-family: "Jersey 10", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
 
-.icon {
-    width: 45%;
-}
-
-.icon:hover {
-    width: 55%;
-    cursor: pointer;
-}
-
-.group_folder_file {
-    position: absolute;
-    display: flex;
-    /* background-color: red; */
-    width: 30%;
-    height: 15%;
-    top: 5%;
-    align-content: center;
-    object-fit: cover;
-    text-align: center;
-}
-
-.group_readme_file {
-    position: absolute;
-    display: flex;
-    /* background-color: red; */
-    width: 40%;
-    height: 15%;
-    top: 25%;
-    align-content: center;
-    object-fit: cover;
-    text-align: center;
-}
-
-.popup-overlay[data-view="0"] {
+/* .popup-overlay[data-view="0"] {
     position: absolute;
     top: calc(50% - 90%/2);
     left: calc(50% - 70%/2);
@@ -305,7 +326,7 @@ video {
     width: 70%;
     height: 90%;
     display: flex;
-}
+} */
 
 .rectangle-div {
     width: 85%;
@@ -372,20 +393,6 @@ video {
     gap: 10%;
     background-color: #000000;
 } */
-.window-body {
-    display: flex;
-    padding: 20px;
-    flex: 1;
-    /* position: absolute;
-    width: 90%;
-    height: 15%;
-    top: 15%; */
-    justify-content: center;
-    align-content: center;
-    object-fit: cover;
-    text-align: center;
-    background-color: #000;
-}
 
 /* .window-body {
     display: grid;
@@ -1051,6 +1058,9 @@ button{
 
 #unlock_page {
     flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
 }
 
 .btn_confirm{

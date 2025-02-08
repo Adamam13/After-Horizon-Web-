@@ -17,6 +17,9 @@ let seed;
 let event_count = 0;
 let zIndexCounter = 1;
 
+let keys = 3;  
+let lockedFiles = {};
+
 function openWindow(id) {
     const win = document.getElementById(id);
     if (win) {
@@ -42,25 +45,39 @@ function generateFoldersAndFiles() {
     const folders = {
         folder1: document.querySelector('.folder1-body'),
         folder2: document.querySelector('.folder2-body'),
+        folder3: document.querySelector('.folder3-body'),
+        folder4: document.querySelector('.folder4-body'),
         folder_readme: document.querySelector('.folder_readme-body')
     };
     
     Object.keys(folders).forEach(folder => folders[folder].innerHTML = '');
     
-    gameData[seed].part_hint.forEach((file, index) => {
-        const folderKey = index % 2 === 0 ? 'folder1' : 'folder2';
-        createFileIcon(folders[folderKey], file, `Part ${index + 1}`, `part_${index + 1}`, folderKey);
+    console.log(gameData[seed].file_hint);
+    gameData[seed].file_hint.forEach((file, index) => {
+        // const folderKey = index % 2 === 0 ? 'folder1' : 'folder2';
+        // console.log(file.folder, folderKey);
+        createFileIcon(folders[file.folder], file.info_grap, file.name, `file_number${index + 1}`, file.folder, file.icon, file.is_lock);
     });
     
 }
 
-function createFileIcon(folder, file, label, idname, foldername) {
+function createFileIcon(folder, file, label, idname, foldername, icon, islock) {
     const wrapper = document.createElement('div');
     wrapper.className = 'icon_wrapper';
     
     const img = document.createElement('img');
     img.className = 'icon';
-    img.src = 'Icon/notes_new.png';
+    img.src = icon;
+
+    const lock = document.createElement('img');
+    if(islock == 1){
+        lock.className = 'lock_icon';
+        lock.src = "Icon/lock2.png";
+        lockedFiles[idname] = true;
+    }
+    else{
+        lockedFiles[idname] = false;
+    }
     
     const text = document.createElement('div');
     text.className = 'desktop_text';
@@ -84,14 +101,46 @@ function createFileIcon(folder, file, label, idname, foldername) {
 
     document.getElementById("game-page").appendChild(filewrapper);
     
-    img.onclick = () => openFile(foldername, idname);
-    wrapper.append(img, text);
+    img.onclick = () => openFile(foldername, idname, lock);
+    wrapper.append(img, text, lock);
     folder.appendChild(wrapper);
 }
 
-function openFile(folderid, fileid) {
-    console.log('Opening file:', fileid);
-    CnO_Window(folderid, fileid);
+function openFile(folderId, fileId, lock) {
+    if (!lockedFiles[fileId]) {
+            CnO_Window(folderId, fileId);
+    } else {
+        confirmUnlock(fileId, folderId, lock);
+    }
+    console.log('Opening file:', fileId);
+}
+
+let lock_icon_temp;
+//comfirm to use key
+function confirmUnlock(fileId, folderId, lock) {
+    keys = document.querySelector('.key_ea').textContent;
+    document.getElementById('unlock_confirmation').style.display = 'flex';
+    document.getElementById('unlock_confirmation').dataset.fileId = fileId;
+    document.getElementById('unlock_confirmation').dataset.folderId = folderId;
+    lock_icon_temp = lock;
+}
+
+function useKey() {
+    let fileId = document.getElementById('unlock_confirmation').dataset.fileId;
+    let folderId = document.getElementById('unlock_confirmation').dataset.folderId;
+    
+    console.log(keys);
+    if(keys > 0){
+        keys--;
+        document.querySelector('.key_ea').textContent = keys;
+    
+        lockedFiles[fileId] = false;
+        lock_icon_temp.src= '';
+    
+        closeWindow(folderId);
+    
+        CnO_Window('unlock_confirmation', fileId);
+    }
 }
 
 // function showGame() {
@@ -329,63 +378,6 @@ function closeAllWindows() {
     allWindows.forEach(window => {
         window.style.display = 'none';
     });
-}
-
-
-
-let keys = 3;  
-let lockedFiles = {
-    //folder1
-    'file-info-carrot': true,
-    'file-info-tomato': true,
-    'file-hint-PT': true,
-    'file-part1': true,
-    'file-hint-Phum': true,
-    'file-part3': true,
-    'file-info-rice': true,
-
-    //folder2
-    'file-info-pumpkin': true,
-    'file-hint-OT': true,
-    'file-part2': true,
-    'file-info-radish': true,
-    'file-hint-Water': true,
-    'file-part4' : true,
-
-    //readme
-    'file-info-elec': false,
-    'file-info-phum': false,
-    'file-info-oxygen': false,
-    'file-info-farm': false,
-    'file-info-guied': false
-};
-
-
-//comfirm to use key
-function confirmUnlock(fileId, folderId) {
-    keys = document.querySelector('.key_ea').textContent;
-    document.getElementById('unlock_confirmation').style.display = 'flex';
-    document.getElementById('unlock_confirmation').dataset.fileId = fileId;
-    document.getElementById('unlock_confirmation').dataset.folderId = folderId;
-
-}
-
-function useKey() {
-    let fileId = document.getElementById('unlock_confirmation').dataset.fileId;
-    let folderId = document.getElementById('unlock_confirmation').dataset.folderId;
-
-    if(keys > 0){
-        keys--;
-        document.querySelector('.key_ea').textContent = keys;
-    
-        lockedFiles[fileId] = false;
-    
-        closeWindow(folderId);
-    
-        CnO_Window('unlock_confirmation', fileId);
-    }
-
-
 }
 
 // function openFile(fileId, folderId) {

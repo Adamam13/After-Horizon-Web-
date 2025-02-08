@@ -1,9 +1,9 @@
 const minigames = [
     // ไม่อยากเล่นเกมอะไรคอมเมนต์ออกเอานะ
-    // imageSwapGame,
-    // spotTheDifferenceGame,
-    // separateTrash,
-    virusGame
+    imageSwapGame,
+    spotTheDifferenceGame,
+    separateTrash
+    // virusGame
 ];
 
 function getRandomMinigame() {
@@ -61,9 +61,6 @@ function showEndGamePopup(imageUrl) {
     winMessage.classList.remove('hidden');
 }
 
-
-
-
 const possibleImages = [
     'Minigame/swap/swap_1.png',
     'Minigame/swap/swap_2.png',
@@ -116,8 +113,6 @@ const imagePositionsReal = [
     '100% 100%'
 ];
 
-
-
 const imagePositions = [...imagePositionsReal]; // Clone
 
 function getRandomImage() {
@@ -157,10 +152,6 @@ function imageSwapGame() {
     shuffleImages();
     initializeGameTimer(30);
 }
-
-// document.querySelectorAll('.image').forEach(img => {
-//     img.addEventListener('click', imageClickHandler);
-// });
 
 function imageClickHandler() {
     if (!selectedImage) {
@@ -437,8 +428,6 @@ function checkWinCondition_dif() {
         }, 1000);
     }
 }
-
-
 
 //separateTrash
 
@@ -782,99 +771,20 @@ function getCategoryName(type) {
 }
 
 // มินิเกมไวรัส
-function virusGame() {
-    const gameContainer = document.getElementById('game-container');
-    const gameOverScreen = document.getElementById('game-over');
-    const finalScore = document.getElementById('final-score');
-    const scoreProgress = document.getElementById('score-progress');
-    let score = 0;
-    let timeLeft = 30;
-    let timer;
-    let gameRunning = false;
+// function virusGame() {
+//     stoptime_minigame();
+//     const gameArea = document.querySelector('.minigame');
 
-    const virusTypes = [
-        { speed: 3, points: 2, img: "Icon/enemy3.png" },
-        { speed: 1, points: 1, img: "Icon/enemy1.png" },
-        { speed: 4, points: 5, img: "Icon/enemy2.png" }
-    ];
+//     gameArea.innerHTML = `
+//         <h1>เกมยิงไวรัส</h1>
+//         <p id="score">คะแนน: 0</p>
+//         <div id="score-bar"><div id="score-progress"></div></div>
+//         <div id="game-container"></div>
+//         <div id="game-over">
+//             <h2 id="final-score"></h2>
+//             <button onclick="startGame()">เริ่มเกมใหม่</button>
+//         </div>
+//     `;
 
-    function updateScore(points) {
-        score += points;
-        document.getElementById('score').innerText = `คะแนน: ${score}`;
-        scoreProgress.style.width = `${(score / 20) * 100}%`;
-    }
-
-    function createVirus() {
-        if (!gameRunning) return;
-        
-        const virusData = virusTypes[Math.floor(Math.random() * virusTypes.length)];
-        const virus = document.createElement('div');
-        virus.classList.add('virus');
-        const virusImg = document.createElement('img');
-        virusImg.src = virusData.img;
-        virus.appendChild(virusImg);
-        gameContainer.appendChild(virus);
-
-        let x = Math.random() * (window.innerWidth - 80);
-        let y = Math.random() * (window.innerHeight - 80);
-        let speedX = (Math.random() * virusData.speed + 1) * (Math.random() < 0.5 ? 1 : -1);
-        let speedY = (Math.random() * virusData.speed + 1) * (Math.random() < 0.5 ? 1 : -1);
-
-        virus.style.left = `${x}px`;
-        virus.style.top = `${y}px`;
-
-        function moveVirus() {
-            if (!gameRunning) return;
-
-            x += speedX;
-            y += speedY;
-            if (x <= 0 || x >= window.innerWidth - 80) speedX *= -1;
-            if (y <= 0 || y >= window.innerHeight - 80) speedY *= -1;
-
-            virus.style.left = `${x}px`;
-            virus.style.top = `${y}px`;
-            requestAnimationFrame(moveVirus);
-        }
-        moveVirus();
-
-        virus.addEventListener('click', () => {
-            virus.style.transform = "scale(0)";
-            setTimeout(() => virus.remove(), 100);
-            updateScore(virusData.points);
-            createVirus();
-        });
-
-        setTimeout(() => virus.remove(), 10000);
-    }
-
-    function startGame() {
-        gameRunning = true;
-        score = 0;
-        timeLeft = 30;
-        document.getElementById('score').innerText = `คะแนน: ${score}`;
-        document.getElementById('timer').innerText = `เวลา: ${timeLeft}`;
-        scoreProgress.style.width = "0%";
-        gameOverScreen.style.display = 'none';
-        gameContainer.innerHTML = '';
-
-        timer = setInterval(() => {
-            timeLeft--;
-            document.getElementById('timer').innerText = `เวลา: ${timeLeft}`;
-            if (timeLeft <= 0) {
-                clearInterval(timer);
-                gameRunning = false;
-                gameContainer.innerHTML = '';
-                finalScore.innerText = `หมดเวลา! คะแนนของคุณ: ${score}`;
-                gameOverScreen.style.display = 'block';
-            }
-        }, 1000);
-
-        for (let i = 0; i < 10; i++) createVirus();
-        setInterval(createVirus, 2000);
-    }
-
-    return { startGame };
-}
-
-const game = virusGame();
-game.startGame();
+//     initializeGameTimer(30);
+// }

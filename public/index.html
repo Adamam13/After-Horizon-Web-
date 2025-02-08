@@ -45,7 +45,6 @@
 			</div>
 		</div>
 
-		<!-- Folder 1 -->
 		<div class="window" id="folder1">
 			<div class="window-header">
 				<button class="button" onclick="closeWindow('folder1')">&lt; Back</button>
@@ -63,6 +62,22 @@
 			</div>
 			<div class="window-body folder2-body"></div>
 		</div>
+		<div class="window" id="folder3">
+			<div class="window-header">
+				<button class="button" onclick="closeWindow('folder3')">&lt; Back</button>
+				<span>Folder 3</span>
+				<button class="button close" onclick="closeWindow('folder3')">X</button>
+			</div>
+			<div class="window-body folder3-body"></div>
+		</div>
+		<div class="window" id="folder4">
+			<div class="window-header">
+				<button class="button" onclick="closeWindow('folder4')">&lt; Back</button>
+				<span>Folder 4</span>
+				<button class="button close" onclick="closeWindow('folder4')">X</button>
+			</div>
+			<div class="window-body folder4-body"></div>
+		</div>
 		
 		<div class="window" id="folder_readme">
 			<div class="window-header">
@@ -72,286 +87,7 @@
 			</div>
 			<div class="window-body folder_readme-body"></div>
 		</div>
-		
 
-		<!-- info file 1 -->
-		<div class="window" id="file-info-farm">
-			<div class="window-header">
-				<button class="button" onclick="CnO_Window('file-info-farm', 'folder_readme')">
-					< Back</button>
-						<span>Farming</span>
-
-						<button class="button close" onclick="closeWindow('file-info-farm')">X</button>
-			</div>
-			<div class="info">
-				<img class="info-img" src="info/info-farm_new.png">
-			</div>
-		</div>
-
-		<div class="window" id="file-info-guied">
-			<div class="window-header">
-				<button class="button" onclick="CnO_Window('file-info-guied', 'folder_readme')">
-					< Back</button>
-						<span>VR Guide</span>
-
-						<button class="button close" onclick="closeWindow('file-info-guied')">X</button>
-			</div>
-			<div class="info">
-				<img class="info-img" src="info/info-guied.png">
-			</div>
-		</div>
-
-		<!-- info file 2 -->
-		<div class="window" id="file-info-oxygen">
-			<div class="window-header">
-				<button class="button" onclick="CnO_Window('file-info-oxygen', 'folder_readme')">
-					< Back</button>
-						<span>Oxygen</span>
-
-						<button class="button close" onclick="closeWindow('file-info-oxygen')">X</button>
-			</div>
-			<div class="info">
-				<img class="info-img" src="info/info-oxygen_new.png">
-			</div>
-		</div>
-
-		<!-- info file 3 -->
-		<div class="window" id="file-info-phum">
-			<div class="window-header">
-				<button class="button" onclick="CnO_Window('file-info-phum', 'folder_readme')">
-					< Back</button>
-						<span>Water Supply System</span>
-
-						<button class="button close" onclick="closeWindow('file-info-phum')">X</button>
-			</div>
-			<div class="info">
-				<img class="info-img" style="width: 80%;" src="info/info-phum_new.png">
-			</div>
-		</div>
-
-		<!-- info file 4 -->
-		<div class="window" id="file-info-elec">
-			<div class="window-header">
-				<button class="button" onclick="CnO_Window('file-info-elec', 'folder_readme')">
-					< Back</button>
-						<span>Electical System</span>
-
-						<button class="button close" onclick="closeWindow('file-info-elec')">X</button>
-			</div>
-			<div class="info">
-				<img class="info-img" style="width: 98%;" src="info/info-elec_new.png">
-			</div>
-		</div>
-
-		<!-- info file 5 -->
-		<div class="window" id="info-cabbage">
-			<div class="window-header">
-				<button class="button" onclick="CnO_Window('info-cabbage', 'folder')">
-					< Back</button>
-						<span>Cabbage</span>
-
-						<button class="button close" onclick="closeWindow('info-cabbage')">X</button>
-			</div>
-			<div class="info">
-				<img class="info-img" src="info/info-cabbage_new.png">
-			</div>
-		</div>
-
-		<!-- info file 6 -->
-		<div class="window" id="file-info-carrot">
-			<div class="window-header">
-				<button class="button" onclick="CnO_Window('file-info-carrot', 'folder1')">
-					< Back</button>
-						<span>Carrot</span>
-
-						<button class="button close" onclick="closeWindow('file-info-carrot')">X</button>
-			</div>
-			<div class="info">
-				<img class="info-img" src="info/info-carrot_new.png">
-			</div>
-		</div>
-
-		<!-- info file 7 -->
-		<div class="window" id="file-info-pumpkin">
-			<div class="window-header">
-				<button class="button" onclick="CnO_Window('file-info-pumpkin', 'folder2')">
-					< Back</button>
-						<span>Pumpkin</span>
-
-						<button class="button close" onclick="closeWindow('file-info-pumpkin')">X</button>
-			</div>
-			<div class="info">
-				<img class="info-img" src="info/info-pumpkin_new.png">
-			</div>
-		</div>
-
-		<!-- info file 8 -->
-		<div class="window" id="file-info-radish">
-			<div class="window-header">
-				<button class="button" onclick="CnO_Window('file-info-radish', 'folder2')">
-					< Back</button>
-						<span>Radish</span>
-
-						<button class="button close" onclick="closeWindow('file-info-radish')">X</button>
-			</div>
-			<div class="info">
-				<img class="info-img" src="info/info-radish_new.png">
-			</div>
-		</div>
-
-		<!-- info file 9 -->
-		<div class="window" id="file-info-rice">
-			<div class="window-header">
-				<button class="button" onclick="CnO_Window('file-info-rice', 'folder1')">
-					< Back</button>
-						<span>Rice</span>
-
-						<button class="button close" onclick="closeWindow('file-info-rice')">X</button>
-			</div>
-			<div class="info">
-				<img class="info-img" src="info/info-rice_new.png">
-			</div>
-		</div>
-
-		<!-- info file 10 -->
-		<div class="window" id="file-info-tomato">
-			<div class="window-header">
-				<button class="button" onclick="CnO_Window('file-info-tomato', 'folder1')">
-					< Back</button>
-						<span>Tomato</span>
-
-						<button class="button close" onclick="closeWindow('file-info-tomato')">X</button>
-			</div>
-			<div class="info">
-				<img class="info-img" src="info/info-tomato_new.png">
-			</div>
-		</div>
-
-		<!-- info file 11 -->
-		<div class="window" id="file-info-watermelon">
-			<div class="window-header">
-				<button class="button" onclick="CnO_Window('file-info-watermelon', 'folder')">
-					< Back</button>
-						<span>Watermelon</span>
-
-						<button class="button close" onclick="closeWindow('file-info-watermelon')">X</button>
-			</div>
-			<div class="info">
-				<img class="info-img" src="info/info-watermelon_new.png">
-			</div>
-		</div>
-
-		<!-- info file 12 -->
-		<div class="window" id="file-hint-OT">
-			<div class="window-header">
-				<button class="button" onclick="CnO_Window('file-hint-OT', 'folder2')">
-					< Back</button>
-						<span>Orange Tree</span>
-
-						<button class="button close" onclick="closeWindow('file-hint-OT')">X</button>
-			</div>
-			<div class="info">
-				<img class="info-img" style="width: 40%;" src="info/hint-OT_new.png">
-			</div>
-		</div>
-
-		<!-- info file 13 -->
-		<div class="window" id="file-hint-PT">
-			<div class="window-header">
-				<button class="button" onclick="CnO_Window('file-hint-PT', 'folder1')">
-					< Back</button>
-						<span>Purple</span>
-
-						<button class="button close" onclick="closeWindow('file-hint-PT')">X</button>
-			</div>
-			<div class="info">
-				<img class="info-img" style="width: 40%;" src="info/hint-PT_new.png">
-			</div>
-		</div>
-
-		<!-- info file 14 -->
-		<div class="window" id="file-hint-Phum">
-			<div class="window-header">
-				<button class="button" onclick="CnO_Window('file-hint-Phum', 'folder1')">
-					< Back</button>
-						<span>Hint</span>
-
-						<button class="button close" onclick="closeWindow('file-hint-Phum')">X</button>
-			</div>
-			<div class="info">
-				<img class="info-img" style="width: 45%;" src="info/hint-Phum.png">
-			</div>
-		</div>
-
-		<!-- info file 15 -->
-		<div class="window" id="file-hint-Water">
-			<div class="window-header">
-				<button class="button" onclick="CnO_Window('file-hint-Water', 'folder2')">
-					< Back </button>
-						<span>Hint</span>
-
-						<button class="button close" onclick="closeWindow('file-hint-Water')">X</button>
-			</div>
-			<div class="info">
-				<img class="info-img" style="width: 45%;" src="info/hint-Water.png">
-			</div>
-		</div>
-
-		<!-- info file 16 -->
-		<div class="window" id="file-part1">
-			<div class="window-header">
-				<button class="button" onclick="CnO_Window('file-part1', 'folder1')">
-					< Back </button>
-						<span>Part1</span>
-
-						<button class="button close" onclick="closeWindow('file-part1')">X</button>
-			</div>
-			<div class="info">
-				<img class="info-img" style="width: 70%;" src="info/part_1.PNG">
-			</div>
-		</div>
-
-		<!-- info file 17 -->
-		<div class="window" id="file-part2">
-			<div class="window-header">
-				<button class="button" onclick="CnO_Window('file-part2', 'folder2')">
-					< Back </button>
-						<span>Part2</span>
-
-						<button class="button close" onclick="closeWindow('file-part2')">X</button>
-			</div>
-			<div class="info">
-				<img class="info-img" style="width: 70%;" src="info/part_2.PNG">
-			</div>
-		</div>
-
-		<!-- info file 18 -->
-		<div class="window" id="file-part3">
-			<div class="window-header">
-				<button class="button" onclick="CnO_Window('file-part3', 'folder1')">
-					< Back </button>
-						<span>Part3</span>
-
-						<button class="button close" onclick="closeWindow('file-part3')">X</button>
-			</div>
-			<div class="info">
-				<img class="info-img" style="width: 70%;" src="info/part_3.PNG">
-			</div>
-		</div>
-
-		<!-- info file 19 -->
-		<div class="window" id="file-part4">
-			<div class="window-header">
-				<button class="button" onclick="CnO_Window('file-part4', 'folder2')">
-					< Back </button>
-						<span>Part4</span>
-
-						<button class="button close" onclick="closeWindow('file-part4')">X</button>
-			</div>
-			<div class="info">
-				<img class="info-img" style="width: 70%;" src="info/part_4.PNG">
-			</div>
-		</div>
 		<!-- water_supply_enter_page -->
 		<div class="window" id="water_supply_enter_page" style="background-color: #00ffff; border: 5px solid #00FFFF;">
 			<div class="window-header" style="background-color: #00FFFF;">
@@ -436,62 +172,6 @@
 				</div>
 			</div>
 		</div>
-
-		<!-- water_supply -->
-		<!-- <div class="window" id="water_supply" style="background-color: #151515; border: 5px solid #00FFFF;">
-			<div class="window-header" style="background-color: #00FFFF;">
-				<button class="button" onclick="CnO_Window('water_supply', 'select_pipe')">
-					< Back</button>
-						<span>Water Supply</span>
-
-						<button class="button close" onclick="closeWindow('water_supply')">X</button>
-			</div>
-			<div class="decode_window" style="background-color: #151515; margin: 15px;">
-				<div class="decode_header">
-					<div class="decode_guide">
-						<div>Decode Guide</div>
-						<div>
-							<div class="box"></div>
-							<div>= Right number, right position.</div>
-						</div>
-						<div>
-							<div class="box"></div>
-							<div>= Right number, wrong position.</div>
-						</div>
-						<div>
-							<div class="box"></div>
-							<div>= Wrong number.</div>
-						</div>
-					</div>
-					<div class="pipe_board">
-					</div>
-				</div>
-				<div class="input-container">
-					<div class="btn-container">
-						<button onclick="increment('digit1')" class="button_press">Λ</button>
-						<input type="text" id="digit1" class="input-box" value="0" readonly>
-						<button onclick="decrement('digit1')" class="button_press">V</button>
-					</div>
-					<div class="btn-container">
-						<button onclick="increment('digit2')" class="button_press">Λ</button>
-						<input type="text" id="digit2" class="input-box" value="0" readonly>
-						<button onclick="decrement('digit2')" class="button_press">V</button>
-					</div>
-					<div class="btn-container">
-						<button onclick="increment('digit3')" class="button_press">Λ</button>
-						<input type="text" id="digit3" class="input-box" value="0" readonly>
-						<button onclick="decrement('digit3')" class="button_press">V</button>
-					</div>
-					<div class="btn-container">
-						<button onclick="increment('digit4')" class="button_press">Λ</button>
-						<input type="text" id="digit4" class="input-box" value="0" readonly>
-						<button onclick="decrement('digit4')" class="button_press">V</button>
-					</div>
-				</div>
-				<button class="btn_check" onclick="checkGuess()">Check</button>
-
-			</div>
-		</div> -->
 
 		<!-- Key Unlock system -->
 		<div class="window" id="lock_key" style="background-color: #e25519; border: 5px solid #e25519;">
@@ -757,8 +437,7 @@
 		</div>
 
 		<!-- desktop_icon -->
-		<div class="group_folder_file">
-
+		<div class="group_file g_folder_file">
 			<div class="icon_wrapper">
 				<img class="icon" id="file_1" onclick="openWindow('folder1')" alt="" src="Icon/folder_new.png">
 				<div class="desktop_text">Folder 1</div>
@@ -767,17 +446,21 @@
 				<img class="icon" id="file_2" onclick="openWindow('folder2')" alt="" src="Icon/folder_new.png">
 				<div class="desktop_text">Folder 2</div>
 			</div>
-		</div>
-
-		<div class="group_readme_file">
+			<div class="icon_wrapper">
+				<img class="icon" id="file_3" onclick="openWindow('folder3')" alt="" src="Icon/folder_new.png">
+				<div class="desktop_text">Folder 3</div>
+			</div>
+			<div class="icon_wrapper">
+				<img class="icon" id="file_4" onclick="openWindow('folder4')" alt="" src="Icon/folder_new.png">
+				<div class="desktop_text">Folder 4</div>
+			</div>
 			<div class="icon_wrapper">
 				<img class="icon" id="readme" onclick="openWindow('folder_readme')" alt="" src="Icon/folder_new.png">
 				<div class="desktop_text">ReadME!</div>
 			</div>
 		</div>
 
-
-		<div class="group_main_file">
+		<div class="group_file g_main_file">
 			<div class="icon_wrapper">
 				<img class="icon" onclick="openWindow('virus')" alt="" src="Icon/virus_icon.png">
 				<div class="desktop_text">Virus Detector</div>
@@ -801,11 +484,11 @@
 			<img class="close" src="Icon/close-icon_new.png" id="close">
 			<div class="rectangle_small">
 				<img class="battery img_bar" alt="" src="Icon/battery_new.png">
-				<div class="key_ea img_bar" id="timecount">00:00</div>
+				<div class="img_bar" id="timecount">00:00</div>
 			</div>
 			<div class="rectangle_small">
 				<img class="key_img img_bar" alt="" src="Icon/key_new.png">
-				<div class="key_ea img_bar">0</div>
+				<div class="key_ea img_bar">3</div>
 			</div>
 		</div>
 	</div>
