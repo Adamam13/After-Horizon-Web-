@@ -11,6 +11,12 @@ span{
     font-size: 2vw;
 }
 
+.font_class{
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 1vw;
+}
 /* กรอบของหน้าจอเกม */
 .desktop {
     width: 95%;
@@ -273,7 +279,7 @@ video {
     justify-content: center;
 }
 .img_bar{
-    max-height: 2vw;
+    /* max-height: 2vw; */
     text-align: center;
     font-family: "Jersey 10", sans-serif;
     display: flex;
@@ -477,7 +483,7 @@ video {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50%;
+    height: 32%;
     width: 40%;
 }
 

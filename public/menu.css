@@ -1,7 +1,23 @@
-.menu-title, .summary-title {
-    font-size: 3em;
-    margin-bottom: 20px;
+@font-face {
+    font-family: 'MyFont';
+    src: url('font/MOON Night DEMO.otf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+.font_thai{
+    font-family: "Mitr", serif;
+    font-weight: 300;
+    font-style: normal;
 }
+.menu-title, .summary-title {
+    font-size: 5em;
+    margin-bottom: 20px;
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
 
 .menu-button, .summary-button {
     padding: 15px 30px;
@@ -11,6 +27,7 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 1.5em;
+    
 }
 
 .menu-button:hover, .summary-button:hover {
@@ -29,6 +46,10 @@
     align-self: center;
     font-weight: bold;
     font-size: medium;
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 3vw;
     transition: background-color 0.1s, transform 0.1s;
 }
 
