@@ -19,6 +19,7 @@ let zIndexCounter = 1;
 
 let keys = 3;  
 let lockedFiles = {};
+let health = 100;
 
 function openWindow(id) {
     const win = document.getElementById(id);
@@ -568,17 +569,31 @@ function startGameTimer() {
 
 function updateTimer() {
     elapsedTime++;
-    const minutes = String(Math.floor(elapsedTime / 60)).padStart(2, '00');
-    const seconds = String(elapsedTime % 60).padStart(2, '00');
-    timerElement.textContent = `${minutes}:${seconds}`;
+    // const minutes = String(Math.floor(elapsedTime / 60)).padStart(2, '00');
+    // const seconds = String(elapsedTime % 60).padStart(2, '00');
+    // timerElement.textContent = `${minutes}:${seconds}`;
     check_event(elapsedTime);
     if (elapsedTime%2 == 0){
         check_virus_event();
     }
-    // if (!electic && !water && !oxygen){
-    //     noting++;
-    //     console.log(noting);
-    // }
+    if (electic){
+        health -= 0.2;
+    }
+    if(water){
+        health -= 0.3;
+    }
+    if(oxygen){
+        health -= 0.4;
+    }
+    if(health <= 0){
+        showThank();
+    }
+    if (!electic && !water && !oxygen){
+        if (health < 100){
+            health += 1;
+        }
+    }
+    timerElement.textContent = `${Math.floor(health)}%`;
 }
 
 
