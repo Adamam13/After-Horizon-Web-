@@ -589,20 +589,23 @@ function updateTimer() {
         showThank();
     }
     if (!electic && !water && !oxygen){
-        if (health < 100){
-            health += 1;
+        health += 10;
+        if(health >=100){
+            health = 100;
         }
+
+        
     }
     timerElement.textContent = `${Math.floor(health)}%`;
 }
 
 
-// สร้าง Audio Object สำหรับเพลงประกอบ
+// // สร้าง Audio Object สำหรับเพลงประกอบ
 // const backgroundMusic = new Audio('video/Hacktime.mp4'); // ใส่พาธเพลงที่ต้องการ
 // backgroundMusic.loop = true; // ตั้งให้เพลงเล่นซ้ำ
-// backgroundMusic.volume = 0.3; // ปรับระดับเสียง (0.0 - 1.0)
+// backgroundMusic.volume = 1; // ปรับระดับเสียง (0.0 - 1.0)
 
-// พยายามเล่นเพลงทันทีที่โหลดหน้าเว็บ
+// // พยายามเล่นเพลงทันทีที่โหลดหน้าเว็บ
 // window.addEventListener('load', () => {
 //     backgroundMusic.play().catch(error => {
 //         console.error('Autoplay failed:', error);
