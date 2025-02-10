@@ -11,12 +11,10 @@ function saveGameData() {
 }
 
 function exportGameData() {
-    // แปลง survival_time จากวินาทีเป็นนาที
     const minutes = String(Math.floor(survival_time / 60)).padStart(2, '0');
     const seconds = String(survival_time % 60).padStart(2, '0');
-    const survivalTimeFormatted = `${minutes}:${seconds}`; // ใช้ฟอร์แมต "00:00"
+    const survivalTimeFormatted = `${minutes}:${seconds}`;
 
-    // สร้างแถวของตารางจาก order_event_clear และ event_clear_time
     const eventNames = {
         1: "Electrical Broken",
         2: "Water Supply Broken",
@@ -24,9 +22,8 @@ function exportGameData() {
     };
 
     const rows = order_event_clear.map((event, i) => {
-        const eventName = eventNames[event] || `Event ${event}`;  // ถ้าไม่เจอให้แสดง Event X
+        const eventName = eventNames[event] || `Event ${event}`;
         const clearTimeInMinutes = event_clear_time[i] !== undefined ? 
-            // แปลงเวลาจากมิลลิวินาทีเป็นฟอร์แมต "00:00"
             `${String(Math.floor(event_clear_time[i] / 60000)).padStart(2, '0')}:${String(Math.floor((event_clear_time[i] % 60000) / 1000)).padStart(2, '0')} นาที` 
             : "-";
         return `
@@ -77,7 +74,7 @@ function exportGameData() {
                     border: 1px solid #444444;
                     padding: 8px;
                     text-align: left;
-                    color: #e0e0e0; /* เพิ่มสีตัวอักษรให้เข้มขึ้น */
+                    color: #e0e0e0;
                 }
                 th {
                     background-color: #333333;
@@ -89,7 +86,7 @@ function exportGameData() {
                     background-color: #444444;
                 }
                 td {
-                    background-color: #2a2a2a; /* เพิ่มสีพื้นหลังให้ตารางตัวอักษร */
+                    background-color: #2a2a2a;
                 }
             </style>
         </head>
