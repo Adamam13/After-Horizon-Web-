@@ -234,7 +234,7 @@ video {
 .lock_icon {
     width: 30px;
     position: absolute;
-    transform: translate(80%, 100%);
+    transform: translate(60%, 60%);
 }
 
 .lock_icon[data-lock='True'] {
