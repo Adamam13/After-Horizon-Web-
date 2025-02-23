@@ -252,6 +252,7 @@ video {
     color: #58E191;
     font-family: "Jersey 10", sans-serif;
     font-weight: 400;
+    
 }
 
 .window-body {
@@ -466,7 +467,7 @@ video {
 }
 
 .info-img {
-    width: 70%;
+    width: 90%;
 }
 
 .decode_window {
@@ -720,8 +721,8 @@ video {
     background-color: #0097ba;
     border: 60px #000000;
     box-sizing: border-box;
-    height: 80%;
-    padding: 2%;
+    height: 70%;
+    padding: 11%;
     position: relative;
 
     display: grid;
@@ -791,20 +792,42 @@ video {
 
 .yellow_pipe {
     position: absolute;
-    width: 2%;
-    height: 20%;
+    width: 11%;
+    height: 22%;
     z-index: 1;
-    background-color: yellow;
+    /* background-color: yellow; */
 }
 
 #y_pipe1 {
+    background-image: url(pipe/pipegoal2.png);
+    background-size: cover;
+    /* max-width: 90%;
+    max-height: 90%; */
+    /* object-fit: cover; */
     bottom: 10%;
     right: 0.7%;
 }
 
 #y_pipe2 {
-    top: 10%;
+    background-image: url(pipe/pipegoal1.png);
+    background-size: cover;
+    top: 25%;
     left: 0.7%;
+}
+
+.system_pipe {
+    position: absolute;
+    width: 60%;
+    height: 22%;
+    z-index: 1;
+    background-color: rgb(9, 255, 0);
+}
+
+#y_system {
+    background-image: url(pipe/system.png);
+    background-size: cover;
+    top: 3%;
+    left: 20%;
 }
 
 .pipe_show img {
