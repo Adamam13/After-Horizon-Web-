@@ -5,6 +5,10 @@ const tuto_images = [
     'info/tutorial 4.png',
     'info/tutorial 5.png',
     'info/tutorial 6.png',
+    'info/tutorial 7.png',
+    'info/tutorial 8.png',
+    'info/tutorial 9.png',
+    'info/tutorial 10.png',
 ]; // Replace with your images
 
 const tuto_slider = document.getElementById('tuto_slider');
