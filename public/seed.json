@@ -99,7 +99,7 @@
             {
                 "name": "Part 2",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-2.png",
+                "info_grap": "part/part9-1.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -113,14 +113,14 @@
             {
                 "name": "Part 3",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-3.png",
+                "info_grap": "part/part13-1.png",
                 "folder": "folder4",
                 "is_lock": 1
             },
             {
                 "name": "Part 4",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-4.png",
+                "info_grap": "part/part21-1png",
                 "folder": "folder2",
                 "is_lock": 1
             },            
@@ -135,21 +135,21 @@
             {
                 "name": "Part 5",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-1.png",
+                "info_grap": "part/part2-2.png",
                 "folder": "folder4",
                 "is_lock": 1
             },
             {
                 "name": "Part 6",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-2.png",
+                "info_grap": "part/part6-2.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
             {
                 "name": "Part 7",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-3.png",
+                "info_grap": "part/part18-2.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
@@ -163,14 +163,14 @@
             {
                 "name": "Part 8",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-4.png",
+                "info_grap": "part/part26-2.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
             {
                 "name": "Part 9",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-1.png",
+                "info_grap": "part/part3-3.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -184,14 +184,14 @@
             {
                 "name": "Part 10",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-2.png",
+                "info_grap": "part/part19-3.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
             {
                 "name": "Part 11",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-3.png",
+                "info_grap": "part/part27-3.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -205,14 +205,14 @@
             {
                 "name": "Part 12",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-4.png",
+                "info_grap": "part/part31-3.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
             {
                 "name": "Part 13",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-1.png",
+                "info_grap": "part/part8-4.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
@@ -233,21 +233,21 @@
             {
                 "name": "Part 15",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-3.png",
+                "info_grap": "part/part16-4.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
             {
                 "name": "Part 16",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-4.png",
+                "info_grap": "part/part20-4.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
             {
                 "name": "Part 14",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-2.png",
+                "info_grap": "part/part28-4.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -302,7 +302,7 @@
 
         ],
         "file_hint":
-            [   
+        [   
             {
                 "name": "How to fix electical",
                 "icon": "Icon/hint_icon.png",
@@ -362,14 +362,14 @@
             {
                 "name": "Part 1",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-1.png",
+                "info_grap": "part/part9-1.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
             {
                 "name": "Part 2",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-2.png",
+                "info_grap": "part/part13-1.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -383,14 +383,14 @@
             {
                 "name": "Part 3",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-3.png",
+                "info_grap": "part/part17-1.png",
                 "folder": "folder4",
                 "is_lock": 1
             },
             {
                 "name": "Part 4",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-4.png",
+                "info_grap": "part/part29-1png",
                 "folder": "folder2",
                 "is_lock": 1
             },            
@@ -405,21 +405,21 @@
             {
                 "name": "Part 5",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-1.png",
+                "info_grap": "part/part6-2.png",
                 "folder": "folder4",
                 "is_lock": 1
             },
             {
                 "name": "Part 6",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-2.png",
+                "info_grap": "part/part14-2.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
             {
                 "name": "Part 7",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-3.png",
+                "info_grap": "part/part22-2.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
@@ -433,14 +433,14 @@
             {
                 "name": "Part 8",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-4.png",
+                "info_grap": "part/part26-2.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
             {
                 "name": "Part 9",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-1.png",
+                "info_grap": "part/part3-3.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -454,14 +454,14 @@
             {
                 "name": "Part 10",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-2.png",
+                "info_grap": "part/part11-3.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
             {
                 "name": "Part 11",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-3.png",
+                "info_grap": "part/part19-3.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -475,14 +475,14 @@
             {
                 "name": "Part 12",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-4.png",
+                "info_grap": "part/part31-3.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
             {
                 "name": "Part 13",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-1.png",
+                "info_grap": "part/part12-4.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
@@ -503,21 +503,21 @@
             {
                 "name": "Part 15",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-3.png",
+                "info_grap": "part/part20-4.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
             {
                 "name": "Part 16",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-4.png",
+                "info_grap": "part/part24-4.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
             {
                 "name": "Part 14",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-2.png",
+                "info_grap": "part/part32-4.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -572,7 +572,7 @@
             "4582", "7242", "5369", "2262", "9920", "7211"
         ],
         "file_hint":
-            [   
+        [   
             {
                 "name": "How to fix electical",
                 "icon": "Icon/hint_icon.png",
@@ -595,6 +595,27 @@
                 "is_lock": 0
             },
             {
+                "name": "How to use water supply 1",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_water1.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to fix water supply 2",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_water2.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to use electical",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_elec.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
                 "name": "How to find key",
                 "icon": "Icon/hint_icon.png",
                 "info_grap": "info/guide_key.png",
@@ -611,14 +632,14 @@
             {
                 "name": "Part 1",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-1.png",
+                "info_grap": "part/part5-1.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
             {
                 "name": "Part 2",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-2.png",
+                "info_grap": "part/part17-1.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -632,14 +653,14 @@
             {
                 "name": "Part 3",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-3.png",
+                "info_grap": "part/part21-1.png",
                 "folder": "folder4",
                 "is_lock": 1
             },
             {
                 "name": "Part 4",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-4.png",
+                "info_grap": "part/part25-1png",
                 "folder": "folder2",
                 "is_lock": 1
             },            
@@ -654,21 +675,21 @@
             {
                 "name": "Part 5",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-1.png",
+                "info_grap": "part/part2-2.png",
                 "folder": "folder4",
                 "is_lock": 1
             },
             {
                 "name": "Part 6",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-2.png",
+                "info_grap": "part/part22-2.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
             {
                 "name": "Part 7",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-3.png",
+                "info_grap": "part/part26-2.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
@@ -682,14 +703,14 @@
             {
                 "name": "Part 8",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-4.png",
+                "info_grap": "part/part30-2.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
             {
                 "name": "Part 9",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-1.png",
+                "info_grap": "part/part15-3.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -703,14 +724,14 @@
             {
                 "name": "Part 10",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-2.png",
+                "info_grap": "part/part19-3.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
             {
                 "name": "Part 11",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-3.png",
+                "info_grap": "part/part23-3.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -724,14 +745,14 @@
             {
                 "name": "Part 12",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-4.png",
+                "info_grap": "part/part27-3.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
             {
                 "name": "Part 13",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-1.png",
+                "info_grap": "part/part8-4.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
@@ -752,21 +773,21 @@
             {
                 "name": "Part 15",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-3.png",
+                "info_grap": "part/part12-4.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
             {
                 "name": "Part 16",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-4.png",
+                "info_grap": "part/part16-4.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
             {
                 "name": "Part 14",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-2.png",
+                "info_grap": "part/part24-4.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -821,7 +842,7 @@
             "0087", "1413", "6136", "4140", "3571", "0197"
         ],
         "file_hint":
-            [   
+        [   
             {
                 "name": "How to fix electical",
                 "icon": "Icon/hint_icon.png",
@@ -840,6 +861,27 @@
                 "name": "How to fix oxygen",
                 "icon": "Icon/hint_icon.png",
                 "info_grap": "info/how_oxy.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to use water supply 1",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_water1.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to fix water supply 2",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_water2.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to use electical",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_elec.png",
                 "folder": "folder_readme",
                 "is_lock": 0
             },
@@ -867,7 +909,7 @@
             {
                 "name": "Part 2",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-2.png",
+                "info_grap": "part/part5-1.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -881,14 +923,14 @@
             {
                 "name": "Part 3",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-3.png",
+                "info_grap": "part/part13-1.png",
                 "folder": "folder4",
                 "is_lock": 1
             },
             {
                 "name": "Part 4",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-4.png",
+                "info_grap": "part/part25-1png",
                 "folder": "folder2",
                 "is_lock": 1
             },            
@@ -903,21 +945,21 @@
             {
                 "name": "Part 5",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-1.png",
+                "info_grap": "part/part2-2.png",
                 "folder": "folder4",
                 "is_lock": 1
             },
             {
                 "name": "Part 6",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-2.png",
+                "info_grap": "part/part10-2.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
             {
                 "name": "Part 7",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-3.png",
+                "info_grap": "part/part18-2.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
@@ -931,14 +973,14 @@
             {
                 "name": "Part 8",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-4.png",
+                "info_grap": "part/part22-2.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
             {
                 "name": "Part 9",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-1.png",
+                "info_grap": "part/part7-3.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -952,14 +994,14 @@
             {
                 "name": "Part 10",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-2.png",
+                "info_grap": "part/part15-3.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
             {
                 "name": "Part 11",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-3.png",
+                "info_grap": "part/part27-3.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -973,14 +1015,14 @@
             {
                 "name": "Part 12",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-4.png",
+                "info_grap": "part/part31-3.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
             {
                 "name": "Part 13",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-1.png",
+                "info_grap": "part/part16-4.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
@@ -1001,21 +1043,21 @@
             {
                 "name": "Part 15",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-3.png",
+                "info_grap": "part/part20-4.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
             {
                 "name": "Part 16",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-4.png",
+                "info_grap": "part/part28-4.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
             {
                 "name": "Part 14",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-2.png",
+                "info_grap": "part/part32-4.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -1069,7 +1111,7 @@
             "7421", "3074", "0381", "2404", "5773", "3158"
         ],
         "file_hint":
-            [   
+        [   
             {
                 "name": "How to fix electical",
                 "icon": "Icon/hint_icon.png",
@@ -1092,6 +1134,27 @@
                 "is_lock": 0
             },
             {
+                "name": "How to use water supply 1",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_water1.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to fix water supply 2",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_water2.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to use electical",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_elec.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
                 "name": "How to find key",
                 "icon": "Icon/hint_icon.png",
                 "info_grap": "info/guide_key.png",
@@ -1108,14 +1171,14 @@
             {
                 "name": "Part 1",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-1.png",
+                "info_grap": "part/part13-1.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
             {
                 "name": "Part 2",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-2.png",
+                "info_grap": "part/part17-1.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -1129,14 +1192,14 @@
             {
                 "name": "Part 3",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-3.png",
+                "info_grap": "part/part21-1.png",
                 "folder": "folder4",
                 "is_lock": 1
             },
             {
                 "name": "Part 4",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-4.png",
+                "info_grap": "part/part29-1png",
                 "folder": "folder2",
                 "is_lock": 1
             },            
@@ -1151,21 +1214,21 @@
             {
                 "name": "Part 5",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-1.png",
+                "info_grap": "part/part10-2.png",
                 "folder": "folder4",
                 "is_lock": 1
             },
             {
                 "name": "Part 6",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-2.png",
+                "info_grap": "part/part14-2.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
             {
                 "name": "Part 7",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-3.png",
+                "info_grap": "part/part18-2.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
@@ -1179,14 +1242,14 @@
             {
                 "name": "Part 8",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-4.png",
+                "info_grap": "part/part26-2.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
             {
                 "name": "Part 9",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-1.png",
+                "info_grap": "part/part11-3.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -1200,14 +1263,14 @@
             {
                 "name": "Part 10",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-2.png",
+                "info_grap": "part/part19-3.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
             {
                 "name": "Part 11",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-3.png",
+                "info_grap": "part/part27-3.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -1221,14 +1284,14 @@
             {
                 "name": "Part 12",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-4.png",
+                "info_grap": "part/part31-3.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
             {
                 "name": "Part 13",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-1.png",
+                "info_grap": "part/part4-4.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
@@ -1249,21 +1312,21 @@
             {
                 "name": "Part 15",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-3.png",
+                "info_grap": "part/part8-4.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
             {
                 "name": "Part 16",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-4.png",
+                "info_grap": "part/part28-4.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
             {
                 "name": "Part 14",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-2.png",
+                "info_grap": "part/part32-4.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -1317,7 +1380,7 @@
             "1687", "0084", "8623", "1764", "6373", "8446"
         ],
         "file_hint":
-            [   
+        [   
             {
                 "name": "How to fix electical",
                 "icon": "Icon/hint_icon.png",
@@ -1377,14 +1440,14 @@
             {
                 "name": "Part 1",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-1.png",
+                "info_grap": "part/part5-1.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
             {
                 "name": "Part 2",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-2.png",
+                "info_grap": "part/part9-1.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -1398,14 +1461,14 @@
             {
                 "name": "Part 3",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-3.png",
+                "info_grap": "part/part17-1.png",
                 "folder": "folder4",
                 "is_lock": 1
             },
             {
                 "name": "Part 4",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-4.png",
+                "info_grap": "part/part19-1png",
                 "folder": "folder2",
                 "is_lock": 1
             },            
@@ -1420,21 +1483,21 @@
             {
                 "name": "Part 5",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-1.png",
+                "info_grap": "part/part10-2.png",
                 "folder": "folder4",
                 "is_lock": 1
             },
             {
                 "name": "Part 6",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-2.png",
+                "info_grap": "part/part14-2.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
             {
                 "name": "Part 7",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-3.png",
+                "info_grap": "part/part26-2.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
@@ -1448,14 +1511,14 @@
             {
                 "name": "Part 8",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-4.png",
+                "info_grap": "part/part30-2.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
             {
                 "name": "Part 9",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-1.png",
+                "info_grap": "part/part3-3.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -1469,14 +1532,14 @@
             {
                 "name": "Part 10",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-2.png",
+                "info_grap": "part/part7-3.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
             {
                 "name": "Part 11",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-3.png",
+                "info_grap": "part/part11-3.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -1490,14 +1553,14 @@
             {
                 "name": "Part 12",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-4.png",
+                "info_grap": "part/part19-3.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
             {
                 "name": "Part 13",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-1.png",
+                "info_grap": "part/part8-4.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
@@ -1518,21 +1581,21 @@
             {
                 "name": "Part 15",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-3.png",
+                "info_grap": "part/part16-4.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
             {
                 "name": "Part 16",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-4.png",
+                "info_grap": "part/part20-4.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
             {
                 "name": "Part 14",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-2.png",
+                "info_grap": "part/part24-4.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -1586,7 +1649,7 @@
             "3705", "9032", "8666", "4220", "2915", "0149" 
         ],
         "file_hint":
-            [   
+        [   
             {
                 "name": "How to fix electical",
                 "icon": "Icon/hint_icon.png",
@@ -1653,7 +1716,7 @@
             {
                 "name": "Part 2",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-2.png",
+                "info_grap": "part/part5-1.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -1667,14 +1730,14 @@
             {
                 "name": "Part 3",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-3.png",
+                "info_grap": "part/part17-1.png",
                 "folder": "folder4",
                 "is_lock": 1
             },
             {
                 "name": "Part 4",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-4.png",
+                "info_grap": "part/part29-1png",
                 "folder": "folder2",
                 "is_lock": 1
             },            
@@ -1689,21 +1752,21 @@
             {
                 "name": "Part 5",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-1.png",
+                "info_grap": "part/part6-2.png",
                 "folder": "folder4",
                 "is_lock": 1
             },
             {
                 "name": "Part 6",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-2.png",
+                "info_grap": "part/part10-2.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
             {
                 "name": "Part 7",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-3.png",
+                "info_grap": "part/part14-2.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
@@ -1717,14 +1780,14 @@
             {
                 "name": "Part 8",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-4.png",
+                "info_grap": "part/part30-2.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
             {
                 "name": "Part 9",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-1.png",
+                "info_grap": "part/part7-3.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -1738,14 +1801,14 @@
             {
                 "name": "Part 10",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-2.png",
+                "info_grap": "part/part19-3.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
             {
                 "name": "Part 11",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-3.png",
+                "info_grap": "part/part23-3.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -1759,14 +1822,14 @@
             {
                 "name": "Part 12",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-4.png",
+                "info_grap": "part/part31-3.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
             {
                 "name": "Part 13",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-1.png",
+                "info_grap": "part/part4-4.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
@@ -1787,21 +1850,21 @@
             {
                 "name": "Part 15",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-3.png",
+                "info_grap": "part/part8-4.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
             {
                 "name": "Part 16",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-4.png",
+                "info_grap": "part/part28-4.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
             {
                 "name": "Part 14",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-2.png",
+                "info_grap": "part/part32-4.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -1855,7 +1918,7 @@
             "2009", "7481", "2173", "3505", "6375", "6509"
         ],
         "file_hint":
-            [   
+        [   
             {
                 "name": "How to fix electical",
                 "icon": "Icon/hint_icon.png",
@@ -1915,14 +1978,14 @@
             {
                 "name": "Part 1",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-1.png",
+                "info_grap": "part/part5-1.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
             {
                 "name": "Part 2",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-2.png",
+                "info_grap": "part/part9-1.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -1936,14 +1999,14 @@
             {
                 "name": "Part 3",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-3.png",
+                "info_grap": "part/part21-1.png",
                 "folder": "folder4",
                 "is_lock": 1
             },
             {
                 "name": "Part 4",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part1-4.png",
+                "info_grap": "part/part25-1png",
                 "folder": "folder2",
                 "is_lock": 1
             },            
@@ -1958,21 +2021,21 @@
             {
                 "name": "Part 5",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-1.png",
+                "info_grap": "part/part2-2.png",
                 "folder": "folder4",
                 "is_lock": 1
             },
             {
                 "name": "Part 6",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-2.png",
+                "info_grap": "part/part6-2.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
             {
                 "name": "Part 7",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-3.png",
+                "info_grap": "part/part18-2.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
@@ -1986,14 +2049,14 @@
             {
                 "name": "Part 8",
                 "icon": "Icon/part2_icon.PNG",
-                "info_grap": "part/part2-4.png",
+                "info_grap": "part/part26-2.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
             {
                 "name": "Part 9",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-1.png",
+                "info_grap": "part/part3-3.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -2007,14 +2070,14 @@
             {
                 "name": "Part 10",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-2.png",
+                "info_grap": "part/part19-3.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
             {
                 "name": "Part 11",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-3.png",
+                "info_grap": "part/part27-3.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
@@ -2028,14 +2091,14 @@
             {
                 "name": "Part 12",
                 "icon": "Icon/part3_icon.PNG",
-                "info_grap": "part/part3-4.png",
+                "info_grap": "part/part31-3.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
             {
                 "name": "Part 13",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-1.png",
+                "info_grap": "part/part8-4.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
@@ -2056,21 +2119,21 @@
             {
                 "name": "Part 15",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-3.png",
+                "info_grap": "part/part16-4.png",
                 "folder": "folder2",
                 "is_lock": 1
             },
             {
                 "name": "Part 16",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-4.png",
+                "info_grap": "part/part20-4.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
             {
                 "name": "Part 14",
                 "icon": "Icon/part4_icon.PNG",
-                "info_grap": "part/part4-2.png",
+                "info_grap": "part/part28-4.png",
                 "folder": "folder3",
                 "is_lock": 1
             },
