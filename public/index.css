@@ -209,7 +209,7 @@ video {
 }
 
 .icon {
-    width: 40%;
+    width: 50%;
 }
 
 .icon:hover {
@@ -248,7 +248,7 @@ video {
 } */
 
 .desktop_text {
-    font-size: 1.5vw;
+    font-size: 2vw;
     color: #58E191;
     font-family: "Jersey 10", sans-serif;
     font-weight: 400;
@@ -468,6 +468,8 @@ video {
 
 .info-img {
     width: 90%;
+    /* max-height: 70%; */
+    object-fit: cover;
 }
 
 .decode_window {

@@ -1,8 +1,8 @@
 const minigames = [
     // ไม่อยากเล่นเกมอะไรคอมเมนต์ออกเอานะ
-    imageSwapGame,
+    // imageSwapGame,
     spotTheDifferenceGame,
-    separateTrash
+    // separateTrash
     // virusGame
 ];
 
@@ -364,16 +364,6 @@ const imagePairs = [
         ]
     },
     {
-        img1: 'Minigame/diff/diff_3_1.png',
-        img2: 'Minigame/diff/diff_3_2.png',
-        differences: [
-            { x: 26, y: 31, width: 10, height: 10 },
-            { x: 51, y: 57, width: 10, height: 10 },
-            { x: 61, y: 83, width: 10, height: 10 },
-            { x: 53, y: 33, width: 10, height: 10 }
-        ]
-    },
-    {
         img1: 'Minigame/diff/diff_4_1.png',
         img2: 'Minigame/diff/diff_4_2.png',
         differences: [
@@ -389,23 +379,6 @@ const imagePairs = [
             { x: 10, y: 31, width: 10, height: 10 },
             { x: 41, y: 46, width: 10, height: 10 },
             { x: 37, y: 65, width: 10, height: 10 }
-        ]
-    },
-    {
-        img1: 'Minigame/diff/diff_6_1.png',
-        img2: 'Minigame/diff/diff_6_2.png',
-        differences: [
-            { x: 82, y: 11, width: 10, height: 10 },
-            { x: 14, y: 79, width: 10, height: 10 }
-        ]
-    },
-    {
-        img1: 'Minigame/diff/diff_7_1.png',
-        img2: 'Minigame/diff/diff_7_2.png',
-        differences: [
-            { x: 1, y: 46, width: 10, height: 10 },
-            { x: 27, y: 77, width: 10, height: 10 },
-            { x: 92, y: 27, width: 10, height: 10 }
         ]
     },
     {
@@ -433,6 +406,78 @@ const imagePairs = [
             { x: 49, y: 37, width: 10, height: 10 },
             { x: 66, y: 31, width: 10, height: 10 }
         ]
+    },
+    {
+        img1: 'Minigame/diff/diff_11_1.png',
+        img2: 'Minigame/diff/diff_11_2.png',
+        differences: [
+            { x: 25, y: 55, width: 10, height: 10 },
+            { x: 49, y: 37, width: 10, height: 10 },
+            { x: 66, y: 31, width: 10, height: 10 }
+        ]
+    },
+    {
+        img1: 'Minigame/diff/diff_12_1.png',
+        img2: 'Minigame/diff/diff_12_2.png',
+        differences: [
+            { x: 25, y: 55, width: 10, height: 10 },
+            { x: 49, y: 37, width: 10, height: 10 },
+            { x: 66, y: 31, width: 10, height: 10 }
+        ]
+    },
+    {
+        img1: 'Minigame/diff/diff_13_1.png',
+        img2: 'Minigame/diff/diff_13_2.png',
+        differences: [
+            { x: 25, y: 55, width: 10, height: 10 },
+            { x: 49, y: 37, width: 10, height: 10 },
+            { x: 66, y: 31, width: 10, height: 10 }
+        ]
+    },
+    {
+        img1: 'Minigame/diff/diff_14_1.png',
+        img2: 'Minigame/diff/diff_14_2.png',
+        differences: [
+            { x: 25, y: 55, width: 10, height: 10 },
+            { x: 49, y: 37, width: 10, height: 10 },
+            { x: 66, y: 31, width: 10, height: 10 }
+        ]
+    },
+    {
+        img1: 'Minigame/diff/diff_15_1.png',
+        img2: 'Minigame/diff/diff_15_2.png',
+        differences: [
+            { x: 25, y: 55, width: 10, height: 10 },
+            { x: 49, y: 37, width: 10, height: 10 },
+            { x: 66, y: 31, width: 10, height: 10 }
+        ]
+    },
+    {
+        img1: 'Minigame/diff/diff_16_1.png',
+        img2: 'Minigame/diff/diff_16_2.png',
+        differences: [
+            { x: 25, y: 55, width: 10, height: 10 },
+            { x: 49, y: 37, width: 10, height: 10 },
+            { x: 66, y: 31, width: 10, height: 10 }
+        ]
+    },
+    {
+        img1: 'Minigame/diff/diff_17_1.png',
+        img2: 'Minigame/diff/diff_17_2.png',
+        differences: [
+            { x: 25, y: 55, width: 10, height: 10 },
+            { x: 49, y: 37, width: 10, height: 10 },
+            { x: 66, y: 31, width: 10, height: 10 }
+        ]
+    },
+    {
+        img1: 'Minigame/diff/diff_18_1.png',
+        img2: 'Minigame/diff/diff_18_2.png',
+        differences: [
+            { x: 25, y: 55, width: 10, height: 10 },
+            { x: 49, y: 37, width: 10, height: 10 },
+            { x: 66, y: 31, width: 10, height: 10 }
+        ]
     }
 ];
 let currentDifferences = [];
@@ -444,7 +489,9 @@ function detectClick(event, imageId) {
     let rect = img.getBoundingClientRect();
     let x = ((event.clientX - rect.left) / rect.width) * 100;
     let y = ((event.clientY - rect.top) / rect.height) * 100;
-    // console.log('live again', x, y);
+ 
+    //show click position
+    console.log('live again', x, y);
 
     increase_virus(2);
 
