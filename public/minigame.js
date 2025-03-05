@@ -1,9 +1,9 @@
 const minigames = [
     // ไม่อยากเล่นเกมอะไรคอมเมนต์ออกเอานะ
-    imageSwapGame,
-    spotTheDifferenceGame,
-    separateTrash
-    // virusGame
+    // imageSwapGame,
+    // spotTheDifferenceGame,
+    // separateTrash
+    virusGame
 ];
 
 function getRandomMinigame() {
@@ -771,20 +771,26 @@ function getCategoryName(type) {
 }
 
 // มินิเกมไวรัส
-// function virusGame() {
-//     stoptime_minigame();
-//     const gameArea = document.querySelector('.minigame');
+function virusGame() {
+    stoptime_minigame();
+    const gameArea = document.querySelector('.minigame');
 
-//     gameArea.innerHTML = `
-//         <h1>เกมยิงไวรัส</h1>
-//         <p id="score">คะแนน: 0</p>
-//         <div id="score-bar"><div id="score-progress"></div></div>
-//         <div id="game-container"></div>
-//         <div id="game-over">
-//             <h2 id="final-score"></h2>
-//             <button onclick="startGame()">เริ่มเกมใหม่</button>
-//         </div>
-//     `;
+    gameArea.innerHTML = `
+        <h1 class="header-text">ทำลายไวรัส</h1>
+        <div id="score-container">
+            <progress id="score-progress" value="0" max="30"></progress>
+        </div>
+        <div id="game-container"></div>
+    `;
 
-//     initializeGameTimer(30);
-// }
+    initializeGameTimer(30);
+}
+
+function startVirusGame(){
+    let score = 0;
+    const virusTypes = [
+        { speed: 3, points: 2, img: "Icon/enemy3.png" },
+        { speed: 1, points: 1, img: "Icon/enemy1.png" },
+        { speed: 4, points: 5, img: "Icon/enemy2.png" }
+    ];
+}
