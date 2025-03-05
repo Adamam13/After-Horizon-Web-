@@ -1,9 +1,9 @@
 const minigames = [
     // ไม่อยากเล่นเกมอะไรคอมเมนต์ออกเอานะ
-    // imageSwapGame,
+    imageSwapGame,
     spotTheDifferenceGame,
     separateTrash,
-    virusGame
+    // virusGame
 ];
 
 function getRandomMinigame() {
@@ -347,138 +347,138 @@ function spotTheDifferenceGame() {
 }
 
 const imagePairs = [
-    {
-        img1: 'Minigame/diff/diff_1_1.png',
-        img2: 'Minigame/diff/diff_1_2.png',
-        differences: [
-            { x: 50, y: 49, width: 10, height: 10 },
-            { x: 83, y: 85, width: 10, height: 10 }
-        ]
-    },
-    {
-        img1: 'Minigame/diff/diff_2_1.png',
-        img2: 'Minigame/diff/diff_2_2.png',
-        differences: [
-            { x: 50, y: 20, width: 10, height: 10 },
-            { x: 39, y: 71, width: 10, height: 10 }
-        ]
-    },
-    {
-        img1: 'Minigame/diff/diff_4_1.png',
-        img2: 'Minigame/diff/diff_4_2.png',
-        differences: [
-            { x: 17, y: 65, width: 10, height: 10 },
-            { x: 35, y: 75, width: 10, height: 10 },
-            { x: 70, y: 81, width: 10, height: 10 }
-        ]
-    },
-    {
-        img1: 'Minigame/diff/diff_5_1.png',
-        img2: 'Minigame/diff/diff_5_2.png',
-        differences: [
-            { x: 10, y: 31, width: 10, height: 10 },
-            { x: 41, y: 46, width: 10, height: 10 },
-            { x: 37, y: 65, width: 10, height: 10 }
-        ]
-    },
-    {
-        img1: 'Minigame/diff/diff_8_1.png',
-        img2: 'Minigame/diff/diff_8_2.png',
-        differences: [
-            { x: 80, y: 8, width: 10, height: 10 },
-            { x: 83, y: 26, width: 10, height: 10 }
-        ]
-    },
-    {
-        img1: 'Minigame/diff/diff_9_1.png',
-        img2: 'Minigame/diff/diff_9_2.png',
-        differences: [
-            { x: 21, y: 47, width: 10, height: 10 },
-            { x: 31, y: 35, width: 10, height: 10 },
-            { x: 60, y: 49, width: 10, height: 10 }
-        ]
-    },
-    {
-        img1: 'Minigame/diff/diff_10_1.png',
-        img2: 'Minigame/diff/diff_10_2.png',
-        differences: [
-            { x: 25, y: 55, width: 10, height: 10 },
-            { x: 49, y: 37, width: 10, height: 10 },
-            { x: 66, y: 31, width: 10, height: 10 }
-        ]
-    },
-    {
-        img1: 'Minigame/diff/diff_11_1.png',
-        img2: 'Minigame/diff/diff_11_2.png',
-        differences: [
-            { x: 25, y: 55, width: 10, height: 10 },
-            { x: 49, y: 37, width: 10, height: 10 },
-            { x: 66, y: 31, width: 10, height: 10 }
-        ]
-    },
-    {
-        img1: 'Minigame/diff/diff_12_1.png',
-        img2: 'Minigame/diff/diff_12_2.png',
-        differences: [
-            { x: 25, y: 55, width: 10, height: 10 },
-            { x: 49, y: 37, width: 10, height: 10 },
-            { x: 66, y: 31, width: 10, height: 10 }
-        ]
-    },
-    {
-        img1: 'Minigame/diff/diff_13_1.png',
-        img2: 'Minigame/diff/diff_13_2.png',
-        differences: [
-            { x: 25, y: 55, width: 10, height: 10 },
-            { x: 49, y: 37, width: 10, height: 10 },
-            { x: 66, y: 31, width: 10, height: 10 }
-        ]
-    },
-    {
-        img1: 'Minigame/diff/diff_14_1.png',
-        img2: 'Minigame/diff/diff_14_2.png',
-        differences: [
-            { x: 25, y: 55, width: 10, height: 10 },
-            { x: 49, y: 37, width: 10, height: 10 },
-            { x: 66, y: 31, width: 10, height: 10 }
-        ]
-    },
-    {
-        img1: 'Minigame/diff/diff_15_1.png',
-        img2: 'Minigame/diff/diff_15_2.png',
-        differences: [
-            { x: 25, y: 55, width: 10, height: 10 },
-            { x: 49, y: 37, width: 10, height: 10 },
-            { x: 66, y: 31, width: 10, height: 10 }
-        ]
-    },
-    {
-        img1: 'Minigame/diff/diff_16_1.png',
-        img2: 'Minigame/diff/diff_16_2.png',
-        differences: [
-            { x: 25, y: 55, width: 10, height: 10 },
-            { x: 49, y: 37, width: 10, height: 10 },
-            { x: 66, y: 31, width: 10, height: 10 }
-        ]
-    },
-    {
-        img1: 'Minigame/diff/diff_17_1.png',
-        img2: 'Minigame/diff/diff_17_2.png',
-        differences: [
-            { x: 25, y: 55, width: 10, height: 10 },
-            { x: 49, y: 37, width: 10, height: 10 },
-            { x: 66, y: 31, width: 10, height: 10 }
-        ]
-    },
-    {
-        img1: 'Minigame/diff/diff_18_1.png',
-        img2: 'Minigame/diff/diff_18_2.png',
-        differences: [
-            { x: 25, y: 55, width: 10, height: 10 },
-            { x: 49, y: 37, width: 10, height: 10 },
-            { x: 66, y: 31, width: 10, height: 10 }
-        ]
-    }
+     {
+         img1: 'Minigame/diff/diff_1_1.png',
+         img2: 'Minigame/diff/diff_1_2.png',
+         differences: [
+             { x: 50, y: 49, width: 10, height: 10 },
+             { x: 83, y: 85, width: 10, height: 10 }
+         ]
+     },
+     {
+         img1: 'Minigame/diff/diff_2_1.png',
+         img2: 'Minigame/diff/diff_2_2.png',
+         differences: [
+             { x: 50, y: 20, width: 10, height: 10 },
+             { x: 39, y: 71, width: 10, height: 10 }
+         ]
+     },
+     {
+         img1: 'Minigame/diff/diff_4_1.png',
+         img2: 'Minigame/diff/diff_4_2.png',
+         differences: [
+             { x: 17, y: 65, width: 10, height: 10 },
+             { x: 35, y: 75, width: 10, height: 10 },
+             { x: 70, y: 81, width: 10, height: 10 }
+         ]
+     },
+     {
+         img1: 'Minigame/diff/diff_5_1.png',
+         img2: 'Minigame/diff/diff_5_2.png',
+         differences: [
+             { x: 10, y: 31, width: 10, height: 10 },
+             { x: 41, y: 46, width: 10, height: 10 },
+             { x: 37, y: 65, width: 10, height: 10 }
+         ]
+     },
+     {
+         img1: 'Minigame/diff/diff_8_1.png',
+         img2: 'Minigame/diff/diff_8_2.png',
+         differences: [
+             { x: 80, y: 8, width: 10, height: 10 },
+             { x: 83, y: 26, width: 10, height: 10 }
+         ]
+     },
+     {
+         img1: 'Minigame/diff/diff_9_1.png',
+         img2: 'Minigame/diff/diff_9_2.png',
+         differences: [
+             { x: 21, y: 47, width: 10, height: 10 },
+             { x: 31, y: 35, width: 10, height: 10 },
+             { x: 60, y: 49, width: 10, height: 10 }
+         ]
+     },
+     {
+         img1: 'Minigame/diff/diff_10_1.png',
+         img2: 'Minigame/diff/diff_10_2.png',
+         differences: [
+             { x: 25, y: 55, width: 10, height: 10 },
+             { x: 49, y: 37, width: 10, height: 10 },
+             { x: 66, y: 31, width: 10, height: 10 }
+         ]
+     },
+     {
+         img1: 'Minigame/diff/diff_11_1.png',
+         img2: 'Minigame/diff/diff_11_2.png',
+         differences: [
+             { x: 37, y: 10, width: 10, height: 10 },
+             { x: 95, y: 26, width: 10, height: 10 }
+         ]
+     },
+     {
+         img1: 'Minigame/diff/diff_12_1.png',
+         img2: 'Minigame/diff/diff_12_2.png',
+         differences: [
+             { x: 85, y: 47, width: 10, height: 10 },
+             { x: 83, y: 11, width: 10, height: 10 },
+             { x: 1, y: 48, width: 10, height: 10 }
+         ]
+     },
+     {
+         img1: 'Minigame/diff/diff_13_1.png',
+         img2: 'Minigame/diff/diff_13_2.png',
+         differences: [
+             { x: 89, y: 52, width: 10, height: 10 },
+             { x: 52, y: 86, width: 10, height: 10 },
+             { x: 13, y: 77, width: 10, height: 10 },
+             { x: 23, y: 37, width: 10, height: 10 }
+         ]
+     },
+     {
+         img1: 'Minigame/diff/diff_14_1.png',
+         img2: 'Minigame/diff/diff_14_2.png',
+         differences: [
+             { x: 54, y: 31, width: 10, height: 10 },
+             { x: 55, y: 52, width: 10, height: 10 },
+             { x: 4, y: 27, width: 10, height: 10 }
+         ]
+     },
+     {
+         img1: 'Minigame/diff/diff_15_1.png',
+         img2: 'Minigame/diff/diff_15_2.png',
+         differences: [
+             { x: 83, y: 92, width: 10, height: 10 },
+             { x: 21, y: 66, width: 10, height: 10 }
+         ]
+     },
+     {
+         img1: 'Minigame/diff/diff_16_1.png',
+         img2: 'Minigame/diff/diff_16_2.png',
+         differences: [
+             { x: 35, y: 26, width: 10, height: 10 },
+             { x: 29, y: 60, width: 10, height: 10 },
+             { x: 87, y: 80, width: 10, height: 10 }
+         ]
+     },
+     {
+         img1: 'Minigame/diff/diff_17_1.png',
+         img2: 'Minigame/diff/diff_17_2.png',
+         differences: [
+             { x: 41, y: 80, width: 20, height: 20 },
+             { x: 85, y: 19, width: 10, height: 10 }
+         ]
+     },
+     {
+         img1: 'Minigame/diff/diff_18_1.png',
+         img2: 'Minigame/diff/diff_18_2.png',
+         differences: [
+             { x: 46, y: 18, width: 20, height: 10 },
+             { x: 0, y: 10, width: 10, height: 10 },
+             { x: 21, y: 50, width: 10, height: 10 },
+             { x: 90, y: 65, width: 10, height: 10 }
+
+         ]
+     }
 ];
 let currentDifferences = [];
 let foundDifferences = [];
