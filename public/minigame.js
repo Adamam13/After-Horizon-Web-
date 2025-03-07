@@ -347,66 +347,66 @@ function spotTheDifferenceGame() {
 }
 
 const imagePairs = [
-     {
-         img1: 'Minigame/diff/diff_1_1.png',
-         img2: 'Minigame/diff/diff_1_2.png',
-         differences: [
-             { x: 50, y: 49, width: 10, height: 10 },
-             { x: 83, y: 85, width: 10, height: 10 }
-         ]
-     },
-     {
-         img1: 'Minigame/diff/diff_2_1.png',
-         img2: 'Minigame/diff/diff_2_2.png',
-         differences: [
-             { x: 50, y: 20, width: 10, height: 10 },
-             { x: 39, y: 71, width: 10, height: 10 }
-         ]
-     },
-     {
-         img1: 'Minigame/diff/diff_4_1.png',
-         img2: 'Minigame/diff/diff_4_2.png',
-         differences: [
-             { x: 17, y: 65, width: 10, height: 10 },
-             { x: 35, y: 75, width: 10, height: 10 },
-             { x: 70, y: 81, width: 10, height: 10 }
-         ]
-     },
-     {
-         img1: 'Minigame/diff/diff_5_1.png',
-         img2: 'Minigame/diff/diff_5_2.png',
-         differences: [
-             { x: 10, y: 31, width: 10, height: 10 },
-             { x: 41, y: 46, width: 10, height: 10 },
-             { x: 37, y: 65, width: 10, height: 10 }
-         ]
-     },
-     {
-         img1: 'Minigame/diff/diff_8_1.png',
-         img2: 'Minigame/diff/diff_8_2.png',
-         differences: [
-             { x: 80, y: 8, width: 10, height: 10 },
-             { x: 83, y: 26, width: 10, height: 10 }
-         ]
-     },
-     {
-         img1: 'Minigame/diff/diff_9_1.png',
-         img2: 'Minigame/diff/diff_9_2.png',
-         differences: [
-             { x: 21, y: 47, width: 10, height: 10 },
-             { x: 31, y: 35, width: 10, height: 10 },
-             { x: 60, y: 49, width: 10, height: 10 }
-         ]
-     },
-     {
-         img1: 'Minigame/diff/diff_10_1.png',
-         img2: 'Minigame/diff/diff_10_2.png',
-         differences: [
-             { x: 25, y: 55, width: 10, height: 10 },
-             { x: 49, y: 37, width: 10, height: 10 },
-             { x: 66, y: 31, width: 10, height: 10 }
-         ]
-     },
+    //  {
+    //      img1: 'Minigame/diff/diff_1_1.png',
+    //      img2: 'Minigame/diff/diff_1_2.png',
+    //      differences: [
+    //          { x: 50, y: 49, width: 10, height: 10 },
+    //          { x: 83, y: 85, width: 10, height: 10 }
+    //      ]
+    //  },
+    //  {
+    //      img1: 'Minigame/diff/diff_2_1.png',
+    //      img2: 'Minigame/diff/diff_2_2.png',
+    //      differences: [
+    //          { x: 50, y: 20, width: 10, height: 10 },
+    //          { x: 39, y: 71, width: 10, height: 10 }
+    //      ]
+    //  },
+    //  {
+    //      img1: 'Minigame/diff/diff_4_1.png',
+    //      img2: 'Minigame/diff/diff_4_2.png',
+    //      differences: [
+    //          { x: 17, y: 65, width: 10, height: 10 },
+    //          { x: 35, y: 75, width: 10, height: 10 },
+    //          { x: 70, y: 81, width: 10, height: 10 }
+    //      ]
+    //  },
+    //  {
+    //      img1: 'Minigame/diff/diff_5_1.png',
+    //      img2: 'Minigame/diff/diff_5_2.png',
+    //      differences: [
+    //          { x: 10, y: 31, width: 10, height: 10 },
+    //          { x: 41, y: 46, width: 10, height: 10 },
+    //          { x: 37, y: 65, width: 10, height: 10 }
+    //      ]
+    //  },
+    //  {
+    //      img1: 'Minigame/diff/diff_8_1.png',
+    //      img2: 'Minigame/diff/diff_8_2.png',
+    //      differences: [
+    //          { x: 80, y: 8, width: 10, height: 10 },
+    //          { x: 83, y: 26, width: 10, height: 10 }
+    //      ]
+    //  },
+    //  {
+    //      img1: 'Minigame/diff/diff_9_1.png',
+    //      img2: 'Minigame/diff/diff_9_2.png',
+    //      differences: [
+    //          { x: 21, y: 47, width: 10, height: 10 },
+    //          { x: 31, y: 35, width: 10, height: 10 },
+    //          { x: 60, y: 49, width: 10, height: 10 }
+    //      ]
+    //  },
+    //  {
+    //      img1: 'Minigame/diff/diff_10_1.png',
+    //      img2: 'Minigame/diff/diff_10_2.png',
+    //      differences: [
+    //          { x: 25, y: 55, width: 10, height: 10 },
+    //          { x: 49, y: 37, width: 10, height: 10 },
+    //          { x: 66, y: 31, width: 10, height: 10 }
+    //      ]
+    //  },
      {
          img1: 'Minigame/diff/diff_11_1.png',
          img2: 'Minigame/diff/diff_11_2.png',
