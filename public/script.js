@@ -32,6 +32,13 @@ function openWindow(id) {
     }
 }
 
+function clickAndBringToFront() {
+    const wins = document.querySelectorAll(".window");
+    wins.forEach(win => win.addEventListener("click", function(){
+        win.style.zIndex = ++ zIndexCounter;
+    }))
+}
+
 function closeWindow(id) {
     const win = document.getElementById(id);
     if (win) win.style.display = 'none';
@@ -401,6 +408,10 @@ function showSummary() {
     document.getElementById('summary-page').classList.remove('hidden');
 }
 
+function confirmClose(){
+    openWindow("close_confirmation");
+}
+
 function showThank() {
     document.getElementById('menu-page').classList.add('hidden');
     document.getElementById('game-page').classList.add('hidden');
@@ -445,6 +456,7 @@ function startGame() {
     start_setpipe();
     generateFoldersAndFiles();
     dragheader();
+    clickAndBringToFront()
     // console.log(gameData);
     reboot_code = gameData[seed].virus;
 }
@@ -462,7 +474,7 @@ function closeTutorial(){
 
 document.getElementById('start-game-button').addEventListener('click', startGame);
 
-document.getElementById('close').addEventListener('click', showThank);
+document.getElementById('close').addEventListener('click', confirmClose);
 
 //random file **not now**
 

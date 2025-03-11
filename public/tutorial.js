@@ -40,11 +40,13 @@ function tuto_updateSlider() {
     tuto_arrow_l.classList.remove('arrow_dis');
     tuto_arrow_l.disabled = false;
 
-    if ((tuto_currentIndex === tuto_images.length - 1)) {
-        tuto_playButton.classList.add('tuto_show');
-    } else{
-        tuto_playButton.classList.remove('tuto_show');
-    }
+    tuto_playButton.classList.add('tuto_show');
+
+    // if ((tuto_currentIndex === tuto_images.length - 1)) {
+    //     tuto_playButton.classList.add('tuto_show');
+    // } else{
+    //     tuto_playButton.classList.remove('tuto_show');
+    // }
 
     if (tuto_currentIndex === tuto_images.length - 1) {
         tuto_arrow_r.classList.add('arrow_dis');

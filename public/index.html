@@ -47,6 +47,20 @@
 			</div>
 		</div>
 
+		<div class="window enter_code" id="close_confirmation" style="display:none; border: 5px solid #ffffff;">
+			<div class="window-header" style="background-color: #ffffff;">
+				<div></div>
+				<span>Shut down?</span>
+				<div></div>
+			</div>
+			<div class="window-body" id="unlock_page">
+				<div class="btn_confirm">
+					<button class="main_btn" id="yes_btn" onclick="showThank()">Yes</button>
+					<button class="main_btn" id="no_btn" onclick="closeWindow('close_confirmation')">Cancel</button>
+				</div>
+			</div>
+		</div>
+
 		<div class="window" id="folder1">
 			<div class="window-header">
 				<button class="button" onclick="closeWindow('folder1')">&lt; Back</button>
