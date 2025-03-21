@@ -3,7 +3,7 @@ const minigames = [
     imageSwapGame,
     spotTheDifferenceGame,
     separateTrash,
-    // virusGame
+    virusGame
 ];
 
 function getRandomMinigame() {
@@ -797,7 +797,7 @@ function startTrashGame() {
 
         if (score >= 30) { // เมื่อคะแนนเต็ม
             displayMessage('ภาวะโลก ละละละเลิฟยู');
-           stoptime_minigame(); // หยุดจับเวลา
+            stoptime_minigame(); // หยุดจับเวลา
         }
     }
 
@@ -884,20 +884,88 @@ function virusGame() {
 
     gameArea.innerHTML = `
         <h1 class="header-text">ทำลายไวรัส</h1>
+        <div id="game-container">
         <div id="score-container">
             <progress id="score-progress" value="0" max="30"></progress>
         </div>
-        <div id="game-container"></div>
+        </div>
     `;
 
     initializeGameTimer(30);
+    startVirusGame()
 }
 
 function startVirusGame(){
     let score = 0;
+    const gameContainer = document.getElementById('game-container');
+    const scoreProgress = document.getElementById('score-progress');
     const virusTypes = [
-        { speed: 3, points: 2, img: "Icon/enemy3.png" },
-        { speed: 1, points: 1, img: "Icon/enemy1.png" },
-        { speed: 4, points: 5, img: "Icon/enemy2.png" }
+        { speed: 9, points: 2, img: "Icon/enemy3.png" },
+        { speed: 3, points: 1, img: "Icon/enemy1.png" },
+        { speed: 6, points: 5, img: "Icon/enemy2.png" }
     ];
+
+    function updateScore_virus(points) {
+        score += points;
+        scoreProgress.value = score;
+
+        if (score >= 30) { // เมื่อคะแนนเต็ม
+            displayMessage('ภาวะโลก ละละละเลิฟยู');
+            stoptime_minigame(); // หยุดจับเวลา)
+        }
+    }
+
+    function createVirus() {
+        const virusData = virusTypes[Math.floor(Math.random() * virusTypes.length)];
+        const virus = document.createElement('div');
+        virus.classList.add('virus_mon');
+        const virusImg = document.createElement('img');
+        virusImg.src = virusData.img;
+        virus.appendChild(virusImg);
+        gameContainer.appendChild(virus);
+
+        let x = Math.random() * (gameContainer.getBoundingClientRect().width - 80);
+        let y = Math.random() * (gameContainer.getBoundingClientRect().height - 80);
+        let speedX = (Math.random() * virusData.speed + 1) * (Math.random() < 0.5 ? 1 : -1);
+        let speedY = (Math.random() * virusData.speed + 1) * (Math.random() < 0.5 ? 1 : -1);
+
+        virus.style.left = `${x}px`;
+        virus.style.top = `${y}px`;
+
+        function moveVirus() {
+            x += speedX;
+            y += speedY;
+            if (x <= 0 || x >= gameContainer.getBoundingClientRect().width - 80) speedX *= -1;
+            if (y <= 0 || y >= gameContainer.getBoundingClientRect().height - 80) speedY *= -1;
+
+            virus.style.left = `${x}px`;
+            virus.style.top = `${y}px`;
+            requestAnimationFrame(moveVirus);
+        }
+        moveVirus();
+
+        virus.addEventListener('click', () => {
+            virus.style.transform = "scale(0)";
+            setTimeout(() => virus.remove(), 100);
+            updateScore_virus(virusData.points);
+            createVirus();
+        });
+    }
+
+    function displayMessage(message) {
+        const gameArea = document.querySelector('.minigame');
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('win-message');
+        messageDiv.innerHTML = `
+            <div class="popup-content">
+                <h2>Summary</h2>
+                <div id="trash-summary" class="trash-summary-horizontal"></div> <!-- ตารางแนวนอน -->
+                <button id="nextGameButton" onclick="continue_Game()">Next Game</button>
+            </div>
+        `;
+        gameArea.appendChild(messageDiv);
+    }
+
+    for (let i = 0; i < 10; i++) createVirus();
+    setInterval(createVirus, 2000);
 }

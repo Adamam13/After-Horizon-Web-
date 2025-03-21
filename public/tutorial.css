@@ -164,7 +164,7 @@
     align-self: center;
     font-weight: bold;
     font-size: x-large;
-    padding: 10%;
+    padding: 3%;
     transition: background-color 0.1s, transform 0.1s;
 }
 

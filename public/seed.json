@@ -390,7 +390,7 @@
             {
                 "name": "Part 4",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part29-1png",
+                "info_grap": "part/part29-1.png",
                 "folder": "folder2",
                 "is_lock": 1
             },            
@@ -1199,7 +1199,7 @@
             {
                 "name": "Part 4",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part29-1png",
+                "info_grap": "part/part29-1.png",
                 "folder": "folder2",
                 "is_lock": 1
             },            
@@ -1737,7 +1737,7 @@
             {
                 "name": "Part 4",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part29-1png",
+                "info_grap": "part/part29-1.png",
                 "folder": "folder2",
                 "is_lock": 1
             },            
