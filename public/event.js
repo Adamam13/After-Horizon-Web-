@@ -35,7 +35,7 @@ function electic_broken() {
     if(!electic){
         console.log("ไฟฟ้าพังจ้าาาา");
         electic = true;
-        set_electic();
+        // set_electic();
         event_alert();
         openWindow('enter_Electical_code');
         const timer_electic = document.getElementById('emer_electic');

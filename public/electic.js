@@ -17,6 +17,7 @@ function set_electic(){
     vr_electic = gameData[seed].vr_electic;
 }
 
+
 function startBlinking(buttonId) {
     const button = document.getElementById(buttonId);
     button.classList.add('blinking');

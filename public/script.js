@@ -445,6 +445,7 @@ function startGame() {
     start_setpipe();
     generateFoldersAndFiles();
     dragheader();
+    set_electic();
     // console.log(gameData);
     reboot_code = gameData[seed].virus;
 }
