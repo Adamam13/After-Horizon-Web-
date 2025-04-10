@@ -1,5 +1,273 @@
 {
-    "25": {
+    "12":{
+        "code": "1234",
+        "event_order": [3,2,1,3,2,
+                        1,2,3,1,2,
+                        3,1,2,3,1,
+                        2,3,1],
+        "event_time": [ 
+    ],
+        "pipe_lineup":[
+            1, 2, 1, 3, 1, 4,
+            3, 2, 1, 4, 3, 1,
+            1, 2, 4, 1, 2, 1
+        ],
+        "pipe_code": [
+            "6969", "2222", "1945", "2005", "2003", "1717",
+            "6699", "9696", "2000", "0000", "2548", "2540",
+            "8181", "1243", "2486", "1379", "5555", "1619"
+        ],
+        "pipe_rotate":[
+            180, 90, 0, 0, 0, 0,
+            0, 0, 0, 180, 90, 0,
+            0, 0, 0, 0, 0, 0
+        ],
+        "vr_electic":["83460", "65243", "49720","93615"],
+        "web_electic":["57192", "91087", "18653","40827"],
+        "dirt":0,
+        "virus": [1,2,3,4,3,2,1,3,4,2,4,3,1,2,3],
+        "passcode": [
+            "4415", "2858", "5512", "8619", "1609", "0328",
+            "6448", "1715", "0712", "9947", "3001", "0431",
+            "4582", "7242", "5369", "2262", "9920", "7211"
+        ],
+        "file_hint":
+        [   
+            {
+                "name": "How to fix electical",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/how_elec.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to fix water supply",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/how_water.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to fix oxygen",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/how_oxy.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to use water supply 1",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_water1.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to fix water supply 2",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_water2.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to use electical",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_elec.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to find key",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_key.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to Clear Virus",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/Tutorial 6.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "Part 1",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "part/part16-4.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 2",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "part/part17-1.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "meme/file/meme_file1.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 3",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "part/part21-1.png",
+                "folder": "folder4",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 4",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "part/part25-1png",
+                "folder": "folder2",
+                "is_lock": 1
+            },            
+            {
+                "name": "Part ??",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "meme/file/meme_file2.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            
+            {
+                "name": "Part 5",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "part/part2-2.png",
+                "folder": "folder4",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 6",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "part/part22-2.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 7",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "part/part26-2.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "meme/file/meme_file3.png",
+                "folder": "folder4",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 8",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "part/part30-2.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 9",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "part/part15-3.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "meme/file/meme_file4.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 10",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "part/part19-3.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 11",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "part/part23-3.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "meme/file/meme_file5.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 12",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "part/part27-3.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 13",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "part/part8-4.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "meme/file/meme_file6.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "meme/file/meme_file7.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 15",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "part/part12-4.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 16",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "part/part16-4.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 14",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "part/part24-4.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "meme/file/meme_file8.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "meme/file/meme_file9.png",
+                "folder": "folder4",
+                "is_lock": 1
+            }
+        ]
+    },
+    "25":{
         "code": "2567",
         "event_order": [1,3,2,1,2
                         ,1,2,3,1,1
@@ -2153,13 +2421,1594 @@
             }
         ]
     },
-    "12":{
-        "code": "1234",
-        "event_order": [3,2,1,3,2,
-                        1,2,3,1,2,
-                        3,1,2,3,1,
-                        2,3,1],
-        "event_time": [ 
+    "98":{
+        "code": "9876",
+        "event_order": [2,3,1,3,2,1,2,3,1,2,3,1,2,3,1,2,3,1],
+        "event_time": [0, 360, 720, 1080, 1260, 1380,1390, 1400, 1410, 1420, 1430, 1440,1450, 1460, 1470, 1480, 1490, 1500],
+        "pipe_lineup":[
+            2, 2, 1, 1, 2, 4,
+            2, 3, 4, 1, 2, 2,
+            2, 1, 2, 4, 1, 2
+        ],
+        "pipe_code":[
+            "0056", "5086", "6517", "1749", "7506", "5133",
+            "7527", "6704", "1379", "5400", "8392", "3979",
+            "2277", "1846", "2790", "9851", "4464", "5406"
+        ],
+        "pipe_rotate":[
+            180, 90, 0, 0, 0, 0,
+            0, 0, 0, 180, 90, 0,
+            0, 0, 0, 0, 0, 0
+        ],
+        "vr_electic":["82795", "28450", "72341","53691"],
+        "web_electic":["43106", "61397", "58609","27480"],
+        "dirt":0,
+        "virus": [1,2,3,4,3,2,1,3,4,2,4,3,1,2,3],
+        "passcode": [
+            "6134", "9606", "4596", "8979", "3137", "1659",
+            "2147", "2422", "1082", "0747", "6890", "3624",
+            "1687", "0084", "8623", "1764", "6373", "8446"
+        ],
+        "file_hint":
+        [   
+            {
+                "name": "How to fix electical",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/how_elec.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to fix water supply",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/how_water.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to fix oxygen",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/how_oxy.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to use water supply 1",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_water1.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to fix water supply 2",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_water2.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to use electical",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_elec.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to find key",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_key.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to Clear Virus",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/Tutorial 6.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "Part 1",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "part/part5-1.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 2",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "part/part9-1.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "meme/file/meme_file1.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 3",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "part/part17-1.png",
+                "folder": "folder4",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 4",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "part/part19-1png",
+                "folder": "folder2",
+                "is_lock": 1
+            },            
+            {
+                "name": "Part ??",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "meme/file/meme_file2.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            
+            {
+                "name": "Part 5",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "part/part10-2.png",
+                "folder": "folder4",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 6",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "part/part14-2.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 7",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "part/part26-2.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "meme/file/meme_file3.png",
+                "folder": "folder4",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 8",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "part/part30-2.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 9",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "part/part3-3.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "meme/file/meme_file4.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 10",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "part/part7-3.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 11",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "part/part11-3.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "meme/file/meme_file5.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 12",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "part/part19-3.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 13",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "part/part8-4.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "meme/file/meme_file6.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "meme/file/meme_file7.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 15",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "part/part16-4.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 16",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "part/part20-4.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 14",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "part/part24-4.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "meme/file/meme_file8.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "meme/file/meme_file9.png",
+                "folder": "folder4",
+                "is_lock": 1
+            }
+        ]
+    },
+    "03":{
+        "code": "0305",
+        "event_order": [3,1,2,3,2,1,2,3,1,2,3,1,2,3,1,2,3,1],
+        "event_time": [0, 360, 720, 1080, 1260, 1380,1390, 1400, 1410, 1420, 1430, 1440,1450, 1460, 1470, 1480, 1490, 1500],
+        "pipe_lineup":[
+            2, 1, 4, 1, 4, 1,
+            1, 2, 1, 2, 2, 2,
+            2, 2, 4, 3, 2, 2
+        ],
+        "pipe_code":[
+            "8668", "7545", "3273", "9667", "4035", "9573",
+            "7037", "9047", "2797", "5765", "8788", "6491",
+            "8282", "0837", "5635", "6958", "3751", "5945"
+        ],
+        "pipe_rotate":[
+            180, 90, 0, 0, 0, 0,
+            0, 0, 0, 180, 90, 0,
+            0, 0, 0, 0, 0, 0
+        ],
+        "vr_electic":["78042", "12937", "34190","85316"],
+        "web_electic":["63195", "40568", "58726","79042"],
+        "dirt":0,
+        "virus": [1,2,3,4,3,2,1,3,4,2,4,3,1,2,3],
+        "passcode": [
+            "6121", "1684", "2254", "6252", "8635", "7415",
+            "3207", "7318", "4316", "7929", "8965", "2533",
+            "7486", "7067", "7098", "6877", "9869", "6624"
+
+        ],
+        "file_hint":
+        [   
+            {
+                "name": "How to fix electical",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/how_elec.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to fix water supply",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/how_water.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to fix oxygen",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/how_oxy.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to use water supply 1",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_water1.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to fix water supply 2",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_water2.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to use electical",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_elec.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to find key",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_key.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to Clear Virus",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/Tutorial 6.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "Part 1",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "part/part9-1.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 2",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "part/part13-1.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "meme/file/meme_file1.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 3",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "part/part17-1.png",
+                "folder": "folder4",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 4",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "part/part29-1.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },            
+            {
+                "name": "Part ??",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "meme/file/meme_file2.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            
+            {
+                "name": "Part 5",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "part/part6-2.png",
+                "folder": "folder4",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 6",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "part/part14-2.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 7",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "part/part22-2.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "meme/file/meme_file3.png",
+                "folder": "folder4",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 8",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "part/part26-2.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 9",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "part/part3-3.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "meme/file/meme_file4.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 10",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "part/part11-3.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 11",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "part/part19-3.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "meme/file/meme_file5.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 12",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "part/part31-3.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 13",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "part/part12-4.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "meme/file/meme_file6.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "meme/file/meme_file7.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 15",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "part/part20-4.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 16",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "part/part24-4.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 14",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "part/part32-4.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "meme/file/meme_file8.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "meme/file/meme_file9.png",
+                "folder": "folder4",
+                "is_lock": 1
+            }
+        ]
+    },
+    "01":{
+        "code": "0116",
+        "event_order": [3,2,1,2,3,2,2,3,1,1,2,3,2,3,1,3,1,2],
+        "event_time": [0, 240, 420, 660, 840, 1080, 1260, 1270, 1280, 1290, 1300, 1310, 1320, 1330, 1340, 1350, 1360, 1370, 1380],
+        "pipe_lineup":[
+            2, 3, 4, 2, 1, 1,
+            2, 2, 1, 2, 2, 2,
+            1, 1, 2, 2, 2, 1
+        ],
+        "pipe_code":[
+            "3606", "9293", "6556", "1864", "8136", "1888",
+            "2866", "0424", "4635", "1862", "8889", "6212",
+            "7209", "7221", "9105", "0171", "4420", "1747"
+        ],
+        "pipe_rotate":[
+            180, 90, 0, 0, 0, 0,
+            0, 0, 0, 180, 90, 0,
+            0, 0, 0, 0, 0, 0
+        ],
+        "vr_electic":["84761", "76014", "37826","90317"],
+        "web_electic":["25903", "93528", "95014","56842"],
+        "dirt":0,
+        "virus": [1,2,3,4,3,2,1,3,4,2,4,3,1,2,3],
+        "passcode": [
+            "0043", "3618", "3056", "7083", "1363", "3710",
+            "7765", "5735", "0694", "5168", "8006", "1168",
+            "2009", "7481", "2173", "3505", "6375", "6509"
+        ],
+        "file_hint":
+        [   
+            {
+                "name": "How to fix electical",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/how_elec.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to fix water supply",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/how_water.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to fix oxygen",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/how_oxy.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to use water supply 1",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_water1.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to fix water supply 2",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_water2.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to use electical",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_elec.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to find key",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_key.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to Clear Virus",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/Tutorial 6.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "Part 1",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "part/part5-1.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 2",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "part/part9-1.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "meme/file/meme_file1.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 3",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "part/part21-1.png",
+                "folder": "folder4",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 4",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "part/part25-1png",
+                "folder": "folder2",
+                "is_lock": 1
+            },            
+            {
+                "name": "Part ??",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "meme/file/meme_file2.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            
+            {
+                "name": "Part 5",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "part/part2-2.png",
+                "folder": "folder4",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 6",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "part/part6-2.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 7",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "part/part18-2.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "meme/file/meme_file3.png",
+                "folder": "folder4",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 8",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "part/part26-2.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 9",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "part/part3-3.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "meme/file/meme_file4.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 10",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "part/part19-3.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 11",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "part/part27-3.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "meme/file/meme_file5.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 12",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "part/part31-3.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 13",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "part/part8-4.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "meme/file/meme_file6.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "meme/file/meme_file7.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 15",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "part/part16-4.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 16",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "part/part20-4.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 14",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "part/part28-4.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "meme/file/meme_file8.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "meme/file/meme_file9.png",
+                "folder": "folder4",
+                "is_lock": 1
+            }
+        ]
+    },
+    "48":{
+        "code": "4852",
+        "event_order": [1,2,3,1,2,3,1,3,2,1,2,3,2,3,1,3,1,2],
+        "event_time": [0, 180, 360, 540, 720, 900, 1020, 1140, 1260, 1320, 1380, 1440,  1450, 1460, 1470, 1480, 1490, 1500],
+        "pipe_lineup":[
+            2, 1, 1, 1, 4, 1,
+            1, 1, 3, 1, 2, 1,
+            2, 1, 3, 4, 1, 1
+        ],
+        "pipe_code":[
+            "7702", "6026", "0877", "6474", "5490", "6704",
+            "1769", "0569", "8177", "1632", "4437", "4097",
+            "5821", "3241", "1039", "8796", "4723", "3155"
+        ],
+        "pipe_rotate":[
+            180, 90, 0, 0, 0, 0,
+            0, 0, 0, 180, 90, 0,
+            0, 0, 0, 0, 0, 0
+        ],
+        "vr_electic":["93615", "23186", "46820","16237"],
+        "web_electic":["58401", "95704", "57391","05948"],
+        "dirt":0,
+        "virus": [1,2,3,4,3,2,1,3,4,2,4,3,1,2,3],
+        "passcode": [
+            "9082", "1067", "6885", "8244", "6333", "9233",
+            "2458", "6175", "1262", "0404", "8125", "9560",
+            "7421", "3074", "0381", "2404", "5773", "3158"
+        ],
+        "file_hint":
+        [   
+            {
+                "name": "How to fix electical",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/how_elec.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to fix water supply",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/how_water.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to fix oxygen",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/how_oxy.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to use water supply 1",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_water1.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to fix water supply 2",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_water2.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to use electical",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_elec.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to find key",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_key.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to Clear Virus",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/Tutorial 6.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "Part 1",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "part/part13-1.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 2",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "part/part17-1.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "meme/file/meme_file1.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 3",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "part/part21-1.png",
+                "folder": "folder4",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 4",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "part/part29-1.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },            
+            {
+                "name": "Part ??",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "meme/file/meme_file2.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            
+            {
+                "name": "Part 5",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "part/part10-2.png",
+                "folder": "folder4",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 6",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "part/part14-2.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 7",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "part/part18-2.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "meme/file/meme_file3.png",
+                "folder": "folder4",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 8",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "part/part26-2.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 9",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "part/part11-3.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "meme/file/meme_file4.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 10",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "part/part19-3.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 11",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "part/part27-3.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "meme/file/meme_file5.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 12",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "part/part31-3.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 13",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "part/part4-4.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "meme/file/meme_file6.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "meme/file/meme_file7.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 15",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "part/part8-4.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 16",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "part/part28-4.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 14",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "part/part32-4.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "meme/file/meme_file8.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "meme/file/meme_file9.png",
+                "folder": "folder4",
+                "is_lock": 1
+            }
+        ]
+    },
+    "16":{
+        "code": "1638",
+        "event_order": [2,3,1,2,3,1,2,1,2,1,1,2,3,1,2,3,1,2],
+        "event_time": [0, 180, 300, 360, 540, 660, 840, 1020, 1140, 1200, 1210, 1220, 1230, 1240, 1250, 1260, 1270, 1280, 1290],
+        "pipe_lineup":[
+            1, 2, 4, 2, 1, 4,
+            4, 3, 2, 1, 2, 3,
+            3, 1, 2, 4, 1, 2
+        ],
+        "pipe_code": [
+            "5658", "9982", "5049", "1872", "1106", "1052",
+            "3489", "0845", "3197", "6588", "0038", "7896",
+            "3540", "1943", "7948", "9555", "1252", "2182"
+        ],
+        "pipe_rotate":[
+            90, 270, 0, 180, 90, 0,
+            0, 0, -90, 0, 0, 0,
+            0, 0, 90, 0, 0, 90
+        ],
+        "vr_electic":["16579", "51276", "14682"],
+        "web_electic":["04832", "84930", "30751"],
+        "virus": [1,2,3,4,3,2,1,3,4,2,4,3,1,2,3],
+        "passcode": [
+        "5167", "6147", "4908", "4967", "2873", "9024",
+        "3410", "7758", "0291", "6845", "1234", "5683", 
+        "7902", "4821", "9056", "3412", "8569", "2104" 
+        ],
+        "file_hint":
+            [   
+            {
+                "name": "How to fix electical",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/how_elec.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to fix water supply",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/how_water.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to fix oxygen",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/how_oxy.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to use water supply 1",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_water1.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to fix water supply 2",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_water2.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to use electical",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_elec.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to find key",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_key.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to Clear Virus",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/Tutorial 6.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "Part 1",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "part/part1-1.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 2",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "part/part9-1.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "meme/file/meme_file1.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 3",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "part/part13-1.png",
+                "folder": "folder4",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 4",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "part/part21-1png",
+                "folder": "folder2",
+                "is_lock": 1
+            },            
+            {
+                "name": "Part ??",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "meme/file/meme_file2.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            
+            {
+                "name": "Part 5",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "part/part2-2.png",
+                "folder": "folder4",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 6",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "part/part6-2.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 7",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "part/part18-2.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "meme/file/meme_file3.png",
+                "folder": "folder4",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 8",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "part/part26-2.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 9",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "part/part3-3.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "meme/file/meme_file4.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 10",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "part/part19-3.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 11",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "part/part27-3.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "meme/file/meme_file5.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 12",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "part/part31-3.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 13",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "part/part8-4.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "meme/file/meme_file6.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "meme/file/meme_file7.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 15",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "part/part16-4.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 16",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "part/part20-4.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 14",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "part/part28-4.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "meme/file/meme_file8.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "meme/file/meme_file9.png",
+                "folder": "folder4",
+                "is_lock": 1
+            }
+        ]
+    },
+    "79":{
+        "code": "7911",
+        "event_order": [2,3,1,3,1,2,3,1,2,1,3,1,3,2,1,2,3,1],
+        "event_time": [0, 120, 240, 360, 480, 600, 720, 840, 960, 1080, 1200, 1320, 1440, 1560, 1680, 1800, 1920, 2040, 2160],
+        "pipe_lineup":[
+            1, 4, 1, 2, 4, 1,
+            2, 1, 2, 2, 1, 4,
+            4, 1, 2, 1, 1, 1
+        ],
+        "pipe_code":[
+            "8085", "4569", "0132", "8407", "7682", "1275",
+            "3978", "9244", "9489", "4504", "2451", "3815",
+            "2237", "5117", "7602", "2901", "4667", "1135"
+        ],
+        "pipe_rotate":[
+            180, 90, 0, 0, 0, 0,
+            0, 0, 0, 180, 90, 0,
+            0, 0, 0, 0, 0, 0
+        ],
+        "vr_electic":["50917", "94367", "83205", "62984"],
+        "web_electic":["26348", "01852", "94761", "70135"],
+        "dirt":0,
+        "virus": [1,2,3,4,3,2,1,3,4,2,4,3,1,2,3],
+        "passcode": [
+            "3826", "0230", "3286", "0228", "8836", "1963",
+            "5404", "8389", "0844", "6991", "0905", "3623",
+            "3705", "9032", "8666", "4220", "2915", "0149" 
+        ],
+        "file_hint":
+        [   
+            {
+                "name": "How to fix electical",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/how_elec.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to fix water supply",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/how_water.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to fix oxygen",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/how_oxy.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to use water supply 1",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_water1.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to fix water supply 2",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_water2.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to use electical",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_elec.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to find key",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/guide_key.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "How to Clear Virus",
+                "icon": "Icon/hint_icon.png",
+                "info_grap": "info/Tutorial 6.png",
+                "folder": "folder_readme",
+                "is_lock": 0
+            },
+            {
+                "name": "Part 1",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "part/part1-1.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 2",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "part/part5-1.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "meme/file/meme_file1.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 3",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "part/part17-1.png",
+                "folder": "folder4",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 4",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "part/part29-1.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },            
+            {
+                "name": "Part ??",
+                "icon": "Icon/part1_icon.PNG",
+                "info_grap": "meme/file/meme_file2.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            
+            {
+                "name": "Part 5",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "part/part6-2.png",
+                "folder": "folder4",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 6",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "part/part10-2.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 7",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "part/part14-2.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "meme/file/meme_file3.png",
+                "folder": "folder4",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 8",
+                "icon": "Icon/part2_icon.PNG",
+                "info_grap": "part/part30-2.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 9",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "part/part7-3.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "meme/file/meme_file4.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 10",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "part/part19-3.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 11",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "part/part23-3.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "meme/file/meme_file5.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 12",
+                "icon": "Icon/part3_icon.PNG",
+                "info_grap": "part/part31-3.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 13",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "part/part4-4.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "meme/file/meme_file6.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "meme/file/meme_file7.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 15",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "part/part8-4.png",
+                "folder": "folder2",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 16",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "part/part28-4.png",
+                "folder": "folder1",
+                "is_lock": 1
+            },
+            {
+                "name": "Part 14",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "part/part32-4.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "meme/file/meme_file8.png",
+                "folder": "folder3",
+                "is_lock": 1
+            },
+            {
+                "name": "Part ??",
+                "icon": "Icon/part4_icon.PNG",
+                "info_grap": "meme/file/meme_file9.png",
+                "folder": "folder4",
+                "is_lock": 1
+            }
+        ]
+    },
+    "90":{
+        "code": "9099",
+        "event_order": [2,3,1,2,3,1,2,1,2,1,1,2,3,1,2,3,1,2],
+        "event_time": [ 0, 60, 180, 360, 420, 540, 720, 780, 900, 1080, 1210, 1220, 1230, 1240, 1250, 1260, 1270, 1280, 1290
     ],
         "pipe_lineup":[
             1, 2, 1, 3, 1, 4,
@@ -2167,9 +4016,9 @@
             1, 2, 4, 1, 2, 1
         ],
         "pipe_code": [
-            "6969", "2222", "1945", "2005", "2003", "1717",
-            "6699", "9696", "2000", "0000", "2548", "2540",
-            "8181", "1243", "2486", "1379", "5555", "1619"
+            "7464", "1159", "8106", "9007", "6779", "6562",
+            "5188", "6475", "1914", "5799", "9738", "9610",
+            "2661", "9201", "4003", "8816", "4455", "7772"
         ],
         "pipe_rotate":[
             180, 90, 0, 0, 0, 0,
@@ -2246,7 +4095,7 @@
             {
                 "name": "Part 1",
                 "icon": "Icon/part1_icon.PNG",
-                "info_grap": "part/part16-4.png",
+                "info_grap": "part/part5-1.png",
                 "folder": "folder1",
                 "is_lock": 1
             },
