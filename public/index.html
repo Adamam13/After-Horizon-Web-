@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="./tutorial.css">
 	<link rel="stylesheet" href="./menu.css">
 	<link rel="stylesheet" href="./virus.css">
+	<link rel="stylesheet" href="./credit.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@400&display=swap" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -511,11 +512,10 @@
 	</div>
 
 	<div id="menu-page" class="desktop page">
-		
 		<h1 class="menu-title">Welcome to AfterDay Horizon</h1>
 		<button class="btn_menu" onclick="showEnter_codePage()">Start Game</button>
 		<button class="btn_menu" onclick="showTutorial()">Tutorial</button>
-		<button class="btn_menu">Credit</button>
+		<button class="btn_menu" onclick="showcredit()">Credit</button>
 	</div>
 
 	<div id="enter_code-page" class="desktop page hidden">
@@ -567,10 +567,10 @@
 	</div>
 
 	<div id="thankyou-page" class="desktop page hidden">
+		<img class="img_logo" alt="" src="Icon/logo_title.png">
 		<h1 class="summary-title">Thankyou for Playing</h1>
-		<p id="summary-text">You completed the game! Well done!</p>
-		<button class="main_btn" onclick="showMenu()">Back To Title</button>
-		<button class="main_btn" onclick="saveGameData()">save data</button>
+		<p class="summary-title" id="summary-text">You Survival 20 min</p>
+		<button class="main_btn" onclick="showMenu()">Back To Menu</button>
 	</div>
 
 	<!-- tutorial -->
@@ -590,6 +590,45 @@
 			<button class="btn_tutorial" id="tuto_playButton">CLOSE</button>
 		</div>
 	</div>
+
+	<div id="credit-page" class="credit page hidden">
+		<div class="logo-section">
+			<img class="img_title" src="Icon/logo_title.png" alt="Game Title">
+		</div>
+	
+		<div class="credit-section">
+			<div class="credit-row">
+				<div class="credit-label">Developed by</div>
+				<div class="credit-content">
+					Parin Dechakorn [ TonNam IT19 ]<br>
+					Pairat Chuenchom [ Adam IT19 ]
+				</div>
+			</div>
+	
+			<div class="credit-row">
+				<div class="credit-label">Advisor</div>
+				<div class="credit-content">
+					Asst. Prof. Dr.Sirion Vittayakorn
+				</div>
+			</div>
+	
+			<div class="credit-row">
+				<div class="credit-label">Credit</div>
+				<div class="credit-content">
+					Icons and images made by Freepik<br>
+					from www.flaticon.com
+				</div>
+			</div>
+		</div>
+	
+		<div class="logo-bottom">
+			<img class="img_logo_c" src="Icon/it_logo.png" alt="IT Logo">
+			<img class="img_logo_c" src="Icon/logo_kmitl.png" alt="KMITL Logo">
+		</div>
+	
+		<button class="btn_credit" onclick="closecredit()">CLOSE</button>
+	</div>
+	
 
 	<script src="script.js"></script>
 	<script src="minigame.js"></script>

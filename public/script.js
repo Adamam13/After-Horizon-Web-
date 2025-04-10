@@ -417,6 +417,10 @@ function showThank() {
     document.getElementById('game-page').classList.add('hidden');
     document.getElementById('summary-page').classList.add('hidden');
     document.getElementById('thankyou-page').classList.remove('hidden');
+    const minutes = String(Math.floor(elapsedTime / 60)).padStart(2, '0');
+    const seconds = String(elapsedTime % 60).padStart(2, '0');
+    const survivalTimeFormatted = `${minutes}:${seconds}`;
+    document.getElementById("summary-text").innerText = `You Survival ${survivalTimeFormatted} Min`;
     saveGameData();
     clearInterval(interval_id);
 }
@@ -469,6 +473,14 @@ function showTutorial(){
 
 function closeTutorial(){
     document.getElementById('tutorial-page').classList.add('hidden');
+}
+
+function showcredit(){
+    document.getElementById('credit-page').classList.remove('hidden');
+}
+
+function closecredit(){
+    document.getElementById('credit-page').classList.add('hidden');
 }
 
 

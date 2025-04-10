@@ -186,6 +186,12 @@ video {
     transform: scale(1.25);
 }
 
+.img_logo {
+    width: 30%;
+    height: 30%;
+    margin-top: -50px;
+}
+
 .group_file {
     position: absolute;
     display: flex;

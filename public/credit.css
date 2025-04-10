@@ -1,0 +1,89 @@
+.credit{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: hsla(0, 0%, 0%, 1);
+}
+
+.btn_credit{
+    background-color: #000000;
+    color: #ff0000;
+    border: 3px solid #ff0000;
+    /* width: 100%; */
+    justify-items: center;
+    align-items: center;
+    align-self: center;
+    font-weight: bold;
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: x-large;
+    padding: 1%;
+    transition: background-color 0.1s, transform 0.1s;
+}
+
+.btn_credit:hover {
+    background-color: #ff0000;
+    color: #0e0000;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.btn_credit:active {
+    background-color: #ff0000;
+    color: #0e0000;
+    cursor: pointer;
+    transform: scale(0.95);
+}
+
+#credit-page {
+    color: white;
+    background-color: black;
+    text-align: center;
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 2em;
+}
+
+.logo-section {
+    margin-bottom: 30px;
+}
+
+.img_title {
+    max-width: 300px;
+    height: auto;
+}
+
+.credit-section {
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.credit-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 20px 0;
+    gap: 40px;
+    text-align: left;
+}
+
+.credit-label {
+    min-width: 160px;
+}
+
+.credit-content {
+    flex: 1;
+}
+
+.logo-bottom {
+    margin-bottom: 30px;
+}
+
+.img_logo_c {
+    height: 80px;
+    margin: 0 10px;
+}
