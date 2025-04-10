@@ -883,7 +883,7 @@ function virusGame() {
     const gameArea = document.querySelector('.minigame');
 
     gameArea.innerHTML = `
-        <h1 class="header-text">ทำลายไวรัส</h1>
+        <h1 class="header-text">Click Virus to Kill</h1>
         <div id="game-container">
         <div id="score-container">
             <progress id="score-progress" value="0" max="30"></progress>
